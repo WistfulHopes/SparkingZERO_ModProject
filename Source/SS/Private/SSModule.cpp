@@ -1,3 +1,3 @@
 #include "Modules/ModuleManager.h"
 
-IMPLEMENT_MODULE(FDefaultGameModuleImpl, SS);
+IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, SS, "SS");
