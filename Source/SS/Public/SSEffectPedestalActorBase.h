@@ -12,7 +12,7 @@ UCLASS(Blueprintable)
 class ASSEffectPedestalActorBase : public AActor {
     GENERATED_BODY()
 public:
-private:
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsEnable;
     
