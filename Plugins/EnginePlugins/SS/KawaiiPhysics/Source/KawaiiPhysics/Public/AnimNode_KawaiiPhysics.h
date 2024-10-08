@@ -4,6 +4,7 @@
 #include "BoneControllers/AnimNode_AnimDynamics.h"
 #include "BoneContainer.h"
 #include "BonePose.h"
+#include "KoratCustomRandomCurveData.h"
 #include "BoneControllers/AnimNode_SkeletalControlBase.h"
 #include "AnimNode_KawaiiPhysics.generated.h"
 
@@ -234,6 +235,12 @@ public:
 	/** Settings for control of physical behavior */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Physics Settings", meta = (PinHiddenByDefault))
 	FKawaiiPhysicsSettings PhysicsSettings;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	bool bEnabledDepthRate;
+    
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	int32 DepthRateOffset;
 	
 	/** Curve for adjusting the set value of physical behavior. Use rate of bone length from Root */
 	UPROPERTY()
@@ -329,6 +336,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Teleport", meta = (PinHiddenByDefault))
 	float TeleportRotationThreshold = 10.0f;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	bool bForceTeleportProcessing;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ExternalForce", meta = (PinHiddenByDefault))
 	FVector Gravity = FVector::ZeroVector;
 	
@@ -339,6 +349,33 @@ public:
 	/** Scale to apply to calculated wind velocities in the solver */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Wind", meta = (DisplayAfter = "bEnableWind"), meta = (PinHiddenByDefault))
 	float WindScale = 1.0f;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	float WindRandomMax;
+    
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	TMap<float, UCurveFloat*> RandomCurves;
+    
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	TMap<float, FKoratCustomRandomCurveData> RandomCurveData;
+    
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	bool bRandomCurveSnake;
+    
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	bool bRandomTimeDeff;
+    
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	bool bEnableOverwriteWind;
+    
+	UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+	FBoneReference CharacterDirectionBone;
+    
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	FVector OverwriteWindDirection;
+    
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	float OverwriteWindSpeed;
 
 	/**
 	 *	EXPERIMENTAL. Perform sweeps for each simulating bodies to avoid collisions with the world.
