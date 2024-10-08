@@ -1,0 +1,6 @@
+#include "SSDramaticBattleCutEditorInitialSelectUIWindowDialogButtonData.h"
+
+FSSDramaticBattleCutEditorInitialSelectUIWindowDialogButtonData::FSSDramaticBattleCutEditorInitialSelectUIWindowDialogButtonData() {
+    this->Function = ESSDramaticBattleCutEditorInitialSelectUIWindowDialogButtonFunctionType::None;
+}
+

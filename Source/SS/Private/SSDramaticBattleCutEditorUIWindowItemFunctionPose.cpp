@@ -1,0 +1,10 @@
+#include "SSDramaticBattleCutEditorUIWindowItemFunctionPose.h"
+
+USSDramaticBattleCutEditorUIWindowItemFunctionPose::USSDramaticBattleCutEditorUIWindowItemFunctionPose() {
+}
+
+USSDramaticBattleCutEditorUIWindowItemFunctionPose* USSDramaticBattleCutEditorUIWindowItemFunctionPose::CreateAndInitialize(FSSDramaticBattleCutEditorUIWindowItemFunctionInitializeParameter InParameter) {
+    return NULL;
+}
+
+

@@ -1,0 +1,18 @@
+{
+	"FileVersion": 3,
+	"Version": 0,
+	"VersionName": "3.2",
+	"FriendlyName": "MORT",
+	"Description": "Multi-Objects Renaming tool is a simple editor improvement that adds one often used function to automate editing of tons actors\\objects names (except folders) in the World Outliner and Content Browser.",
+	"Category": "MORT",
+	"CreatedBy": "Editor Improvements",
+	"CreatedByURL": "",
+	"DocsURL": "https://youtu.be/lL-T71q6icg",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/f6a838d3c72b4d28b5635da50d3335e5",
+	"SupportURL": "qhq.sup@gmail.com",
+	"EngineVersion": "5.1.0",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true
+}

@@ -1,0 +1,6 @@
+#include "SSDramaticBattleCutEditorFunctionParameterDataAsset.h"
+
+USSDramaticBattleCutEditorFunctionParameterDataAsset::USSDramaticBattleCutEditorFunctionParameterDataAsset() {
+}
+
+

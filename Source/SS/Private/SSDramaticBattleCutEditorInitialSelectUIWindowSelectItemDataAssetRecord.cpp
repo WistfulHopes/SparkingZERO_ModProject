@@ -1,0 +1,5 @@
+#include "SSDramaticBattleCutEditorInitialSelectUIWindowSelectItemDataAssetRecord.h"
+
+FSSDramaticBattleCutEditorInitialSelectUIWindowSelectItemDataAssetRecord::FSSDramaticBattleCutEditorInitialSelectUIWindowSelectItemDataAssetRecord() {
+}
+

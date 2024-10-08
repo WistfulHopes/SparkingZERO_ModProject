@@ -1,0 +1,5 @@
+#include "KoratDramaticBattleCutEditorUIWindowButtonGuideDataList.h"
+
+FKoratDramaticBattleCutEditorUIWindowButtonGuideDataList::FKoratDramaticBattleCutEditorUIWindowButtonGuideDataList() {
+}
+

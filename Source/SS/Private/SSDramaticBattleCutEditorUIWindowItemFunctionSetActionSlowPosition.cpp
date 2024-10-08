@@ -1,0 +1,10 @@
+#include "SSDramaticBattleCutEditorUIWindowItemFunctionSetActionSlowPosition.h"
+
+USSDramaticBattleCutEditorUIWindowItemFunctionSetActionSlowPosition::USSDramaticBattleCutEditorUIWindowItemFunctionSetActionSlowPosition() {
+}
+
+USSDramaticBattleCutEditorUIWindowItemFunctionSetActionSlowPosition* USSDramaticBattleCutEditorUIWindowItemFunctionSetActionSlowPosition::CreateAndInitialize(FSSDramaticBattleCutEditorUIWindowItemFunctionInitializeParameter InParameter) {
+    return NULL;
+}
+
+

@@ -1,0 +1,5 @@
+#include "KoratDramaticBattleCutEditorFunctionOperationDataList.h"
+
+FKoratDramaticBattleCutEditorFunctionOperationDataList::FKoratDramaticBattleCutEditorFunctionOperationDataList() {
+}
+

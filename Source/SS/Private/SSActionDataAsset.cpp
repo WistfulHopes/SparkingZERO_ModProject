@@ -1,0 +1,115 @@
+#include "SSActionDataAsset.h"
+
+USSActionDataAsset::USSActionDataAsset() {
+    this->bLocomotionControl = false;
+    this->AttackType = EKoratActionAttackType::None;
+    this->SettleAttackType = EBattleSettleAttackType::None;
+    this->bTransisionBlownPatternWhenDead = true;
+    this->bUsableRevengeCounter = false;
+    this->bUsableRushHighSpeedMoveRevenge = true;
+    this->bInterruptibleExplosionSkill = false;
+    this->bInterruptibleBarrierSkill = false;
+    this->HitCheckType = EKoratActionHitCheckType::HitAndMiss;
+    this->ActionIdleType = EKoratActionIdleType::Normal;
+    this->ActionCategoryType = EKoratActionCategoryType::WaitOrMove;
+    this->ActionSubCategoryType = EKoratActionSubCategoryType::None;
+    this->RushDerivativeCategoryType = EKoratActionRushDerivativeCategoryType::Undefined;
+    this->RotationBaseDirection = EKoratActionRotationBaseDirection::Front;
+    this->BodyYawMode = EKoratActionBodyYawMode::Primary;
+    this->BodyPitchMode = EKoratActionBodyPitchMode::Opponent;
+    this->TiltTimingType = EKoratActionTiltTimingType::StartAction;
+    this->InterpSpeed = 1440.00f;
+    this->MinAngle = -30.00f;
+    this->MaxAngle = 30.00f;
+    this->bAutoLandingWithCantFly = false;
+    this->bAutoLandingWithCanFly = false;
+    this->bFluffyMove = false;
+    this->bPositionNonResettableTiming = false;
+    this->PenetrationMode = EKoratActionPenetrationMode::None;
+    this->ActionCameraDataAction = NULL;
+    this->ActionCameraDataActionToTarget = NULL;
+    this->ActionCameraDataEndAction = NULL;
+    this->ActionCameraDataEndActionToTarget = NULL;
+    this->bPossibleFastAvoidable = false;
+    this->bPossibleZCounter = false;
+    this->bPossibleSuperCounter = false;
+    this->bPossibleSuperCounterRevengeCounterShort = false;
+    this->bPossibleSuperZCounterAdditionalCatch = false;
+    this->bPossibleSelfishness = false;
+    this->bPossibleBuffAvoidable = false;
+    this->bPossibleInterruptGuard = false;
+    this->bPossibleInterruptReflect = false;
+    this->bPossibleThrowEscape = false;
+    this->bPossiblePursuit = false;
+    this->ConditionDown = EKoratActionConditionDown::None;
+    this->LookatPartFlags = EKoratActionLookatPartFlags::None;
+    this->ComboContinueTime = 0.50f;
+    this->OffsetType = EKoratOffsetType::CollisionOffset;
+    this->bPlayAddtiveReaction = false;
+    this->ChangeDirectionType = EKoratChangeDirectionOfActionStartType::None;
+    this->bResetMove = false;
+    this->bRequestBulletToFinish = false;
+    this->bAutoReflect = false;
+    this->bSparkingConditionKeeping = false;
+    this->bLoadedSupporterKeeping = false;
+    this->bActionIdleType = false;
+    this->bUntransferableSettleStep = false;
+    this->bContinueDamage = false;
+    this->bCancelableSparkingCombo = false;
+    this->bCancelableBlastCombo = false;
+    this->bInvincible = false;
+    this->bBulletInvincible = false;
+    this->bNormalBulletInvincible = false;
+    this->bDemonstration = false;
+    this->bDemonstrationHudDisplay = true;
+    this->bDemonstrationCharacterDisplay = true;
+    this->bDemonstrationBulletDisplay = false;
+    this->bIsUnionAction = false;
+    this->bNoPredictCalculationAttackPower = false;
+    this->AutoRecoverSpGaugeAndSkillStockType = EAutoRecoverSpGaugeAndSkillStockType::None;
+    this->AutoRecoverSpGaugeType = EAutoRecoverSpGaugeAndSkillStockType::None;
+    this->AutoRecoverSkillStockType = EAutoRecoverSpGaugeAndSkillStockType::None;
+    this->SearchRangeLeft = 180.00f;
+    this->SearchRangeRight = 180.00f;
+    this->SearchRangeUP = 180.00f;
+    this->SearchRangeDown = 180.00f;
+    this->SearchDistance = 120.00f;
+    this->bUseSearchRange = false;
+    this->bStayActionTarget = false;
+    this->StayActionTargetWaitTime = 0.00f;
+    this->StayActionTargetTime = 0.00f;
+    this->bIgnoreActionTarget = false;
+    this->IgnoreActionTargetDistance = 0.00f;
+    this->bActionTargetStopActionEnd = false;
+    this->bOverwriteMontageLevelSequence = false;
+    this->bCanDrownOutForExplosion = false;
+    this->bImpactProcedureDelegate = false;
+    this->bImpactProcedureWarpUseSequencerKey = false;
+    this->BattleImpactTriggerEventOpt = EBattleImpactTriggerEventOpt::kCurrentTarget;
+    this->bRingOutGroundMartialArtsTournament = false;
+    this->bRingOutBuildingMartialArtsTournament = false;
+    this->bRingOutGroundPowerTournament = false;
+    this->bDisableAutoInterpolateBlendOut = false;
+    this->bNoHitAirWallEffect = false;
+    this->bNotCharacterActionIdle = false;
+    this->bTurnBeforeTransition = false;
+    this->bPlayEffectDuringInvincibility = false;
+    this->bCannotThrowTransitionInStandby = false;
+    this->bEnabledFootIK = true;
+    this->bDisablePushingCollisionWallSlide = false;
+    this->bAttackCollisionNeverMiss = false;
+    this->AddDownValue = 0;
+    this->bNoActionPitch = false;
+    this->bFinishParticularBuff = false;
+    this->AttackCollisionScale = 1.00f;
+    this->bResetHitStop = false;
+    this->bForceFinishVanishing = false;
+}
+
+void USSActionDataAsset::SetContinueDamageFlag() {
+}
+
+void USSActionDataAsset::CheckSequenceMarker() {
+}
+
+

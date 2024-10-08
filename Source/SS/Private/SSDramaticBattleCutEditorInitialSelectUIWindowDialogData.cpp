@@ -1,0 +1,5 @@
+#include "SSDramaticBattleCutEditorInitialSelectUIWindowDialogData.h"
+
+FSSDramaticBattleCutEditorInitialSelectUIWindowDialogData::FSSDramaticBattleCutEditorInitialSelectUIWindowDialogData() {
+}
+

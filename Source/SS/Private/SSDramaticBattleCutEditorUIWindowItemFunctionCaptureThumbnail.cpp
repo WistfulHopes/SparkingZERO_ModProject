@@ -1,0 +1,10 @@
+#include "SSDramaticBattleCutEditorUIWindowItemFunctionCaptureThumbnail.h"
+
+USSDramaticBattleCutEditorUIWindowItemFunctionCaptureThumbnail::USSDramaticBattleCutEditorUIWindowItemFunctionCaptureThumbnail() {
+}
+
+USSDramaticBattleCutEditorUIWindowItemFunctionCaptureThumbnail* USSDramaticBattleCutEditorUIWindowItemFunctionCaptureThumbnail::CreateAndInitialize(FSSDramaticBattleCutEditorUIWindowItemFunctionInitializeParameter InParameter) {
+    return NULL;
+}
+
+

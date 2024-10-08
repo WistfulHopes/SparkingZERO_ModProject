@@ -1,0 +1,23 @@
+#include "SSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionBase.h"
+
+USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionBase::USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionBase() {
+    this->FunctionOperation = ESSDramaticBattleCutEditorFunctionOperationType::None;
+    this->FunctionParameter = ESSDramaticBattleCutEditorFunctionParameterType::None;
+    this->UIController = NULL;
+}
+
+bool USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionBase::IsMatchFunction(ESSDramaticBattleCutEditorFunctionOperationType InFunctionOperation, ESSDramaticBattleCutEditorFunctionParameterType InFunctionParameter) {
+    return false;
+}
+
+void USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionBase::Initialize(ESSDramaticBattleCutEditorFunctionOperationType InFunctionOperation, ESSDramaticBattleCutEditorFunctionParameterType InFunctionParameter, ASSDramaticBattleCutEditorInitialSelectUIController* InUIController) {
+}
+
+void USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionBase::Finalize() {
+}
+
+USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionBase* USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionBase::CreateAndInitializeBase(ASSDramaticBattleCutEditorInitialSelectUIController* InUIController) {
+    return NULL;
+}
+
+

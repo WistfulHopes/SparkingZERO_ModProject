@@ -1,0 +1,5 @@
+#include "SSDramaticBattleCutEditorUIWindowButtonGuideDataAssetRecord.h"
+
+FSSDramaticBattleCutEditorUIWindowButtonGuideDataAssetRecord::FSSDramaticBattleCutEditorUIWindowButtonGuideDataAssetRecord() {
+}
+

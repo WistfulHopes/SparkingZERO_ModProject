@@ -1,0 +1,10 @@
+#include "SSDramaticBattleCutEditorUIWindowItemFunctionSubtitleSpeaker.h"
+
+USSDramaticBattleCutEditorUIWindowItemFunctionSubtitleSpeaker::USSDramaticBattleCutEditorUIWindowItemFunctionSubtitleSpeaker() {
+}
+
+USSDramaticBattleCutEditorUIWindowItemFunctionSubtitleSpeaker* USSDramaticBattleCutEditorUIWindowItemFunctionSubtitleSpeaker::CreateAndInitialize(FSSDramaticBattleCutEditorUIWindowItemFunctionInitializeParameter InParameter) {
+    return NULL;
+}
+
+

@@ -1,0 +1,10 @@
+#include "SSDramaticBattleCutEditorUIWindowItemFunctionSubtitle.h"
+
+USSDramaticBattleCutEditorUIWindowItemFunctionSubtitle::USSDramaticBattleCutEditorUIWindowItemFunctionSubtitle() {
+}
+
+USSDramaticBattleCutEditorUIWindowItemFunctionSubtitle* USSDramaticBattleCutEditorUIWindowItemFunctionSubtitle::CreateAndInitialize(FSSDramaticBattleCutEditorUIWindowItemFunctionInitializeParameter InParameter) {
+    return NULL;
+}
+
+

@@ -1,0 +1,33 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "EKoratPostProcessChameleonBindType.generated.h"
+
+UENUM(BlueprintType)
+enum class EKoratPostProcessChameleonBindType : uint8 {
+    POST_COMMON,
+    STAGE_POS_00_00,
+    STAGE_POS_00_01,
+    STAGE_POS_00_02,
+    STAGE_POS_00_03,
+    STAGE_POS_00_04,
+    STAGE_POS_00_05,
+    STAGE_POS_00_06,
+    STAGE_POS_00_07,
+    STAGE_POS_00_08,
+    STAGE_POS_00_09,
+    CHARA,
+    DYNAMIC,
+    RESIDENT_POST_COMMON,
+    RESIDENT_STAGE_POS_00_00,
+    RESIDENT_STAGE_POS_00_01,
+    RESIDENT_STAGE_POS_00_02,
+    RESIDENT_STAGE_POS_00_03,
+    RESIDENT_STAGE_POS_00_04,
+    RESIDENT_STAGE_POS_00_05,
+    RESIDENT_STAGE_POS_00_06,
+    RESIDENT_STAGE_POS_00_07,
+    RESIDENT_STAGE_POS_00_08,
+    RESIDENT_STAGE_POS_00_09,
+    MAX,
+};
+

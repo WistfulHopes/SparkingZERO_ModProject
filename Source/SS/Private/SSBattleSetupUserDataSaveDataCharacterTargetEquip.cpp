@@ -1,0 +1,5 @@
+#include "SSBattleSetupUserDataSaveDataCharacterTargetEquip.h"
+
+FSSBattleSetupUserDataSaveDataCharacterTargetEquip::FSSBattleSetupUserDataSaveDataCharacterTargetEquip() {
+}
+

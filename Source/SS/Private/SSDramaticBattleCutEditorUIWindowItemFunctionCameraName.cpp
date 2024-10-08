@@ -1,0 +1,10 @@
+#include "SSDramaticBattleCutEditorUIWindowItemFunctionCameraName.h"
+
+USSDramaticBattleCutEditorUIWindowItemFunctionCameraName::USSDramaticBattleCutEditorUIWindowItemFunctionCameraName() {
+}
+
+USSDramaticBattleCutEditorUIWindowItemFunctionCameraName* USSDramaticBattleCutEditorUIWindowItemFunctionCameraName::CreateAndInitialize(FSSDramaticBattleCutEditorUIWindowItemFunctionInitializeParameter InParameter) {
+    return NULL;
+}
+
+

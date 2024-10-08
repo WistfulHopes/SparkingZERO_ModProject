@@ -1,0 +1,6 @@
+#include "SSDramaticBattleCutEditorInitialSelectUIWindowDisplayConditionDataAssetRecord.h"
+
+FSSDramaticBattleCutEditorInitialSelectUIWindowDisplayConditionDataAssetRecord::FSSDramaticBattleCutEditorInitialSelectUIWindowDisplayConditionDataAssetRecord() {
+    this->DisplayCondition = ESSDramaticBattleCutEditorInitialSelectUIWindowDisplayConditionType::Visible;
+}
+

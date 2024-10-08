@@ -1,0 +1,11 @@
+#include "SSDramaticBattleCutEditorUIWindowItemFunctionCharacterListSelect.h"
+
+USSDramaticBattleCutEditorUIWindowItemFunctionCharacterListSelect::USSDramaticBattleCutEditorUIWindowItemFunctionCharacterListSelect() {
+    this->FocusedValue = ESSEventSceneCharacterTypeDE::Character00;
+}
+
+USSDramaticBattleCutEditorUIWindowItemFunctionCharacterListSelect* USSDramaticBattleCutEditorUIWindowItemFunctionCharacterListSelect::CreateAndInitialize(FSSDramaticBattleCutEditorUIWindowItemFunctionInitializeParameter InParameter) {
+    return NULL;
+}
+
+

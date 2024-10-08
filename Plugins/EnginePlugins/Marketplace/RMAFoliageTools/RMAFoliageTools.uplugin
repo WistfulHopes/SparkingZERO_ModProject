@@ -1,0 +1,34 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "2.9.1",
+	"FriendlyName": "RMAFoliageTools",
+	"Description": "RMAFoliageTools offers some features like convert FoliageInstance to StaticMeshActor and vise versa and also a buffer system that makes it possible to transfer FoliageInstance to other levels without any difficulty.",
+	"Category": "Foliage",
+	"CreatedBy": "RMA",
+	"CreatedByURL": "https://www.unrealengine.com/marketplace/profile/RMA",
+	"DocsURL": "https://drive.google.com/open?id=1xJMbrD_hH5Cnr_swelsNpPzTCDGU08Qd",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/cd8704edc80c41dd9ff67a0d7cfb5515",
+	"SupportURL": "",
+	"EngineVersion": "5.1.0",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "RMAFoliageTools",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true
+		}
+	]
+}

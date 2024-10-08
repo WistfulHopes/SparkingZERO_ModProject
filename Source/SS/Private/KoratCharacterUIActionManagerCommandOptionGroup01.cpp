@@ -1,0 +1,5 @@
+#include "KoratCharacterUIActionManagerCommandOptionGroup01.h"
+
+FKoratCharacterUIActionManagerCommandOptionGroup01::FKoratCharacterUIActionManagerCommandOptionGroup01() {
+}
+

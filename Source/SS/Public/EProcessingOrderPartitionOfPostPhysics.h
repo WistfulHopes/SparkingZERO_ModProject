@@ -1,0 +1,47 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "EProcessingOrderPartitionOfPostPhysics.generated.h"
+
+UENUM(BlueprintType)
+enum class EProcessingOrderPartitionOfPostPhysics : uint8 {
+    GameStateBase,
+    GameStateBaseAfter,
+    PlayerPawn,
+    PlayerRootComponet,
+    PlayerCapsuleComponent,
+    PlayerSocketComponent,
+    EndMove,
+    CutCameraLocator,
+    BulletController,
+    BulletActor,
+    BulletBeamView,
+    EndBulletActor,
+    EndCombativesCollision,
+    NextFrameStartProcessing,
+    NextFrameActionDecision,
+    PlayerTransitionFlowComponent,
+    PlayerMontageComponent,
+    PlayerGrappleComponent,
+    PlayerSafeSlowMoveComponent,
+    PlayerAttackCollisionComponent,
+    PlayerAttackCollisionActor,
+    PlayerAttackCollisionActor1P,
+    PlayerAttackCollisionActor2P,
+    PlayerAttackCollisionActorNoEntry,
+    PlayerLocomotionComponent,
+    PlayerPushingComponent,
+    PlayerPushingComponentGiant,
+    PlayerActionTargetComponent,
+    PlayerAntiBulletComponent,
+    BulletCommandManager,
+    PlayerHitCollisionComponent,
+    PlayerHitCollisionComponent1P,
+    PlayerHitCollisionComponent2P,
+    PlayerHitCollisionComponentNoEntry,
+    TriggerImpactGameComponent,
+    PostProccessManagerTickingAfter,
+    ActionManagerForLevelSequence,
+    CutCameraDirector,
+    RootCameraDirector,
+};
+

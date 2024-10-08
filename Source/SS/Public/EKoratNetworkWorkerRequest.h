@@ -1,0 +1,48 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "EKoratNetworkWorkerRequest.generated.h"
+
+UENUM(BlueprintType)
+enum class EKoratNetworkWorkerRequest : uint8 {
+    None,
+    Matching,
+    Enable,
+    Fence,
+    Ranking,
+    RoomSearch,
+    RoomCreate,
+    RoomJoin,
+    InviteFriend,
+    FetchPlayerCard,
+    UploadBattle,
+    TopRankingBattleList,
+    PeriodRankingBattleList,
+    BattleThumbnail,
+    BattleDetail,
+    BattleData,
+    GoodBattle,
+    FavoriteBattle,
+    FavoriteBattleList,
+    BattleDelete,
+    FollowList,
+    UserBattleList,
+    BattleTagSearch,
+    BattleDetailSearch,
+    UploadReplay,
+    UserReplayList,
+    BattleReplayList,
+    ReplayData,
+    ReplayDelete,
+    ReplayGood,
+    ReplayFavorite,
+    ReplayPublic,
+    BattleResultWorldLib,
+    BattleReportWLib,
+    GetHourWLibBattleReportCount,
+    TournamentAddCom,
+    PollNotice,
+    PollMiscInfo,
+    SyncPlayerCard,
+    Max,
+};
+

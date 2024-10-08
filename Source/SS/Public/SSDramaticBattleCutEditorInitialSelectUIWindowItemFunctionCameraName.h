@@ -1,0 +1,21 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "ESSDramaticBattleCutEditorFunctionOperationType.h"
+#include "ESSDramaticBattleCutEditorFunctionParameterType.h"
+#include "SSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionBase.h"
+#include "SSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionCameraName.generated.h"
+
+class ASSDramaticBattleCutEditorInitialSelectUIController;
+class USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionCameraName;
+
+UCLASS(Blueprintable)
+class USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionCameraName : public USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionBase {
+    GENERATED_BODY()
+public:
+    USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionCameraName();
+
+    UFUNCTION(BlueprintCallable)
+    static USSDramaticBattleCutEditorInitialSelectUIWindowItemFunctionCameraName* CreateAndInitialize(ESSDramaticBattleCutEditorFunctionOperationType InFunctionOperation, ESSDramaticBattleCutEditorFunctionParameterType InFunctionParameter, ASSDramaticBattleCutEditorInitialSelectUIController* InUIController);
+    
+};
+
