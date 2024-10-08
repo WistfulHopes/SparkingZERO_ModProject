@@ -1,0 +1,9 @@
+{
+	"BuildId": "23058290",
+	"Modules": 
+	{
+		"KantanChartsDatasource": "UnrealEditor-KantanChartsDatasource.dll",
+		"KantanChartsSlate": "UnrealEditor-KantanChartsSlate.dll",
+		"KantanChartsUMG": "UnrealEditor-KantanChartsUMG.dll"
+	}
+}
