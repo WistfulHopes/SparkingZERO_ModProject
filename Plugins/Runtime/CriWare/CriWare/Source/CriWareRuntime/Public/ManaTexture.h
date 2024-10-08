@@ -72,6 +72,12 @@ public:
 
     UFUNCTION(BlueprintCallable)
     void SetMovieSource(UManaSource* InSource);
+
+    virtual float GetSurfaceWidth() const override { return TargetDimensions.X; }
+    virtual float GetSurfaceHeight() const override { return TargetDimensions.Y; }
+    virtual float GetSurfaceDepth() const override { return 0; }
+    virtual uint32 GetSurfaceArraySize() const override { return 0; }
+
     
 };
 
