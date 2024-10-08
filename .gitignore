@@ -275,6 +275,7 @@ Saved/
 /Programs/MemoryProfiler2/**
 /Programs/UnrealBuildTool/**
 /LocalBuilds/
+/Build/
 
 # Ignore Swarm local save files
 /Binaries/DotNET/SwarmAgent.DeveloperOptions.xml
