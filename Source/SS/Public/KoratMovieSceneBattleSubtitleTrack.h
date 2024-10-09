@@ -35,5 +35,11 @@ public:
     {
         return FMovieSceneEvalTemplatePtr();
     }
+
+    virtual const TArray<UMovieSceneSection*>& GetAllSections() const override
+    {
+        return Sections;
+    }
+    
 };
 

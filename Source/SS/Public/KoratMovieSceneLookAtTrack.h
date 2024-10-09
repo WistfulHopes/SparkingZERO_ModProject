@@ -13,6 +13,11 @@ public:
 
 
     // Fix for true pure virtual functions not being implemented
+
+    bool SupportsType(TSubclassOf<UMovieSceneSection> SectionClass) const
+    {
+        return SectionClass == StaticClass();
+    }
     
     virtual FMovieSceneEvalTemplatePtr CreateTemplateForSection(const UMovieSceneSection& InSection) const override
     {
