@@ -6,3 +6,7 @@ FKoratRigUnit_SphereTraceWorld::FKoratRigUnit_SphereTraceWorld() {
     this->bHit = false;
 }
 
+FKoratRigUnit_SphereTraceWorld_Execute()
+{
+	
+}

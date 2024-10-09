@@ -23,6 +23,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector Result;
     
-    KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathVectorInterpTo();
+	KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathVectorInterpTo();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

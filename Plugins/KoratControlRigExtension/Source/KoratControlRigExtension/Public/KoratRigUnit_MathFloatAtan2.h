@@ -16,6 +16,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Result;
     
-    KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFloatAtan2();
+	KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFloatAtan2();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

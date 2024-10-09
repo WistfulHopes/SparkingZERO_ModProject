@@ -28,7 +28,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float EndScale;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true, Input))
     TEnumAsByte<ECollisionChannel> Channel;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -42,6 +42,9 @@ private:
     FCachedRigElement CachedIndex;
     
 public:
-    KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_FootTrace();
+	KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_FootTrace();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

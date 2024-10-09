@@ -18,229 +18,9 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "++UE5+Release-5.1",
-		"BuildId": "4d3ea466-17eb-498a-a9bb-370a691d92b4"
+		"BuildId": "ca91d5c1-1fdc-4808-a651-da57dfacfe7d"
 	},
 	"BuildProducts": [
-		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-SS.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-SS.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-SSKeyInput.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-SSKeyInput.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/Binaries/Win64/UnrealEditor-ACLPlugin.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/Binaries/Win64/UnrealEditor-ACLPlugin.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/Binaries/Win64/UnrealEditor-ACLPluginEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/Binaries/Win64/UnrealEditor-ACLPluginEditor.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsDatasource.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsDatasource.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsSlate.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsSlate.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsUMG.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsUMG.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/RMAFoliageTools/Binaries/Win64/UnrealEditor-RMAFoliageTools.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/RMAFoliageTools/Binaries/Win64/UnrealEditor-RMAFoliageTools.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/RMAFoliageTools/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysics.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysics.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysicsEd.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysicsEd.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUERuntime/Binaries/Win64/UnrealEditor-SpRuntime.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUERuntime/Binaries/Win64/UnrealEditor-SpRuntime.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUERuntime/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUEXXX/Binaries/Win64/UnrealEditor-SpXXX.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUEXXX/Binaries/Win64/UnrealEditor-SpXXX.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUEXXX/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UnrealImGui/Binaries/Win64/UnrealEditor-ImGui.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UnrealImGui/Binaries/Win64/UnrealEditor-ImGui.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UnrealImGui/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratControlRigExtension/Binaries/Win64/UnrealEditor-KoratControlRigExtension.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratControlRigExtension/Binaries/Win64/UnrealEditor-KoratControlRigExtension.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratControlRigExtension/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratUDS/Binaries/Win64/UnrealEditor-KoratUDS.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratUDS/Binaries/Win64/UnrealEditor-KoratUDS.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratUDS/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratUDS_WeatherParamControl/Binaries/Win64/UnrealEditor-KoratUDS_WeatherParamControl.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratUDS_WeatherParamControl/Binaries/Win64/UnrealEditor-KoratUDS_WeatherParamControl.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratUDS_WeatherParamControl/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareAdxLipSync/Binaries/Win64/UnrealEditor-CriWareAdxLipSync.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareAdxLipSync/Binaries/Win64/UnrealEditor-CriWareAdxLipSync.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareAdxLipSync/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareCinematics/Binaries/Win64/UnrealEditor-CriWareMovieScenes.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareCinematics/Binaries/Win64/UnrealEditor-CriWareMovieScenes.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareCinematics/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWare/Binaries/Win64/UnrealEditor-CriWareRuntime.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWare/Binaries/Win64/UnrealEditor-CriWareRuntime.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWare/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/WindSimShader/Binaries/Win64/UnrealEditor-WindSimShader.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/WindSimShader/Binaries/Win64/UnrealEditor-WindSimShader.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/WindSimShader/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/AgentInterface.dll",
 			"Type": "RequiredResource"
@@ -6056,97 +5836,229 @@
 		{
 			"Path": "$(EngineDir)/Plugins/XGEController/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-SS.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-SS.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-SSKeyInput.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-SSKeyInput.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/Binaries/Win64/UnrealEditor-ACLPlugin.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/Binaries/Win64/UnrealEditor-ACLPlugin.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/Binaries/Win64/UnrealEditor-ACLPluginEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/Binaries/Win64/UnrealEditor-ACLPluginEditor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsDatasource.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsDatasource.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsSlate.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsSlate.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsUMG.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor-KantanChartsUMG.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/RMAFoliageTools/Binaries/Win64/UnrealEditor-RMAFoliageTools.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/RMAFoliageTools/Binaries/Win64/UnrealEditor-RMAFoliageTools.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/RMAFoliageTools/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysics.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysics.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysicsEd.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/Binaries/Win64/UnrealEditor-KawaiiPhysicsEd.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUERuntime/Binaries/Win64/UnrealEditor-SpRuntime.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUERuntime/Binaries/Win64/UnrealEditor-SpRuntime.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUERuntime/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUEXXX/Binaries/Win64/UnrealEditor-SpXXX.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUEXXX/Binaries/Win64/UnrealEditor-SpXXX.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUEXXX/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UnrealImGui/Binaries/Win64/UnrealEditor-ImGui.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UnrealImGui/Binaries/Win64/UnrealEditor-ImGui.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UnrealImGui/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratControlRigExtension/Binaries/Win64/UnrealEditor-KoratControlRigExtension.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratControlRigExtension/Binaries/Win64/UnrealEditor-KoratControlRigExtension.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratControlRigExtension/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratUDS/Binaries/Win64/UnrealEditor-KoratUDS.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratUDS/Binaries/Win64/UnrealEditor-KoratUDS.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratUDS/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratUDS_WeatherParamControl/Binaries/Win64/UnrealEditor-KoratUDS_WeatherParamControl.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratUDS_WeatherParamControl/Binaries/Win64/UnrealEditor-KoratUDS_WeatherParamControl.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratUDS_WeatherParamControl/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareAdxLipSync/Binaries/Win64/UnrealEditor-CriWareAdxLipSync.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareAdxLipSync/Binaries/Win64/UnrealEditor-CriWareAdxLipSync.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareAdxLipSync/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareCinematics/Binaries/Win64/UnrealEditor-CriWareMovieScenes.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareCinematics/Binaries/Win64/UnrealEditor-CriWareMovieScenes.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareCinematics/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWare/Binaries/Win64/UnrealEditor-CriWareRuntime.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWare/Binaries/Win64/UnrealEditor-CriWareRuntime.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWare/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/WindSimShader/Binaries/Win64/UnrealEditor-WindSimShader.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/WindSimShader/Binaries/Win64/UnrealEditor-WindSimShader.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/WindSimShader/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
 		}
 	],
 	"RuntimeDependencies": [
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/ACLPlugin.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/InstanceTool/InstanceTool.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/KantanCharts.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/LogViewerPro/LogViewerPro.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/MORT/MORT.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/RMAFoliageTools/RMAFoliageTools.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/EditorMenu/EditorMenu.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/KawaiiPhysics.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/VertexAnimToolset/VertexAnimToolset.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUEEditor/SpUEEditor.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUERuntime/SpUERuntime.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUEXXX/SpUEXXX.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UnrealImGui/ImGui.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratControlRigExtension/KoratControlRigExtension.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratUDS/KoratUDS.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/KoratUDS_WeatherParamControl/KoratUDS_WeatherParamControl.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareAdxLipSync/CriWareAdxLipSync.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareCinematics/CriWareCinematics.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWare/CriWare.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/SSDestructionDependentCreateTool/SSDestructionDependentCreateTool.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/WindSimShader/WindSimShader.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/SparkingZERO.uproject",
-			"Type": "UFS"
-		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/ARM/Win64/astcenc-sse2.exe",
 			"Type": "NonUFS"
@@ -29281,6 +29193,94 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/XGEController/XGEController.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/ACLPlugin/ACLPlugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/InstanceTool/InstanceTool.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/KantanCharts/KantanCharts.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/LogViewerPro/LogViewerPro.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/MORT/MORT.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Marketplace/RMAFoliageTools/RMAFoliageTools.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/EditorMenu/EditorMenu.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/KawaiiPhysics/KawaiiPhysics.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SS/VertexAnimToolset/VertexAnimToolset.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUEEditor/SpUEEditor.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUERuntime/SpUERuntime.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/SpUE/SpUEXXX/SpUEXXX.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EnginePlugins/UnrealImGui/ImGui.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratControlRigExtension/KoratControlRigExtension.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratUDS/KoratUDS.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KoratUDS_WeatherParamControl/KoratUDS_WeatherParamControl.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareAdxLipSync/CriWareAdxLipSync.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWareCinematics/CriWareCinematics.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Runtime/CriWare/CriWare/CriWare.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/SSDestructionDependentCreateTool/SSDestructionDependentCreateTool.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/WindSimShader/WindSimShader.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/SparkingZERO.uproject",
 			"Type": "UFS"
 		}
 	],

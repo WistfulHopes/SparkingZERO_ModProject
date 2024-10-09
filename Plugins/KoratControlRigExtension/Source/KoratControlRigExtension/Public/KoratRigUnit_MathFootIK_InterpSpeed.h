@@ -17,5 +17,8 @@ public:
     float InterpSpeed;
     
     KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_InterpSpeed();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

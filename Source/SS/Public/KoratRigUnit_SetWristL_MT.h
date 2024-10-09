@@ -12,5 +12,8 @@ public:
     FKoratRigUnit_MeshClippingWrist Left;
     
     SS_API FKoratRigUnit_SetWristL_MT();
+
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

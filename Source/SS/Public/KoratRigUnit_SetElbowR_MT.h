@@ -11,6 +11,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratRigUnit_MeshClippingElbow Right;
     
-    SS_API FKoratRigUnit_SetElbowR_MT();
+	SS_API FKoratRigUnit_SetElbowR_MT();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

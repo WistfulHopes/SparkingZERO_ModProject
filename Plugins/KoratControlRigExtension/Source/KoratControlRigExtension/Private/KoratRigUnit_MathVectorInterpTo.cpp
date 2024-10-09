@@ -5,3 +5,7 @@ FKoratRigUnit_MathVectorInterpTo::FKoratRigUnit_MathVectorInterpTo() {
     this->InterpSpeed = 0.00f;
 }
 
+FKoratRigUnit_MathVectorInterpTo_Execute()
+{
+	
+}

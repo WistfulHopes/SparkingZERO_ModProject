@@ -8,3 +8,7 @@ FKoratRigUnit_MathFootIK_Offset::FKoratRigUnit_MathFootIK_Offset() {
     this->WaistMovement = 0.00f;
 }
 
+FKoratRigUnit_MathFootIK_Offset_Execute()
+{
+	
+}

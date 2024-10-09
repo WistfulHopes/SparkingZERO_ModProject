@@ -3,3 +3,7 @@
 FKoratRigUnit_SetWristL_MT::FKoratRigUnit_SetWristL_MT() {
 }
 
+FKoratRigUnit_SetWristL_MT_Execute()
+{
+}
+

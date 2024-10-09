@@ -6,3 +6,7 @@ FKoratRigUnit_MathFootIK_InterpSpeed::FKoratRigUnit_MathFootIK_InterpSpeed() {
     this->InterpSpeed = 0.00f;
 }
 
+FKoratRigUnit_MathFootIK_InterpSpeed_Execute()
+{
+	
+}
