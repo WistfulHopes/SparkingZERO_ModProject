@@ -22,6 +22,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Alpha;
     
-    KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_Alpha();
+	KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_Alpha();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

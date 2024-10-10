@@ -44,6 +44,9 @@ private:
     FCachedRigElement CachedIndex;
     
 public:
-    KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_CalcFootIK();
+	KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_CalcFootIK();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

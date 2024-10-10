@@ -47,6 +47,9 @@ private:
     FVector TargetOffset;
     
 public:
-    KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_ApplyFoot();
+	KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_ApplyFoot();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

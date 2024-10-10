@@ -7,3 +7,7 @@ FKoratRigUnit_MathFootIK_CalcAnkleHeight::FKoratRigUnit_MathFootIK_CalcAnkleHeig
     this->FootAlpha = 0.00f;
 }
 
+FKoratRigUnit_MathFootIK_CalcAnkleHeight_Execute()
+{
+	
+}

@@ -8,3 +8,7 @@ FKoratRigUnit_MathFootIK_Alpha::FKoratRigUnit_MathFootIK_Alpha() {
     this->Alpha = 0.00f;
 }
 
+FKoratRigUnit_MathFootIK_Alpha_Execute()
+{
+	
+}

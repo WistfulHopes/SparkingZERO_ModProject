@@ -8,3 +8,7 @@ FKoratRigUnit_MathFloatInterpTo::FKoratRigUnit_MathFloatInterpTo() {
     this->Result = 0.00f;
 }
 
+FKoratRigUnit_MathFloatInterpTo_Execute()
+{
+	
+}

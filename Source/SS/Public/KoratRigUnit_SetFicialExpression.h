@@ -50,5 +50,8 @@ public:
     FCachedRigElement CachedControlIndex;
     
     SS_API FKoratRigUnit_SetFicialExpression();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

@@ -24,5 +24,8 @@ public:
     FCachedRigElement CachedIndex;
     
     KORATCONTROLRIGEXTENSION_API FKoratRigUnit_GetSocketTransform();
+
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

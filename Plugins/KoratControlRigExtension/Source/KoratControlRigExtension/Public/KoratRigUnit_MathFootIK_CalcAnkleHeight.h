@@ -43,6 +43,9 @@ private:
     TArray<FCachedRigElement> CachedIndex;
     
 public:
-    KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_CalcAnkleHeight();
+	KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_CalcAnkleHeight();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

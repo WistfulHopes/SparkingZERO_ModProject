@@ -13,3 +13,7 @@ FKoratRigUnit_SetFicialExpression::FKoratRigUnit_SetFicialExpression() {
     this->CloseCurveValue = 0.00f;
 }
 
+FKoratRigUnit_SetFicialExpression_Execute()
+{
+	
+}

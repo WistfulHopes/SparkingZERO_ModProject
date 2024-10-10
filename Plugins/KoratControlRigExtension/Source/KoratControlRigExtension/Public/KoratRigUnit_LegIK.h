@@ -24,6 +24,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratRigUnit_LegIK_WorkData WorkData;
     
-    KORATCONTROLRIGEXTENSION_API FKoratRigUnit_LegIK();
+	KORATCONTROLRIGEXTENSION_API FKoratRigUnit_LegIK();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

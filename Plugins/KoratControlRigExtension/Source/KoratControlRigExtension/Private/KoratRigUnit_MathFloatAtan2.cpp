@@ -6,3 +6,7 @@ FKoratRigUnit_MathFloatAtan2::FKoratRigUnit_MathFloatAtan2() {
     this->Result = 0.00f;
 }
 
+FKoratRigUnit_MathFloatAtan2_Execute()
+{
+	
+}

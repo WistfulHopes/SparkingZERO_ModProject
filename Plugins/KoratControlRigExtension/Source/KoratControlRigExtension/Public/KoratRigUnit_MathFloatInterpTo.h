@@ -22,6 +22,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Result;
     
-    KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFloatInterpTo();
+	KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFloatInterpTo();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

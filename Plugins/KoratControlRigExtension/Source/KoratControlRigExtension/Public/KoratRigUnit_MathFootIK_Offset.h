@@ -46,6 +46,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float WaistMovement;
     
-    KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_Offset();
+	KORATCONTROLRIGEXTENSION_API FKoratRigUnit_MathFootIK_Offset();
+	
+	RIGVM_METHOD()
+	virtual void Execute(const FRigUnitContext& Context) override;
 };
 

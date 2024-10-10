@@ -6,6 +6,6 @@ USTRUCT(BlueprintType)
 struct FKoratRigUnit_MeshClippingWrist {
     GENERATED_BODY()
 public:
-    SS_API FKoratRigUnit_MeshClippingWrist();
+	SS_API FKoratRigUnit_MeshClippingWrist();
 };
 
