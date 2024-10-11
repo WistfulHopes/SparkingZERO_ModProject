@@ -210,6 +210,9 @@
 !/Plugins/EnginePlugins/Marketplace/ACLPlugin/Content/*
 !/Content/SS/Core/*
 
+# avoid PDBs
+/Plugins/**/*.pdb
+
 # Add Horde dockerfiles
 !/Source/Programs/Horde/**/Dockerfile
 
