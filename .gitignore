@@ -280,6 +280,8 @@ obj/
 /Mods/*
 !/Mods/Alpakit/
 !/Mods/SZModLib/
+!/Mods/**/Content/
+!/Mods/**/Content/**
 
 # Ignore any saved local files
 Saved/
