@@ -273,6 +273,12 @@ enc_temp_folder/
 Intermediate/
 obj/
 
+!/Intermediate/ScriptModules/
+
+/Mods/*
+!/Mods/Alpakit/
+!/Mods/SZModLib/
+
 # Ignore any saved local files
 Saved/
 /Programs/MemoryProfiler2/**
