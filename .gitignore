@@ -209,9 +209,11 @@
 !/Plugins/*/*/*/*/Binaries/Win64/*
 !/Plugins/EnginePlugins/Marketplace/ACLPlugin/Content/*
 !/Content/SS/Core/*
+!/Mods/**/Binaries/Win64/*
 
 # avoid PDBs
 /Plugins/**/*.pdb
+/Mods/**/*.pdb
 
 # Add Horde dockerfiles
 !/Source/Programs/Horde/**/Dockerfile
