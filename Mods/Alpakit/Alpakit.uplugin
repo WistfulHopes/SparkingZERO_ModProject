@@ -25,10 +25,6 @@
 		{
 			"Name": "PluginBrowser",
 			"Enabled": true
-		},
-		{
-			"Name": "SZML",
-			"Enabled": true
 		}
 	]
 }
