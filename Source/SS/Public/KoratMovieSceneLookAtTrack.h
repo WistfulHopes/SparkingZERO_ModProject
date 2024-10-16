@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "KoratMovieSceneLookAtSection.h"
 #include "Compilation/IMovieSceneTrackTemplateProducer.h"
 #include "Evaluation/MovieSceneEvalTemplate.h"
 #include "Tracks/MovieScenePropertyTrack.h"
@@ -16,7 +17,12 @@ public:
 
     bool SupportsType(TSubclassOf<UMovieSceneSection> SectionClass) const
     {
-        return SectionClass == StaticClass();
+        return SectionClass == UKoratMovieSceneLookAtSection::StaticClass();
+    }
+
+    UMovieSceneSection* UKoratMovieSceneLookAtTrack::CreateNewSection()
+    {
+        return NewObject<UKoratMovieSceneLookAtSection>(this, NAME_None, RF_Transactional);
     }
     
     virtual FMovieSceneEvalTemplatePtr CreateTemplateForSection(const UMovieSceneSection& InSection) const override

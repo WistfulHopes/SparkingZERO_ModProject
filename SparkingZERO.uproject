@@ -19,6 +19,15 @@
 				"Foliage"
 			]
 		},
+        {
+			"Name": "SSEditor",
+			"Type": "Editor",
+			"LoadingPhase": "PreDefault",
+			"AdditionalDependencies": [
+				"AnimGraph",
+				"Blutility"
+			]
+		},
 		{
 			"Name": "SSKeyInput",
 			"Type": "Runtime",

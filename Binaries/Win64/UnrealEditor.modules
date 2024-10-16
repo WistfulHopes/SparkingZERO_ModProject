@@ -3,6 +3,7 @@
 	"Modules": 
 	{
 		"SS": "UnrealEditor-SS.dll",
+		"SSEditor": "UnrealEditor-SSEditor.dll",
 		"SSKeyInput": "UnrealEditor-SSKeyInput.dll"
 	}
 }

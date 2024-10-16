@@ -6,6 +6,7 @@ public class SparkingZEROEditorTarget : TargetRules {
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		ExtraModuleNames.AddRange(new string[] {
 			"SS",
+			"SSEditor",
 			"SSKeyInput",
 		});
 	}
