@@ -3,13 +3,8 @@
     "templates": [
         {
             "name": "Blueprint Only",
-            "description": "Create a mod that contains only Blueprint code. (You can add C++ code later)",
+            "description": "Create a mod that contains only Blueprint code and assets.",
             "path": "BlueprintBlank"
-        },
-        {
-            "name": "C++ & Blueprint",
-            "description": "Create a mod that contains both C++ and Blueprint code.",
-            "path": "CPPAndBlueprintBlank"
         }
     ]
 }
