@@ -3380,6 +3380,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Mods/SZModLib2/SZModLib2.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Mods/SZModLib/SZModLib.uplugin",
 			"Type": "UFS"
 		},
