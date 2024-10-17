@@ -1,11 +1,11 @@
 {
 	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "1.0.0",
-	"FriendlyName": "SZModLib (Deprecated)",
-	"Description": "DEPRECATED",
+	"Version": 0,
+	"VersionName": "1.0",
+	"FriendlyName": "Sparking! ZERO Mod Library",
+	"Description": "A library for modding Sparking! ZERO",
 	"Category": "Modding",
-	"CreatedBy": "WistfulHopes",
+	"CreatedBy": "WistfulHopes, Narknon",
 	"CreatedByURL": "",
 	"DocsURL": "",
 	"MarketplaceURL": "",
@@ -14,5 +14,5 @@
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
 	"Installed": false,
-	"SemVersion": "1.0.0"
+	"SemVersion": "1"
 }
