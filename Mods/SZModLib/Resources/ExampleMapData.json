@@ -1,0 +1,68 @@
+{
+  "records": {
+    "MyNewMap": {
+      "unLockType": "Non",
+      "validExhibitions": [],
+      "subLevelArray": [],
+      "windVelocity": {
+        "x": 0,
+        "y": 0
+      },
+      "interactiveWindParams": {
+        "bEnable": false,
+        "windRollIntensity": 0,
+        "windKoratSpeed": 0,
+        "grassWindStrength": 0,
+        "grassDirWindMultiplier": 0,
+        "windDirection": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0
+        }
+      },
+      "surfaceToAtbEnumDataAsset": "None",
+      "interactSpaceAreaDataAsset": "None",
+      "bNeedChaosSetting": false,
+      "blackOutMinRate": 0,
+      "bGMDataList": {
+        "key": "None"
+      },
+      "windSoundCueId": 0,
+      "underWaterSoundCueId": 0,
+      "minimumHeightOfWindAisac": 0,
+      "maxHeightOfWindAisac": 0,
+      "mapName": "",
+      "baseStage": {
+        "key": "None"
+      },
+      "thumbnailTexture": "None",
+      "bgTexture": "None",
+      "stageSelectCameraSequencer": "None",
+      "stageChangeImage": "None",
+      "stageChangePreview": "None",
+      "criStageChangePreview": "None",
+      "bIsOutFieldRule": false,
+      "bIsUseSplitScreen": false,
+      "bIsUseInstallPlay": false,
+      "warpAreaDataAsset": "None",
+      "mapObjectLimitDataAsset": "None",
+      "asyncLoadClasses": [],
+      "asyncLoadInstances": [],
+      "mapChangeEscapeMapDataList": {
+        "key": "None"
+      },
+      "mapChangeEscapeLevelSequence": "None",
+      "mapChangeDestructMapDataList": {
+        "key": "None"
+      },
+      "mapChangeDestructLevelSequence": "None",
+      "mapChangeDestructOTLevelSequence": "None",
+      "tutorialBattleFinishLevelSequence": "None",
+      "mapCharacterData": [],
+      "bDebugForceUseAutoBattle": false,
+      "streamingPoolSizeData": [],
+      "bIsVictoryAppealPositionTheStartingPosition": false
+    }
+  }
+}
