@@ -202,6 +202,7 @@
 !/Binaries/Win64/SparkingZEROEditor.target
 !/Binaries/Win64/UnrealEditor.modules
 !/Binaries/Win64/UnrealEditor-SS.dll
+!/Binaries/Win64/UnrealEditor-SSEditor.dll
 !/Binaries/Win64/UnrealEditor-SSKeyInput.dll
 !/Plugins/*/Binaries/Win64/*
 !/Plugins/*/*/Binaries/Win64/*

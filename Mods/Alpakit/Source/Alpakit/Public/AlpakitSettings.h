@@ -8,8 +8,6 @@ UENUM()
 enum class EAlpakitStartGameType : uint8 {
     NONE UMETA(DisplayName = "Do not launch"),
     STEAM UMETA(DisplayName = "Steam"),
-    EPIC_EARLY_ACCESS UMETA(DisplayName = "Epic: Early Access"),
-    EPIC_EXPERIMENTAL UMETA(DisplayName = "Epic: Experimental")
 };
 
 UCLASS(config=Game)
@@ -23,7 +21,7 @@ public:
     void SaveSettings();
 
     UPROPERTY(EditAnywhere, config, Category = Config)
-    FDirectoryPath SatisfactoryGamePath;
+    FDirectoryPath SparkingZEROGamePath;
 
     UPROPERTY(EditAnywhere, config, Category = Config)
     EAlpakitStartGameType LaunchGameAfterPacking;

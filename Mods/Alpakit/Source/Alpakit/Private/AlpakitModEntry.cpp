@@ -161,16 +161,7 @@ FReply SAlpakitModEntry::OnEditModFinished(UModMetadataObject* MetadataObject)
 }
 
 FString GetArgumentForLaunchType(EAlpakitStartGameType LaunchMode) {
-    switch (LaunchMode) {
-    case EAlpakitStartGameType::STEAM:
-        return TEXT("-Steam");
-    case EAlpakitStartGameType::EPIC_EARLY_ACCESS:
-        return TEXT("-EpicEA");
-    case EAlpakitStartGameType::EPIC_EXPERIMENTAL:
-        return TEXT("-EpicExp");
-    default:
-        return TEXT("");
-    }
+	return TEXT("");
 }
 
 FText GetCurrentPlatformName() {
@@ -188,7 +179,7 @@ FText GetCurrentPlatformName() {
 void SAlpakitModEntry::PackageMod(const TArray<TSharedPtr<SAlpakitModEntry>>& NextEntries) const {
     UAlpakitSettings* Settings = UAlpakitSettings::Get();
     const FString PluginName = Mod->GetName();
-    const FString GamePath = Settings->SatisfactoryGamePath.Path;
+    const FString GamePath = Settings->SparkingZEROGamePath.Path;
 
     const FString ProjectPath = FPaths::IsProjectFilePathSet()
         ? FPaths::ConvertRelativePathToFull(FPaths::GetProjectFilePath())
@@ -208,7 +199,7 @@ void SAlpakitModEntry::PackageMod(const TArray<TSharedPtr<SAlpakitModEntry>>& Ne
     UE_LOG(LogAlpakit, Display, TEXT("Packaging plugin \"%s\". %d remaining"), *PluginName, NextEntries.Num());
 
     const FString CommandLine = FString::Printf(TEXT("-ScriptsForProject=\"%s\" PackagePlugin -Project=\"%s\" -PluginName=\"%s\" -GameDir=\"%s\" %s"),
-                                                *ProjectPath, *ProjectPath, *PluginName, *Settings->SatisfactoryGamePath.Path, *AdditionalUATArguments);
+                                                *ProjectPath, *ProjectPath, *PluginName, *Settings->SparkingZEROGamePath.Path, *AdditionalUATArguments);
 
     const FText PlatformName = GetCurrentPlatformName();
     IUATHelperModule::Get().CreateUatTask(
