@@ -1,0 +1,11 @@
+{
+  "ZeroSparkVersion": 1,
+  "SuperGogetaToGTGogeta": {
+    "SetTransformation(SSJtoSSJ4)": {
+      "TargetCharacterID": "0110_04",
+      "ResultingCharacter": "0110_02",
+      "ConsumeBlastStock": 2,
+      "HPRecovery": 0.0
+    }
+  }
+}
