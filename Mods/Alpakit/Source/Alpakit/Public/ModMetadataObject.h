@@ -117,7 +117,7 @@ public:
 
 	/** Whether this mod accepts being missing on the remote, i.e. behaving as a client-/server-side only mod */
 	UPROPERTY(EditAnywhere, Category = "Remote")
-	bool bRequiredOnRemote{true};
+	bool bRequiredOnRemote{false};
 
 	/**
 	 * Populate the fields of this object from an existing descriptor.

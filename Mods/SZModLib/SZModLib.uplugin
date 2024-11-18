@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
-	"Version": 0,
-	"VersionName": "1.0",
+	"Version": 1,
+	"VersionName": "1.0.0",
 	"FriendlyName": "Sparking! ZERO Mod Library",
 	"Description": "A library for modding Sparking! ZERO",
 	"Category": "Modding",
@@ -14,5 +14,5 @@
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
 	"Installed": false,
-	"SemVersion": "1"
+	"SemVersion": "1.0.0"
 }

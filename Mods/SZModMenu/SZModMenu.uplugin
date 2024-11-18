@@ -14,5 +14,13 @@
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
 	"Installed": false,
-	"SemVersion": "1.0.0"
+	"SemVersion": "1.0.0",
+	"Plugins": [
+		{
+			"Name": "SZModLib",
+			"Enabled": true,
+			"SemVersion": ">=1.0.0"
+		}
+	],
+	"RequiredOnRemote": false
 }
