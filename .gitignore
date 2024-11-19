@@ -282,6 +282,7 @@ obj/
 !/Mods/Alpakit/
 !/Mods/SZModLib/
 !/Mods/SZModMenu/
+!/Mods/ZeroSpark/
 !/Mods/**/Content/
 !/Mods/**/Content/**
 !/Mods/**/Resources/**
