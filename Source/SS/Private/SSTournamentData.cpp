@@ -5,5 +5,6 @@ FSSTournamentData::FSSTournamentData() {
     this->MaxWinStreak = 0;
     this->TotalPlayCount = 0;
     this->MaxCharacterCount = 0;
+    this->bIsFirstPlay = false;
 }
 

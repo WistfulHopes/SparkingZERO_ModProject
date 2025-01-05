@@ -43,6 +43,7 @@ enum class EKoratNetworkWorkerRequest : uint8 {
     PollNotice,
     PollMiscInfo,
     SyncPlayerCard,
+    BattleMode010,
     Max,
 };
 

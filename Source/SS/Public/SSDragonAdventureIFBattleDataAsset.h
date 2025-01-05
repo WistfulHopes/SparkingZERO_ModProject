@@ -63,10 +63,19 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FText> VoiceIDBlackList;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText RewardTipsText;
+    
     USSDragonAdventureIFBattleDataAsset();
 
     UFUNCTION(BlueprintCallable)
     void DisplayBattleDirectingInOutputlog();
+    
+    UFUNCTION(BlueprintCallable)
+    void CopyZItemAiLevel_Orb();
+    
+    UFUNCTION(BlueprintCallable)
+    void CopyZItemAiLevel_Easy();
     
 };
 

@@ -73,6 +73,13 @@ FKoratCharacterCommonParameter::FKoratCharacterCommonParameter() {
     this->DragonHomingKeepDistanceInputInfluence = 0.00f;
     this->DragonSmashTransitionDistance = 0.00f;
     this->DragonSmashChargeEndDistance = 0.00f;
+    this->DragonSmashInputDistance = 0.00f;
+    this->DragonSmashInputPositionMoveSpeed = 0.00f;
+    this->DragonDashControllableTargetSpeedRate = 0.00f;
+    this->DragonDashInputInfluence = 0.00f;
+    this->DragonDashInputInfluenceAttenuationDistance = 0.00f;
+    this->DragonDashAttackInputDistance = 0.00f;
+    this->DragonDashAttackInputPositionMoveSpeed = 0.00f;
     this->MaxArmorBreakLevel = 0;
     this->BlastBoostCostNormal = 0.00f;
     this->BlastBoostCostSparking = 0.00f;

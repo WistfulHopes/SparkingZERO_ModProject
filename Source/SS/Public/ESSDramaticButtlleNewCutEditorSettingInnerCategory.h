@@ -14,6 +14,7 @@ enum class ESSDramaticButtlleNewCutEditorSettingInnerCategory : uint8 {
     LayoutAura,
     LayoutEffect,
     LayoutStrongAura,
+    CaptionRemove,
     CaptionTalker,
     CaptionText,
     SlowStartSec,

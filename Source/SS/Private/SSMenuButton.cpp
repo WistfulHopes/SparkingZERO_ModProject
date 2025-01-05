@@ -10,6 +10,7 @@ USSMenuButton::USSMenuButton() {
     this->RemoteButton = NULL;
     this->bIsDisabled = false;
     this->DisableToFocus = false;
+    this->bEnableFocusAutoScroll = false;
     this->MouseScrollEventSnatchWidget = NULL;
     this->bIgnoreDecide = false;
 }

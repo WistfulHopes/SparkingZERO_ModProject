@@ -96,6 +96,12 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratAddtiveReactionParameter AddtiveReactionParameter;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bDebugEazyInputTimingCpp;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    float AddEazyInputTimeCpp;
+    
 public:
     UKoratCharacterMontageComponent(const FObjectInitializer& ObjectInitializer);
 
@@ -322,9 +328,6 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnActionReset();
-    
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    bool IsPossibleZCounter();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool IsPossibleSuperZCounter();

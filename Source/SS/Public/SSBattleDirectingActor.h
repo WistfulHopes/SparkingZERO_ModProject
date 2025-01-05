@@ -44,6 +44,9 @@ private:
     void OnCharacterChange(const int32 InPlaySide);
     
     UFUNCTION(BlueprintCallable)
+    void OnBattleSetup();
+    
+    UFUNCTION(BlueprintCallable)
     void OnBattleSettle();
     
 public:

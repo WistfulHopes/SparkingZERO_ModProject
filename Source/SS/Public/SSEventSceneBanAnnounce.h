@@ -12,10 +12,10 @@ class USSEventSceneBanAnnounce : public USSUiWidget {
 public:
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    UWidgetSwitcher* IconSwitcher;
+    UWidgetSwitcher* IconSwitcher_;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    UTextBlock* TextBlock;
+    UTextBlock* TextBlock_;
     
 public:
     USSEventSceneBanAnnounce();

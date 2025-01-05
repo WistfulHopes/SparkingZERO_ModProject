@@ -50,6 +50,9 @@ protected:
     USSDramaticRightWindowEmoteUi* DirectionEmoteWidget;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSDramaticRightListWindowUi* DirectionConditionsWithoutExplanationWidget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<USSMenuButton*> CharaPanels;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -69,6 +72,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<USSMenuButton*> SelectItemPanels;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    TArray<USSMenuButton*> ConditionWithoutExplanationButtons;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<USSMenuButton*> UpArrows;

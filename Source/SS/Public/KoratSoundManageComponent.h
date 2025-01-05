@@ -8,9 +8,19 @@
 #include "KoratSoundHandle.h"
 #include "KoratSoundManageComponent.generated.h"
 
+class UAtomCueSheetLoaderComponent;
+
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SS_API UKoratSoundManageComponent : public UActorComponent {
     GENERATED_BODY()
+public:
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    UAtomCueSheetLoaderComponent* VoiceCueSheetLoader;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    UAtomCueSheetLoaderComponent* SECueSheetLoader;
+    
 public:
     UKoratSoundManageComponent(const FObjectInitializer& ObjectInitializer);
 

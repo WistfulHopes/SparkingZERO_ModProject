@@ -8,6 +8,7 @@
 #include "SSEventSceneCODataAsset.generated.h"
 
 class ASSEventSceneScriptCO;
+class UKoratMLSDataAsset;
 class USSEventSceneEnvDataAsset;
 class UWorld;
 
@@ -37,8 +38,15 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSEventSceneChoicesCompileDescriptionCO ChoicesDescription;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSet<UKoratMLSDataAsset*> MLSDataAssets;
+    
 public:
     USSEventSceneCODataAsset();
 
+protected:
+    UFUNCTION(BlueprintCallable)
+    void UpdateRegisterMLSDataAssets();
+    
 };
 

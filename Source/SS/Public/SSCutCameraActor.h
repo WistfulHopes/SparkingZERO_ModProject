@@ -13,8 +13,16 @@
 #include "SSCutCameraActor.generated.h"
 
 class AActor;
+class ASSBindingOriginActor;
+class ASSCameraManager;
 class ASSCharacter;
 class ASSCutCameraActor;
+class ASSCutCameraLocator;
+class ASSFocusTargetActor;
+class ASSLookAtTargetActor;
+class ASSLookAtTargetLocator;
+class USSAdditiveRotateInputComponent;
+class USSLookAtComponent;
 
 UCLASS(Blueprintable)
 class ASSCutCameraActor : public ACineCameraActor {
@@ -167,6 +175,31 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DrawDebugThickness;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSLookAtTargetActor* LookAtTarget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSLookAtComponent* LookAtComponent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSAdditiveRotateInputComponent* AdditiveRotateInputComponent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSFocusTargetActor* FocusTarget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSBindingOriginActor* BindingOrigin;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCutCameraLocator*> CameraLocators;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSLookAtTargetLocator*> LookAtTargetLocators;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSCameraManager* CameraManager;
     
 public:
     ASSCutCameraActor(const FObjectInitializer& ObjectInitializer);

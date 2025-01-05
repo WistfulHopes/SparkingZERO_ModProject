@@ -28,6 +28,7 @@ ASSBattleSetupControllerBase::ASSBattleSetupControllerBase(const FObjectInitiali
     this->RollbackCharaReader = NULL;
     this->ManualCameraActor = NULL;
     this->rollbackBeforeCharacter = NULL;
+    this->TempNowPlayingDramaticBattleData = NULL;
     this->CurrentCharaSelectPlaceIndex = 0;
     this->BlindEffectSequenceActor = NULL;
     this->TeamTalkSequenceActor = NULL;

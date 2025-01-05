@@ -11,5 +11,6 @@ FSSAiActionDataList::FSSAiActionDataList() {
     this->bDontAscertainCancel = false;
     this->bDontSuperCounterCancel = false;
     this->bNoHitProbabilityDown = false;
+    this->bDisablesInterruptsOtherTrees = false;
 }
 

@@ -6,6 +6,8 @@
 #include "SSDragonAdventureIFCharacterBase.h"
 #include "SSDragonAdventureIFLocalSingleton.generated.h"
 
+class USSDragonAdventureIFEventBlockDataAsset;
+
 UCLASS(Blueprintable)
 class USSDragonAdventureIFLocalSingleton : public UObject {
     GENERATED_BODY()
@@ -16,6 +18,9 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FSSDragonAdventureIFCharacterBase> CharacterBaseArray;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TMap<FKoratCharacterDataList, USSDragonAdventureIFEventBlockDataAsset*> OtherBlockDataMap;
     
 public:
     USSDragonAdventureIFLocalSingleton();

@@ -13,7 +13,7 @@ void ASSBGMManager::OnCharacterBattleStateChanged2P(const ECharacterBattleState 
 void ASSBGMManager::OnCharacterBattleStateChanged1P(const ECharacterBattleState InOldState, const ECharacterBattleState InNewState) {
 }
 
-void ASSBGMManager::AddCharacter(const int32 InPlayerNumber, ASSCharacter* InCharacter) {
+void ASSBGMManager::AddCharacter(const int32 InPlayerNumber, ASSCharacter* InOldCharacter, ASSCharacter* InNewCharacter, const bool bInSamePerson) {
 }
 
 

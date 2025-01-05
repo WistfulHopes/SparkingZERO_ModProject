@@ -3,6 +3,7 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
+#include "Engine/LatentActionManager.h"
 #include "BattleImpactLevelSequenceParams.h"
 #include "BattleImpactTickEventDelegate.h"
 #include "BattleImpactTimerEventDelegate.h"
@@ -75,6 +76,9 @@ public:
     ASSBattleImpactProcedure(const FObjectInitializer& ObjectInitializer);
 
 protected:
+    UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
+    void WaitLastSectionFinished(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, const int32 InOffsetFrame, const USSBattleImpactCharacterProxy* InCharacterProxy);
+    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void UpdateMatchTransform(float Alpha);
     

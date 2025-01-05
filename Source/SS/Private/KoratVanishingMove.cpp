@@ -11,5 +11,6 @@ FKoratVanishingMove::FKoratVanishingMove() {
     this->bUseOpponentRadius = false;
     this->bUseOneselfRadius = false;
     this->bHorizontalWhenNearToGround = false;
+    this->bDownTargetNull = false;
 }
 

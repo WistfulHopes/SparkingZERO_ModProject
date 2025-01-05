@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "EKoratBattleAuraType.h"
+#include "KoratBlastGroupDataList.h"
 #include "MutualDataAsset.h"
 #include "SSNumericDataAsset.generated.h"
 
@@ -53,6 +54,18 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float GuardCrashedByCombativesBlastSpDamageRate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float StunReactionRecoverySpeedScale;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float StunReactionInputRecoverySpeedScale;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float LimitBoostRecoverySpeedScale;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float LimitBoostInputRecoverySpeedScale;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 BlastStock;
@@ -203,6 +216,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AbsorptionBlastEnergyGainRate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSet<FKoratBlastGroupDataList> ForceBlastEraseBlastGroups;
     
     USSNumericDataAsset();
 

@@ -4,8 +4,10 @@
 #include "SSOptionController.generated.h"
 
 class ASSBnidController;
+class ASSLevelSequenceActor;
 class ASSTitleTermsController;
-class UBillboardComponent;
+class ULevelStreaming;
+class ULevelStreamingDynamic;
 class USSBuiltInMenu;
 class USSMenuGeneralDialog;
 class USSMenuManager;
@@ -89,11 +91,14 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSBuiltInMenu* OptionTitleMenu;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    AActor* OptionHUDBG;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSLevelSequenceActor* HDRSequenceActor;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UBillboardComponent* Billboard;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ULevelStreamingDynamic*> HDROptionSubLevels;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ULevelStreaming* CacheLightingScenarioSubLevel;
     
 public:
     ASSOptionController(const FObjectInitializer& ObjectInitializer);

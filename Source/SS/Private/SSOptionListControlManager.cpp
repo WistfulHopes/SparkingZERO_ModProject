@@ -34,6 +34,9 @@ void USSOptionListControlManager::OnChangeValueCameraUDSpeedButton(const float I
 void USSOptionListControlManager::OnChangeValueCameraUDReverse(const FSSMenuButtonTextItemEntry& InChangeItem) {
 }
 
+void USSOptionListControlManager::OnChangeValueCameraType(const FSSMenuButtonTextItemEntry& InChangeItem) {
+}
+
 void USSOptionListControlManager::OnChangeValueCameraLRSpeedButton(const float InChangeGauge) {
 }
 

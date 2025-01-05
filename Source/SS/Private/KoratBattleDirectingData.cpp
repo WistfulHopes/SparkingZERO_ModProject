@@ -9,6 +9,7 @@ FKoratBattleDirectingData::FKoratBattleDirectingData() {
     this->bOutField = false;
     this->bNoMartialArts = false;
     this->bSuddenlySparking = false;
+    this->bSearchOffStart = false;
     this->bLiveCommentary = false;
 }
 

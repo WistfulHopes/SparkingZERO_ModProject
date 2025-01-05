@@ -3,6 +3,7 @@
 #include "SSMenuButton.h"
 #include "SSTournamentRuleEditorButton.generated.h"
 
+class USSTournamentRuleEditorWidget;
 class UTextBlock;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -15,6 +16,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* Description;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSTournamentRuleEditorWidget* Parent;
+    
+public:
     USSTournamentRuleEditorButton();
 
 protected:

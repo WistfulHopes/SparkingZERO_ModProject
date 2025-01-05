@@ -26,6 +26,8 @@ ASSRootCameraDirector::ASSRootCameraDirector(const FObjectInitializer& ObjectIni
     this->ShakeNearCamRangeScaleMax = 1.00f;
     this->ShakeFarCamRangeScaleMax = 0.00f;
     this->bDrawDebugShakeCamRange = false;
+    this->ReconnectDirector = NULL;
+    this->ReconnectDirectorMainCamera = NULL;
 }
 
 bool ASSRootCameraDirector::IsWatchEnemyCamera() {

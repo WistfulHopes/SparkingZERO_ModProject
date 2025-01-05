@@ -523,6 +523,9 @@ public:
     void SkipApearCharacter(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, EKoratLoop& OutResult, const ASSCharacter* InCharacter, FName InSection, const float InSkipDilation, const bool bInCanSkip, float InDebugSkipTimer);
     
     UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
+    void SkipApearAcceptWait(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo);
+    
+    UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
     void Skip(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, const EKoratDoUntil InRange, const float InSkipDilation, const bool bSkipTest);
     
     UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
@@ -833,6 +836,9 @@ public:
     void IsBattleImpactBreak(ESSFlowConditionsJudgmentType& OutResult, const EBattleImpactType InImpactType);
     
     UFUNCTION(BlueprintCallable)
+    bool IsAcceptBattleStartAppealNetworkFence();
+    
+    UFUNCTION(BlueprintCallable)
     void InitializeChangeAfterCharacterSearchType();
     
     UFUNCTION(BlueprintCallable)
@@ -961,6 +967,9 @@ public:
     UFUNCTION(BlueprintCallable)
     void ForceDisableHandyShakeManual(bool InDisable);
     
+    UFUNCTION(BlueprintCallable)
+    void ForceBattleStartAppealNetworkFence();
+    
     UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
     void FadeMeshTimeScale(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, ASSCharacter* InCharacter, float InTimeScale, float InFadeTime, float InStartTimeScale);
     
@@ -1004,7 +1013,7 @@ public:
     ASSLevelSequenceActor* CreateLevelSequenceActor(AActor* InOwnerActor, const TSoftObjectPtr<ULevelSequence> InLevelSequence, const TArray<FKoratSequencePlayInfo>& InPlaySeq, bool InEnableRebindPlayer, bool InEnablePlayerTransformTrack, bool InNoUseOwnerCutDirector, bool InRegistCustomTimeDilation);
     
     UFUNCTION(BlueprintCallable)
-    ASSCharacter* CreateHiddenCharacterForTaketurns(FVector InNewLocation);
+    ASSCharacter* CreateHiddenCharacterForTaketurns(const FVector InTaihiLoc);
     
     UFUNCTION(BlueprintCallable)
     void CreateHiddenCharacter(bool InReuseCameraFast, bool InDamageCostume);

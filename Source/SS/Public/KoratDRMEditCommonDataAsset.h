@@ -35,6 +35,9 @@ protected:
     TSoftObjectPtr<ULevelSequence> BlurTransitionLevelSequence;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<ULevelSequence> VTContinuousUpdateLevelSequence;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<ULevelSequence> ParticleEffectLevelSequence;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

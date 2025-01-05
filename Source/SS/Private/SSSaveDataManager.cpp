@@ -49,7 +49,7 @@ bool USSSaveDataManager::SaveDramaticEditImageSaveData(TArray<USSDramaticEditIma
 void USSSaveDataManager::ResetSaveDataFLag() {
 }
 
-void USSSaveDataManager::ResetSaveData(USSGameInstance* IngameInstance) {
+void USSSaveDataManager::ResetSaveData(USSGameInstance* InGameInstance) {
 }
 
 bool USSSaveDataManager::ReLoadMainGameSaveData(EKoratMainGameSaveMode InMode) {
@@ -82,7 +82,7 @@ bool USSSaveDataManager::IsError() {
     return false;
 }
 
-void USSSaveDataManager::InitializeSaveData(USSGameInstance* IngameInstance) {
+void USSSaveDataManager::InitializeSaveData(USSGameInstance* InGameInstance) {
 }
 
 USSSystemSaveData* USSSaveDataManager::GetSystemSavedata() {

@@ -43,6 +43,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bNoHitProbabilityDown: 1;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 bDisablesInterruptsOtherTrees: 1;
+    
     FSSAiActionDataList();
 };
 

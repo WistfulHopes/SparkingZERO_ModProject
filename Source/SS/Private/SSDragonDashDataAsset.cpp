@@ -20,6 +20,11 @@ USSDragonDashDataAsset::USSDragonDashDataAsset() {
     this->SpCostIN = 0.00f;
     this->SpCostLP = 0.00f;
     this->SpCostBK = 0.00f;
+    this->HighSpeedEnd0Distance = 1000.00f;
+    this->HighSpeedEnd0Angle = 45.00f;
+    this->HighSpeedEnd1Speed = 100.00f;
+    this->HighSpeedEnd1Time = 0.10f;
+    this->HighSpeedSpCostLP = 8000.00f;
 }
 
 

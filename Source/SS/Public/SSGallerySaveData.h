@@ -9,6 +9,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsEnableReplayCommentary;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsEnableReplayAnimeSong;
+    
     SS_API FSSGallerySaveData();
 };
 

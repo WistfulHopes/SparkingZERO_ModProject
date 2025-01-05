@@ -14,6 +14,12 @@ class USSCharacterBulletManager : public UObject {
 public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<TSoftObjectPtr<ASSBulletActor>> ActiveBulletsArray;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FBulletControllerManagerMessage> ControllerMessages;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USSGroupExplosionManager* GroupExplosionManager;
     
 public:

@@ -7,6 +7,7 @@ AKoratAttackPoolableActor::AKoratAttackPoolableActor(const FObjectInitializer& O
     this->SourceCount = 0;
     this->GroupId = -1;
     this->IsDamage = false;
+    this->bEndAttack = false;
     this->bReflectedHit = false;
 }
 

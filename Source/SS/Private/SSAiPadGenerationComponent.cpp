@@ -25,7 +25,7 @@ void USSAiPadGenerationComponent::OnFinalizeAi() {
 void USSAiPadGenerationComponent::OnDamage(const float InDamage) {
 }
 
-void USSAiPadGenerationComponent::OnChangeCharacter(int32 InPlayerNumber, ASSCharacter* InNewCharacter) {
+void USSAiPadGenerationComponent::OnChangeCharacter(int32 InPlayerNumber, ASSCharacter* InOldCharacter, ASSCharacter* InNewCharacter, const bool bInSamePerson) {
 }
 
 bool USSAiPadGenerationComponent::IsActiveAction() const {

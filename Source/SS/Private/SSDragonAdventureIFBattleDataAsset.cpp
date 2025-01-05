@@ -6,4 +6,10 @@ USSDragonAdventureIFBattleDataAsset::USSDragonAdventureIFBattleDataAsset() {
 void USSDragonAdventureIFBattleDataAsset::DisplayBattleDirectingInOutputlog() {
 }
 
+void USSDragonAdventureIFBattleDataAsset::CopyZItemAiLevel_Orb() {
+}
+
+void USSDragonAdventureIFBattleDataAsset::CopyZItemAiLevel_Easy() {
+}
+
 

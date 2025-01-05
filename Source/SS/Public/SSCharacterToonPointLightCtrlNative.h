@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "DirectionalLightControlSettingData.h"
 #include "DirectionalLightDefaultSettings.h"
 #include "SSCharacterToonPointLightCtrlNative.generated.h"
 
@@ -27,6 +28,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDirectionalLightDefaultSettings DirectionalLightDefault;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TMap<FString, TSoftObjectPtr<AActor>> SceneContexts;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FDirectionalLightControlSettingData OverrideDirLightSettingPerLevel;
     
 public:
     ASSCharacterToonPointLightCtrlNative(const FObjectInitializer& ObjectInitializer);

@@ -6,7 +6,7 @@ USSCmnFilterDialog::USSCmnFilterDialog() {
     this->PageTitleTextWidgetName = TEXT("Text_Title");
     this->FilterHitCountTextWidgetName = TEXT("Text_SF_Num");
     this->ErrorTextWidgetName = TEXT("Text_SF_Alert");
-    this->ResetButtonWidgetName = TEXT("WBP_OBJ_Guide_Btn_0");
+    this->ResetButtonWidgetName = TEXT("WBP_OBJ_Guide_Btn_Present");
     this->SortListButtonValueTextName = TEXT("Text_Sort");
     this->FilterListButtonSelectSwitcherName = TEXT("Swich");
     this->SortListButtonSelectSwitcherName = TEXT("Swich");

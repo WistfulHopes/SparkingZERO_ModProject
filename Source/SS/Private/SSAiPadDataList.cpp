@@ -4,8 +4,10 @@ FSSAiPadDataList::FSSAiPadDataList() {
     this->ExecutionOrder = 0;
     this->NextExecutionOrder = 0;
     this->ProgramMoveType = ESSAiProgramMoveType::None;
+    this->ProgramAddEntryType = ESSAiProgramAddEntryType::None;
     this->InputTime = 0.00f;
     this->InputTimeLevelCurve = NULL;
+    this->InputTimeImpactBoostCurve = NULL;
     this->InputTimeRandom = 0.00f;
     this->InputTimeRandomLevelCurve = NULL;
     this->InputRangeType = ESSAiRangeType::RangeShort;

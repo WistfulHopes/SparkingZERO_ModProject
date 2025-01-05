@@ -38,6 +38,7 @@ FKoratCharacterParameterChanging::FKoratCharacterParameterChanging() {
     this->ThrowDamageScale = 0.00f;
     this->ParryDamageScale = 0.00f;
     this->PursuitDamageScale = 0.00f;
+    this->LightningAttackFromBSMDamageScale = 0.00f;
     this->RushBulletDamageScale = 0.00f;
     this->SmashBulletDamageScale = 0.00f;
     this->BlastForteDamageScale = 0.00f;
@@ -78,6 +79,7 @@ FKoratCharacterParameterChanging::FKoratCharacterParameterChanging() {
     this->bSunglasses = false;
     this->bSuperTough = false;
     this->bStunWhenEndSparkingAfterUltimate = false;
+    this->bInvalidExchange = false;
     this->PowerImpactGaugeUpScale = 0.00f;
     this->CrashImpactInputTimeReduction = 0.00f;
     this->BlastImpactChargeScale = 0.00f;

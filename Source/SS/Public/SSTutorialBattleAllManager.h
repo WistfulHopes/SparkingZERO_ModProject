@@ -4,9 +4,20 @@
 #include "SSMenuManager.h"
 #include "SSTutorialBattleAllManager.generated.h"
 
+class USSTutorialBattleCommandBtnManager;
+class USSTutorialBattleTipsManager;
+
 UCLASS(Blueprintable, EditInlineNew)
 class USSTutorialBattleAllManager : public USSMenuManager {
     GENERATED_BODY()
+public:
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    TArray<USSTutorialBattleCommandBtnManager*> BattleCommandBtnManager;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    TArray<USSTutorialBattleTipsManager*> BattleTipsManager;
+    
 public:
     USSTutorialBattleAllManager();
 

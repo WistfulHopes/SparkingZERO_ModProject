@@ -19,6 +19,7 @@ UKoratCharacterMovementComponent::UKoratCharacterMovementComponent(const FObject
     this->bRotateTowardTargetByBodyPitch = false;
     this->MovementAct = EUKoratCharacterMovementAct::Idle;
     this->MovementActRemainTime = 0.00f;
+    this->bMovementActReferenceDownTargetNull = false;
     this->bEnablePushingCollision = true;
     this->bExecFluffy = true;
     this->FluffyStart = 0.00f;
@@ -27,6 +28,7 @@ UKoratCharacterMovementComponent::UKoratCharacterMovementComponent(const FObject
     this->FluffyCurrentValue = 0.00f;
     this->KnockbackVelocityCurve = NULL;
     this->KnockbackLocationCurve = NULL;
+    this->bUpdatePushingCollision = false;
 }
 
 void UKoratCharacterMovementComponent::UpdateMovementFloor() {
@@ -70,6 +72,10 @@ void UKoratCharacterMovementComponent::KnockbackMovementApply(FVector WorldDirec
 }
 
 bool UKoratCharacterMovementComponent::IsTurning() const {
+    return false;
+}
+
+bool UKoratCharacterMovementComponent::IsHomingMovementActReference(float& OutYawAngle, float& OutYawAngularVelocity) {
     return false;
 }
 

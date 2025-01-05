@@ -4,4 +4,7 @@ USSEventSceneTSDataAsset::USSEventSceneTSDataAsset() {
     this->EnvData = NULL;
 }
 
+void USSEventSceneTSDataAsset::UpdateRegisterMLSDataAssets() {
+}
+
 

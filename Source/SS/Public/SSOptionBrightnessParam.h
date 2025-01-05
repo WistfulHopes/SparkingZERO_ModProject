@@ -21,6 +21,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SDR_Brightness;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bBackgroundImage;
+    
     SS_API FSSOptionBrightnessParam();
 };
 

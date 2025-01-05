@@ -57,7 +57,10 @@ private:
     TMap<FKoratMissionDataList, FKoratWorldLibBattleIdList> MissionTypeWorldLibBattleIdList;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<TSoftObjectPtr<UObject>> LoadRewardIconInstances;
+    TArray<TSoftObjectPtr<UObject>> LoadRewardIconInstancesOffline;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftObjectPtr<UObject>> LoadRewardIconInstancesAll;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratCharacterDataList> CharacterUnlockExceptions;

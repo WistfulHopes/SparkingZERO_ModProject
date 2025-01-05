@@ -7,10 +7,12 @@ ASSBattleSetupController::ASSBattleSetupController(const FObjectInitializer& Obj
     this->SyncCharacterFadeOutSec = 0.50f;
     this->SyncCharacterFadeInSec = 0.50f;
     this->DefaultBuildupItemUnlockNum = 7;
+    this->OnlineOpponentTeamingSyncInterval = 1.00f;
     this->MenuGeneralDialog = NULL;
     this->BattleSetupCharaListWidget = NULL;
     this->NewTopMenuWidget1P = NULL;
     this->NewTopMenuWidget2P = NULL;
+    this->OnlineOpponentTeaming = NULL;
     this->TopMenuButtonSetWidget = NULL;
     this->PlayerLabelWidget = NULL;
     this->TrainingWidget = NULL;
@@ -35,6 +37,9 @@ ASSBattleSetupController::ASSBattleSetupController(const FObjectInitializer& Obj
     this->TransformWidget = NULL;
     this->SkillListWidget = NULL;
     this->CustomizeCharaNameWidget = NULL;
+    this->FormSelectWindow = NULL;
+    this->OnlineTeamPublicSettingUi = NULL;
+    this->TeamingMySetWidget = NULL;
     this->OptionController = NULL;
     this->PreviewCharacterItemEquipment = NULL;
 }

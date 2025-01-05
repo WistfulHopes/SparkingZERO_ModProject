@@ -10,6 +10,8 @@ UKoratCharacterMontageComponent::UKoratCharacterMontageComponent(const FObjectIn
     this->MontageActionTime = 0.00f;
     this->SubActionStateAnimInstance = NULL;
     this->IsActionCancelEnableCpp = 0;
+    this->bDebugEazyInputTimingCpp = false;
+    this->AddEazyInputTimeCpp = 0.50f;
 }
 
 void UKoratCharacterMontageComponent::UpdatePlayingAnimDataListArrayNew() {
@@ -34,7 +36,6 @@ void UKoratCharacterMontageComponent::RegistrationActionIdealPositionDataAsset(c
 
 void UKoratCharacterMontageComponent::PlayAddtiveReaction(const FKoratAddtiveReactionParameter& InAddtiveReactionParameter) {
 }
-
 
 
 

@@ -13,8 +13,7 @@
 
 AKoratUDS_Ultra_Dynamic_Sky::AKoratUDS_Ultra_Dynamic_Sky(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    SetRemoteRoleForBackwardsCompat(ROLE_SimulatedProxy);
     this->RootComponent = CreateDefaultSubobject<UBillboardComponent>(TEXT("Root"));
     this->RefreshSettings = false;
     this->TimeOfDay = 960.00f;

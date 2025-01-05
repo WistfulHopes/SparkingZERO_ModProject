@@ -5,4 +5,7 @@ USSEventSceneMVDataAsset::USSEventSceneMVDataAsset() {
     this->bIFSuggest = false;
 }
 
+void USSEventSceneMVDataAsset::UpdateRegisterMLSDataAssets() {
+}
+
 

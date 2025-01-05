@@ -16,6 +16,10 @@ USSNumericDataAsset::USSNumericDataAsset() {
     this->SelfishnessSPCost = 2500.00f;
     this->SelfishnessSPCostByEnergyBullet = 2500.00f;
     this->GuardCrashedByCombativesBlastSpDamageRate = 1.00f;
+    this->StunReactionRecoverySpeedScale = 1.00f;
+    this->StunReactionInputRecoverySpeedScale = 1.00f;
+    this->LimitBoostRecoverySpeedScale = 1.00f;
+    this->LimitBoostInputRecoverySpeedScale = 1.00f;
     this->BlastStock = 5;
     this->InitialBlastStock = 0;
     this->PursuitBaseLimit = 0;

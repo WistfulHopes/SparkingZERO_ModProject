@@ -1,11 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "KoratMapDataList.h"
 #include "SSLevelScriptActor.h"
 #include "SSMapLevelScriptActor.generated.h"
 
 class AActor;
+class AKoratSequenceSoundPlayer;
 class ASSAquaticSurface;
 class ASSCharacter;
 class UKoratEffectMapData;
@@ -44,6 +47,12 @@ protected:
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FString LightScenarioName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FString> SubLevelNames;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<FString, ULevelStreamingDynamic*> PreloadingSublevels;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -66,6 +75,18 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<ULevelSequence> MapChangeDestructOTLevelSequence;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FBox AreaBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FVector AreaCenter;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TWeakObjectPtr<AKoratSequenceSoundPlayer> WindSoundPlayer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TWeakObjectPtr<AKoratSequenceSoundPlayer> UnderWaterSoundPlayer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 TestPlayMapSW;

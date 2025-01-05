@@ -22,6 +22,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SpCostIN;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float BurstSmashSpCostIN;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float BurstSmashSpCostLP;
+    
     SS_API FKoratCharacterDataZBurstDashParameter();
 };
 

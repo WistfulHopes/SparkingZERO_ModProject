@@ -3,6 +3,9 @@
 USSDramaticSceneEditUi::USSDramaticSceneEditUi() {
 }
 
+void USSDramaticSceneEditUi::UpdateSceneCuts() {
+}
+
 
 
 

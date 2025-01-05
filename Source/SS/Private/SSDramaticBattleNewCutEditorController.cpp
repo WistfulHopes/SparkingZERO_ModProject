@@ -9,6 +9,7 @@ ASSDramaticBattleNewCutEditorController::ASSDramaticBattleNewCutEditorController
     this->SortFilterDialog = NULL;
     this->MenuGeneralDialog = NULL;
     this->CharaLayoutWindow = NULL;
+    this->TipsListUI = NULL;
     this->CaptureTexture = NULL;
     this->StartFadeDuration = 1.00f;
     this->bFinishEdit = false;

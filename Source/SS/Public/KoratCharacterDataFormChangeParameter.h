@@ -4,6 +4,7 @@
 #include "EKoratStyleChangeSPRecoveryMode.h"
 #include "KoratCharacterDataChangeCharacterActionDataList.h"
 #include "KoratCharacterDataList.h"
+#include "KoratCharacterItemDataList.h"
 #include "SSUnionSupportCharacter.h"
 #include "KoratCharacterDataFormChangeParameter.generated.h"
 
@@ -22,6 +23,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool CostumeDamageFlg;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratCharacterItemDataList> AdditionalFormChangeCharacterItems;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ConsumeBlastStock;

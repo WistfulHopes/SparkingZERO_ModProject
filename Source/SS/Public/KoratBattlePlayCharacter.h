@@ -5,6 +5,7 @@
 #include "KoratAiTypeDataList.h"
 #include "KoratBGMDataList.h"
 #include "KoratBattlePlayLevel.h"
+#include "KoratBattlePlayLevelSet.h"
 #include "KoratCharacterCostumeDataList.h"
 #include "KoratCharacterDataList.h"
 #include "KoratCharacterItemDataList.h"
@@ -54,6 +55,9 @@ public:
     bool bRingOut;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bFusionPotara;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HPGaugeValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -82,6 +86,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratBattlePlayLevel> BattlePlayLevel;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratBattlePlayLevelSet BattlePlayEasy;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratBattlePlayLevelSet BattlePlayOrb;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 CostumeDamageLv;

@@ -36,6 +36,15 @@ protected:
     USSBlastImpactDataAsset* BlastImpactDataAsset;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bWinnerBlastDamageOnly;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float DamageScale;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bForceSkipUpdateBlastImpactProcedureActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDrawDebug;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -84,6 +93,9 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlayEndDemo() const;
     
+    UFUNCTION(BlueprintCallable)
+    bool IsForceSkipUpdateBlastImpactProcedureActor();
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool IsCharacterHaveEvent(USSBattleImpactCharacterProxy* InCharacterProxy);
     
@@ -109,6 +121,9 @@ protected:
     
     UFUNCTION(BlueprintCallable)
     FKoratActionDataList GetActionDataFromBlastData(const ESSBlastImpactActionDataType InType, USSBattleImpactCharacterProxy* InCharacterProxy);
+    
+    UFUNCTION(BlueprintCallable)
+    void ForceSkipUpdateBlastImpactProcedureActor(bool InSkip);
     
     UFUNCTION(BlueprintCallable)
     void EndWinnerBlast();

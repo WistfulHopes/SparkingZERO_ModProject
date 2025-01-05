@@ -7,6 +7,7 @@ enum class EBattlePracticeJudgmentType : uint8 {
     None,
     ActionPlayed,
     AttackHits,
+    DamageReceived,
     GuardCrash,
     ActionMove,
     ActionAvoid,

@@ -9,5 +9,6 @@ enum class ESSBattleMode010Difficulty : uint8 {
     Normal,
     Hard,
     VeryHard,
+    Num,
 };
 

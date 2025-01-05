@@ -6,7 +6,8 @@ UENUM(BlueprintType)
 enum class EKoratSortFilterUseMode : uint8 {
     Always,
     BattleMode010,
-    Num,
+    BattleSetup,
     Invalid,
+    Num,
 };
 

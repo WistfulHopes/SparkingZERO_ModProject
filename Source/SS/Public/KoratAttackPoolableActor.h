@@ -45,6 +45,9 @@ public:
     bool IsDamage;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bEndAttack;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bReflectedHit;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -52,6 +55,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratActionDataList CombativesID;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FKoratActionDataList AttackerAction;
     
     AKoratAttackPoolableActor(const FObjectInitializer& ObjectInitializer);
 
@@ -67,7 +73,7 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void RefreshCollision(const FKoratAttackCollisionParameter& InCollisionParameter, FKoratActionDataList InAction, const FKoratAdditionalDamageInfo& InAdditionalDamageInfo, EKoratActionAttackType InAttackType);
+    void RefreshCollision(const FKoratAttackCollisionParameter& InCollisionParameter, FKoratActionDataList InAction, FKoratActionDataList InAttackerAction, const FKoratAdditionalDamageInfo& InAdditionalDamageInfo, EKoratActionAttackType InAttackType);
     
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)

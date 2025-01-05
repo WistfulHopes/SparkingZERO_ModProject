@@ -6,6 +6,7 @@ UENUM(BlueprintType)
 enum class EMenuMissionDialogType : uint8 {
     MythicalOrbFull,
     MythicalOrbUnableReceive,
+    WaitingRankingFinalized,
     Num,
     None,
 };

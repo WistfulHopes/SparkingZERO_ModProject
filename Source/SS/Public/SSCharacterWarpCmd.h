@@ -11,6 +11,7 @@
 #include "SSCharacterWarpCmd.generated.h"
 
 class ASSCharacter;
+class ULevelSequencePlayer;
 
 UCLASS(Blueprintable)
 class ASSCharacterWarpCmd : public AActor {
@@ -18,6 +19,9 @@ class ASSCharacterWarpCmd : public AActor {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     FSSCharacterWarpCommandInfo CommandInfo;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    AActor* OwnerActor;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     AActor* OtherActor;
@@ -27,6 +31,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     FTransform CannonTransform;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ULevelSequencePlayer* SpawnerSequencePlayer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     bool bIsSavePreWarpTransform;

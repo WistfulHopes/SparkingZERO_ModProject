@@ -14,6 +14,7 @@ class APostProcessVolume;
 class ASSDramaticBattleNewCutEditorInitialSelectUIController;
 class UMaterialInterface;
 class USSDramaticBattleNewCutEditorUIWindow;
+class USSDramaticBattleTipsListUi;
 class USSDramaticEditImageSaveData;
 class USSMenuButton;
 class USSMenuGeneralDialog;
@@ -62,6 +63,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSMenuManager* CharaLayoutWindow;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSDramaticBattleTipsListUi* TipsListUI;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2DDynamic* CaptureTexture;

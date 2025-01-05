@@ -21,9 +21,9 @@ ASSTitleBaseController::ASSTitleBaseController(const FObjectInitializer& ObjectI
     this->OptionListVideoManager = NULL;
     this->OptionListLanguageManager = NULL;
     this->OptionTipsManager = NULL;
-    this->OptionHUDBG = NULL;
-    this->Billboard = NULL;
     this->DownLoadContentsCheckProcess = NULL;
+    this->HDRSequenceActor = NULL;
+    this->CacheLightingScenarioSubLevel = NULL;
 }
 
 

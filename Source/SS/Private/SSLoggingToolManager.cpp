@@ -10,10 +10,13 @@ USSLoggingToolManager::USSLoggingToolManager() {
 void USSLoggingToolManager::SetIsEnable(bool IsEnable) {
 }
 
-void USSLoggingToolManager::OnEndMontageSequence(FKoratActionDataList InAction, EKoratCharacterActionFinishReason InActionFinishReason) {
+void USSLoggingToolManager::OnEndMontageSequence2P(FKoratActionDataList InAction, EKoratCharacterActionFinishReason InActionFinishReason) {
 }
 
-void USSLoggingToolManager::OnBeginMontageSequence(FKoratActionDataList InAction) {
+void USSLoggingToolManager::OnEndMontageSequence1P(FKoratActionDataList InAction, EKoratCharacterActionFinishReason InActionFinishReason) {
+}
+
+void USSLoggingToolManager::OnBeginWarp(FKoratActionDataList InAction) {
 }
 
 void USSLoggingToolManager::InitSettingCharacters(const int32 Index) {

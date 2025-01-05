@@ -9,6 +9,11 @@ UCLASS(Blueprintable)
 class USSAreaEditorMessage : public UObject {
     GENERATED_BODY()
 public:
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    TArray<UTextBlock*> messageAreaList;
+    
+public:
     USSAreaEditorMessage();
 
     UFUNCTION(BlueprintCallable)

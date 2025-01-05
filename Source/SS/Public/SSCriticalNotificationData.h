@@ -12,7 +12,10 @@ public:
     FKoratNotificationDataList NotificationDataList;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FDateTime DateTime;
+    FDateTime DateTimeStart;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDateTime DateTimeEnd;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FString, FText> ReplaceText;

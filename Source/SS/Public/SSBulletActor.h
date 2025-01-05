@@ -22,6 +22,7 @@
 #include "ESSBulletStartPosition.h"
 #include "ESSBulletStatusAtStart.h"
 #include "KoratActionDataList.h"
+#include "KoratBlastGroupDataList.h"
 #include "KoratBulletKeyDataList.h"
 #include "KoratCharacterBoneDataList.h"
 #include "KoratCharacterDataList.h"
@@ -32,6 +33,7 @@
 #include "KoratEffectColorDataDetail.h"
 #include "KoratEffectMultipleColorInterface.h"
 #include "KoratEnergyBulletDirectionDataList.h"
+#include "KoratHitBackMovementData.h"
 #include "KoratHitObjectParameter.h"
 #include "KoratReceivedDamageParameter.h"
 #include "SSBulletCharacterCollisionInfo.h"
@@ -629,6 +631,12 @@ public:
     FKoratReceivedDamageParameter BottomDamageStructureMultiHit_ForGiant;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FKoratHitBackMovementData Movement0;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bEnableDestruction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratHitObjectParameter HitObjectStructure;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -650,7 +658,13 @@ public:
     EKoratSuperZCounterType SuperZCounterType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    int32 bExParamSuperZCounterRepel;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bImpossibleSuperZCounterAbsorption;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FKoratBlastGroupDataList BlastGroup;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratEnergyBulletDirectionDataList BulletDirectionAtReflect;

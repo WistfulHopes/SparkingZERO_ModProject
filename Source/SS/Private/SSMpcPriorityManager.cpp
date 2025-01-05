@@ -15,10 +15,6 @@ bool ASSMpcPriorityManager::GetTopPriorityInfo(TArray<ASSMpcPriorityActorBase*>&
     return false;
 }
 
-bool ASSMpcPriorityManager::GetDebugCommandFlag() const {
-    return false;
-}
-
 void ASSMpcPriorityManager::CleanMonitoringActors() {
 }
 

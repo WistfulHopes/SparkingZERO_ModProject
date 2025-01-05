@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "ESSMissionCleraMode.h"
 #include "SSMissionUserDataSaveData.generated.h"
 
@@ -34,6 +35,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsPlatformTrophyUnlock;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDateTime CloseDateTime;
     
     SS_API FSSMissionUserDataSaveData();
 };

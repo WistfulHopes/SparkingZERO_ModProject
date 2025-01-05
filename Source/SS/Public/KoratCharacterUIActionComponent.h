@@ -3,6 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "Engine/EngineTypes.h"
 #include "EKoratCharacterUIActionFootIKMode.h"
+#include "KoratCharacterUIActionComponentCommandRequest.h"
 #include "KoratGroupIdDataList.h"
 #include "KoratUIActionBlendOption.h"
 #include "KoratUIActionDataList.h"
@@ -46,10 +47,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratUIActionBlendOption UIActionBlendOption;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bUIActionEnableUnregisteredMLS;
-    
 private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FKoratCharacterUIActionComponentCommandRequest> CommandRequests;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<UKoratMLSDataAsset*, UKoratMLSDataAsset*> UIActionMLSMap;
     
@@ -127,9 +128,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetUIActionEndFrame(int32 InEndFrame);
-    
-    UFUNCTION(BlueprintCallable)
-    void SetUIActionEnableUnregisteredMLS(bool bInEnable);
     
     UFUNCTION(BlueprintCallable)
     void SetUIActionBlendOption(const FKoratUIActionBlendOption& InUIActionBlendOption);

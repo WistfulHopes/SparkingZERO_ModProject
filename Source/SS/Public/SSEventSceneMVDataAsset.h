@@ -7,6 +7,7 @@
 #include "SSEventSceneMVDataAsset.generated.h"
 
 class ASSEventSceneScriptMV;
+class UKoratMLSDataAsset;
 class USSEventSceneEnvDataAsset;
 class UWorld;
 
@@ -36,8 +37,15 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIFSuggest;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSet<UKoratMLSDataAsset*> MLSDataAssets;
+    
 public:
     USSEventSceneMVDataAsset();
 
+protected:
+    UFUNCTION(BlueprintCallable)
+    void UpdateRegisterMLSDataAssets();
+    
 };
 

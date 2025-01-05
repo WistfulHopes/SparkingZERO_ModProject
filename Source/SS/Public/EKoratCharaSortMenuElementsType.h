@@ -14,6 +14,8 @@ enum class EKoratCharaSortMenuElementsType : uint8 {
     Proficiency,
     Text,
     EventPoint,
+    Appeared,
+    Ruby,
     Default,
 };
 

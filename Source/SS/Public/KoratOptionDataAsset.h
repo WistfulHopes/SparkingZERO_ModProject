@@ -11,6 +11,9 @@
 #include "SSDialogTextData.h"
 #include "KoratOptionDataAsset.generated.h"
 
+class ULevelSequence;
+class UWorld;
+
 UCLASS(Blueprintable)
 class UKoratOptionDataAsset : public UMutualDataAsset {
     GENERATED_BODY()
@@ -75,6 +78,12 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<ESSKeyInputType, FKoratOptionPadGroupListData> OptionPadGroupList;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftObjectPtr<UWorld>> HdrSubLevelArray;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<ULevelSequence> HdrLevelSequencer;
     
 public:
     UKoratOptionDataAsset();

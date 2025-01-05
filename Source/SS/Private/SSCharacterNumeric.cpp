@@ -57,6 +57,13 @@ USSCharacterNumeric::USSCharacterNumeric() {
     this->DragonHomingKeepDistanceInputInfluence = 0.30f;
     this->DragonSmashTransitionDistance = 1500.00f;
     this->DragonSmashChargeEndDistance = 200.00f;
+    this->DragonSmashInputDistance = 100.00f;
+    this->DragonSmashInputPositionMoveSpeed = 20.00f;
+    this->DragonDashControllableTargetSpeedRate = 2.00f;
+    this->DragonDashInputInfluence = 0.30f;
+    this->DragonDashInputInfluenceAttenuationDistance = 1000.00f;
+    this->DragonDashAttackInputDistance = 100.00f;
+    this->DragonDashAttackInputPositionMoveSpeed = 20.00f;
     this->PursuitBaseLimit = 0;
     this->PursuitLimitDragonHoming = 1;
     this->PursuitLimitVanishingAttack = 1;

@@ -78,6 +78,10 @@ bool USSCharacterBattleAssistComponent::IsPlayablePursuit_Implementation(const E
     return false;
 }
 
+bool USSCharacterBattleAssistComponent::IsNoAutoGuardFromActionData(const FKoratActionDataList& InAction) {
+    return false;
+}
+
 void USSCharacterBattleAssistComponent::IsDragonDashStopRequest(EKoratBranch& OutResult) {
 }
 

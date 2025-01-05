@@ -20,5 +20,10 @@ FKoratCharacterDataDragonDashParameter::FKoratCharacterDataDragonDashParameter()
     this->SpCostIN = 0.00f;
     this->SpCostLP = 0.00f;
     this->SpCostBK = 0.00f;
+    this->HighSpeedEnd0Distance = 0.00f;
+    this->HighSpeedEnd0Angle = 0.00f;
+    this->HighSpeedEnd1Speed = 0.00f;
+    this->HighSpeedEnd1Time = 0.00f;
+    this->HighSpeedSpCostLP = 0.00f;
 }
 

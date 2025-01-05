@@ -6,6 +6,7 @@ FKoratBattlePlayCharacter::FKoratBattlePlayCharacter() {
     this->bKnockDown = false;
     this->bBlowIsFront = false;
     this->bRingOut = false;
+    this->bFusionPotara = false;
     this->HPGaugeValue = 0.00f;
     this->HPGaugeValueMax = 0.00f;
     this->SPGaugeValue = 0.00f;

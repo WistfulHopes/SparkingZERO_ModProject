@@ -38,9 +38,6 @@ public:
     bool GetTopPriorityInfo(TArray<ASSMpcPriorityActorBase*>& OutActors);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool GetDebugCommandFlag() const;
-    
     UFUNCTION(BlueprintCallable)
     void CleanMonitoringActors();
     

@@ -19,7 +19,7 @@ public:
     FText Name;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    EKoratSortFilterUseMode UseMode;
+    TArray<EKoratSortFilterUseMode> UseModes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterFigureDataList FigureData;
@@ -32,6 +32,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterAttributeTagDataList AttributeTagData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bEventBonus;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bFirstForm;
     
     USSCharacterFilterDataAsset();
 

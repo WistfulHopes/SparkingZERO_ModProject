@@ -21,8 +21,8 @@ ASSOptionController::ASSOptionController(const FObjectInitializer& ObjectInitial
     this->TitleTermsController = NULL;
     this->RunOptionListManager = NULL;
     this->OptionTitleMenu = NULL;
-    this->OptionHUDBG = NULL;
-    this->Billboard = NULL;
+    this->HDRSequenceActor = NULL;
+    this->CacheLightingScenarioSubLevel = NULL;
 }
 
 

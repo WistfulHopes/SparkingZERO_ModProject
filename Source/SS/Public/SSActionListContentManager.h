@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "KoratBattleOperationGuideData.h"
 #include "SSMenuManager.h"
 #include "SSActionListContentManager.generated.h"
 
@@ -9,6 +10,9 @@ UCLASS(Blueprintable, EditInlineNew)
 class USSActionListContentManager : public USSMenuManager {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FKoratBattleOperationGuideData> OperationGuideDataSet;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UTexture2D*> TexturesIcon;
     

@@ -3,15 +3,10 @@
 #include "SSMenuManager.h"
 #include "SSOptionManager.generated.h"
 
-class AActor;
-
 UCLASS(Blueprintable, EditInlineNew)
 class USSOptionManager : public USSMenuManager {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<AActor> ClassHudBPActor;
-    
     USSOptionManager();
 
     UFUNCTION(BlueprintCallable)

@@ -16,6 +16,7 @@
 #include "KoratSequenceSoundPlayer.generated.h"
 
 class ASSCharacter;
+class ASSLevelSequenceActor;
 class UKoratSoundManageComponent;
 class UMovieSceneSequence;
 
@@ -137,6 +138,9 @@ public:
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UKoratSoundManageComponent* SoundManageComponent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ASSLevelSequenceActor* LevelSequenceActor;
     
 public:
     AKoratSequenceSoundPlayer(const FObjectInitializer& ObjectInitializer);

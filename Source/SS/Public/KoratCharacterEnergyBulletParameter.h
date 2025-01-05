@@ -11,6 +11,7 @@
 #include "ESSBulletStartPosition.h"
 #include "ESSBulletStatusAtStart.h"
 #include "KoratArmorBreakLevelDataList.h"
+#include "KoratBlastGroupDataList.h"
 #include "KoratCharacterBoneDataList.h"
 #include "KoratDamageReactionDataList.h"
 #include "KoratDestructionAttackParameter.h"
@@ -213,6 +214,9 @@ public:
     FKoratDamageReactionDataList DamageStandUp;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratHitBackMovementDataList Movement0;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratHitBackMovementDataList DamageMovement1;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -280,6 +284,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EKoratSuperZCounterType SuperZCounterType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 bExParamSuperZCounterRepel;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bImpossibleSuperZCounterAbsorption;
@@ -391,6 +398,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECameraZoomType ExplosionHitLevel;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratBlastGroupDataList BlastGroup;
     
     SS_API FKoratCharacterEnergyBulletParameter();
 };

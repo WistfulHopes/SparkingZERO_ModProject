@@ -3,6 +3,7 @@
 FKoratBGMDataAssetRecord::FKoratBGMDataAssetRecord() {
     this->UnLockType = EKoratUnLockType::Non;
     this->SortId = 0;
+    this->PlayStartTime = 0.00f;
     this->FadeInDuration = 0.00f;
     this->FadeOutDuration = 0.00f;
     this->Volume = 0.00f;
@@ -14,6 +15,7 @@ FKoratBGMDataAssetRecord::FKoratBGMDataAssetRecord() {
     this->bIsDramaticBattleAvailableEventBGM = false;
     this->UiIconType = ESSBGMOriginType::None;
     this->CopyRightsBGM = false;
+    this->SettingBGMByDevelopmentSide = false;
     this->PackageType = ESSBGMPackageType::Release;
 }
 

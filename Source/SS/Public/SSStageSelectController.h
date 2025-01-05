@@ -16,7 +16,6 @@
 
 class ASSCriMediaPlayer;
 class ASSCutCameraActor;
-class ASSMediaPlayer;
 class ASSUiFaderHUD;
 class ULevelSequence;
 class UObject;
@@ -287,9 +286,6 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSCutCameraActor* ManualCameraActor;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ASSMediaPlayer* StagePreviewPlayer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSCriMediaPlayer* CriMediaPlayer;

@@ -1,6 +1,5 @@
 #include "KoratMovieSceneVisibilitySectionTemplate.h"
 
-#include "Sections/MovieSceneBoolSection.h"
 #include "Tracks/MovieScenePropertyTrack.h"
 
 namespace
@@ -13,11 +12,9 @@ namespace
 	}
 }
 
-FKoratMovieSceneVisibilitySectionTemplate::FKoratMovieSceneVisibilitySectionTemplate() {
-}
-
-FKoratMovieSceneVisibilitySectionTemplate::FKoratMovieSceneVisibilitySectionTemplate(const UMovieSceneBoolSection& Section, const UMovieScenePropertyTrack& Track)
-	: FMovieScenePropertySectionTemplate(Track.GetPropertyName(), Track.GetPropertyPath().ToString())
+FKoratMovieSceneVisibilitySectionTemplate::FKoratMovieSceneVisibilitySectionTemplate(
+	const UMovieSceneBoolSection& Section, const UMovieScenePropertyTrack& Track) : FMovieScenePropertySectionTemplate(
+		Track.GetPropertyName(), Track.GetPropertyPath().ToString())
 	, BoolCurve(Section.GetChannel())
 {
 	PropertyData.PropertyName = SanitizeBoolPropertyName(PropertyData.PropertyName);

@@ -23,6 +23,7 @@ UKoratGameSingleton::UKoratGameSingleton() {
     this->GalleryMyDataData = NULL;
     this->GalleryPictureBookData = NULL;
     this->PlayerCardData = NULL;
+    this->PresentBoxData = NULL;
     this->EndingData = NULL;
     this->MovieListData = NULL;
     this->BattleTrainingData = NULL;
@@ -151,6 +152,7 @@ UKoratGameSingleton::UKoratGameSingleton() {
     this->SeriesTitleData = NULL;
     this->PatternVoiceData = NULL;
     this->PatternSubtitlesData = NULL;
+    this->ConditionalPlayVoiceData = NULL;
     this->BGMData = NULL;
     this->SelectorLabelData = NULL;
     this->SurfaceTypeSettingData = NULL;
@@ -222,6 +224,8 @@ UKoratGameSingleton::UKoratGameSingleton() {
     this->PostProcessManagerBPChameleonType = NULL;
     this->ReplayDataUIManager = CreateDefaultSubobject<USSReplayDataUIManager>(TEXT("ReplayDataUIManager"));
     this->ReplayUIManager = CreateDefaultSubobject<USSReplayManager>(TEXT("ReplayUIManager"));
+    this->bReplayAnimeSongFlag = true;
+    this->bReplayModeFlag = false;
     this->ButtonGuideDataAsset = NULL;
     this->KoratOperationGuideTextDataAsset = NULL;
     this->DRMEditCommonData = NULL;

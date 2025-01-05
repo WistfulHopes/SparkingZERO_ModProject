@@ -39,7 +39,6 @@ ASSStageSelectController::ASSStageSelectController(const FObjectInitializer& Obj
     this->FaderHUD = NULL;
     this->TimerUi = NULL;
     this->ManualCameraActor = NULL;
-    this->StagePreviewPlayer = NULL;
     this->CriMediaPlayer = NULL;
 }
 

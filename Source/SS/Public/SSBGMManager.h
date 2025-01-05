@@ -32,7 +32,7 @@ public:
     
 private:
     UFUNCTION(BlueprintCallable)
-    void AddCharacter(const int32 InPlayerNumber, ASSCharacter* InCharacter);
+    void AddCharacter(const int32 InPlayerNumber, ASSCharacter* InOldCharacter, ASSCharacter* InNewCharacter, const bool bInSamePerson);
     
 
     // Fix for true pure virtual functions not being implemented

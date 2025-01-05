@@ -8,5 +8,8 @@ enum class EMainMenuOnlineCheckMode : uint8 {
     SeverLoginOnly = 4,
     MatchingEnableOnly = 8,
     CheckMaintenanceRankMatch = 16,
+    CheckMaintenanceWorldLibrary = 32,
+    CheckMaintenance011 = 64,
+    CheckMaintenance010 = 128,
 };
 

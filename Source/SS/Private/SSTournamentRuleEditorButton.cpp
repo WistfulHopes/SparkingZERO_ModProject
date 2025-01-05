@@ -3,6 +3,7 @@
 USSTournamentRuleEditorButton::USSTournamentRuleEditorButton() {
     this->Label = NULL;
     this->Description = NULL;
+    this->Parent = NULL;
 }
 
 void USSTournamentRuleEditorButton::OnSlideRight() {

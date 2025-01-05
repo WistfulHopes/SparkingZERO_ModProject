@@ -2,7 +2,6 @@
 #include "CoreMinimal.h"
 #include "ESSAiFormChangeType.h"
 #include "KoratAiTypeDataList.h"
-#include "KoratCharacterDataList.h"
 #include "SSAiB1DataList.h"
 #include "SSAiB2UBDataList.h"
 #include "SSAiCharacterDataList.generated.h"
@@ -14,9 +13,6 @@ USTRUCT(BlueprintType)
 struct SS_API FSSAiCharacterDataList {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FKoratCharacterDataList Character;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratAiTypeDataList DefaultAiType;
     

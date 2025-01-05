@@ -13,6 +13,7 @@ class ASSCutCameraActor;
 class ASSLevelSequenceActor;
 class UKoratMLSDataAsset;
 class USSCharaSelectCharaReader;
+class USSDramaticBattleDataRecordAsset;
 class USSOperationGuideSet;
 class USSSortFilterDialog;
 
@@ -119,6 +120,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratBattleSetupData BattleSetupData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USSDramaticBattleDataRecordAsset* TempNowPlayingDramaticBattleData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSSBattleSetupRequestCommand> RequestListP1;

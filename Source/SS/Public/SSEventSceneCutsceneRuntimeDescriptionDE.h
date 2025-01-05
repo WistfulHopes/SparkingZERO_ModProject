@@ -16,6 +16,9 @@ struct FSSEventSceneCutsceneRuntimeDescriptionDE {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FSSEventSceneSequenceRuntimeDescriptionDE VTContinuousUpdateLevelSequence;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FSSEventSceneSequenceRuntimeDescriptionDE PostProcessOverrideLevelSequence;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

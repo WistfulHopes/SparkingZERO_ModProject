@@ -7,6 +7,7 @@
 #include "SSEventSceneTSDataAsset.generated.h"
 
 class ASSEventSceneScriptTS;
+class UKoratMLSDataAsset;
 class USSEventSceneEnvDataAsset;
 class UWorld;
 
@@ -33,8 +34,15 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<ASSEventSceneScriptTS> Script;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSet<UKoratMLSDataAsset*> MLSDataAssets;
+    
 public:
     USSEventSceneTSDataAsset();
 
+protected:
+    UFUNCTION(BlueprintCallable)
+    void UpdateRegisterMLSDataAssets();
+    
 };
 

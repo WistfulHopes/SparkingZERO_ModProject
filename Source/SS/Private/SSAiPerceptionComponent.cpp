@@ -36,6 +36,10 @@ void USSAiPerceptionComponent::OnDamage(const float InDamage) {
 void USSAiPerceptionComponent::OnActivatedCharacter(ASSCharacter* InCharacter) {
 }
 
+bool USSAiPerceptionComponent::IsZCounter2() const {
+    return false;
+}
+
 bool USSAiPerceptionComponent::IsZCounter() const {
     return false;
 }
@@ -252,6 +256,10 @@ bool USSAiPerceptionComponent::IsBlastForte1RangeIsOutOfRange() const {
     return false;
 }
 
+bool USSAiPerceptionComponent::IsBlastBoost() const {
+    return false;
+}
+
 bool USSAiPerceptionComponent::IsBehindTheEnemy() const {
     return false;
 }
@@ -269,6 +277,9 @@ int32 USSAiPerceptionComponent::GetLowerPriorityCheckGroup() const {
 }
 
 void USSAiPerceptionComponent::ClearSuperAscertain() {
+}
+
+void USSAiPerceptionComponent::ClearCharacterTransform() {
 }
 
 

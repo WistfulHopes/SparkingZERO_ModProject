@@ -123,6 +123,7 @@
 #include "KoratCharacterForbidParameter.h"
 #include "KoratCharacterGroundMoveParameter.h"
 #include "KoratCombativesKeyDataList.h"
+#include "KoratConditionPlayVoiceDataList.h"
 #include "KoratDamage.h"
 #include "KoratDamageReactionDataList.h"
 #include "KoratEffectColorDataDetail.h"
@@ -1227,6 +1228,12 @@ protected:
     int32 DownValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bInvincibleActSCR;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bLastDamageIsEnemyAttack;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DamageReactionRemainingTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -1515,6 +1522,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CounterDamageScale;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 SuccessZCounterCount;
     
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -1969,7 +1979,7 @@ public:
     void StopPlayAction();
     
     UFUNCTION(BlueprintCallable)
-    void StopInvincibleStatusManagement(const EKoratCharacterInvincibleStatus InInvincibleStatus);
+    void StopInvincibleStatusManagement(const EKoratCharacterInvincibleStatus InInvincibleStatus, UObject* InObject);
     
     UFUNCTION(BlueprintCallable)
     void StopInvincibleEffect();
@@ -2002,7 +2012,7 @@ public:
     void StartLoadSupporter(const FKoratActionDataList InAction, const ESSBlastDemoBranchType InBranchType);
     
     UFUNCTION(BlueprintCallable)
-    void StartInvincibleStatusManagement(const EKoratCharacterInvincibleStatus InInvincibleStatus);
+    void StartInvincibleStatusManagement(const EKoratCharacterInvincibleStatus InInvincibleStatus, UObject* InObject, FKoratActionDataList InAction);
     
     UFUNCTION(BlueprintCallable)
     void StartCheckBlastBoostOnCharacter();
@@ -2313,6 +2323,9 @@ public:
     void SetCostumeDamageChangeReactionParam(const FSSCharacterCostumeDamageReactionParam& InReactionParam);
     
     UFUNCTION(BlueprintCallable)
+    void SetConditionPlayVoiceData(TMap<FName, FKoratConditionPlayVoiceDataList> InPlayedVoiceList);
+    
+    UFUNCTION(BlueprintCallable)
     void SetCombo(const bool bInCombo, const int32 InComboNum);
     
     UFUNCTION(BlueprintCallable)
@@ -2386,6 +2399,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetBlastGaugeRecoverySpeed(const float InBlastGaugeRecoverySpeed);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetBlastEndToMapChangeSpectorEvacuation(bool InBlastEnd);
     
     UFUNCTION(BlueprintCallable)
     void SetBeforeInputTime(float InTime);
@@ -2474,6 +2490,15 @@ public:
     void ResetPursuitCount();
     
     UFUNCTION(BlueprintCallable)
+    void ResetNormalRushBulletShotCount();
+    
+    UFUNCTION(BlueprintCallable)
+    void ResetJumpRushBulletShotCountInCurrentSet();
+    
+    UFUNCTION(BlueprintCallable)
+    void ResetJumpRushBulletShotCount();
+    
+    UFUNCTION(BlueprintCallable)
     void ResetJumpFlag();
     
     UFUNCTION(BlueprintCallable)
@@ -2486,10 +2511,16 @@ public:
     void ResetFinishedBulletCount();
     
     UFUNCTION(BlueprintCallable)
+    void ResetFacial();
+    
+    UFUNCTION(BlueprintCallable)
     void ResetDragonDashElapsedTime();
     
     UFUNCTION(BlueprintCallable)
     void ResetDelayStartMapChange();
+    
+    UFUNCTION(BlueprintCallable)
+    void ResetDashRushBulletShotCount();
     
     UFUNCTION(BlueprintCallable)
     void ResetCounterCondition();
@@ -2942,6 +2973,9 @@ public:
     bool IsInUnderWater() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsInterruptibleFrontBarrierSkill() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInterruptibleExplosionSkill() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -2963,6 +2997,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool IsHitDemoFar();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    bool IsHighSpeedDragonDash() const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool IsGuardSuccessByParameter(const FKoratCharacterCombativesParameter& InParameter, bool& OutIsGuardBreak, bool& OutIsAttackBreak, bool& OutIsImpossibleGuard) const;
@@ -3016,7 +3053,7 @@ public:
     bool IsEquipEmote(FKoratActionDataList InCheckAction);
     
     UFUNCTION(BlueprintCallable)
-    bool IsEnergyBulletUsable(const FKoratActionDataList InEnergyBulletActionData, bool bInJumpRushKidan, bool bInDashRushKidan, bool& bOutCannotShoot);
+    bool IsEnergyBulletUsable(bool bInJumpRushKidan, bool bInDashRushKidan, bool& bOutCannotShoot);
     
     UFUNCTION(BlueprintCallable)
     bool IsEnergyBulletSmashUsable(const FKoratActionDataList InEnergyBulletActionData, bool& bOutCannotShoot);
@@ -3199,6 +3236,9 @@ public:
     bool IsBlastUltimateUsable() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsBlastUltimateInterruptible() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBlastUltimateGaveAfterStateToBlowFallingAlsoSIOT() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -3206,6 +3246,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBlastSkillUsable(EKoratBlastSlot InSlot) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsBlastSkillInterruptible(EKoratSkillSlot InSlot) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBlastSkillConsumeSkillStockImmediately(const FKoratActionDataList& InAction) const;
@@ -3218,6 +3261,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool IsBlastLungeMovement();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsBlastImpossibleGuard(const FKoratActionDataList InAction) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBlastImpactBulletOverride() const;
@@ -3234,11 +3280,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBlastForteInterruptible(EKoratSkillSlot InSlot) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsBlastDrain() const;
+    UFUNCTION(BlueprintCallable)
+    bool IsBlastEndToMapChangeSpectorEvacuation();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsBlastDemoBranchTarget(const ESSBlastDemoBranchType InBranchType) const;
+    bool IsBlastDrain() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBlastCombo() const;
@@ -3264,6 +3310,9 @@ public:
     UFUNCTION(BlueprintCallable)
     bool IsAnimationOfCurrentActionMontage(UAnimSequenceBase* InAnimation, bool& OutNoMontage);
     
+    UFUNCTION(BlueprintCallable)
+    bool IsAirCombo(bool& OutHorizon);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsActiveAttackCollision(EKoratActionAttackType InAttackType) const;
     
@@ -3275,6 +3324,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsActionFlagSpiralSlash() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsActionFlagBurstSmash() const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void InputFreeCamera();
@@ -3421,15 +3473,15 @@ public:
     void GetSpeedImpact(EKoratCharacterSpeedImpactStatus& OutStatus, float& OutProgress, float& OutLength, float& OutDecide, float& OutProgressRapid, float& OutPosition) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool GetSocketTransformSyncUnSafe(FTransform& OutTransform, const FName SocketName, const ERelativeTransformSpace TransformSpace) const;
+    bool GetSocketTransformSyncUnSafe(FTransform& OutTransform, const FName SocketName, const TEnumAsByte<ERelativeTransformSpace> TransformSpace) const;
     
 private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool GetSocketTransformSyncSafe(FTransform& OutTransform, const FName InSocketName, const ERelativeTransformSpace InTransformSpace) const;
+    bool GetSocketTransformSyncSafe(FTransform& OutTransform, const FName InSocketName, const TEnumAsByte<ERelativeTransformSpace> InTransformSpace) const;
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool GetSocketTransform(FTransform& OutTransform, const FName SocketName, const ERelativeTransformSpace TransformSpace) const;
+    bool GetSocketTransform(FTransform& OutTransform, const FName SocketName, const TEnumAsByte<ERelativeTransformSpace> TransformSpace) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FRotator GetSocketRotatorSyncSafe(FName InSocketName) const;
@@ -3469,6 +3521,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     void GetRunningActionList(TArray<FKoratActionDataList>& OutActionList, EKoratCharacterLocomotionDetailStatus& OutLocomotionDetailStatus) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FRotator GetRotationWithBodyPitchAngle() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetRotatedNullSyncUnSafe(FTransform& OutTransform) const;
@@ -3561,6 +3616,9 @@ public:
     bool GetNoRotatedNull(FTransform& OutTransform) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetNormalRushBulletShotCount() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetNoLockVirtualTargetTransform(float InDistance) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -3573,7 +3631,7 @@ public:
     float GetMovementParameterVanishingTraceShiftDistance() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    EMovementMode GetMovementParameterStartMovementMode() const;
+    TEnumAsByte<EMovementMode> GetMovementParameterStartMovementMode() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMovementParameterSpeedInterpolateRange() const;
@@ -3687,7 +3745,7 @@ public:
     void GetMovementParameter(FKoratCharacterDataMovementParameter& OutMovementParameter) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    EMovementMode GetMovementMode() const;
+    TEnumAsByte<EMovementMode> GetMovementMode() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetMovementFloorDistance(float& OutFloorDistance) const;
@@ -3741,6 +3799,9 @@ public:
     float GetLiftRecoveryWaitTime() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetLastSectionRemainTimeInAction() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EKoratActionAttackType GetLastDamageAttackType() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -3748,6 +3809,12 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void GetKnockDownReactionParameter(FKoratDamageReactionDataList& OutDamageReactionDataList, FKoratHitBackMovementData& OutHitBackData, FKoratHitStopData& OutHitStopData);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetJumpRushBulletShotCountInCurrentSet() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetJumpRushBulletShotCount() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetJumpBulletSetNum() const;
@@ -3840,6 +3907,9 @@ public:
     ASSNotifyActionCameraTargetActor* GetFreeCameraTargetActor() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    FVector GetForwardVectorWithBodyPitchAngle() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UForceFeedbackComponent* GetForceFeedbackComponent() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -3891,6 +3961,12 @@ public:
     float GetDragonSmashTransitionDistance() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetDragonSmashInputPositionMoveSpeed() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetDragonSmashInputDistance() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDragonSmashChargeEndDistance() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -3918,7 +3994,22 @@ public:
     float GetDragonDashInterval() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetDragonDashInputInfluenceAttenuationDistance() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetDragonDashInputInfluence() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDragonDashElapsedTime() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetDragonDashControllableTargetSpeedRate() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetDragonDashAttackInputPositionMoveSpeed() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetDragonDashAttackInputDistance() const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void GetDownValueLimitReactionParameter(FKoratDamageReactionDataList& OutDamageReactionDataList, FKoratHitBackMovementData& OutHitBackData, FKoratHitStopData& OutHitStopData);
@@ -3948,6 +4039,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetDashUpDownParameter(FKoratCharacterDataDashUpDownParameter& OutDashUpDownParameter) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetDashRushBulletShotCount() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDashJumpZVelocity() const;
@@ -4001,7 +4095,13 @@ public:
     float GetCurrentBlastChargeTime() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetCurrentBlastChargeSpeedScale(EKoratActionAttackType InAttackType) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentBlastChargeRatio(EKoratBlastSlotType InSlot) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetCurrentBlastChargeHomingScale(EKoratActionAttackType InAttackType) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentBlastChargeDamageScale(EKoratActionAttackType InAttackType) const;
@@ -4037,10 +4137,16 @@ public:
     FRotator GetConfrontRotator(float AdditionalAngle) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    TMap<FName, FKoratConditionPlayVoiceDataList> GetConditionPlayVoiceData() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EKoratActionConditionDown GetConditionDown() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetComboNum() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetComboDamage() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetChargeLv() const;
@@ -4639,7 +4745,7 @@ public:
     void DamageOverTimeSP(float InValue, float InTime);
     
     UFUNCTION(BlueprintCallable)
-    float DamageHP(const float InDamage, const bool bInCanKnockDown);
+    float DamageHP(const float InDamage, const bool bInCanKnockDown, const ASSCharacter* InDamageSourceCharacter);
     
     UFUNCTION(BlueprintCallable)
     void CreateRequestAnimData(const FKoratActionDataList InAction, int32 InAnimIndex, const EKoratAnimType InAnimType, const EKoratPlayableAnimType InPlayableAnimType, bool bInSoonStart, bool bInTurn, bool bInCancelableOnly, FName InTurningSection, FKoratRequestAnimData& OutRequestAnimData, EKoratBranch& OutResult);
@@ -4721,6 +4827,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ClearEquipmentAppealVoice();
+    
+    UFUNCTION(BlueprintCallable)
+    void ClearConditionPlayVoiceData();
     
     UFUNCTION(BlueprintCallable)
     void ClearCheckBlastBoostOnCharacter();

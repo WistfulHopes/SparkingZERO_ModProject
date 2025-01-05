@@ -6,6 +6,7 @@ UENUM(BlueprintType)
 enum class EKoratBattleDirectingType : uint8 {
     None,
     Action,
+    ActionOperable,
     Parameters,
     Performance,
     Event,

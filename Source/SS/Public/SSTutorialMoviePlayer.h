@@ -6,8 +6,8 @@
 #include "SSTutorialMoviePlayer.generated.h"
 
 class ASSCriMediaPlayer;
-class ASSMediaPlayer;
 class ASSUiFaderHUD;
+class UObject;
 class USSMenuButton;
 class USSTutorialMovieMenu;
 class UUserWidget;
@@ -19,9 +19,6 @@ public:
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratMovieItemDataList MovieItemDataList;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    ASSMediaPlayer* MediaPlayer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASSCriMediaPlayer* CriMediaPlayer;
@@ -52,6 +49,12 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bPlayingLoopSection;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<TSoftClassPtr<UObject>> LoadClasses;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<TSoftObjectPtr<UObject>> LoadInstances;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BlackOutElapsed;

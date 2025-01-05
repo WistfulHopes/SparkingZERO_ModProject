@@ -3,11 +3,13 @@
 #include "ESSKeyInputType.h"
 #include "EKoratCharacterEquipSettingSaveTarget.h"
 #include "EKoratDramaticEditTextBalnkFilterCategory.h"
+#include "ESSDRMTextSortType.h"
 #include "ESSDramaticBattleSearchConditionDifficulty.h"
 #include "ESSDramaticBattleSearchConditionExist.h"
 #include "ESSDramaticBattleSearchConditionPlayCount.h"
 #include "ESSWLibBattleDetailSearchMenuButtonType.h"
 #include "ESSWLibBattleDetailSearchMenuPageType.h"
+#include "ESSWLibBattleListOverInfoType.h"
 #include "ESSWLibBattleSortType.h"
 #include "ESSWLibDetailSearchCharacterMenuButtonType.h"
 #include "ESSWLibHomeCategoryButtonType.h"
@@ -256,6 +258,27 @@ public:
     FSSDialogTextData NotFinishTutorialDialog;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<ESSWLibHomeCategoryButtonType, ESSWLibBattleListOverInfoType> WLibHomeListOverInfoSettingMap;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<ESSWLibHomePeriodCategoryButtonType, ESSWLibBattleListOverInfoType> WLibPeriodListOverInfoSettingMap;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESSWLibBattleListOverInfoType WLibMyPostBattleListOverInfoSetting;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESSWLibBattleListOverInfoType WLibFavoriteBattleListOverInfoSetting;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESSWLibBattleListOverInfoType WLibUserBattleListOverInfoSetting;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESSWLibBattleListOverInfoType WLibFollowBattleListOverInfoSetting;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESSWLibBattleListOverInfoType WLibSeatchBattleListOverInfoSetting;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsUsedDebugWLibTestFollowUserNameAndIdMap;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -298,7 +321,16 @@ public:
     TMap<EKoratDramaticEditTextBalnkFilterCategory, FText> BaseTextBlankFilterCategoryTexts;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<ESSDRMTextSortType, FText> DRMTextSortNameTexts;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EKoratDramaticEditTextBalnkFilterCategory> BaseTextBlankCategoryList;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<ESSDRMTextSortType> BaseTextSortList;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<ESSDRMTextSortType> WordTextSortList;
     
     UKoratDramaticBattleCommonDataAsset();
 

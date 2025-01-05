@@ -8,7 +8,7 @@ UKoratMovieSceneVisibilityTrack::UKoratMovieSceneVisibilityTrack() {
 
 bool UKoratMovieSceneVisibilityTrack::SupportsType(TSubclassOf<UMovieSceneSection> SectionClass) const
 {
-	return SectionClass == StaticClass();
+	return SectionClass == UMovieSceneBoolSection::StaticClass();
 }
 
 FMovieSceneEvalTemplatePtr UKoratMovieSceneVisibilityTrack::CreateTemplateForSection(
@@ -19,7 +19,7 @@ FMovieSceneEvalTemplatePtr UKoratMovieSceneVisibilityTrack::CreateTemplateForSec
 
 class UMovieSceneSection* UKoratMovieSceneVisibilityTrack::CreateNewSection()
 {
-	return NewObject<UMovieSceneSection>(this, NAME_None, RF_Transactional);
+	return NewObject<UMovieSceneBoolSection>(this, NAME_None, RF_Transactional);
 }
 
 

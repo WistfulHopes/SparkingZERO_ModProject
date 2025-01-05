@@ -134,6 +134,9 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool IsPlayablePursuit(const EKoratPursuitType& InPursuitType);
     
+    UFUNCTION(BlueprintCallable)
+    bool IsNoAutoGuardFromActionData(const FKoratActionDataList& InAction);
+    
 public:
     UFUNCTION(BlueprintCallable)
     void IsDragonDashStopRequest(EKoratBranch& OutResult);

@@ -10,6 +10,7 @@ FSSBlastForteParamDataAssetRecord::FSSBlastForteParamDataAssetRecord() {
     this->SureToHitRange = 0.00f;
     this->bInterruptibleExplosion = false;
     this->bInterruptibleBarrier = false;
+    this->bInterruptibleFrontBarrier = false;
     this->bBackstepWhenNearMode = false;
     this->BackstepWhenWithinDistance = 0.00f;
     this->bTurnBeforeTransition = false;

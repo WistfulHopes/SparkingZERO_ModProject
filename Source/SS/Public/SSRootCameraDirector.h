@@ -6,6 +6,8 @@
 #include "SSCutCameraDirector.h"
 #include "SSRootCameraDirector.generated.h"
 
+class ASSCutCameraActor;
+
 UCLASS(Blueprintable)
 class ASSRootCameraDirector : public ASSCutCameraDirector {
     GENERATED_BODY()
@@ -73,6 +75,20 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDrawDebugShakeCamRange;
+    
+public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCutCameraDirector*> ReconnectDirectors;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSCutCameraDirector* ReconnectDirector;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSCutCameraActor* ReconnectDirectorMainCamera;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FSSCameraConnectOption ReconnectPriorityConnectOption;
     
 public:
     ASSRootCameraDirector(const FObjectInitializer& ObjectInitializer);

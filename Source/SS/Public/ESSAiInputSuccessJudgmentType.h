@@ -19,9 +19,13 @@ enum class ESSAiInputSuccessJudgmentType : uint8 {
     GroundEnd,
     DisablesChargeEnd,
     SpeedImpactOnceInputTiming,
+    SpeedImpactOnceInputTarget,
     SpeedImpactRapidInputTiming,
     CrashImpactInputTimingAttack,
     CrashImpactInputTimingDefense,
+    CrashImpactInputNoInputState,
+    BlastImpactInputTiming,
+    PowerImpactInputTiming,
     Max,
 };
 

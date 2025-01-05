@@ -22,9 +22,11 @@ class USSBattleSetupBuildupItemSelectDialog;
 class USSBattleSetupCustomizeBuildupStatusUi;
 class USSBattleSetupCustomizeCostumeMenu;
 class USSBattleSetupCustomizeTopMenu;
+class USSBattleSetupFormSelectWindow;
 class USSBattleSetupNameList;
 class USSBattleSetupStatusSkillList;
 class USSBattleSetupTeamList;
+class USSBattleSetupTeamingMySet;
 class USSCharaSelectStatusBase;
 class USSCharacterItemEquipment;
 class USSMenuButton;
@@ -172,6 +174,9 @@ protected:
     int32 DefaultBuildupItemUnlockNum;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float OnlineOpponentTeamingSyncInterval;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EKoratBattleSetupCustomizeComSettingButton> CustomizeAiSettingList;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -259,6 +264,15 @@ protected:
     TSoftClassPtr<USSBattleSetupStatusSkillList> ClassSkillListWidget;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<USSBattleSetupFormSelectWindow> ClassFormSelectWindow;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<USSUiWidget> ClassOnlineTeamPublicSettingUi;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<USSBattleSetupTeamingMySet> ClassTeamingMySetWidget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<ULevelSequence> FromStageSelectTransitionSequence;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -278,6 +292,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSBattleMemberSettingMenu* NewTopMenuWidget2P;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSBattleMemberSettingMenu* OnlineOpponentTeaming;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSMenuManager* TopMenuButtonSetWidget;
@@ -350,6 +367,15 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSBattleSetupNameList* CustomizeCharaNameWidget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSBattleSetupFormSelectWindow* FormSelectWindow;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSUiWidget* OnlineTeamPublicSettingUi;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSBattleSetupTeamingMySet* TeamingMySetWidget;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSOptionController* OptionController;

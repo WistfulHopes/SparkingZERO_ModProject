@@ -14,7 +14,7 @@ ASSNotifyActionCameraTargetActor::ASSNotifyActionCameraTargetActor(const FObject
 void ASSNotifyActionCameraTargetActor::SetDeterminedTargetPosition(const bool bInDetermined) {
 }
 
-void ASSNotifyActionCameraTargetActor::SetBattleCameraType(const ENewBattleCameraType InBattleCameraType, const ETypeOfTeleportToPassToBattleCamera InTeleportType) {
+void ASSNotifyActionCameraTargetActor::SetBattleCameraType(const ENewBattleCameraType InBattleCameraType, const ETypeOfTeleportToPassToBattleCamera InTeleportType, int32 InPlaySide) {
 }
 
 void ASSNotifyActionCameraTargetActor::KillMySelf() {

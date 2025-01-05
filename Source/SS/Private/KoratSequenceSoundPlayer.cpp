@@ -30,6 +30,7 @@ AKoratSequenceSoundPlayer::AKoratSequenceSoundPlayer(const FObjectInitializer& O
     this->CtrlType = EKoratSequenceSoundControlType::None;
     this->bUseTerrainRay = false;
     this->SoundManageComponent = NULL;
+    this->LevelSequenceActor = NULL;
 }
 
 void AKoratSequenceSoundPlayer::SetExecuteActor(ASSCharacter* InCharacter) {

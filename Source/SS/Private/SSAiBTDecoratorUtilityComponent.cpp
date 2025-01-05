@@ -47,6 +47,10 @@ bool USSAiBTDecoratorUtilityComponent::IsTargetUpOrDownCpp(const UBTDecorator* I
     return false;
 }
 
+bool USSAiBTDecoratorUtilityComponent::IsStunStateCpp(const UBTDecorator* InMyDecorator, const bool InMyself) {
+    return false;
+}
+
 bool USSAiBTDecoratorUtilityComponent::IsSkillStockCpp(const UBTDecorator* InMyDecorator, const int32 InSkillStockNum, const bool InIsMore, const bool InIsMyself) {
     return false;
 }
@@ -63,6 +67,14 @@ bool USSAiBTDecoratorUtilityComponent::IsRemainingEnergyCpp(const UBTDecorator* 
     return false;
 }
 
+bool USSAiBTDecoratorUtilityComponent::IsPossibleInterruptRepelCpp(const UBTDecorator* InMyDecorator) {
+    return false;
+}
+
+bool USSAiBTDecoratorUtilityComponent::IsPossibleInterruptGuardCpp(const UBTDecorator* InMyDecorator) {
+    return false;
+}
+
 bool USSAiBTDecoratorUtilityComponent::IsPlayerSideCpp(const UBTDecorator* InMyDecorator, const bool InIs1P) {
     return false;
 }
@@ -72,6 +84,10 @@ bool USSAiBTDecoratorUtilityComponent::IsPitchCpp(const UBTDecorator* InMyDecora
 }
 
 bool USSAiBTDecoratorUtilityComponent::IsObstacleCpp(const UBTDecorator* InMyDecorator) {
+    return false;
+}
+
+bool USSAiBTDecoratorUtilityComponent::IsNumbStateCpp(const UBTDecorator* InMyDecorator, const bool InMyself) {
     return false;
 }
 
@@ -107,7 +123,7 @@ bool USSAiBTDecoratorUtilityComponent::IsGroundDistanceCpp(const UBTDecorator* I
     return false;
 }
 
-bool USSAiBTDecoratorUtilityComponent::IsGiantCpp(const UBTDecorator* InMyDecorator) {
+bool USSAiBTDecoratorUtilityComponent::IsGiantCpp(const UBTDecorator* InMyDecorator, const bool InIsMyself) {
     return false;
 }
 

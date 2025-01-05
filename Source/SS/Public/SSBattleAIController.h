@@ -11,7 +11,13 @@ class USSAiLearningComponent;
 class USSAiPadGenerationComponent;
 class USSAiPerceptionComponent;
 class USSAiPersonalityComponent;
+class USSBlastImpactUi;
+class USSCrashImpactBoostUi;
+class USSCrashImpactSetUi;
+class USSPowerGaugeSet;
 class USSRandom;
+class USSSpeedImpactRapidUi;
+class USSSpeedImpactTimingUi;
 
 UCLASS(Blueprintable)
 class ASSBattleAIController : public ASSAIController, public ISSBattleController {
@@ -31,6 +37,30 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDebugRequestCharacterChange;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSPowerGaugeSet* PowerGaugeSet;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSSpeedImpactRapidUi* SpeedImpactRapidUi;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSSpeedImpactRapidUi* SpeedImpactRapidUi1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSSpeedImpactRapidUi* SpeedImpactRapidUi2;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSSpeedImpactTimingUi* SpeedImpactTimingUi;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSCrashImpactSetUi* CrashImpactUi;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSCrashImpactBoostUi* CrashImpactBoostUi;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USSBlastImpactUi* BlastImpactUi;
     
 public:
     ASSBattleAIController(const FObjectInitializer& ObjectInitializer);

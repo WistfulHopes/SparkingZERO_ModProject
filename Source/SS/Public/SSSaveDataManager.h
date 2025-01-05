@@ -114,7 +114,7 @@ public:
     void ResetSaveDataFLag();
     
     UFUNCTION(BlueprintCallable)
-    void ResetSaveData(USSGameInstance* IngameInstance);
+    void ResetSaveData(USSGameInstance* InGameInstance);
     
     UFUNCTION(BlueprintCallable)
     bool ReLoadMainGameSaveData(EKoratMainGameSaveMode InMode);
@@ -141,7 +141,7 @@ public:
     bool IsError();
     
     UFUNCTION(BlueprintCallable)
-    void InitializeSaveData(USSGameInstance* IngameInstance);
+    void InitializeSaveData(USSGameInstance* InGameInstance);
     
     UFUNCTION(BlueprintCallable)
     USSSystemSaveData* GetSystemSavedata();

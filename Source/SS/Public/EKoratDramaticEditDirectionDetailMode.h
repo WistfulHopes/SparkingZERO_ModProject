@@ -12,5 +12,6 @@ enum class EKoratDramaticEditDirectionDetailMode : uint8 {
     DirectionScene,
     DirectionEmote,
     TotalDirectionMode,
+    DirectionConditionsWithoutExplanation,
 };
 

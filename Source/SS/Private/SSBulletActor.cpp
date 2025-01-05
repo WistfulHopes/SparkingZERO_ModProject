@@ -122,9 +122,11 @@ ASSBulletActor::ASSBulletActor(const FObjectInitializer& ObjectInitializer) : Su
     this->bEnableHitDirectionPitchLock = false;
     this->HitDirectionPitch = 0.00f;
     this->BottomHitDirectionPitch = 0.00f;
+    this->bEnableDestruction = false;
     this->bImpossibleReflect = false;
     this->bImpossibleAbsorption = false;
     this->SuperZCounterType = EKoratSuperZCounterType::None;
+    this->bExParamSuperZCounterRepel = -1;
     this->bImpossibleSuperZCounterAbsorption = false;
     this->AngleLimitAtReflect = 0.00f;
     this->bHomingAtReflect = false;

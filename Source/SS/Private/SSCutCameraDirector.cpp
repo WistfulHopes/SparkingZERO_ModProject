@@ -80,10 +80,21 @@ ASSCutCameraDirector::ASSCutCameraDirector(const FObjectInitializer& ObjectIniti
     this->bDebugPhysicalDisparity = false;
     this->DebugPhysicalDisparityAddCamLength = 0.00f;
     this->DebugPhysicalDisparityAddFocalLength = 0.00f;
+    this->PlayerController = NULL;
     this->SecondBlend = true;
     this->SecondMutiBlend = false;
     this->bEnableNewSubSlotArgorizm = true;
+    this->SpawnCutCameraActor = NULL;
+    this->SpawnDirectorMainCamera = NULL;
+    this->SpawnLookAtTargetActor = NULL;
+    this->SpawnFocusTargetActor = NULL;
+    this->SpawnBindingOriginActor = NULL;
+    this->SpawnCameraLocatorActor = NULL;
+    this->SpawnLookAtTargetLocatorActor = NULL;
+    this->SpawnCameraManager = NULL;
+    this->SpawnCameraRootActor = NULL;
     this->SlotParameterStatic.AddDefaulted(10);
+    this->ManualCamera = NULL;
 }
 
 void ASSCutCameraDirector::UpdateMainCamera(ECameraGlobalSlot InSlot, const FSSCutCameraBlendFactor& InBlendFactor, float InDeltaTime, double InWorldTime) {

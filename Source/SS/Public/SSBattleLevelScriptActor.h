@@ -23,6 +23,7 @@
 class AActor;
 class AKoratCharacterUIActionManager;
 class AKoratEffectHitAirWallManager;
+class ASSAiManager;
 class ASSBattleBenchCharacter;
 class ASSBattleDebugDrawActor;
 class ASSBattleDirectingActor;
@@ -89,6 +90,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASSCharacterToonPointLightCtrlNative* CharacterToonPointLightCtrl;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSAiManager* AiManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASSNavSystemManager* NavSystemManager;
@@ -266,6 +270,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SpawnBattleCharacter(TArray<ASSCharacter*>& OutCharacter);
+    
+    UFUNCTION(BlueprintCallable)
+    void SpawnAiManager();
     
     UFUNCTION(BlueprintCallable)
     void SetupPreloadBattledAssets();

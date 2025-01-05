@@ -11,7 +11,7 @@ USSAiCharacterStatusComponent::USSAiCharacterStatusComponent(const FObjectInitia
 void USSAiCharacterStatusComponent::SetDebugAiEnabledType(const EAiEnabledType InAiEnabledType) {
 }
 
-void USSAiCharacterStatusComponent::SetAiType(const FKoratAiTypeDataList& InTypeDataList) {
+void USSAiCharacterStatusComponent::SetAiType(const FKoratAiTypeDataList& InTypeDataList, const bool InResetThinking) {
 }
 
 void USSAiCharacterStatusComponent::SetAiPause(const bool bEnable) {

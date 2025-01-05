@@ -167,10 +167,6 @@ FSSLayeredBoxSafeArea ASSMapWarpDataAssetHolder::GetPlotterBoxSafeAreaById(int32
     return FSSLayeredBoxSafeArea{};
 }
 
-int32 ASSMapWarpDataAssetHolder::GetPlayerIndex(const ASSCharacter* InTargetCharacter) {
-    return 0;
-}
-
 bool ASSMapWarpDataAssetHolder::GetOtherSpacePositionDirect(const FTransform& InTransform, FTransform& OutResultTransform) {
     return false;
 }

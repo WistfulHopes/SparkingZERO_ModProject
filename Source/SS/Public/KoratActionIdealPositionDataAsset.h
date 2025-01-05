@@ -44,6 +44,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bTargetPreLastPosition;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDownTargetNull;
+    
     UKoratActionIdealPositionDataAsset();
 
 };

@@ -12,6 +12,7 @@
 class ASSCutCameraActor;
 class ASSLevelSequenceActor;
 class ASSOptionController;
+class ASSPresentBoxControllerActor;
 class ASSTraceLocator;
 class ASSUiFaderHUD;
 class ULevelStreamingDynamic;
@@ -130,6 +131,9 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSOptionController* OptionController;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ASSPresentBoxControllerActor* PresentBoxActor;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSDramaticBattleWLibHelpDialog* TipsDialog;

@@ -12,7 +12,7 @@ UCLASS(Blueprintable)
 class ASSEffectPedestalActorBase : public AActor {
     GENERATED_BODY()
 public:
-protected:
+private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsEnable;
     
@@ -58,5 +58,6 @@ protected:
 public:
     ASSEffectPedestalActorBase(const FObjectInitializer& ObjectInitializer);
 
+    USceneComponent* GetProductOffset() { return ProductOffset; }
 };
 

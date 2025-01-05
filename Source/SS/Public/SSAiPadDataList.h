@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ESSAiPathMoveTargetType.h"
+#include "ESSAiProgramAddEntryType.h"
 #include "ESSAiProgramMoveType.h"
 #include "ESSAiRangeType.h"
 #include "SSAiInputPad.h"
@@ -26,6 +27,9 @@ public:
     ESSAiProgramMoveType ProgramMoveType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESSAiProgramAddEntryType ProgramAddEntryType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSSAiInputSuccessJudgment> InputSuccessJudgmentArray;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -39,6 +43,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* InputTimeLevelCurve;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UCurveFloat* InputTimeImpactBoostCurve;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float InputTimeRandom;

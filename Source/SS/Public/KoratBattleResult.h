@@ -9,6 +9,7 @@
 #include "KoratBattleResultPlayerRecord.h"
 #include "KoratBattleReward.h"
 #include "KoratBattleTimeSliceData.h"
+#include "KoratBlastActionDataList.h"
 #include "KoratCharacterDataList.h"
 #include "KoratMapDataList.h"
 #include "KoratPlayerStartDataList.h"
@@ -80,6 +81,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bResultStart;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratCharacterDataList BattleFinishCharacterID;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratBlastActionDataList BattleFinishBlast;
     
     SS_API FKoratBattleResult();
 };

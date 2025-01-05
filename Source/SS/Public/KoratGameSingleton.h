@@ -175,6 +175,7 @@ class USSBattleTrainingSettingListDataAsset;
 class USSChangeCharacterActionDataAsset;
 class USSCharacterDataAsset;
 class USSCharacterRaderChart;
+class USSConditionalPlayVoiceDataAsset;
 class USSDownLoadContentsDataAsset;
 class USSDragonAdventureIFChartDataAsset;
 class USSDragonAdventureIFCommonDataAsset;
@@ -221,6 +222,7 @@ class USSPlayerCardBGListDataAsset;
 class USSPlayerCardDataAsset;
 class USSPlayerMatchNetworkManager;
 class USSPowerImpactNGCharaDataAsset;
+class USSPresentBoxDataAsset;
 class USSRankMatchRankDataAsset;
 class USSRankingResourceDataAsset;
 class USSReplayDataUIManager;
@@ -319,6 +321,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSPlayerCardDataAsset* PlayerCardData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USSPresentBoxDataAsset* PresentBoxData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSEndingDataAsset* EndingData;
@@ -723,6 +728,9 @@ public:
     UKoratPatternSubtitlesDataAsset* PatternSubtitlesData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USSConditionalPlayVoiceDataAsset* ConditionalPlayVoiceData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UKoratBGMDataAsset* BGMData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -943,6 +951,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USSReplayManager* ReplayUIManager;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bReplayAnimeSongFlag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bReplayModeFlag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UKoratButtonGuideDataAsset* ButtonGuideDataAsset;

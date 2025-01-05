@@ -100,5 +100,18 @@ enum class ESSMissionType : uint8 {
     TrophyAllUnlock,
     TournamentOnlineVictoryNum,
     TournamentOnlineCharaVictoryNum,
+    BtlMode010ScoreRankingPos,
+    BtlMode010ScoreRankingPosHigher,
+    BtlMode010ScoreRankingPosLower,
+    BtlMode010EventPointNum,
+    BtlMode010CharaDefeatNum,
+    BtlMode010DifficultyEasyPlayNum,
+    BtlMode010DifficultyNormalPlayNum,
+    BtlMode010DifficultyHardPlayNum,
+    BtlMode010DifficultyVeryHardPlayNum,
+    BtlMode010CharaOrganizeDefeatNum,
+    BtlMode010CharaBlastFinishNum,
+    BtlMode010AllySurvivalDefeatNum,
+    BtlMode010DifficultyVeryHardWinNum,
 };
 

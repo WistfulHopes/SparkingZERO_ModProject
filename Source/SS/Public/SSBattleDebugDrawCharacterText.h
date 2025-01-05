@@ -18,6 +18,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText CharacterNumericText;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText InputText;
+    
     SS_API FSSBattleDebugDrawCharacterText();
 };
 

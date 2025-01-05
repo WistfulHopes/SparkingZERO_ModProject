@@ -28,12 +28,15 @@
 #include "KoratShopSalesItemDataList.h"
 #include "KoratStockItemDataList.h"
 #include "KoratTextTitleDataList.h"
+#include "KoratTrainingSetting.h"
 #include "SSBGMSaveData.h"
 #include "SSBattleBGMSaveData.h"
 #include "SSBattleDirectionUserDataSaveData.h"
+#include "SSBattleMode010Data.h"
 #include "SSBattleSettingUserDataSaveData.h"
 #include "SSBattleSetupUserDataSaveData.h"
 #include "SSBattleTrainingData.h"
+#include "SSBtlMode010NotifySaveData.h"
 #include "SSCharacterItemSaveData.h"
 #include "SSCharacterSaveData.h"
 #include "SSDownLoadContentsSaveData.h"
@@ -51,6 +54,7 @@
 #include "SSPlayerCardBGSaveData.h"
 #include "SSPlayerStatusData.h"
 #include "SSPointBoostData.h"
+#include "SSPresentBoxSaveData.h"
 #include "SSShopItemSaveData.h"
 #include "SSStockItemSaveData.h"
 #include "SSTermsData.h"
@@ -153,6 +157,9 @@ public:
     FSSDragonAdventureIFSaveData AdventureIFData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSPresentBoxSaveData PresentBoxData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratDramaticEditWholeSaveData DramaticEditWholeData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -198,10 +205,22 @@ public:
     FSSNotificationSaveData NotificationData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSBtlMode010NotifySaveData BtlMode010NotifyData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSNetworkData NetworkData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSBattleMode010Data BattleMode010Data;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSTournamentData BattleMode011Data;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<uint8> CheckFrameSamples;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratTrainingSetting TrainingSetting;
     
     USSMainGameSaveData();
 

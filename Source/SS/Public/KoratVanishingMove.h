@@ -43,6 +43,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHorizontalWhenNearToGround;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDownTargetNull;
+    
     SS_API FKoratVanishingMove();
 };
 

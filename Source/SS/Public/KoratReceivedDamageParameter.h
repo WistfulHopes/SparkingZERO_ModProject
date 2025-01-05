@@ -10,6 +10,7 @@
 #include "KoratCharacterEffectColorSetData.h"
 #include "KoratCharacterPointLightData.h"
 #include "KoratDamageReactionDataList.h"
+#include "KoratDestructionAttackParameter.h"
 #include "KoratHitBackMovementData.h"
 #include "KoratHitStopData.h"
 #include "SSCharacterEnergyBulletExplosionEffect.h"
@@ -151,6 +152,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSCharacterBuff* Buff;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FKoratDestructionAttackParameter DestructionAttackParameter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratAdditionalDamageInfo AdditionalDamage;

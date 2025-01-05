@@ -5,6 +5,7 @@ ASSMenuCameraDirector::ASSMenuCameraDirector(const FObjectInitializer& ObjectIni
     this->PhysicalDisparityDecayHeightScales.AddDefaulted(12);
     this->PhysicalDisparityDecayWidthScales.AddDefaulted(12);
     this->SlotParameterStatic.AddDefaulted(10);
+    this->bDebugPhysicalDisparityComposeForBattleSetup = false;
     this->bDebugPhysicalDisparityEnable = false;
     this->bDebugRelativeMode = false;
     this->bSetLocationFpsCameraLatAndFocusTargetFrameOnce = false;

@@ -3,6 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "KoratParticleBranchComponent.generated.h"
 
+class AActor;
 class UKoratFreeTimelineParticleBranchAssetGetter;
 class UParticleSystem;
 
@@ -12,6 +13,10 @@ class UKoratParticleBranchComponent : public UActorComponent {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UParticleSystem> DefaultObject;
+    
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    AActor* OwnerActor;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

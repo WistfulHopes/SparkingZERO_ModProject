@@ -48,6 +48,9 @@ protected:
     FVector SaveAimLookatLocation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float SaveLastSectionRemainTimeInAction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDrawDebug;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -67,6 +70,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetSocketTransformSyncSafe(FTransform& OutTransform, const FName SocketName, const TEnumAsByte<ERelativeTransformSpace> TransformSpace) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetLastSectionRemainTimeInAction() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FName GetComponentTagName();

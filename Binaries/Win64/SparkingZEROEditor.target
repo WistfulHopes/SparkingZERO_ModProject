@@ -24404,19 +24404,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Mods/EmptyMap/EmptyMap.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(ProjectDir)/Mods/ExampleMod/ExampleMod.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Mods/GrandTour/GrandTour.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Mods/SZGohanBlack/SZGohanBlack.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -24428,11 +24416,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Mods/SZRandomizer/SZRandomizer.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Mods/UltraInstinctTech/UltraInstinctTech.uplugin",
+			"Path": "$(ProjectDir)/Mods/ZeroSpark/ZeroSpark.uplugin",
 			"Type": "UFS"
 		},
 		{

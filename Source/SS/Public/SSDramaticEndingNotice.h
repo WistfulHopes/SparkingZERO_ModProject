@@ -15,7 +15,7 @@ protected:
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
-    UTextLayoutWidget* TextBlock;
+    UTextLayoutWidget* TextBlock_;
     
 public:
     USSDramaticEndingNotice();

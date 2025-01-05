@@ -44,6 +44,12 @@ ASSCutCameraActor::ASSCutCameraActor(const FObjectInitializer& ObjectInitializer
     this->bDrawDebugLine = false;
     this->DrawDebugLifetime = 0.00f;
     this->DrawDebugThickness = 0.00f;
+    this->LookAtTarget = NULL;
+    this->LookAtComponent = NULL;
+    this->AdditiveRotateInputComponent = NULL;
+    this->FocusTarget = NULL;
+    this->BindingOrigin = NULL;
+    this->CameraManager = NULL;
 }
 
 

@@ -44,6 +44,9 @@ public:
     TArray<FKoratCharacterItemDataList> EquipItem;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratCharacterItemDataList> AdditionalFormChangeCharacterItems;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ConsumeBlastStock;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

@@ -6,6 +6,7 @@
 #include "KoratPlayerStartDataList.h"
 #include "MutualDataAsset.h"
 #include "SSDragonAdventureIFExhibitionSetting.h"
+#include "SSDragonAdventureIFUpdate1Setting.h"
 #include "SSDragonAdventureIFCharacterDataAsset.generated.h"
 
 class AActor;
@@ -70,6 +71,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<ULevelSequence> DirectingSequencer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSDragonAdventureIFUpdate1Setting Update1Setting;
     
     USSDragonAdventureIFCharacterDataAsset();
 

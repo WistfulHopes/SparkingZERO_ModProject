@@ -6,7 +6,7 @@ USSBattleSetupNewCharaIcon::USSBattleSetupNewCharaIcon() {
     this->QuestionTexture = NULL;
     this->FreeTexture = NULL;
     this->LvNumImageWidgetName = TEXT("Img_DPNum");
-    this->LvNumImageScalerValueName = TEXT("Current");
+    this->LvNumImageScalerValueName = TEXT("current");
     this->SwapMarkWidgetName = TEXT("WBP_OBJ_BS_ChIcon_chMark");
     this->SwapMarkCustomAnim_Normal = TEXT("OnCustom_Normal");
     this->SwapMarkCustomAnim_Active = TEXT("OnCustom_Active");

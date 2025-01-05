@@ -11,4 +11,6 @@ public:
     
     FKoratCharacterGroupDataList();
 };
+
+
 FORCEINLINE uint32 GetTypeHash(const FKoratCharacterGroupDataList) { return 0; }

@@ -177,6 +177,12 @@ public:
     int32 UpdateAdditiveRotateInputAvoidTerrainLockDirectionCount;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FRotator UpdateAdditiveRotateAndZoomRotateOffset;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FVector UpdateAdditiveRotateAndZoomZoomOffset;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RollScaleMax;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

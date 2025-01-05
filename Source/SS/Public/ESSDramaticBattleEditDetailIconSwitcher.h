@@ -15,6 +15,12 @@ enum class ESSDramaticBattleEditDetailIconSwitcher : uint8 {
     Emote,
     Scene,
     Time,
+    HP,
+    KI,
+    Action,
+    CpuLv,
+    Form,
+    Fusion,
     Blank,
 };
 

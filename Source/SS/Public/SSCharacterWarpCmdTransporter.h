@@ -8,6 +8,7 @@
 
 class AActor;
 class ASSCharacter;
+class ULevelSequencePlayer;
 
 USTRUCT(BlueprintType)
 struct FSSCharacterWarpCmdTransporter {
@@ -43,6 +44,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     FName SocketName;
     
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ULevelSequencePlayer* SpawnerSequencePlayer;
+    
+public:
     SS_API FSSCharacterWarpCmdTransporter();
 };
 

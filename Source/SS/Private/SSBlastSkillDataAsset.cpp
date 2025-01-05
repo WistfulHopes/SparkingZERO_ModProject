@@ -9,6 +9,8 @@ USSBlastSkillDataAsset::USSBlastSkillDataAsset() {
     this->StealHelth = 0;
     this->MaxChargeTime = 2.00f;
     this->MaxChargeDamageRate = 1.50f;
+    this->MaxChargeSpeedScale = 1.00f;
+    this->MaxChargeHomingScale = 1.00f;
     this->bCanBlastImpact = false;
     this->BlastImpactPower = 0;
     this->bCanSpeedImpact = false;

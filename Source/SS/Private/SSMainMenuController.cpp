@@ -23,6 +23,7 @@ ASSMainMenuController::ASSMainMenuController(const FObjectInitializer& ObjectIni
     this->NetworkManager = NULL;
     this->PLMNetManager = NULL;
     this->OptionController = NULL;
+    this->PresentBoxActor = NULL;
     this->TipsDialog = NULL;
 }
 

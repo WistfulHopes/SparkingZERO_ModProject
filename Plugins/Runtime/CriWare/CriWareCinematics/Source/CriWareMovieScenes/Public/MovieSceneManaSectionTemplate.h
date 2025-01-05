@@ -9,7 +9,7 @@ struct FMovieSceneManaSectionTemplate : public FMovieSceneEvalTemplate {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneManaSectionParams Params;
     
 public:

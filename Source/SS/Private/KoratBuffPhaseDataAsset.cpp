@@ -8,6 +8,7 @@ UKoratBuffPhaseDataAsset::UKoratBuffPhaseDataAsset() {
     this->EffectiveTermType = 2;
     this->EffectiveTime = 1.80f;
     this->EffectiveCount = 0;
+    this->bAscertainCountered = false;
     this->bDelayAction = false;
     this->bDirectBuff = false;
     this->SpecialType = EKoratBuffSpecialType::None;
@@ -19,6 +20,7 @@ UKoratBuffPhaseDataAsset::UKoratBuffPhaseDataAsset() {
     this->bSearchOff = false;
     this->bHideInDemo = false;
     this->bFinishToParticularAction = false;
+    this->bIsDisplayBuffDirectionList = false;
 }
 
 

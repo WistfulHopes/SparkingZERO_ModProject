@@ -8,7 +8,6 @@ UKoratCharacterUIActionComponent::UKoratCharacterUIActionComponent(const FObject
     this->UIActionStartFrameSecond = -1.00f;
     this->UIActionEndFrame = -1;
     this->UIActionEndFrameSecond = -1.00f;
-    this->bUIActionEnableUnregisteredMLS = false;
     this->UIActionMLSRequest = NULL;
     this->bUIActionStopRequest = false;
     this->UIActionStopBlendOutTime = 0.00f;
@@ -43,9 +42,6 @@ void UKoratCharacterUIActionComponent::SetUIActionFootIKMode(EKoratCharacterUIAc
 }
 
 void UKoratCharacterUIActionComponent::SetUIActionEndFrame(int32 InEndFrame) {
-}
-
-void UKoratCharacterUIActionComponent::SetUIActionEnableUnregisteredMLS(bool bInEnable) {
 }
 
 void UKoratCharacterUIActionComponent::SetUIActionBlendOption(const FKoratUIActionBlendOption& InUIActionBlendOption) {

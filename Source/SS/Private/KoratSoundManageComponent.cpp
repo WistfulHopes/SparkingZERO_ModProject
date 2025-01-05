@@ -1,6 +1,8 @@
 #include "KoratSoundManageComponent.h"
 
 UKoratSoundManageComponent::UKoratSoundManageComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->VoiceCueSheetLoader = NULL;
+    this->SECueSheetLoader = NULL;
 }
 
 FKoratSoundHandle UKoratSoundManageComponent::PlayOnAisac(int32 InSoundId, const FString& InSoundName, ESSSoundGroupType InSoundType, bool bInUseGeneralSheet, float InVolume, const FName& InAttachLocationName, const FVector& InAttachLocation, bool IsVibration, const FString& InSelectorName, const FString& InLabelName, const bool IsEnableSlowPlaySpeed, const TMap<FString, float>& InAisacInfomation, const EKoratVibrationControllerType InControllerVibrationType) {

@@ -6,6 +6,7 @@
 #include "KoratAiBlastTypeDataList.h"
 #include "SSAiUtilityComponent.generated.h"
 
+class ASSAiManager;
 class ASSNavSystemManager;
 class UBehaviorTree;
 class USSAiTypeDataAsset;
@@ -66,6 +67,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     UBehaviorTree* GetAiSpecificBehaviorTree(const FName InKeyName);
+    
+    UFUNCTION(BlueprintCallable)
+    ASSAiManager* GetAiManager();
     
 };
 

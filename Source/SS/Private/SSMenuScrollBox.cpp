@@ -5,6 +5,7 @@ USSMenuScrollBox::USSMenuScrollBox() {
     this->RightDragMoveScale = 1.80f;
     this->ThumbMinSize = 100.00f;
     this->ScrollAreaWidget = NULL;
+    this->ScrollSizeWidget = NULL;
     this->SliderBarWidget = NULL;
     this->ViewScrollWidget = NULL;
 }

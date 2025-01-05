@@ -5,6 +5,7 @@ USSCharacterSocketComponent::USSCharacterSocketComponent(const FObjectInitialize
     this->bAimLookatLocationSyncUnSafeEnable = false;
     this->bSaveAimLocationEnable = false;
     this->bSaveAimLookatLocationEnable = false;
+    this->SaveLastSectionRemainTimeInAction = 0.00f;
     this->bDrawDebug = false;
     this->DrawDebugLifetime = 0.00f;
     this->DrawDebugThickness = 5.00f;
@@ -20,6 +21,10 @@ bool USSCharacterSocketComponent::IsEnableAimLocation() {
 
 bool USSCharacterSocketComponent::GetSocketTransformSyncSafe(FTransform& OutTransform, const FName SocketName, const TEnumAsByte<ERelativeTransformSpace> TransformSpace) const {
     return false;
+}
+
+float USSCharacterSocketComponent::GetLastSectionRemainTimeInAction() const {
+    return 0.0f;
 }
 
 FName USSCharacterSocketComponent::GetComponentTagName() {

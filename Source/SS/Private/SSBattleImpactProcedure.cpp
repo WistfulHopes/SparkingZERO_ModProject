@@ -14,6 +14,9 @@ ASSBattleImpactProcedure::ASSBattleImpactProcedure(const FObjectInitializer& Obj
     this->bBattleImpactBreak = false;
 }
 
+void ASSBattleImpactProcedure::WaitLastSectionFinished(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, const int32 InOffsetFrame, const USSBattleImpactCharacterProxy* InCharacterProxy) {
+}
+
 void ASSBattleImpactProcedure::UpdateMatchTransform_Implementation(float Alpha) {
 }
 

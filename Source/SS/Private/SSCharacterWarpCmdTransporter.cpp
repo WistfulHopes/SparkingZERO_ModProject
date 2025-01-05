@@ -7,5 +7,6 @@ FSSCharacterWarpCmdTransporter::FSSCharacterWarpCmdTransporter() {
     this->OwnerActor = NULL;
     this->TargetCharacter = NULL;
     this->OtherActor = NULL;
+    this->SpawnerSequencePlayer = NULL;
 }
 

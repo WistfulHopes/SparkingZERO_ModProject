@@ -9,5 +9,6 @@ FSSCharacterCostumeDamageReactionParam::FSSCharacterCostumeDamageReactionParam()
     this->ReactionDirection = EKoratReactionDirection::Default;
     this->RequestReactionDirection = EKoratReactionDirection::Default;
     this->bLastDamageReactionBySameRushDerived = false;
+    this->bInvincibleActSCR = false;
 }
 

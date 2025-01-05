@@ -49,6 +49,7 @@
 #include "KoratCharacterCostumeDataList.h"
 #include "KoratCharacterDataList.h"
 #include "KoratCharacterFilterDataList.h"
+#include "KoratConditionPlayVoiceDataList.h"
 #include "KoratFormChangeCharacterItemEquipment.h"
 #include "KoratMapDataList.h"
 #include "KoratPlayerStartDataList.h"
@@ -448,6 +449,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bBneSubmissionVer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bOnlineTeamPrivate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKey> BattlePauseKeys;
@@ -927,6 +931,12 @@ public:
     void UpdateBattlePlayerTeamState();
     
     UFUNCTION(BlueprintCallable)
+    void UpdateBattleMode011Param();
+    
+    UFUNCTION(BlueprintCallable)
+    void UpdateBattleMode010SaveData();
+    
+    UFUNCTION(BlueprintCallable)
     void UpdateBattleMode010Param();
     
     UFUNCTION(BlueprintCallable)
@@ -954,6 +964,9 @@ public:
     void SetupCharacterRandom();
     
     UFUNCTION(BlueprintCallable)
+    void SetUpAutoBattleLoopRandomExtraBattle();
+    
+    UFUNCTION(BlueprintCallable)
     void SetTutorialData();
     
     UFUNCTION(BlueprintCallable)
@@ -961,6 +974,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetTournamentCpuLevel(EKoratBattleCpuLevel InCpuLevel);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetTeamCharacterConditionalPlayedVoiceList(int32 InPlayerNo, int32 InMemberNo, const TMap<FName, FKoratConditionPlayVoiceDataList>& InConditionPlayVoiceDataList);
     
     UFUNCTION(BlueprintCallable)
     void SetTeamCameraSpeed(int32 InPlayerNo, int32 InLR, int32 InUD);
@@ -993,6 +1009,9 @@ public:
     void SetSetupBGMList(const TArray<FKoratBGMDataList>& InSetupBGMList);
     
     UFUNCTION(BlueprintCallable)
+    void SetSelectBattleMode010ListDataKey(const FName& InKey);
+    
+    UFUNCTION(BlueprintCallable)
     void SetRetryPlayLevel(int32 InRetryPlayLevel);
     
     UFUNCTION(BlueprintCallable)
@@ -1006,6 +1025,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetRankingType(int32 InType);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetPleyerLevelSet(int32 InPlayLevel);
     
     UFUNCTION(BlueprintCallable)
     void SetPaperTheaterData(USSPaperTheaterDataAsset* InPaperTheaterData);
@@ -1030,6 +1052,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetNoMartialArts(const bool InNoMartialArts);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetNoFormChangeAll(const bool InNoFormChange);
     
     UFUNCTION(BlueprintCallable)
     void SetNoChangeAll(const bool InNoChange);
@@ -1167,6 +1192,12 @@ public:
     void SetBattleMode010UseEventPointBoost(bool bInIsUse);
     
     UFUNCTION(BlueprintCallable)
+    void SetBattleMode010TimePoint(int32 InTimePoint);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetBattleMode010NewRecord(bool InNewRecord);
+    
+    UFUNCTION(BlueprintCallable)
     void SetBattleMode010BattleTime(FTimespan InBattleTime);
     
     UFUNCTION(BlueprintCallable)
@@ -1272,6 +1303,9 @@ public:
     bool IsDrawMontageStateEnable() const;
     
     UFUNCTION(BlueprintCallable)
+    bool IsDownloadBattleMode011Param();
+    
+    UFUNCTION(BlueprintCallable)
     bool IsDownloadBattleMode010Param();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -1356,6 +1390,9 @@ public:
     FString GetTitleGameVersion() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    TMap<FName, FKoratConditionPlayVoiceDataList> GetTeamCharacterConditionalPlayedVoiceList(int32 InPlayerNo, int32 InMemberNo) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FKoratUILevelDataList GetStartupUILevelByDebugMenu() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -1378,6 +1415,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetServerVersion() const;
+    
+    UFUNCTION(BlueprintCallable)
+    FName GetSelectBattleMode010ListDataKey();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetSaveDataVersion() const;
@@ -1494,6 +1534,9 @@ public:
     FText GetConversionDateTimePeriod(FText InText, TArray<int32> InDateTimePeriod);
     
     UFUNCTION(BlueprintCallable)
+    FText GetConversionDateTimeFromText(FText InText, TArray<FText> InDateTime);
+    
+    UFUNCTION(BlueprintCallable)
     FText GetConversionDateTime(FText InText, TArray<int32> InDateTime);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -1603,6 +1646,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void EndActivityFromDragonAdventureIF();
+    
+    UFUNCTION(BlueprintCallable)
+    void DownloadBattleMode011Param();
     
     UFUNCTION(BlueprintCallable)
     void DownloadBattleMode010Param();

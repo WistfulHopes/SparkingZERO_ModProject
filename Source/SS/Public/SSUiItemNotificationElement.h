@@ -1,11 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "SSItemNotificationData.h"
 #include "SSMenuWidget.h"
 #include "SSUiItemNotificationElement.generated.h"
 
 class UImage;
 class UOverlay;
 class UTextBlock;
+class UTexture2D;
 class UWidgetSwitcher;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -33,6 +35,14 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UOverlay* ItemNumOverlay;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UTexture2D> Texture;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSItemNotificationData NotificationData;
+    
+public:
     USSUiItemNotificationElement();
 
 protected:

@@ -8,8 +8,11 @@ USSAiDataAsset::USSAiDataAsset() {
     this->AiLevelTypeEnum = NULL;
     this->DefaultAiLevel = 1;
     this->DefaultRepeatedInterval = 12;
+    this->SpeedImpactTargetMinCurve = NULL;
+    this->SpeedImpactTargetMaxCurve = NULL;
     this->PowerImpactTargetMinCurve = NULL;
     this->PowerImpactTargetMaxCurve = NULL;
+    this->PowerImpactImpactBoostCurve = NULL;
     this->BlastImpactMinRate = 0.50f;
     this->BlastImpactMaxRate = 0.90f;
     this->ShortRangeOfDefaultBodySize = 900.00f;

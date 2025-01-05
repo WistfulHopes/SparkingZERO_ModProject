@@ -3,6 +3,10 @@
 USSBattleMode010DataAsset::USSBattleMode010DataAsset() {
 }
 
+FName USSBattleMode010DataAsset::GetReleaseCondition() {
+    return NAME_None;
+}
+
 FName USSBattleMode010DataAsset::GetBattlePlayMapName() {
     return NAME_None;
 }

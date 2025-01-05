@@ -4,6 +4,7 @@
 #include "FakePersSettings.h"
 #include "SSAnimePersComponent.generated.h"
 
+class ASSCutCameraActor;
 class UMaterialParameterCollection;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -18,6 +19,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialParameterCollection* MaterialParameterCollection;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSCutCameraActor* CameraInstance;
     
     USSAnimePersComponent(const FObjectInitializer& ObjectInitializer);
 

@@ -5,6 +5,9 @@ ASSBlastImpactProcedure::ASSBlastImpactProcedure(const FObjectInitializer& Objec
     this->BlastEffector = TEXT("SPINE3_EFFECTOR_00");
     this->OpenWidthScale = 0.90f;
     this->BlastImpactDataAsset = NULL;
+    this->bWinnerBlastDamageOnly = true;
+    this->DamageScale = 1.20f;
+    this->bForceSkipUpdateBlastImpactProcedureActor = false;
     this->bDrawDebug = false;
     this->DrawDebugLifetime = 0.10f;
     this->DrawDebugThickness = 5.00f;
@@ -44,6 +47,10 @@ bool ASSBlastImpactProcedure::IsPlayEndDemo() const {
     return false;
 }
 
+bool ASSBlastImpactProcedure::IsForceSkipUpdateBlastImpactProcedureActor() {
+    return false;
+}
+
 
 bool ASSBlastImpactProcedure::IsBlastReset() const {
     return false;
@@ -70,6 +77,9 @@ FKoratActionDataList ASSBlastImpactProcedure::GetActionDataFromBlastDataWithPlay
 
 FKoratActionDataList ASSBlastImpactProcedure::GetActionDataFromBlastData(const ESSBlastImpactActionDataType InType, USSBattleImpactCharacterProxy* InCharacterProxy) {
     return FKoratActionDataList{};
+}
+
+void ASSBlastImpactProcedure::ForceSkipUpdateBlastImpactProcedureActor(bool InSkip) {
 }
 
 void ASSBlastImpactProcedure::EndWinnerBlast() {

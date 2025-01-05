@@ -18,6 +18,9 @@ void ASSBattleDirectingActor::OnCreateController(AController* InCreateController
 void ASSBattleDirectingActor::OnCharacterChange(const int32 InPlaySide) {
 }
 
+void ASSBattleDirectingActor::OnBattleSetup() {
+}
+
 void ASSBattleDirectingActor::OnBattleSettle() {
 }
 

@@ -138,6 +138,9 @@ public:
     FKoratCharacterEnergyBulletParameter Parameter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratHitBackMovementData Movement0;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratHitBackMovementData DamageMovement1;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

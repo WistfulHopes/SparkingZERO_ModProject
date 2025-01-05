@@ -1,9 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "KoratCharacterDataList.h"
+#include "SSBattleSetupUserDataCharacterSortFilter.h"
 #include "SSBattleSetupUserDataCustomizeBuildupItemMySets.h"
 #include "SSBattleSetupUserDataSaveDataCharacterTargetEquip.h"
 #include "SSBattleSetupUserDataSaveDataTargetTeaming.h"
+#include "SSBattleSetupUserDataTeamingMySets.h"
 #include "SSBattleSetupUserDataSaveData.generated.h"
 
 USTRUCT(BlueprintType)
@@ -24,6 +26,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSBattleSetupUserDataCustomizeBuildupItemMySets BuildupMySet;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSBattleSetupUserDataTeamingMySets TeamingMySet;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSBattleSetupUserDataCharacterSortFilter CharacterSortFilter;
     
     SS_API FSSBattleSetupUserDataSaveData();
 };

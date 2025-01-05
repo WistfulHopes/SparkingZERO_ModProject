@@ -5,14 +5,14 @@
 #include "SSMenuSceneController.h"
 #include "SSTitleBaseController.generated.h"
 
-class AActor;
 class ASSBnidController;
 class ASSCutCameraActor;
 class ASSLevelSequenceActor;
 class ASSOptionController;
 class ASSTitleTermsController;
 class ASSUiFaderHUD;
-class UBillboardComponent;
+class ULevelStreaming;
+class ULevelStreamingDynamic;
 class USSDownLoadContentsCheckProcess;
 class USSMenuGeneralDialog;
 class USSMenuManager;
@@ -93,17 +93,20 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USSOptionTipsManager* OptionTipsManager;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    AActor* OptionHUDBG;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UBillboardComponent* Billboard;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USSDownLoadContentsCheckProcess* DownLoadContentsCheckProcess;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<EMainMenuSceneArea, FSSMainMenuTransitionCharacterArray> MainMenuAreaCharacters;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSLevelSequenceActor* HDRSequenceActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ULevelStreamingDynamic*> HDROptionSubLevels;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ULevelStreaming* CacheLightingScenarioSubLevel;
     
 public:
     ASSTitleBaseController(const FObjectInitializer& ObjectInitializer);

@@ -19,8 +19,14 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratBattleDirectingData BattleDirecting;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName ReleaseCondition;
+    
     USSBattleMode010DataAsset();
 
+    UFUNCTION(BlueprintCallable)
+    FName GetReleaseCondition();
+    
     UFUNCTION(BlueprintCallable)
     FName GetBattlePlayMapName();
     

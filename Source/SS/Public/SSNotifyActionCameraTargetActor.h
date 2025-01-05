@@ -47,7 +47,7 @@ public:
     void SetDeterminedTargetPosition(const bool bInDetermined);
     
     UFUNCTION(BlueprintCallable)
-    void SetBattleCameraType(const ENewBattleCameraType InBattleCameraType, const ETypeOfTeleportToPassToBattleCamera InTeleportType);
+    void SetBattleCameraType(const ENewBattleCameraType InBattleCameraType, const ETypeOfTeleportToPassToBattleCamera InTeleportType, int32 InPlaySide);
     
     UFUNCTION(BlueprintCallable)
     void KillMySelf();

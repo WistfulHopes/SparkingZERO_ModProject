@@ -14,7 +14,7 @@ private:
     FMovieSceneBoolChannel BoolCurve;
     
 public:
-    SS_API FKoratMovieSceneVisibilitySectionTemplate();
-	SS_API FKoratMovieSceneVisibilitySectionTemplate(const UMovieSceneBoolSection& Section, const UMovieScenePropertyTrack& Track);
+    FKoratMovieSceneVisibilitySectionTemplate() {}
+    SS_API FKoratMovieSceneVisibilitySectionTemplate(const UMovieSceneBoolSection& Section, const UMovieScenePropertyTrack& Track);
 };
 

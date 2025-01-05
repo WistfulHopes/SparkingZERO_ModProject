@@ -15,13 +15,21 @@
 #include "KoratRebindDescriptionByTag.h"
 #include "KoratSequencePlayDescription.h"
 #include "KoratSequencePlayInfo.h"
+#include "KoratSequenceResource.h"
 #include "KoratSequencerRebindInfo.h"
 #include "SSLevelSequenceActor.generated.h"
 
 class AActor;
 class AKoratOverrideTransformActor;
+class ASSBindingOriginActor;
+class ASSCameraManager;
 class ASSCharacter;
+class ASSCutCameraActor;
 class ASSCutCameraDirector;
+class ASSCutCameraLocator;
+class ASSFocusTargetActor;
+class ASSLookAtTargetActor;
+class ASSLookAtTargetLocator;
 class ULevelSequence;
 class UMovieSceneSequence;
 class USSLevelSequencePlayer;
@@ -68,10 +76,37 @@ protected:
     FKoratActionDataList WarpCtrlSequenceAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FKoratActionDataList SaveSpawnAction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bIsDemonstrationFromSaveAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASSCutCameraDirector> RebindedCutCameraDirector;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCutCameraActor*> RebindedCameras;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCutCameraActor*> RebindedReverseCameras;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSLookAtTargetActor*> RebindedLookAtTargets;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSFocusTargetActor*> RebindedFocusTargets;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSBindingOriginActor*> RebindedBindingOrigins;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCutCameraLocator*> RebindedCameraLocators;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSLookAtTargetLocator*> RebindedLookAtTargetLocators;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCameraManager*> RebindedCameraManagers;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<AActor*> RebindedTargetActors;
@@ -107,6 +142,12 @@ protected:
     TWeakObjectPtr<ASSCharacter> RegistedCustomTimeDilationActor;
     
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FKoratSequenceResource SequenceResource;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FKoratEtcResources EtcResource;
+    
     ASSLevelSequenceActor(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)

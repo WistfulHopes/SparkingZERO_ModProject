@@ -7,6 +7,7 @@ enum class ECameraAdditiveRotateInputMode : uint8 {
     Normal,
     StaticWorld,
     AvoidTerrain,
+    TurnAndZoom,
     MAX,
 };
 

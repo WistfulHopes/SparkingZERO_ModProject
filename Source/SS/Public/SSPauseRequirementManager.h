@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "KoratBattleOperationGuideData.h"
 #include "SSMenuManager.h"
 #include "SSPauseRequirementManager.generated.h"
 
@@ -7,6 +8,9 @@ UCLASS(Blueprintable, EditInlineNew)
 class USSPauseRequirementManager : public USSMenuManager {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FKoratBattleOperationGuideData> OperationGuideDataSet;
+    
     USSPauseRequirementManager();
 
     UFUNCTION(BlueprintCallable)

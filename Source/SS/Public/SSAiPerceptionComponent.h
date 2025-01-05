@@ -62,6 +62,9 @@ private:
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsZCounter2() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsZCounter() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -224,6 +227,9 @@ public:
     bool IsBlastForte1RangeIsOutOfRange() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsBlastBoost() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBehindTheEnemy() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -237,6 +243,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ClearSuperAscertain();
+    
+    UFUNCTION(BlueprintCallable)
+    void ClearCharacterTransform();
     
 };
 

@@ -101,6 +101,9 @@ protected:
     FVector MovementActLastReferenceLocationDistance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bMovementActReferenceDownTargetNull;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FFindFloorResult MovementFloorResult;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -135,6 +138,21 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FTransform> SavedLocalSockets;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bUpdatePushingCollision;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FVector PreCapsuleCollisionLocation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FVector PreCapsulePushingCollisionLocation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FVector NewCapsuleCollisionLocation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FVector NewCapsulePushingCollisionLocation;
     
 public:
     UKoratCharacterMovementComponent(const FObjectInitializer& ObjectInitializer);
@@ -180,6 +198,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTurning() const;
+    
+    UFUNCTION(BlueprintCallable)
+    bool IsHomingMovementActReference(float& OutYawAngle, float& OutYawAngularVelocity);
     
     UFUNCTION(BlueprintCallable)
     bool IsFlyingWithFluffy();

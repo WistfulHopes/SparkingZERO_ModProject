@@ -67,4 +67,8 @@ UBehaviorTree* USSAiUtilityComponent::GetAiSpecificBehaviorTree(const FName InKe
     return NULL;
 }
 
+ASSAiManager* USSAiUtilityComponent::GetAiManager() {
+    return NULL;
+}
+
 

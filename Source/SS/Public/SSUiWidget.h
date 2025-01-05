@@ -3,6 +3,7 @@
 #include "SSUserWidget.h"
 #include "SSUiWidget.generated.h"
 
+class UTextLayoutWidget;
 class UUMGSequencePlayer;
 class UWidgetAnimation;
 
@@ -25,6 +26,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UUMGSequencePlayer*> SoundSequencePlayer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    TArray<UTextLayoutWidget*> TextBlock;
     
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

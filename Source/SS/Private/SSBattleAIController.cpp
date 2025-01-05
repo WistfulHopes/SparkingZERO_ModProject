@@ -5,6 +5,14 @@ ASSBattleAIController::ASSBattleAIController(const FObjectInitializer& ObjectIni
     this->bWantsPlayerState = true;
     this->Random = CreateDefaultSubobject<USSRandom>(TEXT("AiRandom"));
     this->bDebugRequestCharacterChange = false;
+    this->PowerGaugeSet = NULL;
+    this->SpeedImpactRapidUi = NULL;
+    this->SpeedImpactRapidUi1 = NULL;
+    this->SpeedImpactRapidUi2 = NULL;
+    this->SpeedImpactTimingUi = NULL;
+    this->CrashImpactUi = NULL;
+    this->CrashImpactBoostUi = NULL;
+    this->BlastImpactUi = NULL;
 }
 
 void ASSBattleAIController::SetBrainComponentDependency() {

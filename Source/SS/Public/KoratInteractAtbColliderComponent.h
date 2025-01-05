@@ -45,9 +45,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<int32, FKoratFreeTimelineHitInformation> OverlapMapList;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    TArray<FHitResult> DebugSweepObject;
-    
     UKoratInteractAtbColliderComponent(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)

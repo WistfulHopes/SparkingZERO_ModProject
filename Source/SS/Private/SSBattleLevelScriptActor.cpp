@@ -4,6 +4,7 @@ ASSBattleLevelScriptActor::ASSBattleLevelScriptActor(const FObjectInitializer& O
     this->BattleTimeLimit = -1.00f;
     this->BattleTimeoverRule = EKoratBattleTimeoverRule::None;
     this->CharacterToonPointLightCtrl = NULL;
+    this->AiManager = NULL;
     this->NavSystemManager = NULL;
     this->PracticeManager = NULL;
     this->BattleTrainingBattleUiController = NULL;
@@ -61,6 +62,9 @@ void ASSBattleLevelScriptActor::SpawnBattleImpactProcedure(const FName Name) {
 }
 
 void ASSBattleLevelScriptActor::SpawnBattleCharacter(TArray<ASSCharacter*>& OutCharacter) {
+}
+
+void ASSBattleLevelScriptActor::SpawnAiManager() {
 }
 
 void ASSBattleLevelScriptActor::SetupPreloadBattledAssets() {

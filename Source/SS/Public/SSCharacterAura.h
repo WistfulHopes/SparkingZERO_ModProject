@@ -1,7 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
+#include "KoratActionDataList.h"
+#include "KoratAuraAssignDataList.h"
 #include "KoratAuraLevelDataList.h"
+#include "SSCharacterAuraAssignRecord.h"
 #include "SSCharacterAuraRecord.h"
 #include "SSCharacterAura.generated.h"
 
@@ -33,6 +36,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FKoratAuraLevelDataList, FSSCharacterAuraRecord> AuraTable;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TMap<FKoratActionDataList, FSSCharacterAuraAssignRecord> AuraAssignFromActionTable;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TMap<FKoratAuraAssignDataList, FSSCharacterAuraAssignRecord> AuraAssignFromAssignTable;
     
 public:
     USSCharacterAura();

@@ -24,6 +24,7 @@
 #include "Templates/SubclassOf.h"
 #include "SSCutCameraDirector.generated.h"
 
+class APlayerController;
 class ASSBindingOriginActor;
 class ASSCameraManager;
 class ASSCutCameraActor;
@@ -295,6 +296,12 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DebugPhysicalDisparityAddFocalLength;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    APlayerController* PlayerController;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FSSCameraConnected> MainCameras;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSSCutCameraInertiaFactor> PreMainCameraInertias;
     
@@ -313,6 +320,60 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSSCameraConnectedQueue> CameraSlot;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCameraManager*> ConnectedCameraManagers;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSubclassOf<ASSCutCameraActor> SpawnCutCameraActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSubclassOf<ASSCutCameraActor> SpawnDirectorMainCamera;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSubclassOf<ASSLookAtTargetActor> SpawnLookAtTargetActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSubclassOf<ASSFocusTargetActor> SpawnFocusTargetActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSubclassOf<ASSBindingOriginActor> SpawnBindingOriginActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSubclassOf<ASSCutCameraLocator> SpawnCameraLocatorActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSubclassOf<ASSLookAtTargetLocator> SpawnLookAtTargetLocatorActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSubclassOf<ASSCameraManager> SpawnCameraManager;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSubclassOf<AActor> SpawnCameraRootActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCutCameraActor*> DirectorMainCamera;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCutCameraActor*> CutCameras;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSLookAtTargetActor*> LookAtTarget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSFocusTargetActor*> FocusTarget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSBindingOriginActor*> BindingOrigin;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCutCameraLocator*> CameraLocator;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSLookAtTargetLocator*> LookAtTargetLocator;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCameraManager*> CameraManagers;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<USplineComponent*> SplineComponentCams;
     
@@ -324,6 +385,10 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSSSlotParameter> SlotParameter;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSCutCameraActor* ManualCamera;
     
 public:
     ASSCutCameraDirector(const FObjectInitializer& ObjectInitializer);

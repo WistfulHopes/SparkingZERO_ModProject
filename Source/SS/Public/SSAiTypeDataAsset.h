@@ -1,11 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ESSAiDefenseType.h"
+#include "ESSAiImpactBoostType.h"
 #include "ESSAiReactionSpeedType.h"
 #include "KoratAiProbabilityTypeDataList.h"
 #include "MutualDataAsset.h"
 #include "SSAiDefenseProbability.h"
 #include "SSAiLevelProbability.h"
+#include "SSAiLevelProbabilityCore.h"
 #include "SSAiLevelReactionSpeed.h"
 #include "SSAiTypeDataAsset.generated.h"
 
@@ -44,6 +46,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIgnoreEmotionalParameter;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, EditFixedSize, meta=(AllowPrivateAccess=true))
+    TMap<ESSAiImpactBoostType, FSSAiLevelProbabilityCore> ImpactBoostMap;
     
     USSAiTypeDataAsset();
 

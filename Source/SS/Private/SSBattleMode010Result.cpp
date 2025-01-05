@@ -3,6 +3,8 @@
 FSSBattleMode010Result::FSSBattleMode010Result() {
     this->bIsNewRecord = false;
     this->bIsUseEventPointBoost = false;
+    this->UseEventPointBoost = 0;
+    this->CharaEventPointBoost = 0;
     this->bIsIllegalAlert = false;
     this->EventPoint = 0;
     this->AddEventPoint = 0;

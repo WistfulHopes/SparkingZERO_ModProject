@@ -35,6 +35,7 @@ enum class EKoratActionSubCategoryType : uint8 {
     ActSPM,
     ActULT,
     ActTRW,
+    ActLTA,
     ActEMO,
     ActHSE,
     ActRSB,

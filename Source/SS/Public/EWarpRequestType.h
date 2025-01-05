@@ -19,6 +19,8 @@ enum class EWarpRequestType : uint8 {
     ForceSmall,
     ForceDisable,
     DelegeteImpactProcedure,
+    ForceForwardSafeLandscapeForSD,
+    DeadlyChangeEntranceLocation,
     MAX,
 };
 

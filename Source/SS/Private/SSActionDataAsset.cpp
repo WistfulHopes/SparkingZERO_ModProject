@@ -9,6 +9,7 @@ USSActionDataAsset::USSActionDataAsset() {
     this->bUsableRushHighSpeedMoveRevenge = true;
     this->bInterruptibleExplosionSkill = false;
     this->bInterruptibleBarrierSkill = false;
+    this->bInterruptibleFrontBarrierSkill = false;
     this->HitCheckType = EKoratActionHitCheckType::HitAndMiss;
     this->ActionIdleType = EKoratActionIdleType::Normal;
     this->ActionCategoryType = EKoratActionCategoryType::WaitOrMove;
@@ -99,11 +100,13 @@ USSActionDataAsset::USSActionDataAsset() {
     this->bDisablePushingCollisionWallSlide = false;
     this->bAttackCollisionNeverMiss = false;
     this->AddDownValue = 0;
+    this->SubtractActionComboDamageScaling = 0.00f;
     this->bNoActionPitch = false;
     this->bFinishParticularBuff = false;
     this->AttackCollisionScale = 1.00f;
     this->bResetHitStop = false;
     this->bForceFinishVanishing = false;
+    this->bNoAutoGuard = false;
 }
 
 void USSActionDataAsset::SetContinueDamageFlag() {

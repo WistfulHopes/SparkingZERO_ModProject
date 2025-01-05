@@ -11,6 +11,7 @@
 #include "KoratBuffPhaseDataAsset.generated.h"
 
 class ULevelSequence;
+class UTexture2D;
 
 UCLASS(Blueprintable)
 class UKoratBuffPhaseDataAsset : public UMutualDataAsset {
@@ -48,6 +49,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 EffectiveCount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bAscertainCountered;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDelayAction;
@@ -102,6 +106,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bFinishToParticularAction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsDisplayBuffDirectionList;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftObjectPtr<UTexture2D>> DirectionListDisplayIcons;
     
     UKoratBuffPhaseDataAsset();
 

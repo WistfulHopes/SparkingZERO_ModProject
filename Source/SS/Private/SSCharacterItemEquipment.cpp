@@ -1,6 +1,7 @@
 #include "SSCharacterItemEquipment.h"
 
 USSCharacterItemEquipment::USSCharacterItemEquipment() {
+    this->GameInstance = NULL;
     this->EnemyItemEquipment = NULL;
     this->CharacterRaderChart = NULL;
 }
@@ -23,7 +24,7 @@ void USSCharacterItemEquipment::UnequipAllItem() {
 void USSCharacterItemEquipment::SetUpWithSetting(const FSSCharacterItemEquipmentSetting& InSetting, const TArray<FKoratCharacterItemDataList>& InEquipItems) {
 }
 
-void USSCharacterItemEquipment::Setup(FKoratCharacterDataList InCharacter, const TArray<FKoratCharacterItemDataList>& InEquipItems, bool bInEnableEffectList) {
+void USSCharacterItemEquipment::Setup(FKoratCharacterDataList InCharacter, const TArray<FKoratCharacterItemDataList>& InEquipItems, const USSGameInstance* InGameInstance, bool bInEnableEffectList) {
 }
 
 void USSCharacterItemEquipment::SetItemEquipmentOutIndexes(const TArray<FKoratCharacterItemDataList>& InEquipItems, TArray<int32>& OutIndexes) {

@@ -5,6 +5,7 @@
 
 class USSBuiltInMenu;
 class USSMenuButton;
+class USSMenuButtonHold;
 
 UCLASS(Blueprintable, EditInlineNew)
 class USSBattleTrainingTopManager : public USSMenuManager {
@@ -13,6 +14,12 @@ public:
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSBuiltInMenu* BuiltInMenu;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSMenuButtonHold* DecideHoldButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSMenuButtonHold* CancelHoldButton;
     
 public:
     USSBattleTrainingTopManager();

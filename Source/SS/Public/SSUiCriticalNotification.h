@@ -4,6 +4,7 @@
 #include "SSUiCriticalNotification.generated.h"
 
 class USSMenuButton;
+class USpUIScrollBox;
 class UTextBlock;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -19,6 +20,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USSMenuButton* Button;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USpUIScrollBox* ScrollBox;
     
 public:
     USSUiCriticalNotification();

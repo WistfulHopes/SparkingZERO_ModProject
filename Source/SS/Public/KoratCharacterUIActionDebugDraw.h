@@ -4,6 +4,7 @@
 #include "KoratCharacterUIActionDebugDraw.generated.h"
 
 class AKoratCharacterUIActionManager;
+class ASSCharacter;
 class UKoratCharacterUIActionDebugDraw;
 
 UCLASS(Blueprintable)
@@ -13,6 +14,9 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AKoratCharacterUIActionManager* UIActionManager;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<ASSCharacter*> Characters;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxLineHeight;

@@ -1,6 +1,6 @@
 #include "MovieSceneKoratFreeMaterialTrack.h"
 
-UMovieSceneKoratFreeMaterialTrack::UMovieSceneKoratFreeMaterialTrack(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+UMovieSceneKoratFreeMaterialTrack::UMovieSceneKoratFreeMaterialTrack(
+	const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
+{
 }
-
-

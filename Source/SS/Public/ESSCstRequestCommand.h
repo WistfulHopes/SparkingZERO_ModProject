@@ -29,6 +29,7 @@ enum class ESSCstRequestCommand : uint8 {
     DitherFadeIn,
     WaitDitherFade,
     ReplaceCharacter,
+    TeamingMySetClearCharacter,
     ChangeRollbackCharacter,
     RemoveDisplayCharacter,
     HiddenSpawnCharacter,

@@ -61,6 +61,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bLastDamageReactionBySameRushDerived;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bInvincibleActSCR;
+    
     SS_API FSSCharacterCostumeDamageReactionParam();
 };
 

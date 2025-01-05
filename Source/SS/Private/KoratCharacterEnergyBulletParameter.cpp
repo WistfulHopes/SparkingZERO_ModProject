@@ -52,6 +52,7 @@ FKoratCharacterEnergyBulletParameter::FKoratCharacterEnergyBulletParameter() {
     this->bImpossibleReflect = false;
     this->bImpossibleAbsorption = false;
     this->SuperZCounterType = EKoratSuperZCounterType::None;
+    this->bExParamSuperZCounterRepel = 0;
     this->bImpossibleSuperZCounterAbsorption = false;
     this->bInterruptGuard = false;
     this->bInterruptReflect = false;

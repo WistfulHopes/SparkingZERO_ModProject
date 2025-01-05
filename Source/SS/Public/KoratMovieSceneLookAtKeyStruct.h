@@ -22,7 +22,7 @@ public:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneActorReferenceKey Target1stReference;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Target1stSocketName;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))

@@ -12,5 +12,6 @@ enum class EKoratCharacterInvincibleStatus : uint8 {
     DownState,
     CombativesAndThrow,
     NormalEnergyBulletOnly,
+    CombativesAndNormalEnergyBullet,
 };
 

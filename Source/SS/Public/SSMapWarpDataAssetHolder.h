@@ -200,9 +200,6 @@ public:
     FSSLayeredBoxSafeArea GetPlotterBoxSafeAreaById(int32 ID);
     
     UFUNCTION(BlueprintCallable)
-    int32 GetPlayerIndex(const ASSCharacter* InTargetCharacter);
-    
-    UFUNCTION(BlueprintCallable)
     bool GetOtherSpacePositionDirect(const FTransform& InTransform, FTransform& OutResultTransform);
     
     UFUNCTION(BlueprintCallable)

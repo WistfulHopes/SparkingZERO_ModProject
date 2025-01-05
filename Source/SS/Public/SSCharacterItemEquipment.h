@@ -20,6 +20,7 @@ class USSBlastSkillDataAsset;
 class USSBlastUltimateDataAsset;
 class USSCharacterItemEquipment;
 class USSCharacterRaderChart;
+class USSGameInstance;
 class UWorld;
 
 UCLASS(Blueprintable)
@@ -27,6 +28,9 @@ class USSCharacterItemEquipment : public UObject {
     GENERATED_BODY()
 public:
 private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USSGameInstance* GameInstance;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USSCharacterItemEquipment* EnemyItemEquipment;
     
@@ -69,7 +73,7 @@ private:
     
 public:
     UFUNCTION(BlueprintCallable)
-    void Setup(FKoratCharacterDataList InCharacter, const TArray<FKoratCharacterItemDataList>& InEquipItems, bool bInEnableEffectList);
+    void Setup(FKoratCharacterDataList InCharacter, const TArray<FKoratCharacterItemDataList>& InEquipItems, const USSGameInstance* InGameInstance, bool bInEnableEffectList);
     
     UFUNCTION(BlueprintCallable)
     void SetItemEquipmentOutIndexes(const TArray<FKoratCharacterItemDataList>& InEquipItems, TArray<int32>& OutIndexes);

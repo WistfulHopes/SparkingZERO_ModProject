@@ -16,6 +16,7 @@ ASSNewBattleCameraActor::ASSNewBattleCameraActor(const FObjectInitializer& Objec
     this->bAvoidTerrainDisableArray.AddDefaulted(4);
     this->LagConvergenceUnderTerrainRestTime = 0.00f;
     this->LagConvergenceUnderTerrain = 0.00f;
+    this->LandingRestTime = 0.00f;
     this->bForceEnemyAfterimagePos = false;
     this->bForcePlayerAfterimagePos = false;
     this->ForceAfterimagePosMaxTime = 1.00f;
@@ -40,6 +41,7 @@ ASSNewBattleCameraActor::ASSNewBattleCameraActor(const FObjectInitializer& Objec
     this->CameraOffsetSideBySideBaseScale = 0.00f;
     this->LookAtNullOffsetMy = 0.00f;
     this->LookAtNullOffsetTarget = 0.00f;
+    this->NearCameraAddHeight = -20.00f;
     this->SmallPlayerAddHeight = 40.00f;
     this->SmallPlayerAddHeightMinSize = 40.00f;
     this->SmallPlayerAddHeightMaxSize = 150.00f;
@@ -51,7 +53,20 @@ ASSNewBattleCameraActor::ASSNewBattleCameraActor(const FObjectInitializer& Objec
     this->UnderTerrainAddHeightSpeedUpNgRestTimeMax = 1.00f;
     this->UnderTerrainAddHeightSpeedUpRestTime = 0.00f;
     this->UnderTerrainAddHeightSpeedUpNgRestTime = 0.00f;
+    this->SmallPlayerDownPitchMinSize = 1000.00f;
+    this->SmallPlayerDownPitchMaxSize = 2000.00f;
+    this->UnderTerrainDownPitchMax = 60.00f;
+    this->bUnderTerrainDownPitch = false;
+    this->bDownPitchInBackMoveEnable = true;
+    this->DownPitchInBackMoveTimeMax = 0.00f;
+    this->DownPitchInBackMoveTime = 0.00f;
+    this->BackMoveTerrainPitch = 0.00f;
+    this->SmallPlayerPitchPlayLockMaxSize = 300.00f;
+    this->bPitchPlayLock = false;
+    this->PitchPlayLockRestTime = 0.00f;
+    this->PitchPlayLockRestTimeMax = 0.50f;
     this->bLookAtNullOffsetTargetImitationArray.AddDefaulted(4);
+    this->ImitationScale = 0.75f;
     this->DebugPhysicalDisparityAddHeightPlayer = 0.00f;
     this->DebugPhysicalDisparityAddHeightEnemy = 0.00f;
     this->LookUpEnemySectionArray.AddDefaulted(4);
@@ -61,6 +76,10 @@ ASSNewBattleCameraActor::ASSNewBattleCameraActor(const FObjectInitializer& Objec
     this->bCharaBoundingDynamic = false;
     this->bCharaBoundingCapsule = true;
     this->CharaBoundingScale = 1.00f;
+    this->SmallPlayerBoundingScaleMin = 0.60f;
+    this->SmallPlayerBoundingScaleMax = 1.00f;
+    this->SmallPlayerBoundingScaleMinSize = 40.00f;
+    this->SmallPlayerBoundingScaleMaxSize = 96.00f;
     this->CharaBoundingScaleSideBySideBaseScale = 1.00f;
     this->CharaBoundingScaleSideBySide = 0.75f;
     this->SplitRate = 0.00f;

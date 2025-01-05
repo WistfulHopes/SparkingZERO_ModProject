@@ -3,10 +3,11 @@
 
 USSCharacterVoiceComponent::USSCharacterVoiceComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->IndexSetPlayVoice = 0;
-    this->VoiceID = 0;
+    this->VoiceID = -1;
     this->IsResetRandomPlay = false;
     this->ExecuteActor = NULL;
     this->VoiceVolume = -1.00f;
+    this->ConditionalPlayVoiceManager = NULL;
     this->Random = CreateDefaultSubobject<USSRandom>(TEXT("Random_USSCharacterVoiceComponent"));
 }
 

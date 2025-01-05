@@ -47,7 +47,7 @@ private:
     void OnDamage(const float InDamage);
     
     UFUNCTION(BlueprintCallable)
-    void OnChangeCharacter(int32 InPlayerNumber, ASSCharacter* InNewCharacter);
+    void OnChangeCharacter(int32 InPlayerNumber, ASSCharacter* InOldCharacter, ASSCharacter* InNewCharacter, const bool bInSamePerson);
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)

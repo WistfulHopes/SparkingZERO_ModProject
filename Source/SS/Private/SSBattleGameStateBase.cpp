@@ -253,6 +253,9 @@ void ASSBattleGameStateBase::SkipApearEnd(UObject* WorldContextObject, const FLa
 void ASSBattleGameStateBase::SkipApearCharacter(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, EKoratLoop& OutResult, const ASSCharacter* InCharacter, FName InSection, const float InSkipDilation, const bool bInCanSkip, float InDebugSkipTimer) {
 }
 
+void ASSBattleGameStateBase::SkipApearAcceptWait(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo) {
+}
+
 void ASSBattleGameStateBase::Skip(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, const EKoratDoUntil InRange, const float InSkipDilation, const bool bSkipTest) {
 }
 
@@ -552,6 +555,10 @@ bool ASSBattleGameStateBase::IsBattleStatus() const {
 void ASSBattleGameStateBase::IsBattleImpactBreak(ESSFlowConditionsJudgmentType& OutResult, const EBattleImpactType InImpactType) {
 }
 
+bool ASSBattleGameStateBase::IsAcceptBattleStartAppealNetworkFence() {
+    return false;
+}
+
 void ASSBattleGameStateBase::InitializeChangeAfterCharacterSearchType() {
 }
 
@@ -718,6 +725,9 @@ void ASSBattleGameStateBase::GameStateDebugPrint(const FString& InString) {
 void ASSBattleGameStateBase::ForceDisableHandyShakeManual(bool InDisable) {
 }
 
+void ASSBattleGameStateBase::ForceBattleStartAppealNetworkFence() {
+}
+
 void ASSBattleGameStateBase::FadeMeshTimeScale(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, ASSCharacter* InCharacter, float InTimeScale, float InFadeTime, float InStartTimeScale) {
 }
 
@@ -761,7 +771,7 @@ ASSLevelSequenceActor* ASSBattleGameStateBase::CreateLevelSequenceActor(AActor* 
     return NULL;
 }
 
-ASSCharacter* ASSBattleGameStateBase::CreateHiddenCharacterForTaketurns(FVector InNewLocation) {
+ASSCharacter* ASSBattleGameStateBase::CreateHiddenCharacterForTaketurns(const FVector InTaihiLoc) {
     return NULL;
 }
 

@@ -22,6 +22,7 @@ FSSBlastSKillParamDataAssetRecord::FSSBlastSKillParamDataAssetRecord() {
     this->bNonLockUsable = false;
     this->BlastImpactCameraType = EKoratBlastImpactCameraType::None;
     this->SuperZCounterType = EKoratSuperZCounterType::None;
+    this->bExParamSuperZCounterRepel = 0;
     this->MoveHitDistance = 0.00f;
     this->MoveLimitTime = 0.00f;
     this->MoveType = EBlastDashMoveType::UncontrollableStraight;
@@ -31,6 +32,9 @@ FSSBlastSKillParamDataAssetRecord::FSSBlastSKillParamDataAssetRecord() {
     this->MoveNeutralTurnSpeed = 0.00f;
     this->bGuardCrash = false;
     this->SureToHitRange = 0.00f;
+    this->bInterruptibleExplosion = false;
+    this->bInterruptibleBarrier = false;
+    this->bInterruptibleFrontBarrier = false;
     this->bBackstepWhenNearMode = false;
     this->BackstepWhenWithinDistance = 0.00f;
     this->bTurnBeforeTransition = false;

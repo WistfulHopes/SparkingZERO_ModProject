@@ -51,6 +51,9 @@ private:
     void OnChangeValueCameraUDReverse(const FSSMenuButtonTextItemEntry& InChangeItem);
     
     UFUNCTION(BlueprintCallable)
+    void OnChangeValueCameraType(const FSSMenuButtonTextItemEntry& InChangeItem);
+    
+    UFUNCTION(BlueprintCallable)
     void OnChangeValueCameraLRSpeedButton(const float InChangeGauge);
     
     UFUNCTION(BlueprintCallable)

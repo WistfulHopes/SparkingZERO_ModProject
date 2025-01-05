@@ -38,10 +38,13 @@ public:
     void SetIsEnable(bool IsEnable);
     
     UFUNCTION(BlueprintCallable)
-    void OnEndMontageSequence(FKoratActionDataList InAction, EKoratCharacterActionFinishReason InActionFinishReason);
+    void OnEndMontageSequence2P(FKoratActionDataList InAction, EKoratCharacterActionFinishReason InActionFinishReason);
     
     UFUNCTION(BlueprintCallable)
-    void OnBeginMontageSequence(FKoratActionDataList InAction);
+    void OnEndMontageSequence1P(FKoratActionDataList InAction, EKoratCharacterActionFinishReason InActionFinishReason);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnBeginWarp(FKoratActionDataList InAction);
     
     UFUNCTION(BlueprintCallable)
     void InitSettingCharacters(const int32 Index);

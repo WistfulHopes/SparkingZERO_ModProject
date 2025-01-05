@@ -9,6 +9,7 @@ UKoratActionTranslationDataAsset::UKoratActionTranslationDataAsset() {
     this->bNoHomingUpwards = false;
     this->bUseOpponentRadius = false;
     this->bUseOneselfRadius = false;
+    this->bNoTilt = false;
     this->bUseOpponentDirection = false;
 }
 

@@ -12,6 +12,11 @@ UCLASS(Blueprintable)
 class UKoratMultiDeviceSetting : public UEngineSubsystem {
     GENERATED_BODY()
 public:
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UKoratMultiDeviceSettingDataAsset* SettingDataAsset;
+    
+public:
     UKoratMultiDeviceSetting();
 
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))

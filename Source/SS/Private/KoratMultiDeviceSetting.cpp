@@ -1,6 +1,7 @@
 #include "KoratMultiDeviceSetting.h"
 
 UKoratMultiDeviceSetting::UKoratMultiDeviceSetting() {
+    this->SettingDataAsset = NULL;
 }
 
 void UKoratMultiDeviceSetting::SetupConsoleVariable(UObject* WorldContextObject) {

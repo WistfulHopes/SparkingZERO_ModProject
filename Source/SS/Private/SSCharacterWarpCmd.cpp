@@ -1,7 +1,9 @@
 #include "SSCharacterWarpCmd.h"
 
 ASSCharacterWarpCmd::ASSCharacterWarpCmd(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->OwnerActor = NULL;
     this->OtherActor = NULL;
+    this->SpawnerSequencePlayer = NULL;
     this->bIsSavePreWarpTransform = false;
     this->bIsKeepDistance = false;
     this->bIsKeepDirectionFinishPose = false;

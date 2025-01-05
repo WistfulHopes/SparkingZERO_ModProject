@@ -13,5 +13,6 @@ enum class ESSDramaticBattleNewCutEditorCommonUiType : uint8 {
     MultiLineTextSubWindow,
     BGMSubWindow,
     LayoutCharaWindow,
+    TipsWindow,
 };
 

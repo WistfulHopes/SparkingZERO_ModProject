@@ -12,6 +12,9 @@ class ASSMenuCameraDirector : public ASSCutCameraDirector {
 public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDebugPhysicalDisparityComposeForBattleSetup;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDebugPhysicalDisparityEnable;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

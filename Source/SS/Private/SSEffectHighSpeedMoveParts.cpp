@@ -2,5 +2,6 @@
 
 FSSEffectHighSpeedMoveParts::FSSEffectHighSpeedMoveParts() {
     this->bShow = false;
+    this->Actor = NULL;
 }
 

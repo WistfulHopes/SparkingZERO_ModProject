@@ -1,7 +1,6 @@
 #include "SSTutorialMoviePlayer.h"
 
 ASSTutorialMoviePlayer::ASSTutorialMoviePlayer(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->MediaPlayer = NULL;
     this->CriMediaPlayer = NULL;
     this->TutorialMovieMenu = NULL;
     this->TutorialMovieWidget = NULL;

@@ -9,6 +9,8 @@ FKoratCharacterBlastSkillParameter::FKoratCharacterBlastSkillParameter() {
     this->StealHelth = 0;
     this->MaxChargeTime = 0.00f;
     this->MaxChargeDamageRate = 0.00f;
+    this->MaxChargeSpeedScale = 0.00f;
+    this->MaxChargeHomingScale = 0.00f;
     this->bCanBlastImpact = false;
     this->BlastImpactPower = 0;
     this->bCanSpeedImpact = false;
@@ -37,6 +39,9 @@ FKoratCharacterBlastSkillParameter::FKoratCharacterBlastSkillParameter() {
     this->bIsEnableHideNearDestructionStaticMesh = false;
     this->bDoVanishingWhenDoBlastCombo = false;
     this->VanishingDistance = 0.00f;
+    this->bInterruptibleExplosion = false;
+    this->bInterruptibleBarrier = false;
+    this->bInterruptibleFrontBarrier = false;
     this->bBackstepWhenNearMode = false;
     this->BackstepWhenWithinDistance = 0.00f;
     this->bTurnBeforeTransition = false;

@@ -77,6 +77,9 @@ public:
     bool IsTargetUpOrDownCpp(const UBTDecorator* InMyDecorator, const bool InIsTargetGiant, const bool InIsMyselfHighPosition);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsStunStateCpp(const UBTDecorator* InMyDecorator, const bool InMyself);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSkillStockCpp(const UBTDecorator* InMyDecorator, const int32 InSkillStockNum, const bool InIsMore, const bool InIsMyself);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -89,6 +92,12 @@ public:
     bool IsRemainingEnergyCpp(const UBTDecorator* InMyDecorator, const float InRate, const bool InIsMore, const bool InIs1P);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsPossibleInterruptRepelCpp(const UBTDecorator* InMyDecorator);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsPossibleInterruptGuardCpp(const UBTDecorator* InMyDecorator);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlayerSideCpp(const UBTDecorator* InMyDecorator, const bool InIs1P);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -96,6 +105,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsObstacleCpp(const UBTDecorator* InMyDecorator);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsNumbStateCpp(const UBTDecorator* InMyDecorator, const bool InMyself);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsMovableDirectionCpp(const UBTDecorator* InMyDecorator, const EAiCheckMoveDirectionType InDirectionType);
@@ -122,7 +134,7 @@ public:
     bool IsGroundDistanceCpp(const UBTDecorator* InMyDecorator, const float InGroundDistance, const bool InIsLess);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsGiantCpp(const UBTDecorator* InMyDecorator);
+    bool IsGiantCpp(const UBTDecorator* InMyDecorator, const bool InIsMyself);
     
     UFUNCTION(BlueprintCallable)
     bool IsFirstSiblingDecorator(const UBTDecorator* InMyDecorator, const UClass* InSearchClass);

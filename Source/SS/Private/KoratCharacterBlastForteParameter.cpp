@@ -12,6 +12,7 @@ FKoratCharacterBlastForteParameter::FKoratCharacterBlastForteParameter() {
     this->bIsImpossibleGuard = false;
     this->bInterruptibleExplosion = false;
     this->bInterruptibleBarrier = false;
+    this->bInterruptibleFrontBarrier = false;
     this->bBackstepWhenNearMode = false;
     this->BackstepWhenWithinDistance = 0.00f;
     this->bTurnBeforeTransition = false;

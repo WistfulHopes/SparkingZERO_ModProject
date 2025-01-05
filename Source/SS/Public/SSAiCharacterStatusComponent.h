@@ -41,7 +41,7 @@ public:
     void SetDebugAiEnabledType(const EAiEnabledType InAiEnabledType);
     
     UFUNCTION(BlueprintCallable)
-    void SetAiType(const FKoratAiTypeDataList& InTypeDataList);
+    void SetAiType(const FKoratAiTypeDataList& InTypeDataList, const bool InResetThinking);
     
     UFUNCTION(BlueprintCallable)
     void SetAiPause(const bool bEnable);

@@ -75,6 +75,7 @@ USSGameInstance::USSGameInstance() {
     this->bDrawMontageStateEnable = false;
     this->bCharacterSelectFillAllCharaEnable = false;
     this->bBneSubmissionVer = false;
+    this->bOnlineTeamPrivate = true;
     this->DoubleClickLimitTime = 0.30f;
     this->MPCController = NULL;
 }
@@ -95,6 +96,12 @@ void USSGameInstance::ValidateBattleCharacterSetting() {
 }
 
 void USSGameInstance::UpdateBattlePlayerTeamState() {
+}
+
+void USSGameInstance::UpdateBattleMode011Param() {
+}
+
+void USSGameInstance::UpdateBattleMode010SaveData() {
 }
 
 void USSGameInstance::UpdateBattleMode010Param() {
@@ -127,6 +134,9 @@ void USSGameInstance::SetupKeyToDeviceIconType(const FKey& InKey, ASSPlayerContr
 void USSGameInstance::SetupCharacterRandom() {
 }
 
+void USSGameInstance::SetUpAutoBattleLoopRandomExtraBattle() {
+}
+
 void USSGameInstance::SetTutorialData() {
 }
 
@@ -134,6 +144,9 @@ void USSGameInstance::SetTransitionMode(const EKoratTransitionMode InTransitionM
 }
 
 void USSGameInstance::SetTournamentCpuLevel(EKoratBattleCpuLevel InCpuLevel) {
+}
+
+void USSGameInstance::SetTeamCharacterConditionalPlayedVoiceList(int32 InPlayerNo, int32 InMemberNo, const TMap<FName, FKoratConditionPlayVoiceDataList>& InConditionPlayVoiceDataList) {
 }
 
 void USSGameInstance::SetTeamCameraSpeed(int32 InPlayerNo, int32 InLR, int32 InUD) {
@@ -166,6 +179,9 @@ void USSGameInstance::SetSetupCharacterList(const TArray<FKoratCharacterDataList
 void USSGameInstance::SetSetupBGMList(const TArray<FKoratBGMDataList>& InSetupBGMList) {
 }
 
+void USSGameInstance::SetSelectBattleMode010ListDataKey(const FName& InKey) {
+}
+
 void USSGameInstance::SetRetryPlayLevel(int32 InRetryPlayLevel) {
 }
 
@@ -179,6 +195,9 @@ void USSGameInstance::SetRankMatchConditions(FSSRankMatchConditions InConditions
 }
 
 void USSGameInstance::SetRankingType(int32 InType) {
+}
+
+void USSGameInstance::SetPleyerLevelSet(int32 InPlayLevel) {
 }
 
 void USSGameInstance::SetPaperTheaterData(USSPaperTheaterDataAsset* InPaperTheaterData) {
@@ -203,6 +222,9 @@ void USSGameInstance::SetOnlineBattleFlg(const bool InOnlineModeFlg) {
 }
 
 void USSGameInstance::SetNoMartialArts(const bool InNoMartialArts) {
+}
+
+void USSGameInstance::SetNoFormChangeAll(const bool InNoFormChange) {
 }
 
 void USSGameInstance::SetNoChangeAll(const bool InNoChange) {
@@ -340,6 +362,12 @@ void USSGameInstance::SetBattleOfflineMode(const EKoratBattleOfflineMode InBattl
 void USSGameInstance::SetBattleMode010UseEventPointBoost(bool bInIsUse) {
 }
 
+void USSGameInstance::SetBattleMode010TimePoint(int32 InTimePoint) {
+}
+
+void USSGameInstance::SetBattleMode010NewRecord(bool InNewRecord) {
+}
+
 void USSGameInstance::SetBattleMode010BattleTime(FTimespan InBattleTime) {
 }
 
@@ -456,6 +484,10 @@ bool USSGameInstance::IsDrawMontageStateEnable() const {
     return false;
 }
 
+bool USSGameInstance::IsDownloadBattleMode011Param() {
+    return false;
+}
+
 bool USSGameInstance::IsDownloadBattleMode010Param() {
     return false;
 }
@@ -561,6 +593,10 @@ FString USSGameInstance::GetTitleGameVersion() const {
     return TEXT("");
 }
 
+TMap<FName, FKoratConditionPlayVoiceDataList> USSGameInstance::GetTeamCharacterConditionalPlayedVoiceList(int32 InPlayerNo, int32 InMemberNo) const {
+    return TMap<FName, FKoratConditionPlayVoiceDataList>();
+}
+
 FKoratUILevelDataList USSGameInstance::GetStartupUILevelByDebugMenu() const {
     return FKoratUILevelDataList{};
 }
@@ -591,6 +627,10 @@ TArray<FKoratBGMDataList> USSGameInstance::GetSetupBGMList() const {
 
 FString USSGameInstance::GetServerVersion() const {
     return TEXT("");
+}
+
+FName USSGameInstance::GetSelectBattleMode010ListDataKey() {
+    return NAME_None;
 }
 
 FString USSGameInstance::GetSaveDataVersion() const {
@@ -745,6 +785,10 @@ FText USSGameInstance::GetConversionDateTimePeriod(FText InText, TArray<int32> I
     return FText::GetEmpty();
 }
 
+FText USSGameInstance::GetConversionDateTimeFromText(FText InText, TArray<FText> InDateTime) {
+    return FText::GetEmpty();
+}
+
 FText USSGameInstance::GetConversionDateTime(FText InText, TArray<int32> InDateTime) {
     return FText::GetEmpty();
 }
@@ -889,6 +933,9 @@ void USSGameInstance::EndActivityFromMainMenu() {
 }
 
 void USSGameInstance::EndActivityFromDragonAdventureIF() {
+}
+
+void USSGameInstance::DownloadBattleMode011Param() {
 }
 
 void USSGameInstance::DownloadBattleMode010Param() {

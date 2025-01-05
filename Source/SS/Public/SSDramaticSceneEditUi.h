@@ -3,8 +3,8 @@
 #include "SSMenuManager.h"
 #include "SSDramaticSceneEditUi.generated.h"
 
+class USSDramaticCutPanelButton;
 class USSDramaticEditImageSaveData;
-class USSMenuButton;
 
 UCLASS(Blueprintable, EditInlineNew)
 class USSDramaticSceneEditUi : public USSMenuManager {
@@ -15,7 +15,7 @@ protected:
     FName HitButtonName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    TArray<USSMenuButton*> CutButtons;
+    TArray<USSDramaticCutPanelButton*> CutButtons;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<USSDramaticEditImageSaveData*> Thumbnails;
@@ -23,6 +23,9 @@ protected:
 public:
     USSDramaticSceneEditUi();
 
+    UFUNCTION(BlueprintCallable)
+    void UpdateSceneCuts();
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFocusLostAnimEvent();
     

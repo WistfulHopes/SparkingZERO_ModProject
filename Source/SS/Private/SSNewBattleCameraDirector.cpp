@@ -47,7 +47,11 @@ ASSNewBattleCameraDirector::ASSNewBattleCameraDirector(const FObjectInitializer&
     this->AdjustVSplitLengthMax = 0.00f;
     this->AdjustSafePositionEnable = true;
     this->AdjustBackEnable = true;
-    this->AdjustBackNearLength = 300.00f;
+    this->AdjustBackNearLengthScale = 0.75f;
+    this->SmallPlayerAdjustBackLengthMinSize = 56.00f;
+    this->SmallPlayerAdjustBackLengthMaxSize = 96.00f;
+    this->SmallPlayerAdjustBackLengthMinRange = 250.00f;
+    this->SmallPlayerAdjustBackLengthMaxRange = 450.00f;
     this->AdjustHEnable = false;
     this->AdjustHCompMode = ECameraAdjustCompMode::PLAYER;
     this->AdjustHSplitRateL = 0.00f;

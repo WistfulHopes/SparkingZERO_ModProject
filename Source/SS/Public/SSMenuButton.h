@@ -52,6 +52,9 @@ protected:
     bool DisableToFocus;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bEnableFocusAutoScroll;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> DisableAnimationEvents;
     
 public:

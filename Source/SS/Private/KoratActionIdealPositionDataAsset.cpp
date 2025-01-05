@@ -12,6 +12,7 @@ UKoratActionIdealPositionDataAsset::UKoratActionIdealPositionDataAsset() {
     this->bNoTilt = false;
     this->bMidAirKick = false;
     this->bTargetPreLastPosition = false;
+    this->bDownTargetNull = false;
 }
 
 

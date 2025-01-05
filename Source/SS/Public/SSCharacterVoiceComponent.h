@@ -9,6 +9,7 @@
 #include "SSCharacterVoiceComponent.generated.h"
 
 class ASSCharacter;
+class USSConditionalPlayVoiceManager;
 class USSRandom;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -59,6 +60,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterCostumeDataList EquipCostumeDataList;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USSConditionalPlayVoiceManager* ConditionalPlayVoiceManager;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

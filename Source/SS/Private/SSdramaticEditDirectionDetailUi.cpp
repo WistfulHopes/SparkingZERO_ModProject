@@ -8,6 +8,7 @@ USSdramaticEditDirectionDetailUi::USSdramaticEditDirectionDetailUi() {
     this->DirectionItemWidget = NULL;
     this->DirectionSceneWidget = NULL;
     this->DirectionEmoteWidget = NULL;
+    this->DirectionConditionsWithoutExplanationWidget = NULL;
     this->UnitText = NULL;
     this->ExplaneText = NULL;
     this->NumTitleText = NULL;
