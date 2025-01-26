@@ -5,6 +5,7 @@ USSDramaticBattleListUI::USSDramaticBattleListUI() {
     this->NowDisplayMode = EKoratMenuDramaticMode::None;
     this->bSetCopyList = false;
     this->PrevDataIndex = 0;
+    this->bIsModeSelectingList = false;
 }
 
 

@@ -53,7 +53,7 @@ public:
     
 private:
     UFUNCTION(BlueprintCallable)
-    void OnP2CharacterBattleSPDown(float InDownValue);
+    void OnP2CharacterBattleSPDown(ASSCharacter* InCharacter, float InDownValue);
     
     UFUNCTION(BlueprintCallable)
     void OnP2CharacterBattleSparkingDown(float InDownValue);
@@ -62,7 +62,7 @@ private:
     void OnP2CharacterBattleDamageReceived(float InReceivedDamage);
     
     UFUNCTION(BlueprintCallable)
-    void OnP1CharacterBattleSPDown(float InDownValue);
+    void OnP1CharacterBattleSPDown(ASSCharacter* InCharacter, float InDownValue);
     
     UFUNCTION(BlueprintCallable)
     void OnP1CharacterBattleSparkingDown(float InDownValue);
@@ -81,10 +81,16 @@ public:
     bool IsHUDVisible(ESSHUDType InHUDType, int32 InPlayerIndex) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsHUDMainGaugeVisible(int32 InPlayerIndex) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDebugUIVisible() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDebugUIBlueprintVisible() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsCharacterHUDStatusReq(int32 InPlayerIndex) const;
     
     UFUNCTION(BlueprintCallable)
     void HideHUDWidget();

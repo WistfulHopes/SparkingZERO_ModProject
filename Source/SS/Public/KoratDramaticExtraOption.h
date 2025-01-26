@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EKoratDramaticExtraUnLockType.h"
+#include "EKoratUnLockType.h"
 #include "KoratDramaticBattleExtraDataList.h"
 #include "KoratDramaticMission.h"
 #include "KoratDramaticExtraOption.generated.h"
@@ -19,7 +19,10 @@ public:
     TArray<FKoratDramaticBattleExtraDataList> UnlockExtraBattles;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    EKoratDramaticExtraUnLockType UnLockType;
+    EKoratUnLockType ExtraUnlockType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsDLCBattle;
     
     SS_API FKoratDramaticExtraOption();
 };

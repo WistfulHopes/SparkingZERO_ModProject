@@ -4,6 +4,9 @@
 #include "KoratBGMDataList.h"
 #include "KoratCharacterDataList.h"
 #include "KoratCharacterItemDataList.h"
+#include "KoratDramaticBattleExtraDataList.h"
+#include "KoratEditPartsImageDataList.h"
+#include "KoratEditPartsTextDataList.h"
 #include "KoratPlayerCardBGDataList.h"
 #include "MutualDataAsset.h"
 #include "SSDownLoadContentsDataAssetRecord.generated.h"
@@ -29,6 +32,15 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratPlayerCardBGDataList> PlayerCardBGIds;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratDramaticBattleExtraDataList> DramaticBattleExtraIds;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratEditPartsTextDataList> EditPartsTextIds;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratEditPartsImageDataList> EditPartsImageIds;
     
     USSDownLoadContentsDataAssetRecord();
 

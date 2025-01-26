@@ -188,6 +188,9 @@ public:
     void SafeMoveAndSlideAlongSurface(FVector MoveVelocity, FRotator MoveRotation);
     
     UFUNCTION(BlueprintCallable)
+    void RequestAutoLandingFall();
+    
+    UFUNCTION(BlueprintCallable)
     void KnockbackMovementVector(FVector WorldDirection, float InAlpha, float ScaleValue);
     
     UFUNCTION(BlueprintCallable)

@@ -3,6 +3,7 @@
 #include "GameFramework/Actor.h"
 #include "SSActionListController.generated.h"
 
+class ASSCharacter;
 class USSActionListManager;
 class USSOperationGuideSet;
 
@@ -22,6 +23,9 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSOperationGuideSet* GuideWidget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<ASSCharacter*> Character;
     
 public:
     ASSActionListController(const FObjectInitializer& ObjectInitializer);

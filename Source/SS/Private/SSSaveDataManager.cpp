@@ -21,6 +21,7 @@ USSSaveDataManager::USSSaveDataManager() {
     this->bLoadDebug = false;
     this->bErrorStartFlg = true;
     this->bRestoreFocusErrorEnd = false;
+    this->bMainGameSavePermission = false;
 }
 
 void USSSaveDataManager::StartFileChkSaveData() {

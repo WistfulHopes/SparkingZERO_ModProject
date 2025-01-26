@@ -17,6 +17,7 @@ enum class ESSCstRequestCommand : uint8 {
     WaitCharaMotion,
     WaitCharaMotionToStandAll,
     WaitCameraInterpolate,
+    WaitBattleCharaLoading,
     WaitCharaLoading,
     WaitCharaCameraLoading,
     WaitBgCharaState,

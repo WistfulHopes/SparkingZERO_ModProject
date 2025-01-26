@@ -36,6 +36,9 @@ private:
     void OnChangeValue02(const FSSMenuButtonTextItemEntry& InChangeItem);
     
     UFUNCTION(BlueprintCallable)
+    void OnChangeValue01_1(const FSSMenuButtonTextItemEntry& InChangeItem);
+    
+    UFUNCTION(BlueprintCallable)
     void OnChangeValue01(const FSSMenuButtonTextItemEntry& InChangeItem);
     
     UFUNCTION(BlueprintCallable)

@@ -26,10 +26,10 @@ private:
     void OnStartImpact();
     
     UFUNCTION(BlueprintCallable)
-    void OnSpUp(const float InSpUp);
+    void OnSpUp(ASSCharacter* InCharacter, const float InSpUp);
     
     UFUNCTION(BlueprintCallable)
-    void OnSpDown(const float InSpDown);
+    void OnSpDown(ASSCharacter* InCharacter, float InSpDown);
     
     UFUNCTION(BlueprintCallable)
     void OnSparking();

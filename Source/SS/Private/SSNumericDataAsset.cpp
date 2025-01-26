@@ -8,6 +8,7 @@ USSNumericDataAsset::USSNumericDataAsset() {
     this->SPAutoRecoveryLimit = 20000.00f;
     this->SPAutoRecoverySpeed = 3000.00f;
     this->SPChargeSpeed = 4.00f;
+    this->SPChargeSpeedUnderAutoRecoveryLimit = -1.00f;
     this->SparkingGaugeChargeSpeed = 30000.00f;
     this->PreSparkingGaugeDecreaseSpeed = 10000.00f;
     this->SparkingModeGaugeDecreaseSpeed = 4000.00f;

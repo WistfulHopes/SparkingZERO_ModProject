@@ -27,5 +27,8 @@ protected:
     UFUNCTION(BlueprintCallable)
     void ModeSet();
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetNowSelectModeNum();
+    
 };
 

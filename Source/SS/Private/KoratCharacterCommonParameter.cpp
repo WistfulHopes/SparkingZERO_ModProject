@@ -11,6 +11,7 @@ FKoratCharacterCommonParameter::FKoratCharacterCommonParameter() {
     this->SPAutoRecoverySpeed = 0.00f;
     this->SPAutoRecoverySpeedParry = 0.00f;
     this->SPAutoRecoverySpeedSuperZCounter = 0.00f;
+    this->SuperAscertainSPCost = 0.00f;
     this->SPChargeSpeed = 0.00f;
     this->SparkingGaugeChargeSpeed = 0.00f;
     this->PreSparkingGaugeDecreaseSpeed = 0.00f;
@@ -118,5 +119,12 @@ FKoratCharacterCommonParameter::FKoratCharacterCommonParameter() {
     this->DisableAimRange = 0.00f;
     this->ToAimBodyBlendTime = 0.00f;
     this->FromAimBodyBlendTime = 0.00f;
+    this->FastAvoidanceInputTime = 0.00f;
+    this->RushHighSpeedMoveRevengeInputTime = 0.00f;
+    this->SuperCounterInputTime = 0.00f;
+    this->GuardInputCoolTime = 0.00f;
+    this->bDisableGuardInputCoolTimeReset = false;
+    this->SuperCounterInputCoolTime = 0.00f;
+    this->bDisableSuperCounterInputCoolTimeReset = false;
 }
 

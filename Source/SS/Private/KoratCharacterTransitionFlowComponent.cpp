@@ -128,7 +128,7 @@ void UKoratCharacterTransitionFlowComponent::IsDragonDashPursuitRequestOnBattleA
 void UKoratCharacterTransitionFlowComponent::IsDragonDashPursuitEndRequestOnBattleAssist(ESSFlowConditionsDragonDashAttack& OutResult) {
 }
 
-void UKoratCharacterTransitionFlowComponent::IsComboAssistSonicSwaySmashRequestOnBattleAssist(EKoratBranch& OutResult, EKoratBattleKey InBattleKey) {
+void UKoratCharacterTransitionFlowComponent::IsComboAssistSonicSwaySmashRequestOnBattleAssist(EKoratBranch& OutResult, EKoratBattleKey InBattleKey, float InTime, EKoratInequalitySignType InInequalitySign) {
 }
 
 void UKoratCharacterTransitionFlowComponent::IsComboAssistRollingHurricaneRequestOnBattleAssist(EKoratBranch& OutResult, EKoratBattleKey InBattleKey, float InTime, EKoratInequalitySignType InInequalitySign) {

@@ -15,10 +15,10 @@ void USSAiPersonalityComponent::OnUpdateHp() {
 void USSAiPersonalityComponent::OnStartImpact() {
 }
 
-void USSAiPersonalityComponent::OnSpUp(const float InSpUp) {
+void USSAiPersonalityComponent::OnSpUp(ASSCharacter* InCharacter, const float InSpUp) {
 }
 
-void USSAiPersonalityComponent::OnSpDown(const float InSpDown) {
+void USSAiPersonalityComponent::OnSpDown(ASSCharacter* InCharacter, float InSpDown) {
 }
 
 void USSAiPersonalityComponent::OnSparking() {

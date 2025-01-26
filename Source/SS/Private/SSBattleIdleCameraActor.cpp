@@ -79,10 +79,6 @@ ASSBattleIdleCameraActor::ASSBattleIdleCameraActor(const FObjectInitializer& Obj
     this->PitchPlaySplitRateDefaultU = 0.80f;
     this->PitchPlaySplitRateDefaultD = 0.20f;
     this->DebugDrawNewPitchHeightPlayArgorizum = false;
-    this->NewLookingDownArgorizum = false;
-    this->LookingDownPitchMax = 80.00f;
-    this->LookingDownPitchMin = 10.00f;
-    this->LookingDownPullCamOffsetScaleMax = 1.50f;
     this->NewLatPositionZArgorizum = false;
     this->NewLatPositionZArgorizumBugfix = true;
     this->LatPitchFovLimitScaleU = 0.50f;
@@ -216,6 +212,7 @@ ASSBattleIdleCameraActor::ASSBattleIdleCameraActor(const FObjectInitializer& Obj
     this->LagScaleDecayPitchMax = 30.00f;
     this->LagScaleDecayPitchScaleMin = 1.00f;
     this->LagScaleDecayPitchScaleMax = 0.50f;
+    this->LandingEnemyLagScale = 0.00f;
     this->bChargeMargin = false;
     this->ChargeMarginLastTime = 0.00f;
     this->bExplosionHitMargin = false;

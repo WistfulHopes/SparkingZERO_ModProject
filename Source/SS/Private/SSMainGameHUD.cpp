@@ -27,7 +27,7 @@ void ASSMainGameHUD::SetHUDTimerVisible(bool bInIsVisible) {
 void ASSMainGameHUD::SetDebugUIWidget(UUserWidget* InWidget) {
 }
 
-void ASSMainGameHUD::OnP2CharacterBattleSPDown(float InDownValue) {
+void ASSMainGameHUD::OnP2CharacterBattleSPDown(ASSCharacter* InCharacter, float InDownValue) {
 }
 
 void ASSMainGameHUD::OnP2CharacterBattleSparkingDown(float InDownValue) {
@@ -36,7 +36,7 @@ void ASSMainGameHUD::OnP2CharacterBattleSparkingDown(float InDownValue) {
 void ASSMainGameHUD::OnP2CharacterBattleDamageReceived(float InReceivedDamage) {
 }
 
-void ASSMainGameHUD::OnP1CharacterBattleSPDown(float InDownValue) {
+void ASSMainGameHUD::OnP1CharacterBattleSPDown(ASSCharacter* InCharacter, float InDownValue) {
 }
 
 void ASSMainGameHUD::OnP1CharacterBattleSparkingDown(float InDownValue) {
@@ -56,11 +56,19 @@ bool ASSMainGameHUD::IsHUDVisible(ESSHUDType InHUDType, int32 InPlayerIndex) con
     return false;
 }
 
+bool ASSMainGameHUD::IsHUDMainGaugeVisible(int32 InPlayerIndex) const {
+    return false;
+}
+
 bool ASSMainGameHUD::IsDebugUIVisible() const {
     return false;
 }
 
 bool ASSMainGameHUD::IsDebugUIBlueprintVisible() const {
+    return false;
+}
+
+bool ASSMainGameHUD::IsCharacterHUDStatusReq(int32 InPlayerIndex) const {
     return false;
 }
 

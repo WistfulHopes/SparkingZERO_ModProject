@@ -16,7 +16,8 @@ ASSNewBattleCameraActor::ASSNewBattleCameraActor(const FObjectInitializer& Objec
     this->bAvoidTerrainDisableArray.AddDefaulted(4);
     this->LagConvergenceUnderTerrainRestTime = 0.00f;
     this->LagConvergenceUnderTerrain = 0.00f;
-    this->LandingRestTime = 0.00f;
+    this->LandingRestTimePlayer = 0.00f;
+    this->LandingRestTimeEnemy = 0.00f;
     this->bForceEnemyAfterimagePos = false;
     this->bForcePlayerAfterimagePos = false;
     this->ForceAfterimagePosMaxTime = 1.00f;
@@ -42,6 +43,10 @@ ASSNewBattleCameraActor::ASSNewBattleCameraActor(const FObjectInitializer& Objec
     this->LookAtNullOffsetMy = 0.00f;
     this->LookAtNullOffsetTarget = 0.00f;
     this->NearCameraAddHeight = -20.00f;
+    this->AirComboAddHeightMin = 0.00f;
+    this->AirComboAddHeightMax = 0.00f;
+    this->AirComboAddHeightMinSize = 96.00f;
+    this->AirComboAddHeightMaxSize = 150.00f;
     this->SmallPlayerAddHeight = 40.00f;
     this->SmallPlayerAddHeightMinSize = 40.00f;
     this->SmallPlayerAddHeightMaxSize = 150.00f;

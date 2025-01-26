@@ -5,6 +5,7 @@ ASSActionListController::ASSActionListController(const FObjectInitializer& Objec
     this->ActionListManager2P = NULL;
     this->ActionListManagerBase = NULL;
     this->GuideWidget = NULL;
+    this->Character.AddDefaulted(2);
 }
 
 

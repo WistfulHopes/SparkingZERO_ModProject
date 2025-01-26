@@ -370,7 +370,7 @@ public:
     void IsDragonDashPursuitEndRequestOnBattleAssist(ESSFlowConditionsDragonDashAttack& OutResult);
     
     UFUNCTION(BlueprintCallable)
-    void IsComboAssistSonicSwaySmashRequestOnBattleAssist(EKoratBranch& OutResult, EKoratBattleKey InBattleKey);
+    void IsComboAssistSonicSwaySmashRequestOnBattleAssist(EKoratBranch& OutResult, EKoratBattleKey InBattleKey, float InTime, EKoratInequalitySignType InInequalitySign);
     
     UFUNCTION(BlueprintCallable)
     void IsComboAssistRollingHurricaneRequestOnBattleAssist(EKoratBranch& OutResult, EKoratBattleKey InBattleKey, float InTime, EKoratInequalitySignType InInequalitySign);

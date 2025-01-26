@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMainMenuListButtonBehaviour.h"
 #include "EMainMenuListButtonQuickMatchType.h"
+#include "EMainMenuOnlineCheckMode.h"
 #include "SSMainMenuListOpenWidgetDataBase.h"
 #include "SSMainMenuWidgetButtonData.generated.h"
 
@@ -29,6 +30,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString ActivityId;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bNeedOnline;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EMainMenuOnlineCheckMode OnlineCheckMode;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 SceneIndex;

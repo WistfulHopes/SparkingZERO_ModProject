@@ -242,6 +242,8 @@ ASSCharacter::ASSCharacter(const FObjectInitializer& ObjectInitializer) : Super(
     this->AnimEventDispatcher = NULL;
     this->PlayableAnimType = EKoratPlayableAnimType::All;
     this->bCharge = false;
+    this->bCameraPreUpDown = false;
+    this->bCameraUpDownAfterIdle = false;
     this->bExplosionHit_CamUnSync = false;
     this->ExplosionHitLevel_CamUnSync = ECameraZoomType::ZoomNone;
     this->ExplosionHitElapsedTime_CamUnSync = 0.00f;
@@ -431,6 +433,8 @@ ASSCharacter::ASSCharacter(const FObjectInitializer& ObjectInitializer) : Super(
     this->FacialControlRig = NULL;
     this->bIsFinishDemo = false;
     this->bIsChangeHiddenCharacter = false;
+    this->bIsSecondStartAppealCharacter = false;
+    this->bIsSecondStartAppealCharacterWhenDestroyEffect = false;
     this->SpawnedLevelSequenceActor = NULL;
     this->CapsulePushingComponent->SetupAttachment(RootComponent);
     this->ForceFeedbackComponent->SetupAttachment(RootComponent);
@@ -702,7 +706,7 @@ void ASSCharacter::SetNextSectionCharacterActionSequenceActor(FKoratActionDataLi
 void ASSCharacter::SetNextSection(const FName InNextSectionName) {
 }
 
-void ASSCharacter::SetMovementMode(EMovementMode InMovementMode) {
+void ASSCharacter::SetMovementMode(TEnumAsByte<EMovementMode> InMovementMode) {
 }
 
 void ASSCharacter::SetLookatPartFlags(const EKoratActionLookatPartFlags& InPartFlags) {
@@ -1027,6 +1031,9 @@ void ASSCharacter::ResetPursuitCount() {
 void ASSCharacter::ResetNormalRushBulletShotCount() {
 }
 
+void ASSCharacter::ResetLoadingSupporters() {
+}
+
 void ASSCharacter::ResetJumpRushBulletShotCountInCurrentSet() {
 }
 
@@ -1279,6 +1286,10 @@ bool ASSCharacter::IsUsableRushHighSpeedMoveRevenge() const {
 }
 
 bool ASSCharacter::IsUsableRevengeCounter() const {
+    return false;
+}
+
+bool ASSCharacter::IsUpDownMoving() {
     return false;
 }
 
@@ -3623,7 +3634,7 @@ void ASSCharacter::DisableHidden() {
 
 
 
-void ASSCharacter::DestroySupporter() {
+void ASSCharacter::DestroySupporter(bool NewIsFormChange) {
 }
 
 void ASSCharacter::DestroyRequestCharacterActionSequenceActor(FKoratActionDataList InAction, EKoratCharacterActionFinishReason InActionFinishReason) {
@@ -3726,6 +3737,9 @@ void ASSCharacter::ConsumeSPCostZCounter() {
 void ASSCharacter::ConsumeSPCostSuperCounter() {
 }
 
+void ASSCharacter::ConsumeSPCostSuperAscertain() {
+}
+
 void ASSCharacter::ConsumeSPCostSelfishness() {
 }
 
@@ -3802,6 +3816,10 @@ bool ASSCharacter::CheckSPCostZCounter() const {
 }
 
 bool ASSCharacter::CheckSPCostSuperCounter() const {
+    return false;
+}
+
+bool ASSCharacter::CheckSPCostSuperAscertain() const {
     return false;
 }
 

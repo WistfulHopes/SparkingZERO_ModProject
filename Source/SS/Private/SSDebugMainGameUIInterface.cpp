@@ -18,6 +18,9 @@ TSoftObjectPtr<USSDebugMainGameUIExecute> USSDebugMainGameUIInterface::GetExecut
     return NULL;
 }
 
+void USSDebugMainGameUIInterface::GetAllActionList(TArray<FKoratActionDataList>& OutActionList) {
+}
+
 
 
 

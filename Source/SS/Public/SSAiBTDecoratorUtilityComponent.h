@@ -299,12 +299,6 @@ public:
     bool CanFormChangeCpp(const UBTDecorator* InMyDecorator);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool CanFlyCpp(const UBTDecorator* InMyDecorator);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool CanFinishCpp(const UBTDecorator* InMyDecorator);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanCharacterChangeCpp(const UBTDecorator* InMyDecorator);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

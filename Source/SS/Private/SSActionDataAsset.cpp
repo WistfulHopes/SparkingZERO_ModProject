@@ -40,6 +40,7 @@ USSActionDataAsset::USSActionDataAsset() {
     this->bPossibleBuffAvoidable = false;
     this->bPossibleInterruptGuard = false;
     this->bPossibleInterruptReflect = false;
+    this->PossibleInterruptReflectTimeSincePush = 0.00f;
     this->bPossibleThrowEscape = false;
     this->bPossiblePursuit = false;
     this->ConditionDown = EKoratActionConditionDown::None;

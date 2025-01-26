@@ -87,6 +87,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bRestoreFocusErrorEnd;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bMainGameSavePermission;
+    
     USSSaveDataManager();
 
     UFUNCTION(BlueprintCallable)

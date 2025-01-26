@@ -331,14 +331,6 @@ bool USSAiBTDecoratorUtilityComponent::CanFormChangeCpp(const UBTDecorator* InMy
     return false;
 }
 
-bool USSAiBTDecoratorUtilityComponent::CanFlyCpp(const UBTDecorator* InMyDecorator) {
-    return false;
-}
-
-bool USSAiBTDecoratorUtilityComponent::CanFinishCpp(const UBTDecorator* InMyDecorator) {
-    return false;
-}
-
 bool USSAiBTDecoratorUtilityComponent::CanCharacterChangeCpp(const UBTDecorator* InMyDecorator) {
     return false;
 }

@@ -200,6 +200,12 @@ public:
     bool IsChangeMyselfAction() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsCanFly() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsCanFinish() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBurstDerived() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

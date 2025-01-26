@@ -61,6 +61,9 @@ void UKoratCharacterMovementComponent::SetMovementWalkableFloor(bool IsWalkableF
 void UKoratCharacterMovementComponent::SafeMoveAndSlideAlongSurface(FVector MoveVelocity, FRotator MoveRotation) {
 }
 
+void UKoratCharacterMovementComponent::RequestAutoLandingFall() {
+}
+
 void UKoratCharacterMovementComponent::KnockbackMovementVector(FVector WorldDirection, float InAlpha, float ScaleValue) {
 }
 

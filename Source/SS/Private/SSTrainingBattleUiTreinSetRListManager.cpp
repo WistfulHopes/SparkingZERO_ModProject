@@ -28,6 +28,9 @@ void USSTrainingBattleUiTreinSetRListManager::OnChangeValue03(const FSSMenuButto
 void USSTrainingBattleUiTreinSetRListManager::OnChangeValue02(const FSSMenuButtonTextItemEntry& InChangeItem) {
 }
 
+void USSTrainingBattleUiTreinSetRListManager::OnChangeValue01_1(const FSSMenuButtonTextItemEntry& InChangeItem) {
+}
+
 void USSTrainingBattleUiTreinSetRListManager::OnChangeValue01(const FSSMenuButtonTextItemEntry& InChangeItem) {
 }
 

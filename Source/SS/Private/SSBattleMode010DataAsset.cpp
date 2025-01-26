@@ -19,4 +19,7 @@ FKoratBattleDirectingData USSBattleMode010DataAsset::GetBattleDirecting() {
     return FKoratBattleDirectingData{};
 }
 
+void USSBattleMode010DataAsset::DisplayBattleDirectingInOutputlog() {
+}
+
 

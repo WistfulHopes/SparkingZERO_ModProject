@@ -121,6 +121,14 @@ bool UKoratCharacterMontageComponent::IsBattleKeyPressedImpl(const EKoratBattleK
 }
 
 
+float UKoratCharacterMontageComponent::GetSuperCounterInputTime() const {
+    return 0.0f;
+}
+
+float UKoratCharacterMontageComponent::GetRushHighSpeedMoveRevengeInputTime() const {
+    return 0.0f;
+}
+
 
 float UKoratCharacterMontageComponent::GetNotifyEventTime(const FAnimNotifyEvent& InAnimNotifyEvent) const {
     return 0.0f;
@@ -130,6 +138,10 @@ void UKoratCharacterMontageComponent::GetMontageNotifyEvents(const UAnimMontage*
 }
 
 float UKoratCharacterMontageComponent::GetMontageActionTime() const {
+    return 0.0f;
+}
+
+float UKoratCharacterMontageComponent::GetFastAvoidanceInputTime() const {
     return 0.0f;
 }
 
@@ -165,6 +177,9 @@ float UKoratCharacterMontageComponent::GetBattleKeyTimeSincePressedAtIntervalImp
     return 0.0f;
 }
 
+float UKoratCharacterMontageComponent::GetBattleKeyInterval(EKoratBattleKey InBattleKey) const {
+    return 0.0f;
+}
 
 float UKoratCharacterMontageComponent::GetBattleKeyHoldTimeImpl(const EKoratBattleKey Key) const {
     return 0.0f;

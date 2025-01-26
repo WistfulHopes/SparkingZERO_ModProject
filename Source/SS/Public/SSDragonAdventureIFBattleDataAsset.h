@@ -72,6 +72,9 @@ public:
     void DisplayBattleDirectingInOutputlog();
     
     UFUNCTION(BlueprintCallable)
+    void CopyZItemAiLevel_Orb_Easy();
+    
+    UFUNCTION(BlueprintCallable)
     void CopyZItemAiLevel_Orb();
     
     UFUNCTION(BlueprintCallable)

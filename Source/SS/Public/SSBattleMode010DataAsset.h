@@ -36,5 +36,8 @@ public:
     UFUNCTION(BlueprintCallable)
     FKoratBattleDirectingData GetBattleDirecting();
     
+    UFUNCTION(BlueprintCallable)
+    void DisplayBattleDirectingInOutputlog();
+    
 };
 

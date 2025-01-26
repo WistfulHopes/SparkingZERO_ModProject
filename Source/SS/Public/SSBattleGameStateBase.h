@@ -817,6 +817,9 @@ public:
     UFUNCTION(BlueprintCallable)
     bool IsImpactGvsG();
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsHitFallInRingoutRule(const ASSCharacter* InCharacter, const FVector& InBasePos, const float InLocationZ, float& OutHitLocationZ) const;
+    
     UFUNCTION(BlueprintCallable)
     bool IsFinishMode();
     

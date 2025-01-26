@@ -50,6 +50,7 @@ USSGameInstance::USSGameInstance() {
     this->TournamentCompleteBattles = 0;
     this->bTournamentFinalWinWithoutPlaying = false;
     this->NotificationManager = NULL;
+    this->MainUserChangedCallbackId = 0;
     this->PaperTheaterData = NULL;
     this->InputDeviceManager = NULL;
     this->MenuInterruptManager = NULL;
@@ -197,7 +198,7 @@ void USSGameInstance::SetRankMatchConditions(FSSRankMatchConditions InConditions
 void USSGameInstance::SetRankingType(int32 InType) {
 }
 
-void USSGameInstance::SetPleyerLevelSet(int32 InPlayLevel) {
+void USSGameInstance::SetPleyerLevelSet(bool InEasy, bool InOrb) {
 }
 
 void USSGameInstance::SetPaperTheaterData(USSPaperTheaterDataAsset* InPaperTheaterData) {

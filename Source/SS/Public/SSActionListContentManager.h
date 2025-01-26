@@ -4,6 +4,7 @@
 #include "SSMenuManager.h"
 #include "SSActionListContentManager.generated.h"
 
+class ASSCharacter;
 class UTexture2D;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -19,6 +20,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UTexture2D*> TexturesSkillIcon;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ASSCharacter* Character;
+    
     USSActionListContentManager();
 
     UFUNCTION(BlueprintCallable)
@@ -26,6 +30,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetFocusOnPossible();
+    
+    UFUNCTION(BlueprintCallable)
+    void SetCharacter(ASSCharacter* InCharacter);
     
     UFUNCTION(BlueprintCallable)
     void OnPadRButton();

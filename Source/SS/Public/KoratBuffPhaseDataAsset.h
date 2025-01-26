@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EKoratBuffSpecialType.h"
+#include "KoratActionDataList.h"
 #include "KoratArmorDataList.h"
 #include "KoratBuffCategoryDataList.h"
 #include "KoratCharacterGroupDataList.h"
@@ -64,6 +65,15 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAfterImageDodge;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float DodgeMoveChangeDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDodgeMoveChangeAtBulletAttack;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratActionDataList ChangeDodgePlayAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<FName> BuffTags;

@@ -42,6 +42,7 @@ ASSBattleSetupController::ASSBattleSetupController(const FObjectInitializer& Obj
     this->TeamingMySetWidget = NULL;
     this->OptionController = NULL;
     this->PreviewCharacterItemEquipment = NULL;
+    this->ActionListController = NULL;
 }
 
 void ASSBattleSetupController::UpdateCameraAttachTransform() {

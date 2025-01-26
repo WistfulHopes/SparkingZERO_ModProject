@@ -20,5 +20,6 @@ FSSNetworkData::FSSNetworkData() {
     this->PlayerMatchMaxWinStreak = 0;
     this->PlayerMatchParticipation = 0;
     this->PlayerMatchCharaCount = 0;
+    this->PlayerMatchModeAuto = false;
 }
 

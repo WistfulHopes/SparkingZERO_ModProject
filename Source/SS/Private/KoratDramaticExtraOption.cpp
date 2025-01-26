@@ -2,6 +2,7 @@
 
 FKoratDramaticExtraOption::FKoratDramaticExtraOption() {
     this->Difficulty = 0;
-    this->UnLockType = EKoratDramaticExtraUnLockType::None;
+    this->ExtraUnlockType = EKoratUnLockType::Non;
+    this->bIsDLCBattle = false;
 }
 

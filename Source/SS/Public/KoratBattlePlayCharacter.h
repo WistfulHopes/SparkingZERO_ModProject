@@ -94,6 +94,9 @@ public:
     FKoratBattlePlayLevelSet BattlePlayOrb;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratBattlePlayLevelSet BattlePlayOrbEasy;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 CostumeDamageLv;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

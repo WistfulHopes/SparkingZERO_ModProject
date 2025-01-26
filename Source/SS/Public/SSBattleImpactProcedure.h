@@ -11,6 +11,7 @@
 #include "EBattleImpactTriggerEventOpt.h"
 #include "EBattleImpactType.h"
 #include "EKoratImpactTransformType.h"
+#include "EWarpRequestReturnType.h"
 #include "SSBattleImpactProcedure.generated.h"
 
 class APlayerController;
@@ -126,7 +127,7 @@ protected:
     void ReceiveOnTriggerEventMatchTransform(float Time, EBattleImpactTriggerEventOpt Option);
     
     UFUNCTION(BlueprintCallable)
-    void OnTriggerEventMatchTransform(float Time, EBattleImpactTriggerEventOpt Option, bool InWarpReturn);
+    void OnTriggerEventMatchTransform(float Time, EBattleImpactTriggerEventOpt Option, bool InWarpReturn, EWarpRequestReturnType InWarpRequestReturnType, const FVector& InMotionOffset);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnInterimBattle(USSBattleImpactCharacterProxy* InLeadCharacter, float InDominance);

@@ -2,12 +2,16 @@
 
 USSActionListManager::USSActionListManager() {
     this->ActionListContentManager = NULL;
+    this->Character = NULL;
 }
 
 void USSActionListManager::SubScroll() {
 }
 
 void USSActionListManager::SetFocusOnPossible() {
+}
+
+void USSActionListManager::SetCharacter(ASSCharacter* InCharacter) {
 }
 
 void USSActionListManager::OnPadRButton() {

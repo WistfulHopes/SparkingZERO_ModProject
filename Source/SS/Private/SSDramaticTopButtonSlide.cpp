@@ -14,4 +14,8 @@ void USSDramaticTopButtonSlide::PlaySlideAnimation(UWidgetAnimation* InOneShotAn
 void USSDramaticTopButtonSlide::ModeSet() {
 }
 
+int32 USSDramaticTopButtonSlide::GetNowSelectModeNum() {
+    return 0;
+}
+
 

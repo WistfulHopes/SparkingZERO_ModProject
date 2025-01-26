@@ -9,10 +9,10 @@ UKoratWeatherControllerComp::UKoratWeatherControllerComp(const FObjectInitialize
     this->FadeOutTime = 0.50f;
 }
 
-void UKoratWeatherControllerComp::OnSpDown2P(float InDownValue) {
+void UKoratWeatherControllerComp::OnSpDown2P(ASSCharacter* InCharacter, const float InDownValue) {
 }
 
-void UKoratWeatherControllerComp::OnSpDown1P(float InDownValue) {
+void UKoratWeatherControllerComp::OnSpDown1P(ASSCharacter* InCharacter, const float InDownValue) {
 }
 
 void UKoratWeatherControllerComp::OnSetup() {

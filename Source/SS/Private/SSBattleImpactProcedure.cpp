@@ -58,7 +58,7 @@ void ASSBattleImpactProcedure::RequestBattleImpactBreakStatic(const UObject* Wor
 }
 
 
-void ASSBattleImpactProcedure::OnTriggerEventMatchTransform(float Time, EBattleImpactTriggerEventOpt Option, bool InWarpReturn) {
+void ASSBattleImpactProcedure::OnTriggerEventMatchTransform(float Time, EBattleImpactTriggerEventOpt Option, bool InWarpReturn, EWarpRequestReturnType InWarpRequestReturnType, const FVector& InMotionOffset) {
 }
 
 void ASSBattleImpactProcedure::OnInterimBattle_Implementation(USSBattleImpactCharacterProxy* InLeadCharacter, float InDominance) {

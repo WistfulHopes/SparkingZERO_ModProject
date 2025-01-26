@@ -7,5 +7,6 @@ enum class EMainMenuSettingsMode : uint8 {
     MatchingCondition,
     RoomSearch,
     RoomCreate,
+    AutoQuickMatch,
 };
 

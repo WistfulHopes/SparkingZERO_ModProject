@@ -14,6 +14,7 @@
 #include "SSBattleSetupPlayerLabelObjects.h"
 #include "SSBattleSetupController.generated.h"
 
+class ASSActionListController;
 class ASSOptionController;
 class ULevelSequence;
 class USSBattleMemberSettingMenu;
@@ -382,6 +383,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSCharacterItemEquipment* PreviewCharacterItemEquipment;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ASSActionListController* ActionListController;
     
 public:
     ASSBattleSetupController(const FObjectInitializer& ObjectInitializer);

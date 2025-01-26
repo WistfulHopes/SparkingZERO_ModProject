@@ -30,6 +30,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<ULevelSequence> DuringInvincibilityPlayLevelSequence;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsEnableMPCPriorityControl;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsEnableDestroyEffectAfterStartAppeal;
+    
     SS_API FKoratCharacterDataBattleAssets();
 };
 

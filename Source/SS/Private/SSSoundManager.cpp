@@ -70,6 +70,9 @@ void USSSoundManager::ReserveBGM(const FKoratBGMDataList InBGMDataList) {
 void USSSoundManager::RemoveAtomCueSheetLoaderActor(const FName& InCueSheetName) {
 }
 
+void USSSoundManager::RemoveAtomCueSheetInfo(USoundAtomCueSheet* InCueSheet) {
+}
+
 void USSSoundManager::ReleaseSound() {
 }
 

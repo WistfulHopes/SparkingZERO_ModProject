@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EKoratMenuDramaticMode.h"
+#include "EKortaDramticBattleCategory.h"
 #include "KoratDramaticBattleExtraDataList.h"
 #include "SSDramaticBattleListUIBase.h"
 #include "SSDramaticBattleListUI.generated.h"
@@ -33,6 +34,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratDramaticBattleExtraDataList> NowDispUnlockExtraBattles;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<EKortaDramticBattleCategory> NowExtraBattleCategorys;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsModeSelectingList;
     
 public:
     USSDramaticBattleListUI();

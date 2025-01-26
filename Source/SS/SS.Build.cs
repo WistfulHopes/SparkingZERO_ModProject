@@ -33,11 +33,11 @@ public class SS : ModuleRules {
             "NavigationSystem",
             "Niagara",
             "PhysicsCore",
-            "RigVM",
             "SSKeyInput",
             "Slate",
             "SlateCore",
             "SpRuntime",
+            "RigVM",
             "UMG",
             "WindSimShader",
         });

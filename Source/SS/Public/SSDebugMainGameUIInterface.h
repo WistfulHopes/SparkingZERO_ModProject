@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "KoratActionDataList.h"
 #include "SSDebugMenuOpenedBP.h"
 #include "SSDebugMainGameUIInterface.generated.h"
 
@@ -31,6 +32,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TSoftObjectPtr<USSDebugMainGameUIExecute> GetExecuteInstancePtr() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    void GetAllActionList(TArray<FKoratActionDataList>& OutActionList);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CallTick(float InDeltaTime);

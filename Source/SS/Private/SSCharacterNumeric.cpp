@@ -17,6 +17,7 @@ USSCharacterNumeric::USSCharacterNumeric() {
     this->SPGaugeAutoRecoverySpeedSuperZCounter = -1000.00f;
     this->SPGaugeAutoRecoveryLimit = 20000.00f;
     this->SPChargeSpeed = 10000.00f;
+    this->SPChargeSpeedUnderAutoRecoveryLimit = 0.00f;
     this->MaxSPGaugeValue = 50000.00f;
     this->InitialSP = 20000.00f;
     this->SparkingGaugeChargeSpeed = 10000.00f;
@@ -45,6 +46,7 @@ USSCharacterNumeric::USSCharacterNumeric() {
     this->SuperZCounterFlickBlastCost = 2;
     this->SuperZCounterDrownOutBlastCost = 2;
     this->SuperZCounterAbsorptionBlastCost = 2;
+    this->SuperAscertainSPCost = 2500.00f;
     this->SuperCounterSPCost = 0.00f;
     this->ZCounterSPCost = 0.00f;
     this->SelfishnessSPCostByCombatives = 0.00f;

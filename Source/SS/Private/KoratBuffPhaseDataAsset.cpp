@@ -13,6 +13,8 @@ UKoratBuffPhaseDataAsset::UKoratBuffPhaseDataAsset() {
     this->bDirectBuff = false;
     this->SpecialType = EKoratBuffSpecialType::None;
     this->bAfterImageDodge = true;
+    this->DodgeMoveChangeDistance = -1.00f;
+    this->bDodgeMoveChangeAtBulletAttack = false;
     this->ArmorLevelUp = 0;
     this->bNumb = false;
     this->ChargeHelth = 0;

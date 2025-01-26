@@ -110,6 +110,9 @@ protected:
     TArray<USSCharaSelectCharaReader*> CharaReader;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<USSCharaSelectCharaReader*> BattleCharaReader;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSCharaSelectCharaReader* RollbackCharaReader;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

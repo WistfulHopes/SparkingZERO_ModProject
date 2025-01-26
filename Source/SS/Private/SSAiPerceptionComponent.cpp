@@ -220,6 +220,14 @@ bool USSAiPerceptionComponent::IsChangeMyselfAction() const {
     return false;
 }
 
+bool USSAiPerceptionComponent::IsCanFly() const {
+    return false;
+}
+
+bool USSAiPerceptionComponent::IsCanFinish() const {
+    return false;
+}
+
 bool USSAiPerceptionComponent::IsBurstDerived() const {
     return false;
 }

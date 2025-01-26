@@ -1,5 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EKoratActionCategoryType.h"
+#include "EKoratActionSubCategoryType.h"
 #include "KoratArmorDataList.h"
 #include "KoratCharacterDataArmorLevelParameter.generated.h"
 
@@ -15,6 +17,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HitBackRate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSet<EKoratActionCategoryType> ForceEnableAttackActionCategories;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSet<EKoratActionSubCategoryType> ForceEnableAttackActionSubCategories;
     
     SS_API FKoratCharacterDataArmorLevelParameter();
 };

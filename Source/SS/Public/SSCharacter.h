@@ -1201,6 +1201,12 @@ protected:
     bool bCharge;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bCameraPreUpDown;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bCameraUpDownAfterIdle;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bExplosionHit_CamUnSync;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -1852,6 +1858,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratActionDataList ChangeAction_STD;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bIsSecondStartAppealCharacter;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bIsSecondStartAppealCharacterWhenDestroyEffect;
+    
 protected:
     UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<AKoratFreeTimelineActor>> FreeTimelines;
@@ -2165,7 +2177,7 @@ public:
     void SetNextSection(const FName InNextSectionName);
     
     UFUNCTION(BlueprintCallable)
-    void SetMovementMode(EMovementMode InMovementMode);
+    void SetMovementMode(TEnumAsByte<EMovementMode> InMovementMode);
     
     UFUNCTION(BlueprintCallable)
     void SetLookatPartFlags(const EKoratActionLookatPartFlags& InPartFlags);
@@ -2493,6 +2505,9 @@ public:
     void ResetNormalRushBulletShotCount();
     
     UFUNCTION(BlueprintCallable)
+    void ResetLoadingSupporters();
+    
+    UFUNCTION(BlueprintCallable)
     void ResetJumpRushBulletShotCountInCurrentSet();
     
     UFUNCTION(BlueprintCallable)
@@ -2804,6 +2819,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUsableRevengeCounter() const;
+    
+    UFUNCTION(BlueprintCallable)
+    bool IsUpDownMoving();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUnconscious() const;
@@ -4685,7 +4703,7 @@ public:
     void DisableCharacterPush();
     
     UFUNCTION(BlueprintCallable)
-    void DestroySupporter();
+    void DestroySupporter(bool NewIsFormChange);
     
     UFUNCTION(BlueprintCallable)
     void DestroyRequestCharacterActionSequenceActor(FKoratActionDataList InAction, EKoratCharacterActionFinishReason InActionFinishReason);
@@ -4787,6 +4805,9 @@ public:
     void ConsumeSPCostSuperCounter();
     
     UFUNCTION(BlueprintCallable)
+    void ConsumeSPCostSuperAscertain();
+    
+    UFUNCTION(BlueprintCallable)
     void ConsumeSPCostSelfishness();
     
     UFUNCTION(BlueprintCallable)
@@ -4860,6 +4881,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CheckSPCostSuperCounter() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool CheckSPCostSuperAscertain() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CheckSPCostSelfishness() const;

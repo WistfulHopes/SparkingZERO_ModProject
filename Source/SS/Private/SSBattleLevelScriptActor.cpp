@@ -34,7 +34,7 @@ ASSBattleLevelScriptActor::ASSBattleLevelScriptActor(const FObjectInitializer& O
     this->CharacterStorageManager = NULL;
 }
 
-void ASSBattleLevelScriptActor::UnloadCharacter(const int32 InPlaySide, const FKoratCharacterDataList& InCharacterDataList, const FKoratCharacterCostumeDataList& InCostume, UKoratCharacterMLSDataAsset* InExtendMLSDataAsset, ASSCharacter* InSSCharacter) {
+void ASSBattleLevelScriptActor::UnloadCharacter(const int32 InPlaySide, const FKoratCharacterDataList& InCharacterDataList, const FKoratCharacterCostumeDataList& InCostume, UKoratCharacterMLSDataAsset* InExtendMLSDataAsset, ASSCharacter* InSSCharacter, bool IsUnloadCharacterSound) {
 }
 
 void ASSBattleLevelScriptActor::UnloadBattleScenePhase() {
@@ -205,7 +205,7 @@ void ASSBattleLevelScriptActor::DestroyMapWarpDataAssetHolder() {
 void ASSBattleLevelScriptActor::DestroyCharacterWarpCtrl() {
 }
 
-void ASSBattleLevelScriptActor::DestroyBattleCharacter(ASSCharacter* InCharacter, bool InIsRequestGC) {
+void ASSBattleLevelScriptActor::DestroyBattleCharacter(ASSCharacter* InCharacter, bool InIsRequestGC, bool InIsDestroySupportCharacter) {
 }
 
 void ASSBattleLevelScriptActor::ClearBattleConversationData() {

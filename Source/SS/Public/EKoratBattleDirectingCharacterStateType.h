@@ -27,6 +27,10 @@ enum class EKoratBattleDirectingCharacterStateType : uint8 {
     NoHit_BlastSkill1,
     NoHit_BlastSkill2,
     NoHit_BlastUltimate,
+    NoHit_PowerImpactTrigger,
+    NoHit_CrashImpactTrigger,
+    NoHit_SpeedImpactTrigger,
+    NoHit_BlastImpactTrigger,
     SunFist,
     SunFistEnd,
 };

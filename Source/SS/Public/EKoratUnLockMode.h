@@ -7,5 +7,6 @@ enum class EKoratUnLockMode : uint8 {
     Lock,
     New,
     Checked,
+    CheckedLock,
 };
 

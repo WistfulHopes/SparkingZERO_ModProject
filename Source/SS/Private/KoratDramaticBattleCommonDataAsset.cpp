@@ -2,6 +2,7 @@
 
 UKoratDramaticBattleCommonDataAsset::UKoratDramaticBattleCommonDataAsset() {
     this->WLibDetailSearchConditionDifficultyDefault = ESSDramaticBattleSearchConditionDifficulty::Level20;
+    this->WLibStatusStackHistoryMax = 60;
     this->WLibMyPostBattleListOverInfoSetting = ESSWLibBattleListOverInfoType::PlayCount;
     this->WLibFavoriteBattleListOverInfoSetting = ESSWLibBattleListOverInfoType::PlayCount;
     this->WLibUserBattleListOverInfoSetting = ESSWLibBattleListOverInfoType::PlayCount;

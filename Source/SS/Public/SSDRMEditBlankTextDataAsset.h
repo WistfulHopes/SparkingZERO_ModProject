@@ -4,7 +4,7 @@
 #include "SSDRMEditBlankTextBlank.h"
 #include "SSDRMEditBlankTextDataAsset.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, MinimalAPI)
 class USSDRMEditBlankTextDataAsset : public USSDRMEditBaseTextDataAsset {
     GENERATED_BODY()
 public:

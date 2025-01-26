@@ -15,5 +15,9 @@ enum class EKoratActionAttackType : uint8 {
     AttackAction,
     SignCombatives,
     TriggerSonicSway,
+    PowerImpactTrigger,
+    CrashImpactTrigger,
+    SpeedImpactTrigger,
+    BlastImpactTrigger,
 };
 

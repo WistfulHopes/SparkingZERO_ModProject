@@ -242,7 +242,7 @@ public:
     ASSBattleLevelScriptActor(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)
-    void UnloadCharacter(const int32 InPlaySide, const FKoratCharacterDataList& InCharacterDataList, const FKoratCharacterCostumeDataList& InCostume, UKoratCharacterMLSDataAsset* InExtendMLSDataAsset, ASSCharacter* InSSCharacter);
+    void UnloadCharacter(const int32 InPlaySide, const FKoratCharacterDataList& InCharacterDataList, const FKoratCharacterCostumeDataList& InCostume, UKoratCharacterMLSDataAsset* InExtendMLSDataAsset, ASSCharacter* InSSCharacter, bool IsUnloadCharacterSound);
     
     UFUNCTION(BlueprintCallable)
     void UnloadBattleScenePhase();
@@ -397,7 +397,7 @@ public:
     void DestroyCharacterWarpCtrl();
     
     UFUNCTION(BlueprintCallable)
-    void DestroyBattleCharacter(ASSCharacter* InCharacter, bool InIsRequestGC);
+    void DestroyBattleCharacter(ASSCharacter* InCharacter, bool InIsRequestGC, bool InIsDestroySupportCharacter);
     
     UFUNCTION(BlueprintCallable)
     void ClearBattleConversationData();

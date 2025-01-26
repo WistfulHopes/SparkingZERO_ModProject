@@ -258,6 +258,12 @@ public:
     FSSDialogTextData NotFinishTutorialDialog;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 WLibStatusStackHistoryMax;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSDialogTextData HistoryOverNotOpenDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<ESSWLibHomeCategoryButtonType, ESSWLibBattleListOverInfoType> WLibHomeListOverInfoSettingMap;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

@@ -3,6 +3,7 @@
 #include "SSMenuManager.h"
 #include "SSActionListManager.generated.h"
 
+class ASSCharacter;
 class USSActionListContentManager;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -14,6 +15,9 @@ private:
     USSActionListContentManager* ActionListContentManager;
     
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ASSCharacter* Character;
+    
     USSActionListManager();
 
     UFUNCTION(BlueprintCallable)
@@ -21,6 +25,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetFocusOnPossible();
+    
+    UFUNCTION(BlueprintCallable)
+    void SetCharacter(ASSCharacter* InCharacter);
     
     UFUNCTION(BlueprintCallable)
     void OnPadRButton();

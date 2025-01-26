@@ -342,6 +342,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSNotificationManager* NotificationManager;
     
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint32 MainUserChangedCallbackId;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSPaperTheaterDataAsset* PaperTheaterData;
     
@@ -1027,7 +1030,7 @@ public:
     void SetRankingType(int32 InType);
     
     UFUNCTION(BlueprintCallable)
-    void SetPleyerLevelSet(int32 InPlayLevel);
+    void SetPleyerLevelSet(bool InEasy, bool InOrb);
     
     UFUNCTION(BlueprintCallable)
     void SetPaperTheaterData(USSPaperTheaterDataAsset* InPaperTheaterData);

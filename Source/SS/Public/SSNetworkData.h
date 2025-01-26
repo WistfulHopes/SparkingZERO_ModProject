@@ -73,6 +73,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterDataList PlayerMatchCharaName;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool PlayerMatchModeAuto;
+    
     FSSNetworkData();
 };
 

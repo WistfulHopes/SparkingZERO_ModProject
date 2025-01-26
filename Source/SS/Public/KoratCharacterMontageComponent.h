@@ -359,6 +359,12 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     bool IsActionCanStandby() const;
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetSuperCounterInputTime() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetRushHighSpeedMoveRevengeInputTime() const;
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     TArray<FKoratReplaceAnimationDataList> GetPlayingAnimDataListArray() const;
     
@@ -370,6 +376,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMontageActionTime() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetFastAvoidanceInputTime() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FKoratReplaceAnimationDataList> GetCurrentPlayingAnimDataListArray() const;
@@ -395,8 +404,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBattleKeyTimeSincePressedAtIntervalImpl(const EKoratBattleKey InBattleKey) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
-    float GetBattleKeyInterval(EKoratBattleKey InBattleKey);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetBattleKeyInterval(EKoratBattleKey InBattleKey) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBattleKeyHoldTimeImpl(const EKoratBattleKey Key) const;

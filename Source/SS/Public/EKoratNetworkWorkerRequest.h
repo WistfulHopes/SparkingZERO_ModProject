@@ -42,6 +42,7 @@ enum class EKoratNetworkWorkerRequest : uint8 {
     TournamentAddCom,
     PollNotice,
     PollMiscInfo,
+    ResolveBanner,
     SyncPlayerCard,
     BattleMode010,
     Max,

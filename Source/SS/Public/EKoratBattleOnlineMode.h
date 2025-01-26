@@ -13,5 +13,6 @@ enum class EKoratBattleOnlineMode : uint8 {
     BattleMode011,
     BattleMode010,
     BattleMode012,
+    AutoQuickMatch,
 };
 

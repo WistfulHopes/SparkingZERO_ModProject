@@ -532,6 +532,10 @@ bool ASSBattleGameStateBase::IsImpactGvsG() {
     return false;
 }
 
+bool ASSBattleGameStateBase::IsHitFallInRingoutRule(const ASSCharacter* InCharacter, const FVector& InBasePos, const float InLocationZ, float& OutHitLocationZ) const {
+    return false;
+}
+
 bool ASSBattleGameStateBase::IsFinishMode() {
     return false;
 }

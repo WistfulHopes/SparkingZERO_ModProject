@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "ESSBannerState.h"
 #include "KoratShopFloorDataList.h"
 #include "KoratUILevelDataList.h"
@@ -7,6 +8,7 @@
 #include "SSBannerDataAsset.generated.h"
 
 class UTexture2D;
+class UTexture2DDynamic;
 
 UCLASS(Blueprintable)
 class USSBannerDataAsset : public UMutualDataAsset {
@@ -29,6 +31,21 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString TransitionURL;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<uint8> DownloadBinaryImage;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UTexture2DDynamic* DownloadTexture;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDateTime OpenTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDateTime CloseTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 Priority;
     
     USSBannerDataAsset();
 

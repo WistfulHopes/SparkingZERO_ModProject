@@ -9,6 +9,9 @@ enum class ESSDlcItemType : uint8 {
     CharacterItem,
     Bgm,
     PlayerCardBG,
+    DramaticBattleExtra,
+    EditPartsText,
+    EditPartsImage,
     Num,
 };
 

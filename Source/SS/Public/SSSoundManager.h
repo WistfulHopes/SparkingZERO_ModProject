@@ -138,6 +138,9 @@ public:
     void RemoveAtomCueSheetLoaderActor(const FName& InCueSheetName);
     
     UFUNCTION(BlueprintCallable)
+    void RemoveAtomCueSheetInfo(USoundAtomCueSheet* InCueSheet);
+    
+    UFUNCTION(BlueprintCallable)
     void ReleaseSound();
     
     UFUNCTION(BlueprintCallable)

@@ -37,10 +37,10 @@ public:
     UKoratWeatherControllerComp(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)
-    void OnSpDown2P(float InDownValue);
+    void OnSpDown2P(ASSCharacter* InCharacter, float InDownValue);
     
     UFUNCTION(BlueprintCallable)
-    void OnSpDown1P(float InDownValue);
+    void OnSpDown1P(ASSCharacter* InCharacter, float InDownValue);
     
     UFUNCTION(BlueprintCallable)
     void OnSetup();

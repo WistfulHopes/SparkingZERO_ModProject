@@ -10,5 +10,6 @@ enum class EKortaDramticBattleCategory : uint8 {
     EliteClass,
     LegeandSuperClass,
     HighDegreeOfDifficulty,
+    DLCBattle,
 };
 
