@@ -8,6 +8,7 @@
 #include "KoratWeatherControllerComp.generated.h"
 
 class ASSBattleLevelScriptActor;
+class ASSCharacter;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UKoratWeatherControllerComp : public UActorComponent, public IKoratWeatherControlInterface {
@@ -37,10 +38,10 @@ public:
     UKoratWeatherControllerComp(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)
-    void OnSpDown2P(ASSCharacter* InCharacter, float InDownValue);
+    void OnSpDown2P(ASSCharacter* InCharacter, const float InDownValue);
     
     UFUNCTION(BlueprintCallable)
-    void OnSpDown1P(ASSCharacter* InCharacter, float InDownValue);
+    void OnSpDown1P(ASSCharacter* InCharacter, const float InDownValue);
     
     UFUNCTION(BlueprintCallable)
     void OnSetup();

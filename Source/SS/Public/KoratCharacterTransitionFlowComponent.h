@@ -308,7 +308,7 @@ public:
     void SetTransitionDestinationAnimIndex(FKoratActionDataList InAction, int32 InAnimIndex, bool InIsStartTurn, bool InIsAnimTurn, FName InTurningSection);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void SetTransitionDestination(FKoratActionDataList InAction, bool InIsStartTurn, bool InIsAnimTurn, FName InTurningSection, bool IsNoTurnBeforeTransition);
+    void SetTransitionDestination(FKoratActionDataList InAction, bool InIsStartTurn, bool InIsAnimTurn, FName InTurningSection, bool IsNoTurnBeforeTransition, const int32 IsAnimIndex);
     
     UFUNCTION(BlueprintCallable)
     void SetRequestDirectingAction(const EKoratBattleDirectingAction InRequestType);

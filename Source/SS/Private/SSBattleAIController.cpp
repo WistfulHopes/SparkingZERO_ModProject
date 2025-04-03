@@ -13,6 +13,7 @@ ASSBattleAIController::ASSBattleAIController(const FObjectInitializer& ObjectIni
     this->CrashImpactUi = NULL;
     this->CrashImpactBoostUi = NULL;
     this->BlastImpactUi = NULL;
+    this->ZSearchEffectRenderer = NULL;
 }
 
 void ASSBattleAIController::SetBrainComponentDependency() {

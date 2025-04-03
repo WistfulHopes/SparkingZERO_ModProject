@@ -8,8 +8,6 @@ FKoratBattleResultPlayerRecord::FKoratBattleResultPlayerRecord() {
     this->RankMatchSingleRankPoint = 0;
     this->RankMatchTeamRank = 0;
     this->RankMatchTeamRankPoint = 0;
-    this->TenkaichiRank = 0;
-    this->TenkaichiRankPoint = 0;
     this->Money = 0;
     this->EventPoint = 0;
     this->PlayerRatePoint = 0;

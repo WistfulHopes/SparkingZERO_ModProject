@@ -1592,6 +1592,10 @@ bool ASSCharacter::IsFluffyMoveNow() const {
     return false;
 }
 
+bool ASSCharacter::IsFindTimeDilationTrackAll() {
+    return false;
+}
+
 bool ASSCharacter::IsFarLowAltitudeFlightOnCharacter() const {
     return false;
 }
@@ -3974,6 +3978,9 @@ void ASSCharacter::BattleKeyPushImpl(EKoratBattleKey InBattleKey, ESSFlowConditi
 void ASSCharacter::BattleKeyHoldImpl(EKoratBattleKey InBattleKey, ESSFlowConditionsJudgmentType& OutJudgment) {
 }
 
+
+void ASSCharacter::BakeLastParameterForceAll() {
+}
 
 void ASSCharacter::AttackBlastImpact(float InPower) {
 }

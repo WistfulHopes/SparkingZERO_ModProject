@@ -39,6 +39,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDateTime CloseDateTime;
     
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    int64 UniqueSettingId;
+    
     SS_API FSSMissionUserDataSaveData();
 };
 

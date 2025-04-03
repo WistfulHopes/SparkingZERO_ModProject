@@ -7,6 +7,7 @@ FKoratCharacterDataFormChangeParameter::FKoratCharacterDataFormChangeParameter()
     this->ConsumeBlastStock = 0;
     this->HpRecovery = 0.00f;
     this->StyleChangeSPRecoveryMode = EKoratStyleChangeSPRecoveryMode::Default;
+    this->bDisableRecoveryAfterTheSecondTime = false;
     this->CoolTime = 0.00f;
     this->SafeSpawnAreaSize = EKoratSafeSpawnAreaSize::None;
 }

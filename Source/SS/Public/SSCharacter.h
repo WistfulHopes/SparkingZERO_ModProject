@@ -2553,7 +2553,7 @@ public:
     void RequestTransitionOfFlowAction(const FKoratActionDataList InBeforeAction, const FKoratActionDataList InAfterAction);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void RequestTransitAction(FKoratActionDataList InAction);
+    void RequestTransitAction(FKoratActionDataList InAction, const int32 InAnimIndex);
     
     UFUNCTION(BlueprintCallable)
     void RequestResetMoveSpeed(bool InFlag);
@@ -3057,6 +3057,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFluffyMoveNow() const;
+    
+    UFUNCTION(BlueprintCallable)
+    bool IsFindTimeDilationTrackAll();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFarLowAltitudeFlightOnCharacter() const;
@@ -5037,6 +5040,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BattleKeyHold(EKoratBattleKey InBattleKey, ESSFlowConditionsJudgmentType& OutJudgment);
+    
+    UFUNCTION(BlueprintCallable)
+    void BakeLastParameterForceAll();
     
     UFUNCTION(BlueprintCallable)
     void AttackBlastImpact(float InPower);

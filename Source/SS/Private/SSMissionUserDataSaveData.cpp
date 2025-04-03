@@ -9,5 +9,6 @@ FSSMissionUserDataSaveData::FSSMissionUserDataSaveData() {
     this->bIsOverLimit = false;
     this->bIsReleased = false;
     this->bIsPlatformTrophyUnlock = false;
+    this->UniqueSettingId = 0;
 }
 

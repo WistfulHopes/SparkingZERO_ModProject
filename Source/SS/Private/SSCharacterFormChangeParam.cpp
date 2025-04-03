@@ -11,6 +11,7 @@ FSSCharacterFormChangeParam::FSSCharacterFormChangeParam() {
     this->HpRecovery = 0.00f;
     this->AddMaxHP = 0.00f;
     this->StyleChangeSPRecoveryMode = EKoratStyleChangeSPRecoveryMode::Default;
+    this->bDisableRecoveryAfterTheSecondTime = false;
     this->CoolTime = 0.00f;
     this->PartnerChangeOkFlg = false;
     this->FaceChipTextureP1 = NULL;

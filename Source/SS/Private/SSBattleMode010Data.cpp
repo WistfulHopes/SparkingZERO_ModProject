@@ -2,5 +2,6 @@
 
 FSSBattleMode010Data::FSSBattleMode010Data() {
     this->bIsFirstPlay = false;
+    this->SeasonNo = 0;
 }
 

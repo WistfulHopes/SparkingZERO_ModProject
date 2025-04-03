@@ -138,6 +138,9 @@ USSLevelSequencePlayer* ASSLevelSequenceActor::GetSSSequencePlayer() {
 void ASSLevelSequenceActor::EndEffectSequenceCamera() {
 }
 
+void ASSLevelSequenceActor::BakeLastParameterForce() {
+}
+
 void ASSLevelSequenceActor::AddRebindInfo(FMovieSceneObjectBindingID InBindingId, const FString& InName, uint32 InActorGUID) {
 }
 

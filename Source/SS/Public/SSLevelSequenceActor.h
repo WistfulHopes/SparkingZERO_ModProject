@@ -259,6 +259,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void EndEffectSequenceCamera();
     
+public:
+    UFUNCTION(BlueprintCallable)
+    void BakeLastParameterForce();
+    
 private:
     UFUNCTION()
     void AddRebindInfo(FMovieSceneObjectBindingID InBindingId, const FString& InName, uint32 InActorGUID);

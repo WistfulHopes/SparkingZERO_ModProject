@@ -20,6 +20,7 @@ USSGameInstance::USSGameInstance() {
     this->ReplaySaveGame = NULL;
     this->ReplaySlotName = TEXT("ReplaySave");
     this->ReplayUserIndex = 0;
+    this->ReplayBattleMode010Difficulty = ESSBattleMode010Difficulty::None;
     this->bAgingReplayLoop = false;
     this->bDebugReplayOptionMap = true;
     this->bDebugReplayOptionCharacter = true;

@@ -35,7 +35,10 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EKoratStyleChangeSPRecoveryMode StyleChangeSPRecoveryMode;
-    
+        
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDisableRecoveryAfterTheSecondTime;
+
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CoolTime;
     

@@ -14,6 +14,7 @@ FKoratCharacterTypeDataAssetRecord::FKoratCharacterTypeDataAssetRecord() {
     this->BlastUltimateDamageScale = 0.00f;
     this->CombativesDamageResist = 0.00f;
     this->EnergyDamageResist = 0.00f;
+    this->BlastDamageResist = 0.00f;
     this->CombativesChargeScale = 0.00f;
     this->BulletChargeScale = 0.00f;
     this->SPAutoRecoveryScale = 0.00f;

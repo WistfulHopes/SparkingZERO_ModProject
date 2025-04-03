@@ -51,6 +51,7 @@ FKoratCharacterParameterChanging::FKoratCharacterParameterChanging() {
     this->ComboDamageScalingEffectScale = 0.00f;
     this->CombativesDamageResist = 0.00f;
     this->EnergyDamageResist = 0.00f;
+    this->BlastDamageResist = 0.00f;
     this->ShaveDamageResist = 0.00f;
     this->SelfDamageResist = 0.00f;
     this->DestructedDamageResist = 0.00f;

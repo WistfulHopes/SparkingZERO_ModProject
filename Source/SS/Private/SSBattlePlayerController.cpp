@@ -16,6 +16,7 @@ ASSBattlePlayerController::ASSBattlePlayerController(const FObjectInitializer& O
     this->BlastImpactUi = NULL;
     this->DBEvTriggerUi = NULL;
     this->PerformanceIcon = NULL;
+    this->ZSearchEffectRenderer = NULL;
     this->DebugPauseRepeatStartTime = 0.20f;
     this->DebugPauseRepeatStepTime = 0.10f;
     this->GuideWidget = NULL;

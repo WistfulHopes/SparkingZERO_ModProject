@@ -238,6 +238,9 @@ void ASSBattleGameStateBase::SpeedImpactFinish() {
 void ASSBattleGameStateBase::SpeedImpactBattleConversationFinishWait(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo) {
 }
 
+void ASSBattleGameStateBase::SkipApearTimeDilationWait(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo) {
+}
+
 void ASSBattleGameStateBase::SkipApearStart(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, float InFadeTime, float InWaitTime) {
 }
 

@@ -508,6 +508,9 @@ public:
     void SpeedImpactBattleConversationFinishWait(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo);
     
     UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
+    void SkipApearTimeDilationWait(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo);
+    
+    UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
     void SkipApearStart(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, float InFadeTime, float InWaitTime);
     
     UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))

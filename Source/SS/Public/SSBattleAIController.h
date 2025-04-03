@@ -5,6 +5,7 @@
 #include "SSBattleController.h"
 #include "SSBattleAIController.generated.h"
 
+class ASSCZSearchEffectRenderer;
 class UBehaviorTreeComponent;
 class USSAiBTDecoratorUtilityComponent;
 class USSAiLearningComponent;
@@ -61,6 +62,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USSBlastImpactUi* BlastImpactUi;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ASSCZSearchEffectRenderer* ZSearchEffectRenderer;
     
 public:
     ASSBattleAIController(const FObjectInitializer& ObjectInitializer);

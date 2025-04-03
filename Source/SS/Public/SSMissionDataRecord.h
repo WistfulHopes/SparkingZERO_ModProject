@@ -69,6 +69,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterDataList MissionReleaseCharacterId;
     
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    int64 UniqueSettingId;
+    
     USSMissionDataRecord();
 
 };

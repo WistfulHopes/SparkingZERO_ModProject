@@ -8,6 +8,7 @@
 class ASSActionListController;
 class ASSBattleDetailsController;
 class ASSBattlePlayerController;
+class ASSCZSearchEffectRenderer;
 class ASSChameleon;
 class ASSDramaticDetailsController;
 class ASSGeneralDialogController;
@@ -76,6 +77,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USSPerformanceIcon* PerformanceIcon;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ASSCZSearchEffectRenderer* ZSearchEffectRenderer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DebugPauseRepeatStartTime;
