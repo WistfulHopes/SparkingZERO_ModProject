@@ -90,6 +90,8 @@ class USSLoggingToolManager;
 class USSMenuInterruptManager;
 class USSMenuManager;
 class USSMissionDataManager;
+class USSModeHUNManager;
+class USSModeNSRManager;
 class USSMythicalOrbManager;
 class USSNotificationManager;
 class USSPaperTheaterDataAsset;
@@ -185,7 +187,16 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSBattleMode011Result BattleMode011Result;
-    
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratCharacterDataList> CharacterRestriction;
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bModeNSRContinue;
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bModeNSRContinueLoadAutoSave;
+
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratTrainingSetting TrainingSetting;
     
@@ -281,7 +292,13 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSDramaticDataManager* DaramaticDataManager;
-    
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    class USSModeHUNManager* ModeHUNDataManager;
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    class USSModeNSRManager* ModeNSRManager;
+
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bStartKoratPDramaticImageGeneration;
     
@@ -344,9 +361,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSTournamentRoundMatchResults TournamentRoundMatchResult;
-    
+
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bTournamentFinalWinWithoutPlaying;
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<int32> MaxDPTypeData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSNotificationManager* NotificationManager;
@@ -1685,6 +1705,39 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void AddBattleReward(TArray<FKoratBattleReward> InBattleReward);
-    
+
+    UFUNCTION(BlueprintCallable)
+    void ModeNSRContinue(const FKoratBattlePlayCharacter& InEnemyCharacter, bool bInLoadAutoSave);
+
+    UFUNCTION(BlueprintCallable)
+    class USSModeNSRManager* GetModeNSRManager();
+
+    UFUNCTION(BlueprintCallable)
+    bool IsBattleMenuModeHUN();
+
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    EKoratBattleMenu GetEKoratBattleMenuForBattle() const;
+
+    UFUNCTION(BlueprintCallable)
+    void SetDefaultBattleBGM(const FKoratBGMDataList& InBattleBGM);
+
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FKoratBGMDataList GetDefaultBattleBGM() const;
+
+    UFUNCTION(BlueprintCallable)
+    EBattleWinLose GetSpConclusionResult();
+
+    UFUNCTION(BlueprintCallable)
+    bool GetSearchOffStart();
+
+    UFUNCTION(BlueprintCallable)
+    bool RemoveNonExistEventBonusCharacterSort(TArray<FKoratCharaSortMenuDataRecord>& OutFilter);
+
+    UFUNCTION(BlueprintCallable)
+    bool RemoveNonExistEventBonusCharacterFilter(TArray<FKoratCharacterFilterDataList>& OutFilter);
+
+    UFUNCTION(BlueprintCallable)
+    bool IsExistBattleMode010EPBonusCharacter();
+
 };
 

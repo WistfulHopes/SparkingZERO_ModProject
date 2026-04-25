@@ -968,4 +968,47 @@ ESSKeyInputType USSGameInstance::ChangeRichTextTagTable(const FText& InText, FTe
 void USSGameInstance::AddBattleReward(TArray<FKoratBattleReward> InBattleReward) {
 }
 
+// April 2026 new function stubs
+void USSGameInstance::ModeNSRContinue(const FKoratBattlePlayCharacter& InCharacter, bool bInLoadAutoSave) {
+}
+
+USSModeNSRManager* USSGameInstance::GetModeNSRManager() {
+    return ModeNSRManager;
+}
+
+bool USSGameInstance::IsBattleMenuModeHUN() {
+    return false;
+}
+
+EKoratBattleMenu USSGameInstance::GetEKoratBattleMenuForBattle() const {
+    return (EKoratBattleMenu)0;
+}
+
+void USSGameInstance::SetDefaultBattleBGM(const FKoratBGMDataList& InBGM) {
+}
+
+FKoratBGMDataList USSGameInstance::GetDefaultBattleBGM() const {
+    return FKoratBGMDataList();
+}
+
+EBattleWinLose USSGameInstance::GetSpConclusionResult() {
+    return (EBattleWinLose)0;
+}
+
+bool USSGameInstance::GetSearchOffStart() {
+    return false;
+}
+
+bool USSGameInstance::RemoveNonExistEventBonusCharacterSort(TArray<FKoratCharaSortMenuDataRecord>& InOutSortData) {
+    return false;
+}
+
+bool USSGameInstance::RemoveNonExistEventBonusCharacterFilter(TArray<FKoratCharacterFilterDataList>& InOutFilterData) {
+    return false;
+}
+
+bool USSGameInstance::IsExistBattleMode010EPBonusCharacter() {
+    return false;
+}
+
 
