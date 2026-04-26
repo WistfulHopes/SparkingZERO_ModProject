@@ -243,6 +243,6 @@ After updating headers, test:
 
 ## Version Information
 - **Analysis Date:** April 24, 2026
-- **October 2024 Source:** `C:\Users\zchri\SparkingZERO_ModProject\Source\SS\Public\SSGameInstance.h`
-- **April 2026 Source:** `C:\Program Files (x86)\Steam\steamapps\common\DRAGON BALL Sparking! ZERO\SparkingZERO\Binaries\Win64\CXXHeaderDump\SS.hpp` (Line 38766-39314)
-- **Extracted April 2026 Class:** `C:\Users\zchri\SparkingZERO_ModProject\SSGameInstance_April2026.hpp`
+- **October 2024 Source:** `Source/SS/Public/SSGameInstance.h`
+- **April 2026 Source:** CXX Header Dump from UE4SS (`SS.hpp`, Line 38766-39314)
+- **Extracted April 2026 Class:** `SSGameInstance_April2026.hpp`

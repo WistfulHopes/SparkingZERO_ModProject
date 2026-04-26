@@ -101,7 +101,7 @@ Wine/Proton doesn't properly honor `VirtualAlloc` with `PAGE_EXECUTE_READWRITE`.
 
 ## Source Code
 
-Located at: `C:\Users\zchri\SparkingZERO_ModProject\BPPropertyNullFix\main.cpp`
+Located at: `BPPropertyNullFix/main.cpp`
 
 Compile with:
 ```
