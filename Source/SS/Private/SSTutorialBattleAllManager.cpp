@@ -1,6 +1,7 @@
 #include "SSTutorialBattleAllManager.h"
 
 USSTutorialBattleAllManager::USSTutorialBattleAllManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSTutorialBattleAllManager::SetBattleTipsCheckView(int32 InSetNo, bool InFlg) {

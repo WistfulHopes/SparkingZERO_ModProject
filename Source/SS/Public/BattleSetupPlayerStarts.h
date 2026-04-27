@@ -14,6 +14,9 @@ public:
     TArray<FKoratPlayerStartDataList> TeamMembersPlaceLarge;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratPlayerStartDataList> TeamMembersPlaceLargeNew;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratPlayerStartDataList> TeamMembersPlaceSpecial;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

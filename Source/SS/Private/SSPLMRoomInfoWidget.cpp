@@ -1,6 +1,7 @@
 #include "SSPLMRoomInfoWidget.h"
 
 USSPLMRoomInfoWidget::USSPLMRoomInfoWidget() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->HeaderLabel = NULL;
     this->RoomIdLabel = NULL;
     this->RoomIdText = NULL;

@@ -14,4 +14,10 @@ ASSRankingController::ASSRankingController(const FObjectInitializer& ObjectIniti
     this->PlayerCardActor = NULL;
 }
 
+void ASSRankingController::OnPressRightShoulderKey() {
+}
+
+void ASSRankingController::OnPressLeftShoulderKey() {
+}
+
 

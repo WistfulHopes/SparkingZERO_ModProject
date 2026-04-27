@@ -11,6 +11,7 @@
 #include "EDebugVirtualNetPlayerRoleType.h"
 #include "EDragonType.h"
 #include "EKoratBattleCpuLevel.h"
+#include "EKoratBattleDamageCorrection.h"
 #include "EKoratBattleFormat.h"
 #include "EKoratBattleKeyMode.h"
 #include "EKoratBattleMemberRule.h"
@@ -46,6 +47,7 @@
 #include "KoratBattleReward.h"
 #include "KoratBattleSetting.h"
 #include "KoratCharaSortMenuDataRecord.h"
+#include "KoratCharaSortMenuRecord.h"
 #include "KoratCharacterCostumeDataList.h"
 #include "KoratCharacterDataList.h"
 #include "KoratCharacterFilterDataList.h"
@@ -90,6 +92,8 @@ class USSLoggingToolManager;
 class USSMenuInterruptManager;
 class USSMenuManager;
 class USSMissionDataManager;
+class USSModeHUNManager;
+class USSModeNSRManager;
 class USSMythicalOrbManager;
 class USSNotificationManager;
 class USSPaperTheaterDataAsset;
@@ -185,6 +189,15 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSBattleMode011Result BattleMode011Result;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratCharacterDataList> CharacterRestriction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bModeNSRContinue;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bModeNSRContinueLoadAutoSave;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratTrainingSetting TrainingSetting;
@@ -283,6 +296,12 @@ protected:
     USSDramaticDataManager* DaramaticDataManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USSModeHUNManager* ModeHUNDataManager;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USSModeNSRManager* ModeNSRManager;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bStartKoratPDramaticImageGeneration;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -347,6 +366,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bTournamentFinalWinWithoutPlaying;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<int32> MaxDPTypeData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSNotificationManager* NotificationManager;
@@ -976,9 +998,6 @@ public:
     void SetupCharacterRandom();
     
     UFUNCTION(BlueprintCallable)
-    void SetUpAutoBattleLoopRandomExtraBattle();
-    
-    UFUNCTION(BlueprintCallable)
     void SetTutorialData();
     
     UFUNCTION(BlueprintCallable)
@@ -1126,6 +1145,9 @@ public:
     void SetDramaticBattleEndingLevelSequenceActor(ASSLevelSequenceActor* InLevelSequenceActor);
     
     UFUNCTION(BlueprintCallable)
+    void SetDefaultBattleBGM(const FKoratBGMDataList& InBattleBGM);
+    
+    UFUNCTION(BlueprintCallable)
     void SetDebugNetRollType(const EDebugVirtualNetPlayerRoleType InDbgNetRollType);
     
     UFUNCTION(BlueprintCallable)
@@ -1136,6 +1158,12 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetDebugAdventureIFTestSetting(FSSDebugAdventureIFTestSetting& InSetting);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetDamageCorrectionMode();
+    
+    UFUNCTION(BlueprintCallable)
+    void SetDamageCorrection(const EKoratBattleDamageCorrection InDamageCorrection);
     
     UFUNCTION(BlueprintCallable)
     void SetCharacterSelectFillAllCharaTest(bool bInEnable);
@@ -1243,6 +1271,9 @@ public:
     void SetBattleDirectingData(const FKoratBattleDirectingData& InBattleDirectingData);
     
     UFUNCTION(BlueprintCallable)
+    void SetBattleCpuOptimization(const bool InEnableCpuOptimization);
+    
+    UFUNCTION(BlueprintCallable)
     void SetBattleCpuLevel(const EKoratBattleCpuLevel InBattleCpuLevel);
     
     UFUNCTION(BlueprintCallable)
@@ -1282,7 +1313,16 @@ public:
     void ResetBattleStartFadeColor();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool RemoveNonExistEventBonusCharacterSort(TArray<FKoratCharaSortMenuRecord>& OutFilter) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool RemoveNonExistEventBonusCharacterFilter(TArray<FKoratCharacterFilterDataList>& OutFilter) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool OpenFileDialog(const FString& Title, const FString& FileTypes, const FString& InLastPath, const bool bAllowMultipleFileSelections, FString& OutLastPath, TArray<FString>& OutOpenFilenames) const;
+    
+    UFUNCTION(BlueprintCallable)
+    void ModeNSRContinue(const FKoratBattlePlayCharacter& InEnemyCharacter, bool bInLoadAutoSave);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSkipOpAppealInDramaticBattle() const;
@@ -1307,6 +1347,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOnlineBattleBeforeMatching() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsExistBattleMode010EPBonusCharacter() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEnableTravelSystem() const;
@@ -1352,6 +1395,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBattleMenuStandByTraining() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsBattleMenuModeHUN() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBattleMenuFreeTournamentTraining() const;
@@ -1411,6 +1457,9 @@ public:
     EKoratBattleStartAppealType GetStartAppealType() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    EBattleWinLose GetSpConclusionResult() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FKoratBGMDataList GetSparkingBGM2P() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -1430,6 +1479,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     FName GetSelectBattleMode010ListDataKey();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetSearchOffStart() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetSaveDataVersion() const;
@@ -1473,6 +1525,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetNoMartialArts() const;
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    USSModeNSRManager* GetModeNSRManager() const;
+        
     UFUNCTION(BlueprintCallable)
     FSSOptionAssistParam GetMatchingAssistParam(int32 InPlaySide);
     
@@ -1507,6 +1562,9 @@ public:
     bool GetEnhanceditems() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    EKoratBattleMenu GetEKoratBattleMenuForBattle() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EKoratBattleMenu GetEKoratBattleMenu() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -1525,6 +1583,9 @@ public:
     ASSLevelSequenceActor* GetDramaticBattleEndingLevelSequenceActor();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    FKoratBGMDataList GetDefaultBattleBGM() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EDebugVirtualNetPlayerRoleType GetDebugNetRollType() const;
     
     UFUNCTION(BlueprintCallable)
@@ -1535,6 +1596,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FSSDebugAdventureIFTestSetting GetDebugAdventureIFTestSetting() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    EKoratBattleDamageCorrection GetDamageCorrection() const;
     
     UFUNCTION(BlueprintCallable)
     FText GetConversionText(FText InText, TArray<FText> InWord, const FString& InStyleName);
@@ -1672,9 +1736,6 @@ public:
     void ClearBattleChangeSettingData();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    EBattleWinLose CheckSpConclusionWithKnockDown() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CheckKnockDown(const FKoratBattleDirectingCondition& InCondition, const bool InMoment) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -1687,4 +1748,3 @@ public:
     void AddBattleReward(TArray<FKoratBattleReward> InBattleReward);
     
 };
-

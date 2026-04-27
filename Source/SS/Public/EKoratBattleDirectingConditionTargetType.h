@@ -8,5 +8,7 @@ enum class EKoratBattleDirectingConditionTargetType : uint8 {
     PlayerTeam,
     EnemyTeam,
     Anyone,
+    PlayerTeamAll,
+    EnemyTeamAll,
 };
 

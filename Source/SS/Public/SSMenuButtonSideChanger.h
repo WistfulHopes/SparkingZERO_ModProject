@@ -66,5 +66,8 @@ protected:
     UFUNCTION(BlueprintCallable)
     void OnValueDown();
     
+    UFUNCTION(BlueprintCallable)
+    void OnChangeChipRepeat(bool bRepeat);
+    
 };
 

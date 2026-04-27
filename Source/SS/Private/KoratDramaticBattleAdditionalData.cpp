@@ -2,10 +2,14 @@
 
 FKoratDramaticBattleAdditionalData::FKoratDramaticBattleAdditionalData() {
     this->GoodCount = 0;
+    this->RankedGoodCount = 0;
     this->PlayCount = 0;
+    this->RankedPlayCount = 0;
     this->ClearCount = 0;
     this->ClearRate = 0.00f;
+    this->RankedClearRate = 0.00f;
     this->FavoriteNum = 0;
+    this->RankedFavoriteNum = 0;
     this->Rank = 0;
     this->ReplayNum = 0;
     this->bIsPosted = false;

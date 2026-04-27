@@ -25,6 +25,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSMenuCharacterManager* MenuCharacterManager;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDisableMenuControllerLinkDestroy;
+    
 public:
     ASSUiLevelScriptActor(const FObjectInitializer& ObjectInitializer);
 
@@ -32,4 +35,3 @@ public:
     ASSMenuSceneController* GetMenuController();
     
 };
-

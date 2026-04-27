@@ -3,6 +3,8 @@
 USSMovementDataAsset::USSMovementDataAsset() {
     this->NormalSpeed = 1500.00f;
     this->NearSpeed = 750.00f;
+    this->UpDownSpeed = 1800.00f;
+    this->NearUpDownSpeed = 1800.00f;
     this->NearDistance = 500.00f;
     this->SpeedInterpolateRange = 50.00f;
     this->NormalWalkSpeed = 1500.00f;

@@ -28,6 +28,7 @@ class ASSBattleBenchCharacter;
 class ASSBattleDebugDrawActor;
 class ASSBattleDirectingActor;
 class ASSBattleImpactProcedure;
+class ASSBattleModeNSRActor;
 class ASSBattlePracticeManager;
 class ASSBattleRequestVisibilitySwirchActor;
 class ASSBattleSettleCameraTarget;
@@ -44,6 +45,7 @@ class ASSCutCameraActor;
 class ASSCutCameraDirector;
 class ASSExplosionManager;
 class ASSMapWarpDataAssetHolder;
+class ASSModeNSRSelectController;
 class ASSNavSystemManager;
 class ASSRootCameraDirector;
 class ASSTutorialBattleScriptDirector;
@@ -81,6 +83,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<ASSRootCameraDirector*> RootCameraDirectors;
     
+    void AddBattleConversation(const FKoratBattleConversation& InConversation)
+    {
+        BattleConversationData.Add(InConversation);
+    }
+
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<int32, FSSBattlePlayerInfo> PlayerPawns;
@@ -144,6 +151,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<FKoratPlayerStartDataList, ASSBattleBenchCharacter*> BattleTeamCharacters;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSBattleModeNSRActor* BattleModeNSRActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSModeNSRSelectController* BattleModeNSRSelectController;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<UUserWidget> PreloadingWidgetAsset;

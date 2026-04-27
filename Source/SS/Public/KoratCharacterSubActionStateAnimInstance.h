@@ -148,6 +148,9 @@ public:
     UAnimMontage* GetOriginalMontage(const EKoratAnimType InAnimType) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetNullMovementTotal(const EKoratAnimType InAnimType, float& OutNullMovementTotalXY, float& OutNullMovementTotalZ) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetNextSection(const EKoratAnimType InAnimType) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -196,4 +199,3 @@ protected:
     void AddDebugActionString(const EKoratAnimType InAnimType);
     
 };
-

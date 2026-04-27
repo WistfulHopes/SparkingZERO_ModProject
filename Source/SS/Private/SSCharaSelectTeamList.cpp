@@ -1,6 +1,7 @@
 #include "SSCharaSelectTeamList.h"
 
 USSCharaSelectTeamList::USSCharaSelectTeamList() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->EmptyFaceTexture = NULL;
 }
 

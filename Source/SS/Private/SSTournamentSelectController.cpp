@@ -8,6 +8,8 @@ ASSTournamentSelectController::ASSTournamentSelectController(const FObjectInitia
     this->RuleViewerWidget = NULL;
     this->FilterWidget = NULL;
     this->SaveLoadWidget = NULL;
+    this->DialogWidget = NULL;
+    this->DialogManager = NULL;
 }
 
 

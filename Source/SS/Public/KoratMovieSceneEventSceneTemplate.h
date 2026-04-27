@@ -18,5 +18,20 @@ public:
     uint8 bFireEventsWhenBackwards: 1;
     
     SS_API FKoratMovieSceneEventSceneTemplate();
+    FKoratMovieSceneEventSceneTemplate(const UKoratMovieSceneEventSceneSection& Section);
+
+    virtual void EvaluateSwept(const FMovieSceneEvaluationOperand& Operand,
+                               const FMovieSceneContext& Context,
+                               const TRange<FFrameNumber>& SweptRange,
+                               const FPersistentEvaluationData& PersistentData,
+                               FMovieSceneExecutionTokens& ExecutionTokens) const override;
+
+    virtual UScriptStruct& GetScriptStructImpl() const override
+    {
+        return *StaticStruct();
+    }
+
+    virtual EMovieSceneCompletionMode GetCompletionMode() const;
+    virtual FName GetEvaluationGroup() const;
 };
 

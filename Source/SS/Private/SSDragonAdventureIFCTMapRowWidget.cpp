@@ -1,6 +1,7 @@
 #include "SSDragonAdventureIFCTMapRowWidget.h"
 
 USSDragonAdventureIFCTMapRowWidget::USSDragonAdventureIFCTMapRowWidget() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 

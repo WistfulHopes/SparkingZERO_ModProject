@@ -35,6 +35,9 @@ public:
     TArray<FString> CultureDirectionSpAutoScroll;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FString> ScreenSizeCanvasSlotWidgetName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bTickEvenWhenPaused;
     
     USSUiWidget();

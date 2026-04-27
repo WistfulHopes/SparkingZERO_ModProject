@@ -109,6 +109,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnablePushingCollision;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bPushingCollisionHit;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bExecFluffy;
     
@@ -216,6 +219,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetSocketTransformSyncSafe(FTransform& OutTransform, const FName SocketName, const TEnumAsByte<ERelativeTransformSpace> TransformSpace) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetPushingCollisionHit() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPushingCollisionEnable() const;

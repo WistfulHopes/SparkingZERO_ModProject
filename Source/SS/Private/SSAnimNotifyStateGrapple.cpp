@@ -8,7 +8,7 @@ USSAnimNotifyStateGrapple::USSAnimNotifyStateGrapple() {
 void USSAnimNotifyStateGrapple::EndGrapple() const {
 }
 
-void USSAnimNotifyStateGrapple::BeginGrapple(const EKoratInverseKinematicsType Type, const FGrappleHandParameters& RightHand, const FGrappleHandParameters& LeftHand, const FName& GrabBone) const {
+void USSAnimNotifyStateGrapple::BeginGrapple(const EKoratInverseKinematicsType Type, const FName& SpecifiedBone, const FGrappleHandParameters& RightHand, const FGrappleHandParameters& LeftHand, const FName& GrabBone) const {
 }
 
 

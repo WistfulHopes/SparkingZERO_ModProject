@@ -6,10 +6,17 @@
 #include "Sections/MovieSceneActorReferenceSection.h"
 #include "KoratMovieSceneEventSceneFpsCameraSection.generated.h"
 
+struct FKoratMovieSceneEventSceneFpsCameraTemplate; // forward
+
 UCLASS(Blueprintable, MinimalAPI)
 class UKoratMovieSceneEventSceneFpsCameraSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
+    UKoratMovieSceneEventSceneFpsCameraSection();
+    
+    const FMovieSceneActorReferenceData& GetLookAtReference() const { return LookAtReference; }
+    const FMovieSceneBoolChannel& GetEnable() const { return Enable; }
+    const FMovieSceneFloatChannel& GetAlpha() const { return Alpha; }
 private:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneActorReferenceData LookAtReference;
@@ -19,9 +26,5 @@ private:
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneFloatChannel Alpha;
-    
-public:
-    UKoratMovieSceneEventSceneFpsCameraSection();
 
 };
-

@@ -1,6 +1,7 @@
 #include "SSMenuManager.h"
 
 USSMenuManager::USSMenuManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->KoratCustomNavigationRule = EKoratCustomNavigationRule::None;
     this->bDoWrapCustomNavigation = true;
     this->ShowHideAnimPattern = EKoratWidgetShowHideAnimPattern::Default;

@@ -2,6 +2,7 @@
 
 USSTrainingBattleUiTreinSetRListManager::USSTrainingBattleUiTreinSetRListManager() {
     this->bIsVolatile = true;
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSTrainingBattleUiTreinSetRListManager::OnChangeValue09(const FSSMenuButtonTextItemEntry& InChangeItem) {

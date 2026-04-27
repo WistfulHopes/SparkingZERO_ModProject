@@ -1,6 +1,7 @@
 #include "SSMainMenuRoomIdInput.h"
 
 USSMainMenuRoomIdInput::USSMainMenuRoomIdInput() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->RoomIdInputWidget = NULL;
 }
 

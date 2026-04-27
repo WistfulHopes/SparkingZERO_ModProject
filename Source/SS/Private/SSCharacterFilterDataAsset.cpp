@@ -2,6 +2,7 @@
 
 USSCharacterFilterDataAsset::USSCharacterFilterDataAsset() {
     this->SortId = 0;
+    this->bExclusive = false;
     this->bEventBonus = false;
     this->bFirstForm = false;
 }

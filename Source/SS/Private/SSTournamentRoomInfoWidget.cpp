@@ -1,6 +1,7 @@
 #include "SSTournamentRoomInfoWidget.h"
 
 USSTournamentRoomInfoWidget::USSTournamentRoomInfoWidget() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->StageImage = NULL;
     this->StageLabelText = NULL;
     this->StageText = NULL;

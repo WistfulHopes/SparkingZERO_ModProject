@@ -1,6 +1,7 @@
 #include "SSTournamentVersusAnimWidget.h"
 
 USSTournamentVersusAnimWidget::USSTournamentVersusAnimWidget() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->RoundTitleText = NULL;
     this->RoundTitleImage = NULL;
     this->UserNameL = NULL;

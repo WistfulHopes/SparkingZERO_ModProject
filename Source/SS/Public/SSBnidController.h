@@ -3,6 +3,7 @@
 #include "GameFramework/Actor.h"
 #include "SSBnidController.generated.h"
 
+class USSBnidNetworkManager;
 class USSMenuGeneralDialog;
 class USSOperationGuideSet;
 
@@ -20,8 +21,10 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSMenuGeneralDialog* MenuGeneralDialog2;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USSBnidNetworkManager* NetworkManager;
+    
 public:
     ASSBnidController(const FObjectInitializer& ObjectInitializer);
 
 };
-

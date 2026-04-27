@@ -39,6 +39,9 @@ ASSNewBattleCameraActor::ASSNewBattleCameraActor(const FObjectInitializer& Objec
     this->PhysicalDisparityDecayScaleHeightArray.AddDefaulted(4);
     this->PhysicalDisparityDecayScaleBaseYawArray.AddDefaulted(4);
     this->PhysicalDisparityBoundScaleDecayRateArray.AddDefaulted(4);
+    this->PhysicalDisparityTargetWeightAddLengthArray.AddDefaulted(4);
+    this->PhysicalDisparityTargetWeightAddHeightArray.AddDefaulted(4);
+    this->PhysicalDisparityTargetWeightAddWidthArray.AddDefaulted(4);
     this->CameraOffsetSideBySideBaseScale = 0.00f;
     this->LookAtNullOffsetMy = 0.00f;
     this->LookAtNullOffsetTarget = 0.00f;
@@ -72,6 +75,9 @@ ASSNewBattleCameraActor::ASSNewBattleCameraActor(const FObjectInitializer& Objec
     this->PitchPlayLockRestTimeMax = 0.50f;
     this->bLookAtNullOffsetTargetImitationArray.AddDefaulted(4);
     this->ImitationScale = 0.75f;
+    this->bLookAtNullOffsetTargetReversedImitationArray.AddDefaulted(4);
+    this->ReversedImitationScale = 0.75f;
+    this->ReversedImitationEnemyHeightScale = 0.80f;
     this->DebugPhysicalDisparityAddHeightPlayer = 0.00f;
     this->DebugPhysicalDisparityAddHeightEnemy = 0.00f;
     this->LookUpEnemySectionArray.AddDefaulted(4);
@@ -101,7 +107,7 @@ ASSNewBattleCameraActor::ASSNewBattleCameraActor(const FObjectInitializer& Objec
     this->AdjustFromDelay = false;
     this->AdjustScaleCamera = 1.00f;
     this->AdjustScaleLookAtTarget = 1.00f;
-    this->FocusTargetPositionRate = 0.50f;
+    this->FocusTargetPositionRate = 0.00f;
     this->bDelayLookAtTargetPos = false;
     this->bDelayCameraPos = false;
     this->bDelayLookAtTargetPosRelative = false;

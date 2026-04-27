@@ -15,5 +15,5 @@ private:
 public:
     UKoratMovieSceneEventSceneSection();
 
+    const FKoratMovieSceneEventSceneSectionData& GetEventData() const { return EventData; }
 };
-

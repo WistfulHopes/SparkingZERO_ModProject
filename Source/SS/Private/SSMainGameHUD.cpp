@@ -33,7 +33,7 @@ void ASSMainGameHUD::OnP2CharacterBattleSPDown(ASSCharacter* InCharacter, float 
 void ASSMainGameHUD::OnP2CharacterBattleSparkingDown(float InDownValue) {
 }
 
-void ASSMainGameHUD::OnP2CharacterBattleDamageReceived(float InReceivedDamage) {
+void ASSMainGameHUD::OnP2CharacterBattleDamageReceived(float InReceivedDamage, const bool InGuardSuccess) {
 }
 
 void ASSMainGameHUD::OnP1CharacterBattleSPDown(ASSCharacter* InCharacter, float InDownValue) {
@@ -42,7 +42,7 @@ void ASSMainGameHUD::OnP1CharacterBattleSPDown(ASSCharacter* InCharacter, float 
 void ASSMainGameHUD::OnP1CharacterBattleSparkingDown(float InDownValue) {
 }
 
-void ASSMainGameHUD::OnP1CharacterBattleDamageReceived(float InReceivedDamage) {
+void ASSMainGameHUD::OnP1CharacterBattleDamageReceived(float InReceivedDamage, const bool InGuardSuccess) {
 }
 
 void ASSMainGameHUD::OnChangeToNewCharacter(ASSCharacter* InBefore, ASSCharacter* InAfter, const bool bInNewCharacter) {

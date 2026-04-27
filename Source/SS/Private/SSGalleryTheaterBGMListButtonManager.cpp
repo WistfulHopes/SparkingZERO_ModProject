@@ -1,6 +1,7 @@
 #include "SSGalleryTheaterBGMListButtonManager.h"
 
 USSGalleryTheaterBGMListButtonManager::USSGalleryTheaterBGMListButtonManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 

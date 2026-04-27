@@ -23,6 +23,9 @@ public:
     FKoratCharacterMoveParameterChanging ShortDashMove;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratCharacterMoveParameterChanging CancelShortDashMove;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterMoveParameterChanging DragonDashMove;
     
     SS_API FKoratCharacterMoveParameterChangingSet();

@@ -13,5 +13,6 @@ FKoratHitBackMovementData::FKoratHitBackMovementData() {
     this->VerticalAngle = 0.00f;
     this->HorizontalAngle = 0.00f;
     this->AngleToReduceTilt = 0.00f;
+    this->NoUpKnockbackOnGround = false;
 }
 

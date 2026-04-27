@@ -22,7 +22,7 @@ public:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneActorReferenceKey Target1stReference;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Target1stSocketName;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -42,6 +42,7 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float OverrideBlendTime;
+
     
     SS_API FKoratMovieSceneLookAtKeyStruct();
 };

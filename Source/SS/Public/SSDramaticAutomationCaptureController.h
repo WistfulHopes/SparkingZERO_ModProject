@@ -40,6 +40,9 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> NowEditTempCutThumbnailArray;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 CaptuerImageResizeMode;
+    
 public:
     ASSDramaticAutomationCaptureController(const FObjectInitializer& ObjectInitializer);
 

@@ -5,5 +5,6 @@ FSSOptionSoundVisibleFlags::FSSOptionSoundVisibleFlags() {
     this->bSeVolume = false;
     this->bVoiceVolume = false;
     this->bAnimSong = false;
+    this->bSeType = false;
 }
 

@@ -39,7 +39,7 @@ void USSAiPersonalityComponent::OnInitializeAi() {
 void USSAiPersonalityComponent::OnFinalizeAi() {
 }
 
-void USSAiPersonalityComponent::OnDamage(const float InDamage) {
+void USSAiPersonalityComponent::OnDamage(const float InDamage, const bool InGuardSuccess) {
 }
 
 void USSAiPersonalityComponent::OnCharacterBattleStateChanged(const ECharacterBattleState InOldState, const ECharacterBattleState InNewState) {

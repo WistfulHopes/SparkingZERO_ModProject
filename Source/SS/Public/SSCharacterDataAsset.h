@@ -6,6 +6,8 @@
 #include "MutualDataAsset.h"
 #include "SSCharacterDataAsset.generated.h"
 
+class USSAiCharacterDataAsset;
+
 UCLASS(Blueprintable)
 class USSCharacterDataAsset : public UMutualDataAsset {
     GENERATED_BODY()
@@ -26,6 +28,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetChangeCharacterActionData();
+    
+    UFUNCTION(BlueprintCallable)
+    void SetAiCharacterDataAsset(USSAiCharacterDataAsset* InAiCharacterDataAsset);
     
     UFUNCTION(BlueprintCallable)
     bool ImportGeneralFateCombination(const TMap<FKoratCharacterDataList, EGeneralFateAttribute2>& InMap);

@@ -10,7 +10,7 @@ public:
     USSTitleTermsManager();
 
     UFUNCTION(BlueprintCallable)
-    void SubScroll();
+    void SubScroll(float InIntensity);
     
 private:
     UFUNCTION(BlueprintCallable)
@@ -30,7 +30,7 @@ public:
     void OnChangeValueCategory_L();
     
     UFUNCTION(BlueprintCallable)
-    void AddScroll();
+    void AddScroll(float InIntensity);
     
 };
 

@@ -5,6 +5,7 @@
 UENUM(BlueprintType)
 enum class EWarpRequestType : uint8 {
     Auto,
+    Auto2,
     ForceSafeGround,
     ForceSafeGroundFit,
     ForceSafeAir,
@@ -21,6 +22,7 @@ enum class EWarpRequestType : uint8 {
     DelegeteImpactProcedure,
     ForceForwardSafeLandscapeForSD,
     DeadlyChangeEntranceLocation,
+    ForceBackwardSafeLandscapeForSD,
     MAX,
 };
 

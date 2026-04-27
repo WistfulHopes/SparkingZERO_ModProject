@@ -59,7 +59,7 @@ private:
     void OnP2CharacterBattleSparkingDown(float InDownValue);
     
     UFUNCTION(BlueprintCallable)
-    void OnP2CharacterBattleDamageReceived(float InReceivedDamage);
+    void OnP2CharacterBattleDamageReceived(float InReceivedDamage, const bool InGuardSuccess);
     
     UFUNCTION(BlueprintCallable)
     void OnP1CharacterBattleSPDown(ASSCharacter* InCharacter, float InDownValue);
@@ -68,7 +68,7 @@ private:
     void OnP1CharacterBattleSparkingDown(float InDownValue);
     
     UFUNCTION(BlueprintCallable)
-    void OnP1CharacterBattleDamageReceived(float InReceivedDamage);
+    void OnP1CharacterBattleDamageReceived(float InReceivedDamage, const bool InGuardSuccess);
     
     UFUNCTION(BlueprintCallable)
     void OnChangeToNewCharacter(ASSCharacter* InBefore, ASSCharacter* InAfter, const bool bInNewCharacter);

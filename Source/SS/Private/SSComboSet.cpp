@@ -1,6 +1,7 @@
 #include "SSComboSet.h"
 
 USSComboSet::USSComboSet() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ComboWidget = NULL;
     this->DamageWidget = NULL;
 }

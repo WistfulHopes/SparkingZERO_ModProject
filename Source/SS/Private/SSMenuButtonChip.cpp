@@ -2,6 +2,7 @@
 
 USSMenuButtonChip::USSMenuButtonChip() {
     this->bIsFocusable = false;
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->bEnableMouseDecideKeyRepeat = true;
     this->MouseDecideKeyRepeatStartTime = 0.20f;
     this->MouseDecideKeyRepeatStepTime = 0.10f;

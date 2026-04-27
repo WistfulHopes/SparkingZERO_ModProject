@@ -20,6 +20,9 @@ protected:
     void SetHitButtonData(USSMenuButton* InHitButton, USSRemoteButton* InRemoteButton, int32 InDataIndex);
     
     UFUNCTION(BlueprintCallable)
+    void SetHitButtonAnimation(USSMenuButton* InHitButton, USSRemoteButton* InRemoteButton, int32 InDataIndex);
+    
+    UFUNCTION(BlueprintCallable)
     void SetCountText(USSMenuButton* InHitButton, FName InWBP_Name, int32 Count, FName InWBP_Name2, FText Unit);
     
     UFUNCTION(BlueprintCallable)

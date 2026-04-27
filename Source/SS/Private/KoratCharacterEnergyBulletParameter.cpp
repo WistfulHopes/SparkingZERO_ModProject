@@ -16,6 +16,7 @@ FKoratCharacterEnergyBulletParameter::FKoratCharacterEnergyBulletParameter() {
     this->FireLimit = 0;
     this->AttackType = EKoratActionAttackType::None;
     this->EnergyBullectCollisionPriority = 0;
+    this->EnergyBullectCollisionPriorityInBeam = 0;
     this->CollisionShapeClass = NULL;
     this->CollisionSizeCurve = NULL;
     this->CollisionHeightOverriveCurve = NULL;
@@ -29,10 +30,13 @@ FKoratCharacterEnergyBulletParameter::FKoratCharacterEnergyBulletParameter() {
     this->CharacterCollisionRevibeSpan = 0.00f;
     this->CharacterLastHitType = ESSBulletCharacterLastHitType::PlayOT;
     this->LifeSpanAfterCharacterLastHit = 0.00f;
+    this->bIgnoreHitBehindAttackChara = false;
     this->GeometryFirstHitType = ESSBulletGeometryFirstHitType::SingleHit;
     this->GeometryCollisionRevibeNum = 0;
     this->GeometryCollisionRevibeSpan = 0.00f;
     this->GeometryLastHitType = ESSBulletGeometryLastHitType::PlayOT;
+    this->bLastHitAtIndestructibleGeometry = false;
+    this->bGeometryCollisionTestOnlyOnce = false;
     this->StatusAtStart = ESSBulletStatusAtStart::Homing;
     this->StartPosition = ESSBulletStartPosition::Normal;
     this->HomingAngleLimitAtStart = 0.00f;
@@ -50,6 +54,7 @@ FKoratCharacterEnergyBulletParameter::FKoratCharacterEnergyBulletParameter() {
     this->HitDirectionPitch = 0.00f;
     this->bImpossibleGuard = false;
     this->bImpossibleReflect = false;
+    this->bPossibleDashReflect = false;
     this->bImpossibleAbsorption = false;
     this->SuperZCounterType = EKoratSuperZCounterType::None;
     this->bExParamSuperZCounterRepel = 0;
@@ -78,6 +83,7 @@ FKoratCharacterEnergyBulletParameter::FKoratCharacterEnergyBulletParameter() {
     this->ReduceAuraSearchDistance = 0.00f;
     this->ReduceAutoSearchDistance = 0.00f;
     this->ReduceZSearchEffectTime = 0.00f;
+    this->CategoryType = EKoratBulletCategoryType::Undefined;
     this->bSelfishnessAvoidable = false;
     this->bEnableDestruction = false;
     this->bReceiveSelfDamage = false;

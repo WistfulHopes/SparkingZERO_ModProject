@@ -3,7 +3,7 @@
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
-#include "Engine/LatentActionManager.h"
+#include "BattleImpactLevelSequenceParams.h"
 #include "BattleImpactLevelSequenceParams.h"
 #include "BattleImpactTickEventDelegate.h"
 #include "BattleImpactTimerEventDelegate.h"

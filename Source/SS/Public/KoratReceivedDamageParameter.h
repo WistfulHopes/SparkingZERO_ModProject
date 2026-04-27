@@ -7,6 +7,7 @@
 #include "EKoratReactionDirection.h"
 #include "KoratActionDataList.h"
 #include "KoratAdditionalDamageInfo.h"
+#include "KoratCharacterDataList.h"
 #include "KoratCharacterEffectColorSetData.h"
 #include "KoratCharacterPointLightData.h"
 #include "KoratDamageReactionDataList.h"
@@ -151,7 +152,13 @@ public:
     float AttackPowerMagnification;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 AttackerDP;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSCharacterBuff* Buff;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratCharacterDataList BuffAssetCharaID;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratDestructionAttackParameter DestructionAttackParameter;

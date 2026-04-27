@@ -4,6 +4,7 @@
 #include "SSBattleMode010BattleSetupController.generated.h"
 
 class USSBattleMode010DifficultyDialog;
+class USSBattleMode010Regulation;
 class USSBattleMode010TopMenu;
 class USSDramaticBattleWLibHelpDialog;
 
@@ -20,6 +21,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<USSBattleMode010DifficultyDialog> ClassDifficultyDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<USSBattleMode010Regulation> ClassRegulation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText BackToTop;

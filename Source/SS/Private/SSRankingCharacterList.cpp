@@ -1,6 +1,7 @@
 #include "SSRankingCharacterList.h"
 
 USSRankingCharacterList::USSRankingCharacterList() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->CharacterNameText = NULL;
 }
 

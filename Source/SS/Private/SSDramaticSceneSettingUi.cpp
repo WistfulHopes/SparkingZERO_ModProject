@@ -1,6 +1,7 @@
 #include "SSDramaticSceneSettingUi.h"
 
 USSDramaticSceneSettingUi::USSDramaticSceneSettingUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->OpeningSceneButton = NULL;
     this->VictorySceneButton = NULL;
     this->DefeatSceneButton = NULL;

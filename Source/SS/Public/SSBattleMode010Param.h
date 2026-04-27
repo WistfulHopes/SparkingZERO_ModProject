@@ -3,6 +3,7 @@
 #include "UObject/NoExportTypes.h"
 #include "ESSBattleMode010Difficulty.h"
 #include "SSBattleMode010PointParam.h"
+#include "SSBattleMode010TipsParam.h"
 #include "SSBattleMode010Param.generated.h"
 
 USTRUCT(BlueprintType)
@@ -47,6 +48,18 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDateTime RewardEndTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<ESSBattleMode010Difficulty, FDateTime> DefetedTimeMap;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<ESSBattleMode010Difficulty, bool> DefetedTimeUpdatedInfoMap;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<ESSBattleMode010Difficulty, int32> DefetedScoreMap;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FSSBattleMode010TipsParam> TipsArray;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SelectedDataKey;

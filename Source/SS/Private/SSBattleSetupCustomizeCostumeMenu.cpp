@@ -1,6 +1,7 @@
 #include "SSBattleSetupCustomizeCostumeMenu.h"
 
 USSBattleSetupCustomizeCostumeMenu::USSBattleSetupCustomizeCostumeMenu() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->CostumeHitButtonPrefixName = TEXT("WBP_OBJ_Common_HitButton_0");
     this->AccessoryHitButtonPrefixName = TEXT("WBP_OBJ_Common_HitAccesarry_");
     this->AccessoryDispButtonSwitcherName = TEXT("Switch");

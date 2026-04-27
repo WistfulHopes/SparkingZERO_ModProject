@@ -1,6 +1,7 @@
 #include "SSPurchaseConfirmationDialog.h"
 
 USSPurchaseConfirmationDialog::USSPurchaseConfirmationDialog() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->CurrentInAnimType = 0;
 }
 

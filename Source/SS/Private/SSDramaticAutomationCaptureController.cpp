@@ -7,6 +7,7 @@ ASSDramaticAutomationCaptureController::ASSDramaticAutomationCaptureController(c
     this->CaptureTexture = NULL;
     this->bWaitCaptureStart = false;
     this->bWaitCaptureComplete = false;
+    this->CaptuerImageResizeMode = 0;
 }
 
 

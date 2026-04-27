@@ -255,6 +255,10 @@ bool USSBlueprintFunctionLibrary::CloseEditorUtilityWidget(const FString& Object
     return false;
 }
 
+bool USSBlueprintFunctionLibrary::CheckPlayerControllerViewCharacterCamera(const ASSCharacter* InCharacter) {
+    return false;
+}
+
 bool USSBlueprintFunctionLibrary::CapsuleTraceMultiWithRotation(const UObject* WorldContextObject, const FVector Start, const FVector END, float Radius, float HalfHeight, const FRotator Orientation, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
     return false;
 }

@@ -39,6 +39,9 @@ public:
     bool bEnableExDragonOrb;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bOffDragonOrbEffectOnClear;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FText> NextEventInfo;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, EditFixedSize, meta=(AllowPrivateAccess=true))
@@ -53,4 +56,3 @@ public:
     USSDragonAdventureIFEventBlockDataAsset();
 
 };
-

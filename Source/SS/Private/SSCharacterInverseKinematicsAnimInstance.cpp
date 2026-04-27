@@ -5,6 +5,7 @@ USSCharacterInverseKinematicsAnimInstance::USSCharacterInverseKinematicsAnimInst
     this->FootIK_LeftFootSocket = TEXT("socket_IK_Retarget_Toe1_L");
     this->FootIK_RightFootSocket = TEXT("socket_IK_Retarget_Toe1_R");
     this->ThrowA2B = 0.00f;
+    this->FootIKAlpha = 1.00f;
 }
 
 void USSCharacterInverseKinematicsAnimInstance::ThrowHandRight(const EKoratInverseKinematicsType ThrowType, const FSSInverseKinematicsParameter& HandParams) {
@@ -65,7 +66,7 @@ void USSCharacterInverseKinematicsAnimInstance::EndThrow(const EKoratInverseKine
 void USSCharacterInverseKinematicsAnimInstance::DebugDraw_Implementation(float InDeltaT) const {
 }
 
-void USSCharacterInverseKinematicsAnimInstance::BeginThrow(const EKoratInverseKinematicsType ThrowType) {
+void USSCharacterInverseKinematicsAnimInstance::BeginThrow(const EKoratInverseKinematicsType ThrowType, const FName& NewSpecifiedBone) {
 }
 
 

@@ -3,6 +3,7 @@
 #include "UObject/Object.h"
 #include "EKoratMainGameSaveMode.h"
 #include "SSOptionParam.h"
+#include "SSSaveCheckData.h"
 #include "SSSaveDataManager.generated.h"
 
 class USSDramaticEditImageSaveData;
@@ -29,6 +30,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<USSDramaticEditImageSaveData*> DramaticEditImageSaveData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<bool> DramaticEditImageSaveDataLoadFlg;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> DramaticEditImageSaveDataSlotName;
@@ -89,6 +93,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bMainGameSavePermission;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSSaveCheckData SaveCheckData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bCheckResizeAndShardingMode;
     
     USSSaveDataManager();
 

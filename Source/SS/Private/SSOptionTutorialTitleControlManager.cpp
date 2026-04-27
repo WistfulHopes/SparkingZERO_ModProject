@@ -1,6 +1,7 @@
 #include "SSOptionTutorialTitleControlManager.h"
 
 USSOptionTutorialTitleControlManager::USSOptionTutorialTitleControlManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSOptionTutorialTitleControlManager::OnPadRButton() {

@@ -3,8 +3,8 @@
 #include "Sections/MovieSceneParameterSection.h"
 #include "MovieSceneKawaiiPhysicsSection.generated.h"
 
-UCLASS(Blueprintable, MinimalAPI)
-class UMovieSceneKawaiiPhysicsSection : public UMovieSceneParameterSection {
+UCLASS(Blueprintable)
+class SS_API UMovieSceneKawaiiPhysicsSection : public UMovieSceneParameterSection {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -15,5 +15,10 @@ public:
     
     UMovieSceneKawaiiPhysicsSection();
 
+    // Accessors for the curves if needed
+    const TArray<FBoolParameterNameAndCurve>& GetBoolCurves() const;
+    const TArray<FScalarParameterNameAndCurve>& GetScalarCurves() const;
+    const TArray<FVectorParameterNameAndCurves>& GetVectorCurves() const;
+	void ReconstructChannelProxy_Public();
 };
 

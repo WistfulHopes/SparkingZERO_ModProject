@@ -1,6 +1,7 @@
 #include "SSPauseManager.h"
 
 USSPauseManager::USSPauseManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSPauseManager::OnTutorialSkip() {
@@ -19,6 +20,9 @@ void USSPauseManager::OnReturnCharaSelectButton() {
 }
 
 void USSPauseManager::OnRetryButton() {
+}
+
+void USSPauseManager::OnRetirementButton() {
 }
 
 void USSPauseManager::OnResumeButton() {

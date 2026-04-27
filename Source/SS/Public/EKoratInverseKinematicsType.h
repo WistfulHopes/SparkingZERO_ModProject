@@ -6,5 +6,6 @@ UENUM(BlueprintType)
 enum class EKoratInverseKinematicsType : uint8 {
     IKT_Hand_Throw_A,
     IKT_Hand_Throw_B,
+    IKT_Hand_Specify,
 };
 

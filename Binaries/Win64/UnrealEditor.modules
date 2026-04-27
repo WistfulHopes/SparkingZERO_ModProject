@@ -1,9 +1,10 @@
 {
-	"BuildId": "a73acb08-31f6-4f5d-a0c8-e3bee692c259",
+	"BuildId": "1b6dc9f0-7f79-4ca7-93c5-c4ea8bcf1ffb",
 	"Modules": 
 	{
 		"SS": "UnrealEditor-SS.dll",
 		"SSEditor": "UnrealEditor-SSEditor.dll",
-		"SSKeyInput": "UnrealEditor-SSKeyInput.dll"
+		"SSKeyInput": "UnrealEditor-SSKeyInput.dll",
+		"SSTukiEditor": "UnrealEditor-SSTukiEditor.dll"
 	}
 }

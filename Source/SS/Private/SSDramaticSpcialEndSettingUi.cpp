@@ -1,6 +1,7 @@
 #include "SSDramaticSpcialEndSettingUi.h"
 
 USSDramaticSpcialEndSettingUi::USSDramaticSpcialEndSettingUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->SpVictoryConditionButton = NULL;
     this->SpDefeatConditionButton = NULL;
     this->SpVictorySceneButton = NULL;

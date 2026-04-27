@@ -16,6 +16,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     EShowFromCameraMode ShowFromCameraMode;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bBugFixFlag;
+    
 public:
     USSEffectSwitchShowCameraComponent(const FObjectInitializer& ObjectInitializer);
 

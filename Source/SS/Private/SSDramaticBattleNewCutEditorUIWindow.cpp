@@ -1,6 +1,7 @@
 #include "SSDramaticBattleNewCutEditorUIWindow.h"
 
 USSDramaticBattleNewCutEditorUIWindow::USSDramaticBattleNewCutEditorUIWindow() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->SlowStartOffText = FText::FromString(TEXT("--"));
     this->NumCharacterText = FText::FromString(TEXT("\x3010\xFF11\x3011\x4EBA\x76EE"));
 }

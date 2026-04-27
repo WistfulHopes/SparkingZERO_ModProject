@@ -18,6 +18,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString CategoryDispButtonSwitcherName;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString ItemWarningTextWidgetName;
+    
     USSBattleSetupCustomizeTopMenu();
 
     UFUNCTION(BlueprintCallable, BlueprintPure)

@@ -23,6 +23,10 @@ EKoratLevelSequenceValidateResultType USSLevelSequenceUtils::ValidateSpawnableTr
     return EKoratLevelSequenceValidateResultType::None;
 }
 
+EKoratLevelSequenceValidateResultType USSLevelSequenceUtils::ValidateDirectorBlueprint(ULevelSequence* InLevelSequence) {
+    return EKoratLevelSequenceValidateResultType::None;
+}
+
 bool USSLevelSequenceUtils::ValidateBindingTag(UMovieSceneSequence* InRootSequence) {
     return false;
 }

@@ -1,6 +1,7 @@
 #include "SSHPStock.h"
 
 USSHPStock::USSHPStock() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->CurrentStockImage = NULL;
     this->WidgetSwitch = NULL;
 }

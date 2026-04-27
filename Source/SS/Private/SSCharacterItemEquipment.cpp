@@ -33,6 +33,10 @@ void USSCharacterItemEquipment::SetItemEquipmentOutIndexes(const TArray<FKoratCh
 void USSCharacterItemEquipment::SetItemEquipment(const TArray<FKoratCharacterItemDataList>& InEquipItems) {
 }
 
+bool USSCharacterItemEquipment::IsForbiddenForm(const FKoratCharacterDataList& InCharacter) const {
+    return false;
+}
+
 void USSCharacterItemEquipment::GetFormChangeCharacter(TArray<FKoratCharacterDataList>& OutCharacters) {
 }
 
@@ -108,7 +112,7 @@ FKoratCharacterCostumeDataList USSCharacterItemEquipment::DecideCostume(FKoratCh
     return FKoratCharacterCostumeDataList{};
 }
 
-void USSCharacterItemEquipment::DebugDraw(const UWorld* InWorld, const FVector& InPos) const {
+void USSCharacterItemEquipment::DebugDraw(const UWorld* InWorld, const FVector& InPos) {
 }
 
 void USSCharacterItemEquipment::CalcRadarChartParameter(TArray<float>& OutRadarChartParam) {

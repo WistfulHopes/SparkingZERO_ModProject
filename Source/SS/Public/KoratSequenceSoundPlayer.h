@@ -13,6 +13,8 @@
 #include "KoratExecuteActorInterface.h"
 #include "KoratGroupIdDataList.h"
 #include "KoratPatternVoiceDataList.h"
+#include "KoratSequenceSoundBranch.h"
+#include "KoratSoundBranchTypeDataList.h"
 #include "KoratSequenceSoundPlayer.generated.h"
 
 class ASSCharacter;
@@ -60,6 +62,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Volume;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FKoratSoundBranchTypeDataList, FKoratSequenceSoundBranch> SoundBranches;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     ASSCharacter* ExecuteActor;
     
@@ -83,6 +88,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsMoveToDifferentPositionSound;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool IsEnableChangeTypeSE;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SetPlayVoiceName;
@@ -134,6 +142,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseTerrainRay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
+    bool bIsChangeBattleBGM;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
+    bool bIsBattleStartBGM;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))

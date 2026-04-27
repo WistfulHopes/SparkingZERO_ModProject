@@ -7,12 +7,15 @@ enum class EKoratBattleDirectingTrigger : uint8 {
     None,
     Unconditional,
     HPGauge,
+    HPGaugeActualValue,
     ElapsedTime,
     BeyondTime,
     OnTime,
     KnockDown,
     ActionStart,
     ActionEnd,
+    ActionStart2,
+    ActionEnd2,
     ActionHit,
     ActionNoHit,
     DefendAttack,
@@ -32,5 +35,7 @@ enum class EKoratBattleDirectingTrigger : uint8 {
     WeakRetry,
     UseOrb,
     AfterTutorialSpeedImpact,
+    DamagePerSpecifiedSecond,
+    ComboCount,
 };
 

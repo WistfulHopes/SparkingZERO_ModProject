@@ -1,10 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneSection.h"
+#include "Channels/MovieSceneChannelProxy.h"
 #include "MovieSceneViewSwitchSection.generated.h"
 
-UCLASS(Blueprintable, MinimalAPI)
-class UMovieSceneViewSwitchSection : public UMovieSceneSection {
+UCLASS(Blueprintable)
+class SS_API UMovieSceneViewSwitchSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -17,6 +18,5 @@ public:
     bool bLowPriority;
     
     UMovieSceneViewSwitchSection();
-
+    
 };
-

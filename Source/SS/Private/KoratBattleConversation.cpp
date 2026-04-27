@@ -9,5 +9,6 @@ FKoratBattleConversation::FKoratBattleConversation() {
     this->HiddenSubtitles = false;
     this->HiddenSubtitlesOnly2P = false;
     this->IsLipsSyncroSupportCharacter = false;
+    this->bStopSoundEndPlay = false;
 }
 

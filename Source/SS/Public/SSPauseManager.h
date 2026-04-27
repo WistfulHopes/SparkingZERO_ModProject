@@ -29,6 +29,9 @@ private:
     void OnRetryButton();
     
     UFUNCTION(BlueprintCallable)
+    void OnRetirementButton();
+    
+    UFUNCTION(BlueprintCallable)
     void OnResumeButton();
     
     UFUNCTION(BlueprintCallable)

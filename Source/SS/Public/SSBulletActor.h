@@ -8,6 +8,7 @@
 #include "GameFramework/Actor.h"
 #include "Engine/LatentActionManager.h"
 #include "EKoratBranch.h"
+#include "EKoratBulletCategoryType.h"
 #include "EKoratLoop.h"
 #include "EKoratSuperZCounterType.h"
 #include "ESSBulletActorAfterReflectRequest.h"
@@ -59,7 +60,7 @@ class USSRandom;
 class USSWindMotorComponent;
 class USceneComponent;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, NotPlaceable)
 class ASSBulletActor : public AActor, public IKoratEffectMultipleColorInterface {
     GENERATED_BODY()
 public:
@@ -80,6 +81,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float BeamCollisionStraightCheckDegree;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ClashEnableAngle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASSCharacter* OwnerCharacter;
@@ -242,6 +246,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bIsPlayedDemoSkipExplosion;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    int32 BlastID;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bIgnoreActionTarget;
@@ -553,6 +560,9 @@ public:
     float LifeSpanAfterCharacterLastHit;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bIgnoreHitBehindAttackChara;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ESSBulletGeometryFirstHitType GeometryFirstHitType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -565,7 +575,19 @@ public:
     ESSBulletGeometryLastHitType GeometryLastHitType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bLastHitAtIndestructibleGeometry;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bGeometryCollisionTestOnlyOnce;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bSkipGeometryCollisionTest;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 EnergyBullectCollisionPriority;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    int32 EnergyBullectCollisionPriorityInBeam;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bEnergyBullectCollisionSpecial;
@@ -649,7 +671,13 @@ public:
     FKoratHitObjectParameter BeamClashStructure;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    EKoratBulletCategoryType CategoryType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bImpossibleReflect;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bPossibleDashReflect;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bImpossibleAbsorption;
@@ -690,10 +718,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor UpVectorDebugDrawColor;
     
-protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    bool bOptimizeMode;
-    
+
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bIsEnabled;
@@ -704,6 +729,8 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bRunCollisionTestThisFrame;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bRunNextTickZeroDelta;
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USSRandom* Random;
@@ -885,9 +912,11 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBulletSpeed() const;
     
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetBulletEnable() const;
     
+protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetBulletCollisionEnable() const;
     
@@ -998,4 +1027,3 @@ protected:
 
     // Fix for true pure virtual functions not being implemented
 };
-

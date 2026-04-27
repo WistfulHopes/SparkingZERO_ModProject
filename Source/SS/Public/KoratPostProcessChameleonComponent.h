@@ -3,7 +3,7 @@
 #include "KoratPostProcessChameleonComponentBase.h"
 #include "KoratPostProcessChameleonComponent.generated.h"
 
-UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(BlueprintType, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SS_API UKoratPostProcessChameleonComponent : public UKoratPostProcessChameleonComponentBase {
     GENERATED_BODY()
 public:

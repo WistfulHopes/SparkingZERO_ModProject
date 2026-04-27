@@ -15,6 +15,8 @@ FKoratCharacterBlastUltimateParameter::FKoratCharacterBlastUltimateParameter() {
     this->BlastImpactPower = 0;
     this->bCanSpeedImpact = false;
     this->bWeakSpecialShield = false;
+    this->bNoDisableSnapHorizontalInNearGround = false;
+    this->bToAimBodyBlendTimeIsZero = false;
     this->TransitionConditionHitBulletCount = 0;
     this->TransitionConditionFinishedBulletCount = 0;
     this->bGaveAfterStateToBlowFalling = false;

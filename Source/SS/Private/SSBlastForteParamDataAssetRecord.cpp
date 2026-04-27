@@ -16,5 +16,7 @@ FSSBlastForteParamDataAssetRecord::FSSBlastForteParamDataAssetRecord() {
     this->bTurnBeforeTransition = false;
     this->bTurnCGSection = false;
     this->bTurnHTSection = false;
+    this->bNoAutoGuard = false;
+    this->bNoHitCheckCombatives = false;
 }
 

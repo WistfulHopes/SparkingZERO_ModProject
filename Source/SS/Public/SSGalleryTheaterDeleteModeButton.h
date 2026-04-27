@@ -10,6 +10,12 @@ public:
     USSGalleryTheaterDeleteModeButton();
 
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnToggleOn();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnToggleOff();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnToggleAndDeleteItemExist();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -28,4 +34,3 @@ public:
     bool IsDeleteItemExist() const;
     
 };
-

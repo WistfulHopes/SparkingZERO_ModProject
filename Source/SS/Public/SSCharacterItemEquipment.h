@@ -82,6 +82,9 @@ public:
     void SetItemEquipment(const TArray<FKoratCharacterItemDataList>& InEquipItems);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsForbiddenForm(const FKoratCharacterDataList& InCharacter) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetFormChangeCharacter(TArray<FKoratCharacterDataList>& OutCharacters);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -141,8 +144,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FKoratCharacterCostumeDataList DecideCostume(FKoratCharacterDataList InCharacter, const TArray<FKoratCharacterItemDataList>& InEquipItems);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    void DebugDraw(const UWorld* InWorld, const FVector& InPos) const;
+    UFUNCTION(BlueprintCallable)
+    void DebugDraw(const UWorld* InWorld, const FVector& InPos);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void CalcRadarChartParameter(TArray<float>& OutRadarChartParam);
@@ -157,4 +160,3 @@ public:
     static void BodyChangeCombine(const TArray<FKoratCharacterItemDataList>& InSoulCharacterItem, const TArray<FKoratCharacterItemDataList>& InBodyCharacterItem, TArray<FKoratCharacterItemDataList>& OutCombinedEquipment);
     
 };
-

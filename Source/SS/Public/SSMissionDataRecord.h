@@ -25,6 +25,9 @@ public:
     FText MissionOverview;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText MissionOverviewEmbedString;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MissionOverviewNumeric;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -68,6 +71,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterDataList MissionReleaseCharacterId;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 DisplayOrderEventTop;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     int64 UniqueSettingId;

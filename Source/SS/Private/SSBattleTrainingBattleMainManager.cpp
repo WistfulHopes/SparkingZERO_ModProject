@@ -1,6 +1,7 @@
 #include "SSBattleTrainingBattleMainManager.h"
 
 USSBattleTrainingBattleMainManager::USSBattleTrainingBattleMainManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->BuiltInMenu = NULL;
     this->BattleCategolyText = NULL;
     this->BattleCommand = NULL;

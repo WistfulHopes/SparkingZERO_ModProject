@@ -1,6 +1,7 @@
 #include "SSBattleSetupCustomizeBuildupStatusUi.h"
 
 USSBattleSetupCustomizeBuildupStatusUi::USSBattleSetupCustomizeBuildupStatusUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->RadarChartWidgetName = TEXT("WBP_OBJ_BS_Custom_Chart");
     this->SpecialGaugeWidgetName = TEXT("Item_Sp_");
     this->CustomAnimName_Change = TEXT("OnChangeData");

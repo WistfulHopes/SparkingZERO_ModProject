@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECameraZoomType.h"
 #include "EKoratActionAttackType.h"
+#include "EKoratBulletCategoryType.h"
 #include "EKoratSuperZCounterType.h"
 #include "ESSBulletCharacterFirstHitType.h"
 #include "ESSBulletCharacterLastHitType.h"
@@ -79,6 +80,9 @@ public:
     int32 EnergyBullectCollisionPriority;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 EnergyBullectCollisionPriorityInBeam;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<USSBulletShapeBase> CollisionShapeClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -118,6 +122,9 @@ public:
     float LifeSpanAfterCharacterLastHit;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIgnoreHitBehindAttackChara;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESSBulletGeometryFirstHitType GeometryFirstHitType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -128,6 +135,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESSBulletGeometryLastHitType GeometryLastHitType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bLastHitAtIndestructibleGeometry;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bGeometryCollisionTestOnlyOnce;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESSBulletStatusAtStart StatusAtStart;
@@ -280,6 +293,9 @@ public:
     bool bImpossibleReflect;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bPossibleDashReflect;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bImpossibleAbsorption;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -376,6 +392,9 @@ public:
     float ReduceZSearchEffectTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratBulletCategoryType CategoryType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bSelfishnessAvoidable;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -404,4 +423,3 @@ public:
     
     SS_API FKoratCharacterEnergyBulletParameter();
 };
-

@@ -28,6 +28,12 @@ protected:
     void OnShowTournamentDisabled();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnShowRankMatchSeasonEnabled();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnShowRankMatchSeasonDisabled();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShowRankMatchEnabled();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

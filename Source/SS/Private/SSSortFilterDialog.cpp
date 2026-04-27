@@ -1,6 +1,7 @@
 #include "SSSortFilterDialog.h"
 
 USSSortFilterDialog::USSSortFilterDialog() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->LeftPageChangeButtonName = TEXT("WBP_OBJ_Com_BTN_Category_L");
     this->RightPageChangeButtonName = TEXT("WBP_OBJ_Com_BTN_Category_R");
     this->PageTitleTextWidgetName = TEXT("Text_Title");

@@ -15,5 +15,7 @@ enum class EKoratBattleMenu : uint8 {
     Tutorial,
     SplitScreenBattle,
     TenkaichiBudokai,
+    ModeHUN,
+    ModeNSR,
 };
 

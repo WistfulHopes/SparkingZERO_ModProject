@@ -12,7 +12,7 @@ void ASSTutorialBattleUiController::TrainingInputSuccess(int32 InIndex, EKoratBa
 void ASSTutorialBattleUiController::TrainingInputFinished(FName InMenuName) {
 }
 
-void ASSTutorialBattleUiController::TrainingInputFailure(int32 InIndex, EKoratBattleKey InBattleKey, FName InMenuName) {
+void ASSTutorialBattleUiController::TrainingInputFailure(int32 InIndex, EKoratBattleKey InBattleKey, FName InMenuName, EBattlePracticeInputFailureType InFailureType) {
 }
 
 void ASSTutorialBattleUiController::FullPowerSmashDamageBrake() {

@@ -1,6 +1,7 @@
 #include "SSTournamentSaveLoadWidget.h"
 
 USSTournamentSaveLoadWidget::USSTournamentSaveLoadWidget() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSTournamentSaveLoadWidget::UpdateButton(USSMenuButton* InHitButton, USSRemoteButton* InRemoteButton, int32 InDataIndex) {

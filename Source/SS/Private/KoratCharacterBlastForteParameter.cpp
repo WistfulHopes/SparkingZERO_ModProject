@@ -18,6 +18,8 @@ FKoratCharacterBlastForteParameter::FKoratCharacterBlastForteParameter() {
     this->bTurnBeforeTransition = false;
     this->bTurnCGSection = false;
     this->bTurnHTSection = false;
+    this->bNoAutoGuard = false;
+    this->bNoHitCheckCombatives = false;
     this->SureToHitRange = 0.00f;
 }
 

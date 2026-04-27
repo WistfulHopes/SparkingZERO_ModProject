@@ -4,6 +4,7 @@
 ASSLevelScriptActor::ASSLevelScriptActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Random = CreateDefaultSubobject<USSRandom>(TEXT("Random_ASSLevelScriptActor"));
     this->bPersistentLevel = false;
+    this->DestructionManagerUpdateActor = NULL;
 }
 
 void ASSLevelScriptActor::UnloadInstances(const TArray<TSoftObjectPtr<UObject>>& InInstances) {

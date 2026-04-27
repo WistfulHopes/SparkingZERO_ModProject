@@ -1,6 +1,7 @@
 #include "SSDramaticBattleWLibNewDetailSearchMenu.h"
 
 USSDramaticBattleWLibNewDetailSearchMenu::USSDramaticBattleWLibNewDetailSearchMenu() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->NoneTexture = NULL;
 }
 

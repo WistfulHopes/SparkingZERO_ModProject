@@ -4,6 +4,8 @@ ASSEventSceneScriptMV::ASSEventSceneScriptMV(const FObjectInitializer& ObjectIni
     this->CameraSequence = NULL;
     this->SubsceneSequence = NULL;
     this->IFSuggestWidget = NULL;
+    this->bOverrideNearClippingPlane = false;
+    this->CustomNearClippingPlane = 10.00f;
 }
 
 void ASSEventSceneScriptMV::WaitSubsceneFinish(UObject* WorldContextObject, FLatentActionInfo InLatentInfo) {

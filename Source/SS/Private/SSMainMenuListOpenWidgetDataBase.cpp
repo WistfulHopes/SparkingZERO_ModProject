@@ -5,5 +5,6 @@ FSSMainMenuListOpenWidgetDataBase::FSSMainMenuListOpenWidgetDataBase() {
     this->bNeedOnline = false;
     this->OnlineCheckMode = EMainMenuOnlineCheckMode::None;
     this->bOnlineOnly = false;
+    this->ModeNSRContinueMode = EKoratModeNSRSelectMode::None;
 }
 

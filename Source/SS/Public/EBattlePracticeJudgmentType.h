@@ -12,5 +12,6 @@ enum class EBattlePracticeJudgmentType : uint8 {
     ActionMove,
     ActionAvoid,
     SectionChanged,
+    ActionElapsedTime,
 };
 

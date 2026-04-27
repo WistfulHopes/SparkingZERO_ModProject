@@ -1,6 +1,7 @@
 #include "SSStylePanel.h"
 
 USSStylePanel::USSStylePanel() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ChangeLeftButtonGuide = NULL;
     this->ChangeRightButtonGuide = NULL;
 }

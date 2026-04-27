@@ -1,6 +1,7 @@
 #include "SSOptionOperationControlManager.h"
 
 USSOptionOperationControlManager::USSOptionOperationControlManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->SelectedNo = 0;
 }
 

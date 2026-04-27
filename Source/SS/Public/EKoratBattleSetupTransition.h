@@ -34,5 +34,7 @@ enum class EKoratBattleSetupTransition : uint8 {
     BstTopEnd = BstComTopTeamFromSt,
     BstStageSelect = BstCustomize,
     BstStageListSelect = BstComCustomize,
+    BstBegin = BstTop,
+    BstEnd = BstPreBattleStart,
 };
 

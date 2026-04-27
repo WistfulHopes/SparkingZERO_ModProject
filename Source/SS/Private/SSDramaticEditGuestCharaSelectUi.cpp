@@ -1,6 +1,7 @@
 #include "SSDramaticEditGuestCharaSelectUi.h"
 
 USSDramaticEditGuestCharaSelectUi::USSDramaticEditGuestCharaSelectUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->EmptyTexture = NULL;
     this->FocusButtonIndex = 0;
     this->SelectGuestCharaMode = EKoratSelectGuestCharacterUiMode::None;

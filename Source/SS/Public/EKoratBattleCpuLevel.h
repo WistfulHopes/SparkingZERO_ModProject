@@ -9,5 +9,6 @@ enum class EKoratBattleCpuLevel : uint8 {
     Usual,
     Strong,
     FierceGod,
+    Extreme,
 };
 

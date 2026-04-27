@@ -19,5 +19,18 @@ protected:
 public:
     UKoratPointLightParameterSection();
 
+    const TArray<FBoolParameterNameAndCurve>& GetBoolCurves() const;
+    const TArray<FScalarParameterNameAndCurve>& GetScalarCurves() const;
+    const TArray<FVectorParameterNameAndCurves>& GetVectorCurves() const;
+    const TArray<FVector2DParameterNameAndCurves>& GetVector2DCurves() const;
+    const TArray<FColorParameterNameAndCurves>& GetColorCurves() const; 
+    const TArray<FKoratByteParameterNameAndCurve>& GetByteParameterNamesAndCurves() const { return ByteParameterNamesAndCurves; }
+    const TArray<FKoratIntParameterNameAndCurve>& GetIntParameterNamesAndCurves() const { return IntParameterNamesAndCurves; }
+    TArray<FKoratByteParameterNameAndCurve>& GetByteParameterNamesAndCurves() { return ByteParameterNamesAndCurves; }
+    TArray<FKoratIntParameterNameAndCurve>& GetIntParameterNamesAndCurves() { return IntParameterNamesAndCurves; }
+
+	void ReconstructChannelProxy_Public();
+	virtual void PostLoad() override;
+
 };
 

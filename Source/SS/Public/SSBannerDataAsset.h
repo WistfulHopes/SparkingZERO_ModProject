@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
+#include "ESSBannerState.h"
 #include "ESSBannerState.h"
 #include "KoratShopFloorDataList.h"
 #include "KoratUILevelDataList.h"

@@ -1,8 +1,8 @@
 #include "MovieSceneViewSwitchSection.h"
 
-UMovieSceneViewSwitchSection::UMovieSceneViewSwitchSection() {
-    this->CurveValue = 0;
-    this->bLowPriority = false;
+UMovieSceneViewSwitchSection::UMovieSceneViewSwitchSection()
+{
+    CurveName = NAME_None;
+    CurveValue = 0;
+    bLowPriority = false;
 }
-
-

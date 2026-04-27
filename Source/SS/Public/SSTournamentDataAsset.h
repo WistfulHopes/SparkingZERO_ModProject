@@ -7,6 +7,7 @@
 #include "ETournamentVoiceEventId.h"
 #include "ETournamentZItemCustomizeType.h"
 #include "KoratBattleDirectingSetup.h"
+#include "KoratCharacterDataList.h"
 #include "KoratCharacterFilterDataList.h"
 #include "KoratConversationDataList.h"
 #include "KoratMapDataList.h"
@@ -24,6 +25,9 @@ class USSTournamentDataAsset : public UMutualDataAsset {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText TournamentName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText DecoratedName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratCharacterFilterDataList> PlayerCharacterRestriction;
@@ -87,6 +91,15 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<int32, FSSTournamentReservedTeamData> ReservedComTeams;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratCharacterDataList> ExceptionalCharacters;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratBattleDirectingSetup> ExceptionalBattleDirectingSetups;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<ETournamentVoiceEventId, FKoratConversationDataList> ExceptionalVoiceEvent;
     
     USSTournamentDataAsset();
 

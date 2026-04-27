@@ -1,6 +1,7 @@
 #include "SSDramaticImageSelectUi.h"
 
 USSDramaticImageSelectUi::USSDramaticImageSelectUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->LeftButton = NULL;
     this->RightButton = NULL;
     this->HedderTitleText = NULL;

@@ -9,14 +9,17 @@ UKoratBuffPhaseDataAsset::UKoratBuffPhaseDataAsset() {
     this->EffectiveTime = 1.80f;
     this->EffectiveCount = 0;
     this->bAscertainCountered = false;
+    this->bSuperCountered = false;
     this->bDelayAction = false;
     this->bDirectBuff = false;
     this->SpecialType = EKoratBuffSpecialType::None;
     this->bAfterImageDodge = true;
     this->DodgeMoveChangeDistance = -1.00f;
     this->bDodgeMoveChangeAtBulletAttack = false;
+    this->bPassOnToNewCharacter = false;
     this->ArmorLevelUp = 0;
     this->bNumb = false;
+    this->bPossibleRevengeCounterNumb = false;
     this->ChargeHelth = 0;
     this->ChargeEnergy = 0;
     this->bSearchOff = false;

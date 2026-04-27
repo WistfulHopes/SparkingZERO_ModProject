@@ -6,6 +6,7 @@ USSCharacterSocketComponent::USSCharacterSocketComponent(const FObjectInitialize
     this->bSaveAimLocationEnable = false;
     this->bSaveAimLookatLocationEnable = false;
     this->SaveLastSectionRemainTimeInAction = 0.00f;
+    this->SaveFootIKAlpha = 1.00f;
     this->bDrawDebug = false;
     this->DrawDebugLifetime = 0.00f;
     this->DrawDebugThickness = 5.00f;
@@ -24,6 +25,10 @@ bool USSCharacterSocketComponent::GetSocketTransformSyncSafe(FTransform& OutTran
 }
 
 float USSCharacterSocketComponent::GetLastSectionRemainTimeInAction() const {
+    return 0.0f;
+}
+
+float USSCharacterSocketComponent::GetFootIKAlpha() const {
     return 0.0f;
 }
 

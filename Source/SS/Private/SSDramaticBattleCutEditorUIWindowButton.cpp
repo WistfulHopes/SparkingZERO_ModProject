@@ -1,6 +1,7 @@
 #include "SSDramaticBattleCutEditorUIWindowButton.h"
 
 USSDramaticBattleCutEditorUIWindowButton::USSDramaticBattleCutEditorUIWindowButton() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->MenuButtonSelector = NULL;
     this->BaseSwitcherWidget = NULL;
     this->SwitcherWidget = NULL;

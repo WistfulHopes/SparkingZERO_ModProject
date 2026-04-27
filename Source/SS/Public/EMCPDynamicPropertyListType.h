@@ -7,5 +7,6 @@ enum class EMCPDynamicPropertyListType : uint8 {
     None,
     TournamentSearchList,
     TournamentCreateList,
+    NumericList,
 };
 

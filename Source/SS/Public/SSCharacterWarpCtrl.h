@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "EWarpRequestType.h"
 #include "SSCharacterWarpCtrl.generated.h"
 
 class ASSMapWarpDataAssetHolder;
@@ -61,6 +62,9 @@ public:
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static void OnWarpOverride(const UObject* WorldContextObject, bool InReturn, bool InLoop, const ULevelSequencePlayer* InSequencePlayer);
     
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static void OnWarpInstant(const UObject* WorldContextObject, const ULevelSequencePlayer* InSequencePlayer, EWarpRequestType InWarpRequestType);
+    
     UFUNCTION(BlueprintCallable)
     bool IsImpactWarpControlActive();
     
@@ -75,4 +79,3 @@ private:
     ASSMapWarpDataAssetHolder* GetMapWarpDataAssetHolder();
     
 };
-

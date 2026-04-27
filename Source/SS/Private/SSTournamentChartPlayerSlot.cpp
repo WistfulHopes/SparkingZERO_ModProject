@@ -1,6 +1,7 @@
 #include "SSTournamentChartPlayerSlot.h"
 
 USSTournamentChartPlayerSlot::USSTournamentChartPlayerSlot() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->BaseSwitcher = NULL;
     this->SlotName = NULL;
     this->NamePlateWidget = NULL;

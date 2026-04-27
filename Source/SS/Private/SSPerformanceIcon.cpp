@@ -1,6 +1,7 @@
 #include "SSPerformanceIcon.h"
 
 USSPerformanceIcon::USSPerformanceIcon() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->LSwitcher = NULL;
     this->RSwitcher = NULL;
     this->GradeSwitcher = NULL;

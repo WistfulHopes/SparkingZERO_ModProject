@@ -214,6 +214,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool IsDownBlendSkip_;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool IsMovingAction_;
+    
 public:
     USSAnimInstanceSubIdleMove();
 

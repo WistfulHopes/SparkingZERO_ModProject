@@ -1,6 +1,7 @@
 #include "SSBattleSetupBuildupItemMySet.h"
 
 USSBattleSetupBuildupItemMySet::USSBattleSetupBuildupItemMySet() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ItemWidgetName = TEXT("WBP_OBJ_BS_Custom_MS_ItemName_");
     this->ItemDescriptionTextWidgetName = TEXT("Text_ItemTips");
     this->TabButtonWidgetName = TEXT("WBP_OBJ_BS_Custom_MS_TabBTN_");

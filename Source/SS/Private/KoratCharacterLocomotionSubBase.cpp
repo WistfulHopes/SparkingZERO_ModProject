@@ -4,6 +4,9 @@ UKoratCharacterLocomotionSubBase::UKoratCharacterLocomotionSubBase() {
     this->XYSpeedThreshold = 10.00f;
 }
 
+void UKoratCharacterLocomotionSubBase::PrintHitResult(const FHitResult& InHitResult) {
+}
+
 float UKoratCharacterLocomotionSubBase::CalculationSideStepAddYaw(ASSCharacter* InCharacter, float InDeltaSeconds, float InMaxSpeed) {
     return 0.0f;
 }

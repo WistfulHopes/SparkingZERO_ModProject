@@ -8,10 +8,24 @@
 #include "Channels/MovieSceneStringChannel.h"
 #include "KoratMovieSceneLookAtSection.generated.h"
 
+struct FKoratMovieSceneLookAtTemplate; // forward
+
 UCLASS(Blueprintable, MinimalAPI)
 class UKoratMovieSceneLookAtSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
+    UKoratMovieSceneLookAtSection();
+    
+    const FMovieSceneByteChannel& GetPartFlags() const { return PartFlags; }
+    const FMovieSceneBoolChannel& GetEnableLookat() const { return EnableLookat; }
+    const FMovieSceneBoolChannel& GetUpdateLookAt() const { return UpdateLookAt; }
+    const FMovieSceneActorReferenceData& GetTarget1stReference() const { return Target1stReference; }
+    const FMovieSceneStringChannel& GetTarget1stSocketName() const { return Target1stSocketName; }
+    const FMovieSceneActorReferenceData& GetTarget2ndReference() const { return Target2ndReference; }
+    const FMovieSceneStringChannel& GetTarget2ndSocketName() const { return Target2ndSocketName; }
+    const FMovieSceneFloatChannel& GetAlpha() const { return Alpha; }
+    const FMovieSceneBoolChannel& GetEnableOverrideBlendTime() const { return EnableOverrideBlendTime; }
+    const FMovieSceneFloatChannel& GetOverrideBlendTime() const { return OverrideBlendTime; }
 private:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneByteChannel PartFlags;
@@ -42,9 +56,4 @@ private:
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneFloatChannel OverrideBlendTime;
-    
-public:
-    UKoratMovieSceneLookAtSection();
-
 };
-

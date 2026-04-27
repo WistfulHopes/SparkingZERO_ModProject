@@ -1,6 +1,7 @@
 #include "SSSPGaugeParts.h"
 
 USSSPGaugeParts::USSSPGaugeParts() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->SPDamageGaugeMaterial = NULL;
     this->SPGaugeMaterial = NULL;
     this->SPMinusGaugeMaterial = NULL;

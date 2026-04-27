@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMCPDynamicPropertyListType.h"
 #include "SSMatchingCondProp.h"
+#include "SSMatchingContPropNumericListParam.h"
 #include "SSMatchingCondPropDataAssetRecord.generated.h"
 
 USTRUCT(BlueprintType)
@@ -19,6 +20,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMCPDynamicPropertyListType DynamicGenerateType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSMatchingContPropNumericListParam NumericListSettings;
     
     SS_API FSSMatchingCondPropDataAssetRecord();
 };

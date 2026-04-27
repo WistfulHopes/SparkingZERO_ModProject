@@ -18,5 +18,6 @@ enum class ESSReplayDataUIBattleMode : uint8 {
     OfflineComvs1P,
     OfflineBattle,
     OnlineBattle,
+    ModeHUN,
 };
 

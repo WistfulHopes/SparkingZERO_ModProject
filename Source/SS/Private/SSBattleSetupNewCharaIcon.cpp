@@ -1,6 +1,7 @@
 #include "SSBattleSetupNewCharaIcon.h"
 
 USSBattleSetupNewCharaIcon::USSBattleSetupNewCharaIcon() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->PlaySide = 0;
     this->EmptyTexture = NULL;
     this->QuestionTexture = NULL;

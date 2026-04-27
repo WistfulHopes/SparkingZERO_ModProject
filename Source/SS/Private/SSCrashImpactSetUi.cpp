@@ -1,6 +1,7 @@
 #include "SSCrashImpactSetUi.h"
 
 USSCrashImpactSetUi::USSCrashImpactSetUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->CrashImpactUi = NULL;
 }
 

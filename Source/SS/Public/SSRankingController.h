@@ -54,5 +54,12 @@ private:
 public:
     ASSRankingController(const FObjectInitializer& ObjectInitializer);
 
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnPressRightShoulderKey();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnPressLeftShoulderKey();
+    
 };
 

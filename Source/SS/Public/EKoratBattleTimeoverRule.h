@@ -5,6 +5,6 @@
 UENUM(BlueprintType)
 enum class EKoratBattleTimeoverRule : uint8 {
     None,
-    TimeOverHpLeft,
+    ComVictory,
 };
 

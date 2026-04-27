@@ -1,6 +1,7 @@
 #include "SSOptionListEtcManager.h"
 
 USSOptionListEtcManager::USSOptionListEtcManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSOptionListEtcManager::OnChangeValueRightsNotation() {

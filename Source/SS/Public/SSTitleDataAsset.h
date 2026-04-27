@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EKoratUnLockType.h"
+#include "ESSTitleIdAddedInfoType.h"
 #include "KoratCharacterDataList.h"
 #include "MutualDataAsset.h"
 #include "SSTitleDataAsset.generated.h"
@@ -13,6 +14,9 @@ class USSTitleDataAsset : public UMutualDataAsset {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText Title;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ESSTitleIdAddedInfoType IdAddedInfoType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterDataList TitleCharacter;
@@ -41,4 +45,3 @@ public:
     USSTitleDataAsset();
 
 };
-

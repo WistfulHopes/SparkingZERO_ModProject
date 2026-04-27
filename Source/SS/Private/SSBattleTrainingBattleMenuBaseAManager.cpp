@@ -1,6 +1,7 @@
 #include "SSBattleTrainingBattleMenuBaseAManager.h"
 
 USSBattleTrainingBattleMenuBaseAManager::USSBattleTrainingBattleMenuBaseAManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSBattleTrainingBattleMenuBaseAManager::OnPadRButton() {

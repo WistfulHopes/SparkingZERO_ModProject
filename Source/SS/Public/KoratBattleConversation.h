@@ -64,6 +64,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratSoundHandle ExternalVoiceSoundHandle;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bStopSoundEndPlay;
+    
     SS_API FKoratBattleConversation();
 };
 

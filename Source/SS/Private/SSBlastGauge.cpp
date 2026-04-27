@@ -1,6 +1,7 @@
 #include "SSBlastGauge.h"
 
 USSBlastGauge::USSBlastGauge() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->BlastGaugeEffectMaterial = NULL;
     this->StockCountMaterial = NULL;
     this->GaugeBoarderEffectWidget = NULL;
@@ -26,5 +27,10 @@ void USSBlastGauge::SetGaugeMax(const float InGaugeMax) {
 
 
 
+
+
+int32 USSBlastGauge::GetStartShowModeNow() {
+    return 0;
+}
 
 

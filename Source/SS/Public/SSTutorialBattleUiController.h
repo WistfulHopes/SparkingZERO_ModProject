@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "EBattlePracticeInputFailureType.h"
 #include "EKoratBattleKey.h"
 #include "SSMenuSceneController.h"
 #include "SSTutorialBattleUiController.generated.h"
@@ -41,7 +42,7 @@ private:
     void TrainingInputFinished(FName InMenuName);
     
     UFUNCTION(BlueprintCallable)
-    void TrainingInputFailure(int32 InIndex, EKoratBattleKey InBattleKey, FName InMenuName);
+    void TrainingInputFailure(int32 InIndex, EKoratBattleKey InBattleKey, FName InMenuName, EBattlePracticeInputFailureType InFailureType);
     
     UFUNCTION(BlueprintCallable)
     void FullPowerSmashDamageBrake();

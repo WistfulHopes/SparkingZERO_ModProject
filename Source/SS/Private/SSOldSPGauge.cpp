@@ -1,6 +1,7 @@
 #include "SSOldSPGauge.h"
 
 USSOldSPGauge::USSOldSPGauge() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->DisplayGaugeMin = 0.00f;
     this->DisplayGaugeMax = 1.00f;
     this->GaugeMinValue = 0.00f;

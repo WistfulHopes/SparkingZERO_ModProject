@@ -2,6 +2,8 @@
 
 FKoratCharacterParameterChanging::FKoratCharacterParameterChanging() {
     this->AddLife = 0.00f;
+    this->bEnableBaseLifeOverride = false;
+    this->BaseLifeOverride = 0.00f;
     this->AddInitialSP = 0.00f;
     this->SPAutoRecoveryScale = 0.00f;
     this->SPChargeSpeedScale = 0.00f;
@@ -17,6 +19,7 @@ FKoratCharacterParameterChanging::FKoratCharacterParameterChanging() {
     this->VanishingAssaultExpendSpScale = 0.00f;
     this->BulletExpendEnergyScale = 0.00f;
     this->ShortDashSpCostScale = 0.00f;
+    this->CancelShortDashSpCostScale = 0.00f;
     this->DragonDashSpCostScale = 0.00f;
     this->ZBurstDashExpendSpScale = 0.00f;
     this->HighSpeedMoveExpendSpScale = 0.00f;
@@ -49,6 +52,8 @@ FKoratCharacterParameterChanging::FKoratCharacterParameterChanging() {
     this->BlastComboDamageScale = 0.00f;
     this->GuardCrashSpDamageScale = 0.00f;
     this->ComboDamageScalingEffectScale = 0.00f;
+    this->bUseReverseComboDamageScaling = false;
+    this->SubtractActionComboDamageScalingMagnificationScale = 0.00f;
     this->CombativesDamageResist = 0.00f;
     this->EnergyDamageResist = 0.00f;
     this->BlastDamageResist = 0.00f;
@@ -68,6 +73,7 @@ FKoratCharacterParameterChanging::FKoratCharacterParameterChanging() {
     this->RushBulletSpeedScale = 0.00f;
     this->AddRushBulletNum = 0;
     this->AddRushBulletLimit = 0;
+    this->bActivateBullet = false;
     this->StunReactionRecoverySpeedScale = 0.00f;
     this->StunReactionInputRecoverySpeedScale = 0.00f;
     this->NumbRecoverySpeedScale = 0.00f;

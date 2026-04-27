@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
+#include "Misc/Guid.h"
 #include "SSPresentBoxSaveData.generated.h"
 
 USTRUCT(BlueprintType)

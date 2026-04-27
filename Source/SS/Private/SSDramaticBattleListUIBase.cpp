@@ -1,6 +1,7 @@
 #include "SSDramaticBattleListUIBase.h"
 
 USSDramaticBattleListUIBase::USSDramaticBattleListUIBase() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->NowSelectingBattle = -1;
     this->BeforeFocusButton = NULL;
     this->FocusTime = 0.00f;

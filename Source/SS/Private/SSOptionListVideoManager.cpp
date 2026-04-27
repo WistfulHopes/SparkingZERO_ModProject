@@ -1,6 +1,7 @@
 #include "SSOptionListVideoManager.h"
 
 USSOptionListVideoManager::USSOptionListVideoManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSOptionListVideoManager::OnChangeValueWindowMode(const FSSMenuButtonTextItemEntry& InChangeItem) {
@@ -31,6 +32,9 @@ void USSOptionListVideoManager::OnChangeValueResolution(const FSSMenuButtonTextI
 }
 
 void USSOptionListVideoManager::OnChangeValuePostProcessQuality(const FSSMenuButtonTextItemEntry& InChangeItem) {
+}
+
+void USSOptionListVideoManager::OnChangeValueOutOfArea(const FSSMenuButtonTextItemEntry& InChangeItem) {
 }
 
 void USSOptionListVideoManager::OnChangeValueMotionBlurQuality(const FSSMenuButtonTextItemEntry& InChangeItem) {

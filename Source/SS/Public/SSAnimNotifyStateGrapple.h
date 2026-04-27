@@ -26,7 +26,7 @@ protected:
     void EndGrapple() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
-    void BeginGrapple(const EKoratInverseKinematicsType Type, const FGrappleHandParameters& RightHand, const FGrappleHandParameters& LeftHand, const FName& GrabBone) const;
+    void BeginGrapple(const EKoratInverseKinematicsType Type, const FName& SpecifiedBone, const FGrappleHandParameters& RightHand, const FGrappleHandParameters& LeftHand, const FName& GrabBone) const;
     
 };
 

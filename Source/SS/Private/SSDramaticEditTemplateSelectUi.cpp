@@ -1,6 +1,7 @@
 #include "SSDramaticEditTemplateSelectUi.h"
 
 USSDramaticEditTemplateSelectUi::USSDramaticEditTemplateSelectUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->TemplateImage = NULL;
     this->TemplateExplaneTextBlock = NULL;
     this->TemplateButton = NULL;

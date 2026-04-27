@@ -29,14 +29,17 @@
 #include "OnBattleSettleDelegate.h"
 #include "OnBattleSetupDelegate.h"
 #include "OnBattleStartDelegate.h"
+#include "OnBgmManagerReadyDelegate.h"
 #include "OnChangeToNewCharacterDelegate.h"
 #include "OnTickEndWithPauseDelegate.h"
 #include "OnTrainingPositionResetDelegate.h"
+#include "SSCharacterLoadingSupporter.h"
 #include "SSGameStateBase.h"
 #include "SSSupportingCharacterData.h"
 #include "SSBattleGameStateBase.generated.h"
 
 class AActor;
+class ASSBGMManager;
 class ASSCharacter;
 class ASSLevelSequenceActor;
 class UCurveFloat;
@@ -204,6 +207,9 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnTickEndWithPause OnTickEndWithPause;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnBgmManagerReady OnBgmManagerReady;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 CrashImpactPhaseLoopCounter;
@@ -258,6 +264,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bMapChangePause;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bModeNSRPause;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bInterruptDialogPause;
@@ -323,7 +332,7 @@ protected:
     FKoratCharacterDataChangeCharacterActionDataList ChangeCharacterActionList;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    TArray<FSSSupportingCharacterData> LoadingSupporters;
+    TArray<FSSCharacterLoadingSupporter> LoadingSupporters;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FSSSupportingCharacterData> LoadedSupporters;
@@ -346,6 +355,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bIsTimeOverSettle;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bBattleSettled;
+    
 public:
     ASSBattleGameStateBase(const FObjectInitializer& ObjectInitializer);
 
@@ -357,6 +369,9 @@ public:
     
     UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
     void WaitMapChangeLoadingComplete(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo);
+    
+    UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
+    void WaitingForRequestTransitAction(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, const int32 InPlaySide);
     
     UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
     void WaitingForDramaticFinishDemo(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo);
@@ -479,6 +494,9 @@ public:
     void StartTrainingPositionReset(const bool InPositionOnly);
     
     UFUNCTION(BlueprintCallable)
+    void StartLoadingSectionNoTouchRootMotionTimer();
+    
+    UFUNCTION(BlueprintCallable)
     void StartLoadingSectionNoTouchRootMotion();
     
     UFUNCTION(BlueprintCallable)
@@ -536,6 +554,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetWaitForSettleDirection(const bool InFlag);
+    
+    UFUNCTION(BlueprintCallable)
+    void SettingControllerTickDependencies();
     
     UFUNCTION(BlueprintCallable)
     void SetSideBySideCameraMode(bool InEnable, bool InBurstUpdate);
@@ -603,7 +624,7 @@ public:
     void ResetCameraFade();
     
     UFUNCTION(BlueprintCallable)
-    void ResetBattleElapsedTime();
+    void ResetBattleDirectingElapsedTime();
     
     UFUNCTION(BlueprintCallable)
     void ResetActionCameraTargets();
@@ -748,6 +769,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnApearSceneStart();
     
+    UFUNCTION(BlueprintCallable)
+    void NotifyBgmManagerReady(ASSBGMManager* InBgmManager);
+    
     UFUNCTION(BlueprintCallable, meta=(Latent, LatentInfo="InLatentInfo", WorldContext="WorldContextObject"))
     void MapChangeStart(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo);
     
@@ -814,6 +838,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLoadingSection() const;
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsKnockDownFromRetryData(const int32 InPlaySide);
+    
     UFUNCTION(BlueprintCallable)
     bool IsIntroductionOrder2pFirst();
     
@@ -825,6 +852,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool IsFinishMode();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsDuringBattleConnectionStatus() const;
     
     UFUNCTION(BlueprintCallable)
     bool IsDramaticFinish(const ASSCharacter* InDirectingWinner);
@@ -1025,6 +1055,9 @@ public:
     void CreateHiddenCharacter(bool InReuseCameraFast, bool InDamageCostume);
     
     UFUNCTION(BlueprintCallable)
+    void CreateDestructionFieldForGiant(ASSCharacter* InTriggerCharacter);
+    
+    UFUNCTION(BlueprintCallable)
     void CreateDamageCostumeCharacter(bool InReuseCameraFast);
     
     UFUNCTION(BlueprintCallable)
@@ -1060,13 +1093,16 @@ public:
     void ClearFade();
     
     UFUNCTION(BlueprintCallable)
+    void ClearBuffInBattleFinish();
+    
+    UFUNCTION(BlueprintCallable)
     void ClearBuff();
     
     UFUNCTION(BlueprintCallable)
     void CheckSideBySideCameraMode();
     
     UFUNCTION(BlueprintCallable)
-    void CheckDramaticFinish(bool& OutDramaticFinish);
+    void CheckDramaticFinish(bool& OutDramaticFinish, int32& OutWinnerPlaySide);
     
     UFUNCTION(BlueprintCallable)
     void CheckDamageCostumeLoadedInThisTerminal(EKoratLoop& OutResult);

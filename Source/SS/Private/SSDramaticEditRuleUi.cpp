@@ -1,6 +1,7 @@
 #include "SSDramaticEditRuleUi.h"
 
 USSDramaticEditRuleUi::USSDramaticEditRuleUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->TabUi = NULL;
     this->ListUi = NULL;
     this->CreatingBeforeData = NULL;

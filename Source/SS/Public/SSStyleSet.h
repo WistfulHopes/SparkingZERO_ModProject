@@ -34,7 +34,7 @@ public:
     int32 GetStyleIconCount() const;
     
     UFUNCTION(BlueprintCallable)
-    void DisableStyle(int32 InStyleIndex, int32 InConsumeBlastStock);
+    void DisableStyle(int32 InStyleIndex, int32 InConsumeBlastStock, bool bMainPanel);
     
     UFUNCTION(BlueprintCallable)
     void Disable();
@@ -43,7 +43,7 @@ public:
     void DecideStyle(int32 InStyleIndex);
     
     UFUNCTION(BlueprintCallable)
-    void ActivateStyle(int32 InStyleIndex, int32 InConsumeBlastStock);
+    void ActivateStyle(int32 InStyleIndex, int32 InConsumeBlastStock, bool bMainPanel);
     
     UFUNCTION(BlueprintCallable)
     void Activate();

@@ -5,7 +5,7 @@ public class SS : ModuleRules {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;
-        
+
         PublicDependencyModuleNames.AddRange(new string[] {
             "AIModule",
             "AnimGraphRuntime",
@@ -22,8 +22,10 @@ public class SS : ModuleRules {
             "Foliage",
             "GameplayCameras",
             "GeometryCollectionEngine",
+            "GameplayTasks",
             "InputCore",
             "KantanChartsUMG",
+            "KawaiiPhysics",
             "KoratControlRigExtension",
             "KoratUDS",
             "LevelSequence",
@@ -33,13 +35,28 @@ public class SS : ModuleRules {
             "NavigationSystem",
             "Niagara",
             "PhysicsCore",
+            "RigVM",
             "SSKeyInput",
             "Slate",
             "SlateCore",
             "SpRuntime",
-            "RigVM",
             "UMG",
-            "WindSimShader",
+            "WindSimShader"
         });
+
+        PrivateDependencyModuleNames.AddRange(new string[] {
+            "MovieSceneTracks",
+        });
+
+        if (Target.bBuildEditor)
+        {
+            PublicDependencyModuleNames.AddRange(new string[] {
+                "UnrealEd",
+                "PropertyEditor",
+                "EditorStyle",
+                "Sequencer",
+                "MovieSceneTools"
+            });
+        }
     }
 }

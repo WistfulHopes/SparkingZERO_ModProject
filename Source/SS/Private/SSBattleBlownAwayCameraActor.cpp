@@ -7,7 +7,11 @@ ASSBattleBlownAwayCameraActor::ASSBattleBlownAwayCameraActor(const FObjectInitia
     this->PhysicalDisparityDecayScaleHeightArray.AddDefaulted(4);
     this->PhysicalDisparityDecayScaleBaseYawArray.AddDefaulted(4);
     this->PhysicalDisparityBoundScaleDecayRateArray.AddDefaulted(4);
+    this->PhysicalDisparityTargetWeightAddLengthArray.AddDefaulted(4);
+    this->PhysicalDisparityTargetWeightAddHeightArray.AddDefaulted(4);
+    this->PhysicalDisparityTargetWeightAddWidthArray.AddDefaulted(4);
     this->bLookAtNullOffsetTargetImitationArray.AddDefaulted(4);
+    this->bLookAtNullOffsetTargetReversedImitationArray.AddDefaulted(4);
     this->LookUpEnemySectionArray.AddDefaulted(4);
     this->HitGroundDisable = false;
     this->LastCamAngle = 170.00f;

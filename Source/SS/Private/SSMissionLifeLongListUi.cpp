@@ -1,6 +1,7 @@
 #include "SSMissionLifeLongListUi.h"
 
 USSMissionLifeLongListUi::USSMissionLifeLongListUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSMissionLifeLongListUi::SetHitButtonData(USSMenuButton* InHitButton, USSRemoteButton* InRemoteButton, int32 InDataIndex) {

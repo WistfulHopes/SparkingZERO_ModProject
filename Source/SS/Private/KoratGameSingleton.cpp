@@ -8,6 +8,7 @@
 #include "SSReplayManager.h"
 #include "SSSaveDataManager.h"
 #include "SSSoundManager.h"
+#include "SSUiWidgetManager.h"
 
 UKoratGameSingleton::UKoratGameSingleton() {
     this->FacialExpressionData = NULL;
@@ -37,6 +38,8 @@ UKoratGameSingleton::UKoratGameSingleton() {
     this->DramaticBattleAssetDataAsset = NULL;
     this->DramaticBattleBattleDataAsset = NULL;
     this->DramaticExtraData = NULL;
+    this->ModeHUNData = NULL;
+    this->ModeNSRData = NULL;
     this->BattleSetupAssetData = NULL;
     this->TeamTalkAssetData = NULL;
     this->ShopMenuAssetData = NULL;
@@ -89,6 +92,7 @@ UKoratGameSingleton::UKoratGameSingleton() {
     this->EditPartsTextListData = NULL;
     this->StampListData = NULL;
     this->PlayerCardBGListData = NULL;
+    this->ModeHUNAssetDataAsset = NULL;
     this->AuraPointLightData = NULL;
     this->AuraRimLightData = NULL;
     this->AuraLevelData = NULL;
@@ -158,6 +162,7 @@ UKoratGameSingleton::UKoratGameSingleton() {
     this->SurfaceTypeSettingData = NULL;
     this->HapticFeedbackSettingData = NULL;
     this->ChainPlaySoundData = NULL;
+    this->SoundBranchTypeData = NULL;
     this->GroupIdData = NULL;
     this->ReplaceTransitionActionData = NULL;
     this->ActionCameraDataDefault = NULL;
@@ -173,7 +178,6 @@ UKoratGameSingleton::UKoratGameSingleton() {
     this->WindMotorAssetData = NULL;
     this->BuffCategoryData = NULL;
     this->ShakeForceTypeAssetData = NULL;
-    this->EffectLimitsData = NULL;
     this->ObjectLimitGroupIDEnum = NULL;
     this->ObjectLimitAssetData = NULL;
     this->FreeTimelineTypeSettingData = NULL;
@@ -200,6 +204,7 @@ UKoratGameSingleton::UKoratGameSingleton() {
     this->SaveDataManager = CreateDefaultSubobject<USSSaveDataManager>(TEXT("SaveDataManager"));
     this->PlayerFactoryProxy = CreateDefaultSubobject<UKoratFreeTimelinePlayerFactoryProxy>(TEXT("PlayerFactoryProxy"));
     this->AppNetworkWorker = CreateDefaultSubobject<USSAppNetworkWorker>(TEXT("AppNetworkWorker"));
+    this->UiWidgetManager = CreateDefaultSubobject<USSUiWidgetManager>(TEXT("UiWidgetManager"));
     this->PlayerMatchNetworkManager = CreateDefaultSubobject<USSPlayerMatchNetworkManager>(TEXT("PlayerMatchNetworkManager"));
     this->ParticleParameterDataAsset = NULL;
     this->AttackCollisionPool = CreateDefaultSubobject<UKoratAttackCollisionPool>(TEXT("AttackCollisionPool"));

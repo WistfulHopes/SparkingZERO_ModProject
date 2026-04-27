@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
+#include "Math/Box.h"
 #include "UObject/Object.h"
 #include "SSAreaLimitChecker.generated.h"
 

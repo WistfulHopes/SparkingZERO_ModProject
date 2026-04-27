@@ -12,7 +12,7 @@ public:
     TSoftObjectPtr<ULevelSequence> SequenceAsset;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 CueId;
+    int32 CueID;
     
     SS_API FKoratInteractKnockPlayData();
 };

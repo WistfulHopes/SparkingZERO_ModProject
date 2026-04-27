@@ -7,5 +7,6 @@ enum class ESSMissionReleaseTyming : uint8 {
     None,
     AfterTutorial,
     AfterCharacterUnlock,
+    AfterTutorialNewIcon,
 };
 

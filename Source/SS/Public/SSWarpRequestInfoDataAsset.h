@@ -24,6 +24,9 @@ public:
     EWarpRequestReturnType WarpRequestReturnType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 WarpCtrlReturnWarpBeforeFrame;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bWarpCenterOtherCharacter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -41,6 +44,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bWarpReturnWarpRootMotionOffsetAdd;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bEnableUpOffset;
+    
     SS_API FSSWarpRequestInfoDataAsset();
 };
-

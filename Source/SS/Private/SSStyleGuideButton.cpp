@@ -1,6 +1,7 @@
 #include "SSStyleGuideButton.h"
 
 USSStyleGuideButton::USSStyleGuideButton() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->GuideButtonText = NULL;
 }
 

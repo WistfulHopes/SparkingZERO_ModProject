@@ -116,6 +116,9 @@ public:
     USSTeamGauge* GetTeamGauge();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetStartShowModeNow();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USSSPGauge* GetSPGauge();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

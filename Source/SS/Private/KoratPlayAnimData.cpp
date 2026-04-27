@@ -7,5 +7,8 @@ FKoratPlayAnimData::FKoratPlayAnimData() {
     this->LevelSequence = NULL;
     this->bPlaying = false;
     this->bDisableAutoInterpolateBlendOut = false;
+    this->NullMovementTotalXY = 0.00f;
+    this->NullMovementTotalZ = 0.00f;
+    this->bSetNullMovementTotal = false;
 }
 

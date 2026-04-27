@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "KoratMovieSceneLookAtSection.h"
 #include "Compilation/IMovieSceneTrackTemplateProducer.h"
 #include "Evaluation/MovieSceneEvalTemplate.h"
 #include "Tracks/MovieScenePropertyTrack.h"
@@ -11,12 +12,10 @@ class UKoratMovieSceneLookAtTrack : public UMovieScenePropertyTrack, public IMov
 public:
     UKoratMovieSceneLookAtTrack();
 
-
-    // Fix for true pure virtual functions not being implemented
-
-    virtual FMovieSceneEvalTemplatePtr CreateTemplateForSection(const UMovieSceneSection& InSection) const override
-    {
-        return FMovieSceneEvalTemplatePtr();
-    }
+    virtual bool SupportsType(TSubclassOf<UMovieSceneSection> SectionClass) const override;
+    virtual UMovieSceneSection* CreateNewSection() override;
+    virtual FMovieSceneEvalTemplatePtr CreateTemplateForSection(const UMovieSceneSection& InSection) const override;
+#if WITH_EDITOR
+    virtual FText GetDisplayName() const override;
+#endif
 };
-

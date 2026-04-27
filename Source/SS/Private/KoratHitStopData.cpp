@@ -6,5 +6,6 @@ FKoratHitStopData::FKoratHitStopData() {
     this->HitEnemyStop = 0.00f;
     this->HitEnemyTimeDilation = 0.00f;
     this->HitStopDelay = 0.00f;
+    this->bUpdateBattleStateWithWorldTime = false;
 }
 

@@ -1,6 +1,7 @@
 #include "SSPLMRoomPlayerListPanel.h"
 
 USSPLMRoomPlayerListPanel::USSPLMRoomPlayerListPanel() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->SlotEmptySwitcher = NULL;
     this->SlotStatusSwitcher = NULL;
     this->SlotBlankStatusSwitcher = NULL;

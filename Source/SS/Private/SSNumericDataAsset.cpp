@@ -7,6 +7,7 @@ USSNumericDataAsset::USSNumericDataAsset() {
     this->InitialSP = 20000.00f;
     this->SPAutoRecoveryLimit = 20000.00f;
     this->SPAutoRecoverySpeed = 3000.00f;
+    this->SPAutoRecoverySpeedScaleUnderOneGauge = 1.00f;
     this->SPChargeSpeed = 4.00f;
     this->SPChargeSpeedUnderAutoRecoveryLimit = -1.00f;
     this->SparkingGaugeChargeSpeed = 30000.00f;
@@ -52,6 +53,7 @@ USSNumericDataAsset::USSNumericDataAsset() {
     this->ThrowBreakSkillGaugeGain = 0.00f;
     this->BackAttackedSkillGaugeGain = 0.00f;
     this->HPSkillGaugeGain = 0.00f;
+    this->LastOneHPSkillGaugeGain = 0.00f;
     this->SpeedImpactWinSkillGaugeGain = 0.00f;
     this->CrashImpactWinSkillGaugeGain = 0.00f;
     this->BlastImpactWinSkillGaugeGain = 0.00f;

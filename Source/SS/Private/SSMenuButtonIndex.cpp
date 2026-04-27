@@ -1,6 +1,7 @@
 #include "SSMenuButtonIndex.h"
 
 USSMenuButtonIndex::USSMenuButtonIndex() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSMenuButtonIndex::SetSelectedIndex(const int32 InIndexToSelect) {

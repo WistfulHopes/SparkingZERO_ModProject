@@ -2,6 +2,7 @@
 
 USSDramaticEditImageSaveData::USSDramaticEditImageSaveData() {
     this->UserIndex = -1;
+    this->DataVersion = 0;
 }
 
 

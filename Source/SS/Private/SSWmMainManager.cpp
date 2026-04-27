@@ -1,6 +1,7 @@
 #include "SSWmMainManager.h"
 
 USSWmMainManager::USSWmMainManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->StampTime = 10.00f;
     this->StampWaitTime = 11.00f;
     this->NiceWaitTime = 10.00f;

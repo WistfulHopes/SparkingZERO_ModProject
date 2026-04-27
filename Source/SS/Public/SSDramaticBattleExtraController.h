@@ -514,6 +514,9 @@ protected:
     void OnDecideSimpleCharaSelectLeft();
     
     UFUNCTION(BlueprintCallable)
+    void OnBattleCategoryChanged();
+    
+    UFUNCTION(BlueprintCallable)
     void DecideItemButton(int32 InDecideButtonDataIndex);
     
     UFUNCTION(BlueprintCallable)
@@ -550,4 +553,3 @@ protected:
     void ChangeBattleCharaIcon(USSMenuButton* InHitButton, USSRemoteButton* InRemoteButton, int32 InDataIndex);
     
 };
-

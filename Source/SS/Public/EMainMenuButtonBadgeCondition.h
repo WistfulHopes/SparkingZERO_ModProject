@@ -13,5 +13,6 @@ enum class EMainMenuButtonBadgeCondition : uint8 {
     UnrewardedMode03Mission,
     UnRewardedTrophyMission,
     NewProductInShop,
+    BattleMode010HaveUpdatedRecords,
 };
 

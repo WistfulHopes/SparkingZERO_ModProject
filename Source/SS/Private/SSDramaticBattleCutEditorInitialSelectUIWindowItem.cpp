@@ -1,6 +1,7 @@
 #include "SSDramaticBattleCutEditorInitialSelectUIWindowItem.h"
 
 USSDramaticBattleCutEditorInitialSelectUIWindowItem::USSDramaticBattleCutEditorInitialSelectUIWindowItem() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->UIController = NULL;
     this->UIWindow = NULL;
 }

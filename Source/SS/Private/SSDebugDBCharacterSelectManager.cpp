@@ -1,6 +1,7 @@
 #include "SSDebugDBCharacterSelectManager.h"
 
 USSDebugDBCharacterSelectManager::USSDebugDBCharacterSelectManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->SelectedStartButtonOfLastSession = NULL;
 }
 

@@ -1,6 +1,7 @@
 #include "SSSpeedImpactUi.h"
 
 USSSpeedImpactUi::USSSpeedImpactUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->SuccessTiming = 0.70f;
     this->CircleScaleCurve = NULL;
     this->CircleTiming = NULL;

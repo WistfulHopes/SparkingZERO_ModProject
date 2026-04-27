@@ -8,6 +8,7 @@ enum class ESSPlayerCardMajorItemType : uint8 {
     BattleMode010,
     Tournament,
     RankMatch,
+    RankMatchSeason,
     Drama,
     Num,
 };

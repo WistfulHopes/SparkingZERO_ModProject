@@ -41,6 +41,11 @@ public:
     UFUNCTION(BlueprintCallable)
     static EKoratLevelSequenceValidateResultType ValidateSpawnableTrack(UMovieScene* InMovieScene, FString& InResultMessage);
     
+private:
+    UFUNCTION(BlueprintCallable)
+    static EKoratLevelSequenceValidateResultType ValidateDirectorBlueprint(ULevelSequence* InLevelSequence);
+    
+public:
     UFUNCTION(BlueprintCallable)
     static bool ValidateBindingTag(UMovieSceneSequence* InRootSequence);
     

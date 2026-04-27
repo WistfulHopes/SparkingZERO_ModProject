@@ -51,7 +51,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterDataShortDashParameter StepShortDash;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratCharacterDataShortDashParameter StepCancelShortDash;
+    
     USSStepsDataAsset();
 
 };
-

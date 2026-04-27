@@ -50,7 +50,7 @@ private:
     void OnFinalizeAi();
     
     UFUNCTION(BlueprintCallable)
-    void OnDamage(const float InDamage);
+    void OnDamage(const float InDamage, const bool InGuardSuccess);
     
     UFUNCTION(BlueprintCallable)
     void OnCharacterBattleStateChanged(const ECharacterBattleState InOldState, const ECharacterBattleState InNewState);

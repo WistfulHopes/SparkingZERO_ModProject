@@ -12,7 +12,9 @@ ASSLevelSequenceActor::ASSLevelSequenceActor(const FObjectInitializer& ObjectIni
     this->bRebindOriginTrackOverrideTransformActor = false;
     this->bWarpCtrlSequenceStart = false;
     this->bWarpCtrlSequenceEnd = false;
+    this->WarpCtrlReturnWarpBeforeFrame = 5;
     this->bIsDemonstrationFromSaveAction = false;
+    this->bNoUseOwnerCutDirector = false;
     this->CameraLerpTimeStart = -1.00f;
     this->CameraLerpTimeEnd = -1.00f;
     this->CameraSlot = 0;

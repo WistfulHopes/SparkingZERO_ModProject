@@ -1,6 +1,7 @@
 #include "SSBattleMode010DifficultyDialog.h"
 
 USSBattleMode010DifficultyDialog::USSBattleMode010DifficultyDialog() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->DecidedButton = NULL;
 }
 

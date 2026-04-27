@@ -69,4 +69,3 @@ enum class ESSDramaticPictureFilterFlags : uint64 {
     BIT_62 = 1ULL << 62,
     BIT_63 = 1ULL << 63,
 };
-

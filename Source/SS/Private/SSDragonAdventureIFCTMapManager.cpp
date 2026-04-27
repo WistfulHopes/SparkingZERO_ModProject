@@ -1,6 +1,7 @@
 #include "SSDragonAdventureIFCTMapManager.h"
 
 USSDragonAdventureIFCTMapManager::USSDragonAdventureIFCTMapManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 

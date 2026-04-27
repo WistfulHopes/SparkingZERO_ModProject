@@ -38,6 +38,9 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UKoratDecalActorManager* DecalActorManager;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSet<ASSLevelSequenceActor*> FacialSequences;
+    
 public:
     USSEffectManager();
 

@@ -25,6 +25,9 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SkipSerialization, meta=(AllowPrivateAccess=true))
     TArray<FSSReplayBattleData> BattleData;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsDebugOnlineAutoBattleAiEnable;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FSSReplayBattleEtcData TempEtcData;
     

@@ -1,6 +1,7 @@
 #include "SSSparkingGauge.h"
 
 USSSparkingGauge::USSSparkingGauge() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->DamageGaugeReduceSpeed = 10000.00f;
     this->DamageDelaySec = 0.00f;
     this->ChargeTermThreshold = 0.50f;

@@ -1,6 +1,7 @@
 #include "SSOptionAssistControlManager.h"
 
 USSOptionAssistControlManager::USSOptionAssistControlManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSOptionAssistControlManager::OnChangeValueAssistRevengeCounter(const FSSMenuButtonTextItemEntry& InChangeItem) {

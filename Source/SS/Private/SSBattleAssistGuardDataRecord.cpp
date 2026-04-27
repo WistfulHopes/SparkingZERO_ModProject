@@ -4,6 +4,7 @@ FSSBattleAssistGuardDataRecord::FSSBattleAssistGuardDataRecord() {
     this->CombativesGuardDistance = 0.00f;
     this->GiantCombativesGuardDistance = 0.00f;
     this->BulletsGuardDistance = 0.00f;
+    this->CombativesBlastGuardDistance = 0.00f;
     this->CombativesGuardRecoveryTime = 0.00f;
 }
 

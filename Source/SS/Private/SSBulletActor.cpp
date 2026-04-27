@@ -11,6 +11,7 @@ ASSBulletActor::ASSBulletActor(const FObjectInitializer& ObjectInitializer) : Su
     this->bOTBulletMoveStopByCollision = true;
     this->TransformHistoryIntervalLength = 100.00f;
     this->BeamCollisionStraightCheckDegree = 1.00f;
+    this->ClashEnableAngle = 90.00f;
     this->OwnerCharacter = NULL;
     this->SupporterIndex = -1;
     this->ChargeLv = 0;
@@ -43,6 +44,7 @@ ASSBulletActor::ASSBulletActor(const FObjectInitializer& ObjectInitializer) : Su
     this->DistanceDelicateBeamEnableHistoryPointSqr = 10000.00f;
     this->bIsAfterDemo = false;
     this->bIsPlayedDemoSkipExplosion = false;
+    this->BlastID = 0;
     this->bIgnoreActionTarget = false;
     this->HomingTargetActor = NULL;
     this->TargetPointDiffusionRadius = 0.00f;
@@ -106,11 +108,16 @@ ASSBulletActor::ASSBulletActor(const FObjectInitializer& ObjectInitializer) : Su
     this->CharacterCollisionRevibeSpan = 0.00f;
     this->CharacterLastHitType = ESSBulletCharacterLastHitType::PlayOT;
     this->LifeSpanAfterCharacterLastHit = 0.00f;
+    this->bIgnoreHitBehindAttackChara = false;
     this->GeometryFirstHitType = ESSBulletGeometryFirstHitType::SingleHit;
     this->GeometryCollisionRevibeNum = 0;
     this->GeometryCollisionRevibeSpan = 0.00f;
     this->GeometryLastHitType = ESSBulletGeometryLastHitType::PlayOT;
+    this->bLastHitAtIndestructibleGeometry = false;
+    this->bGeometryCollisionTestOnlyOnce = false;
+    this->bSkipGeometryCollisionTest = false;
     this->EnergyBullectCollisionPriority = 0;
+    this->EnergyBullectCollisionPriorityInBeam = 0;
     this->bEnergyBullectCollisionSpecial = false;
     this->bEnergyBullectCollisionInvincible = false;
     this->bIsSpecialShield = false;
@@ -123,7 +130,9 @@ ASSBulletActor::ASSBulletActor(const FObjectInitializer& ObjectInitializer) : Su
     this->HitDirectionPitch = 0.00f;
     this->BottomHitDirectionPitch = 0.00f;
     this->bEnableDestruction = false;
+    this->CategoryType = EKoratBulletCategoryType::Undefined;
     this->bImpossibleReflect = false;
+    this->bPossibleDashReflect = false;
     this->bImpossibleAbsorption = false;
     this->SuperZCounterType = EKoratSuperZCounterType::None;
     this->bExParamSuperZCounterRepel = -1;
@@ -131,10 +140,10 @@ ASSBulletActor::ASSBulletActor(const FObjectInitializer& ObjectInitializer) : Su
     this->AngleLimitAtReflect = 0.00f;
     this->bHomingAtReflect = false;
     this->bReceiveSelfDamage = false;
-    this->bOptimizeMode = false;
     this->bIsEnabled = true;
     this->bIsCollisionEnabled = true;
     this->bRunCollisionTestThisFrame = false;
+    this->bRunNextTickZeroDelta = false;
     this->Random = CreateDefaultSubobject<USSRandom>(TEXT("Random_ASSBulletActor"));
     this->SceneComponent = (USceneComponent*)RootComponent;
     this->BulletVisualComponent = CreateDefaultSubobject<USceneComponent>(TEXT("BulletVisual"));

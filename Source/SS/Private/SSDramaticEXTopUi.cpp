@@ -1,6 +1,7 @@
 #include "SSDramaticEXTopUi.h"
 
 USSDramaticEXTopUi::USSDramaticEXTopUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSDramaticEXTopUi::SetButtonData(USSRemoteButton* InButton, int32 InDataIndex) {

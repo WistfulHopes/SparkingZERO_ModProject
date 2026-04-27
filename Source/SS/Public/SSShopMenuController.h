@@ -8,15 +8,18 @@
 #include "KoratShopFloorDataList.h"
 #include "KoratShopSalesItemDataList.h"
 #include "SSBattleSetupControllerBase.h"
+#include "SSShopCartItemInfo.h"
 #include "SSShopPurchasedInfoKPI.h"
 #include "SSShopMenuController.generated.h"
 
 class UKoratShopMenuDataAsset;
+class UObject;
 class USSCharacterItemEquipment;
 class USSMenuButton;
 class USSMenuGeneralDialog;
 class USSMenuManager;
 class USSMenuViewScroll;
+class USSMultiPurchaseConfirmationDialog;
 class USSPurchaseConfirmationDialog;
 class USSRemoteButton;
 class USSShopMenuNetworkManager;
@@ -48,10 +51,19 @@ protected:
     TSoftClassPtr<USSPurchaseConfirmationDialog> ClassPurchasedDialog;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<USSMultiPurchaseConfirmationDialog> ClassMultiPurchaseConfirmationDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<USSMultiPurchaseConfirmationDialog> ClassMultiPurchasedDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<USSMenuManager> ClassItemDetailWidget;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<USSMenuGeneralDialog> ClassMenuGeneralDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UObject* CharacterTextureLoadMaterialInstance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratBGMDataList BgmShop;
@@ -112,6 +124,12 @@ private:
     USSPurchaseConfirmationDialog* PurchasedDialog;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSMultiPurchaseConfirmationDialog* MultiPurchaseConfirmationDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSMultiPurchaseConfirmationDialog* MultiPurchasedDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSMenuManager* ItemDetailWidget;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -134,6 +152,9 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratShopSalesItemDataList> SortFilteredFloorItemList;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FSSShopCartItemInfo> CurrentCartItemList;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratShopSalesItemDataList CurrentSelectItem;

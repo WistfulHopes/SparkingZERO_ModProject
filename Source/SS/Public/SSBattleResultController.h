@@ -5,6 +5,8 @@
 
 class ASSBattleResultAdventureIFController;
 class ASSPlayerCardControllerActor;
+class USSBattleMode010Timer;
+class USSBattleModeNSRRezultManager;
 class USSBattleResult01ChLvUpManager;
 class USSBattleResult01Manager;
 class USSBattleResult01PlayerRankUpManager;
@@ -89,7 +91,13 @@ private:
     USSTimerUi* ResultTimerManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSBattleMode010Timer* ResultReplayManager;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSMenuReportDialog* ReportDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSBattleModeNSRRezultManager* ModeNSRRezultManager;
     
 public:
     ASSBattleResultController(const FObjectInitializer& ObjectInitializer);

@@ -126,6 +126,9 @@ void ASSDramaticBattleExtraController::OnDecideSimpleCharaSelectRight() {
 void ASSDramaticBattleExtraController::OnDecideSimpleCharaSelectLeft() {
 }
 
+void ASSDramaticBattleExtraController::OnBattleCategoryChanged() {
+}
+
 void ASSDramaticBattleExtraController::DecideItemButton(int32 InDecideButtonDataIndex) {
 }
 

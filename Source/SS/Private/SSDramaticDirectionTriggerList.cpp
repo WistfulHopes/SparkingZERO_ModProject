@@ -1,12 +1,16 @@
 #include "SSDramaticDirectionTriggerList.h"
 
 USSDramaticDirectionTriggerList::USSDramaticDirectionTriggerList() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSDramaticDirectionTriggerList::SetTargetIcon(USSMenuButton* InHitButton, FName InWBP_Name, int32 InDataIndex, bool SecondFlg) {
 }
 
 void USSDramaticDirectionTriggerList::SetHitButtonData(USSMenuButton* InHitButton, USSRemoteButton* InRemoteButton, int32 InDataIndex) {
+}
+
+void USSDramaticDirectionTriggerList::SetHitButtonAnimation(USSMenuButton* InHitButton, USSRemoteButton* InRemoteButton, int32 InDataIndex) {
 }
 
 void USSDramaticDirectionTriggerList::SetCountText(USSMenuButton* InHitButton, FName InWBP_Name, int32 Count, FName InWBP_Name2, FText Unit) {

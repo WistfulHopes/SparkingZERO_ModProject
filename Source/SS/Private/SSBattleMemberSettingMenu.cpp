@@ -1,11 +1,13 @@
 #include "SSBattleMemberSettingMenu.h"
 
 USSBattleMemberSettingMenu::USSBattleMemberSettingMenu() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->RemoveButtonWidgetName = TEXT("WBP_OBJ_Common_HitBTN_Remove");
     this->SwapButtonWidgetName = TEXT("WBP_OBJ_Common_HitBTN_Replace");
     this->DPVisibilityWidgetName = TEXT("DPNumSet");
     this->DPNumTextWidgetName = TEXT("DPNum");
     this->DPAlertMarkWidgetName = TEXT("IMG_Alert");
+    this->DPMaxChangeMarkWidgetName = TEXT("IMG_Icon_Notifiation");
     this->EPBonusVisibilityWidgetName = TEXT("EVPointNumSet");
     this->EPBonusNumTextWidgetName = TEXT("EVBonusNum");
 }

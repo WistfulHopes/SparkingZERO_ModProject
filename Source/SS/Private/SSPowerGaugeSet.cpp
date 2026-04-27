@@ -1,6 +1,7 @@
 #include "SSPowerGaugeSet.h"
 
 USSPowerGaugeSet::USSPowerGaugeSet() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->PowerGauge = NULL;
     this->HoldButton = NULL;
 }

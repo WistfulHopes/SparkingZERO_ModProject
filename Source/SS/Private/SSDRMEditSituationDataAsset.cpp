@@ -6,6 +6,7 @@ USSDRMEditSituationDataAsset::USSDRMEditSituationDataAsset() {
     this->RebindType = ESSDramaticRebindType::Event;
     this->MaxCharacters = 0;
     this->MinCharacters = 0;
+    this->PermitMinCharacters = -1;
 }
 
 

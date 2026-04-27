@@ -15,5 +15,6 @@ FSSOptionVideoParam::FSSOptionVideoParam() {
     this->ChaosQuality = 0;
     this->Vsync = false;
     this->DofQuality = 0;
+    this->OutOfArea = 0;
 }
 

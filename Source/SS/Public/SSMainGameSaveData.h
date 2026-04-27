@@ -23,6 +23,10 @@
 #include "KoratEditPartsTextDataList.h"
 #include "KoratIconTitleDataList.h"
 #include "KoratMapDataList.h"
+#include "KoratModeHUNDataList.h"
+#include "KoratModeHUNSaveDataRecord.h"
+#include "KoratModeHUNWholeSaveData.h"
+#include "KoratModeNSRSaveData.h"
 #include "KoratMovieItemDataList.h"
 #include "KoratPlayerCardBGDataList.h"
 #include "KoratShopSalesItemDataList.h"
@@ -41,6 +45,7 @@
 #include "SSCharacterSaveData.h"
 #include "SSDownLoadContentsSaveData.h"
 #include "SSDragonAdventureIFSaveData.h"
+#include "SSDramaticEditImagesSaveDataMode.h"
 #include "SSEditPartsImageSaveData.h"
 #include "SSEditPartsTextSaveData.h"
 #include "SSGallerySaveData.h"
@@ -61,6 +66,7 @@
 #include "SSTextTitleSaveData.h"
 #include "SSTournamentData.h"
 #include "SSTutorialData.h"
+#include "SSViewedRecordSaveData.h"
 #include "SSMainGameSaveData.generated.h"
 
 class UTexture2D;
@@ -121,6 +127,9 @@ public:
     TMap<FKoratTextTitleDataList, FSSTextTitleSaveData> TextTitleItemDataList;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool NeedRestoreTextTitle;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FKoratIconTitleDataList, FSSIconTitleSaveData> IconTitleItemDataList;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -178,6 +187,9 @@ public:
     TMap<FKoratDramaticBattleTipsDataList, FKoratDramaticTipsSaveDataRecord> DramaticTipsDatas;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSDramaticEditImagesSaveDataMode DramaticEditImagesSaveDataMode;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSMissionModeUserDataListSaveData MissionUserData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -208,6 +220,9 @@ public:
     FSSBtlMode010NotifySaveData BtlMode010NotifyData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSViewedRecordSaveData ViewedRecordsData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSNetworkData NetworkData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -222,10 +237,18 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratTrainingSetting TrainingSetting;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FKoratModeHUNDataList, FKoratModeHUNSaveDataRecord> ModeHUNDatas;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratModeHUNWholeSaveData ModeHUNWholeData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratModeNSRSaveData ModeNSRData;
+    
     USSMainGameSaveData();
 
     UFUNCTION(BlueprintCallable)
     void InitTutorialMode();
     
 };
-

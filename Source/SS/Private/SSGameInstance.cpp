@@ -12,6 +12,8 @@ USSGameInstance::USSGameInstance() {
     this->OnlineBattleMatchingState = EKoratOnlineBattleMatchingState::None;
     this->bOnlineBattleObserver = false;
     this->OnlineBattleRematchCount = 0;
+    this->bModeNSRContinue = false;
+    this->bModeNSRContinueLoadAutoSave = false;
     this->BattleStartMode = EKoratBattleStartMode::First;
     this->TransitionMode = EKoratTransitionMode::Battle;
     this->ReplayRetryCount = 0;
@@ -32,6 +34,8 @@ USSGameInstance::USSGameInstance() {
     this->bIsTransitionDramaticEpilogueEnding = false;
     this->bIsAfterDramaticEnding = false;
     this->DaramaticDataManager = NULL;
+    this->ModeHUNDataManager = NULL;
+    this->ModeNSRManager = NULL;
     this->bStartKoratPDramaticImageGeneration = false;
     this->bTitleCompanyLogoDisplayed = false;
     this->bActivitySetEnd = false;
@@ -134,9 +138,6 @@ void USSGameInstance::SetupKeyToDeviceIconType(const FKey& InKey, ASSPlayerContr
 }
 
 void USSGameInstance::SetupCharacterRandom() {
-}
-
-void USSGameInstance::SetUpAutoBattleLoopRandomExtraBattle() {
 }
 
 void USSGameInstance::SetTutorialData() {
@@ -286,6 +287,9 @@ void USSGameInstance::SetDramaticBattleEndingSubLevelForLevelSequence(ULevelStre
 void USSGameInstance::SetDramaticBattleEndingLevelSequenceActor(ASSLevelSequenceActor* InLevelSequenceActor) {
 }
 
+void USSGameInstance::SetDefaultBattleBGM(const FKoratBGMDataList& InBattleBGM) {
+}
+
 void USSGameInstance::SetDebugNetRollType(const EDebugVirtualNetPlayerRoleType InDbgNetRollType) {
 }
 
@@ -296,6 +300,12 @@ void USSGameInstance::SetDebugCutEditorTestSetting(FSSDebugCutEditorTestSetting&
 }
 
 void USSGameInstance::SetDebugAdventureIFTestSetting(FSSDebugAdventureIFTestSetting& InSetting) {
+}
+
+void USSGameInstance::SetDamageCorrectionMode() {
+}
+
+void USSGameInstance::SetDamageCorrection(const EKoratBattleDamageCorrection InDamageCorrection) {
 }
 
 void USSGameInstance::SetCharacterSelectFillAllCharaTest(bool bInEnable) {
@@ -403,6 +413,9 @@ void USSGameInstance::SetBattleDirectingInfo(FKoratBattleDirectingInfo& InBattle
 void USSGameInstance::SetBattleDirectingData(const FKoratBattleDirectingData& InBattleDirectingData) {
 }
 
+void USSGameInstance::SetBattleCpuOptimization(const bool InEnableCpuOptimization) {
+}
+
 void USSGameInstance::SetBattleCpuLevel(const EKoratBattleCpuLevel InBattleCpuLevel) {
 }
 
@@ -442,8 +455,19 @@ void USSGameInstance::ResetDefaultBattleSetting() {
 void USSGameInstance::ResetBattleStartFadeColor() {
 }
 
+bool USSGameInstance::RemoveNonExistEventBonusCharacterSort(TArray<FKoratCharaSortMenuRecord>& OutFilter) const {
+    return false;
+}
+
+bool USSGameInstance::RemoveNonExistEventBonusCharacterFilter(TArray<FKoratCharacterFilterDataList>& OutFilter) const {
+    return false;
+}
+
 bool USSGameInstance::OpenFileDialog(const FString& Title, const FString& FileTypes, const FString& InLastPath, const bool bAllowMultipleFileSelections, FString& OutLastPath, TArray<FString>& OutOpenFilenames) const {
     return false;
+}
+
+void USSGameInstance::ModeNSRContinue(const FKoratBattlePlayCharacter& InEnemyCharacter, bool bInLoadAutoSave) {
 }
 
 bool USSGameInstance::IsSkipOpAppealInDramaticBattle() const {
@@ -475,6 +499,10 @@ bool USSGameInstance::IsOnlineBattleMatched() const {
 }
 
 bool USSGameInstance::IsOnlineBattleBeforeMatching() const {
+    return false;
+}
+
+bool USSGameInstance::IsExistBattleMode010EPBonusCharacter() const {
     return false;
 }
 
@@ -535,6 +563,10 @@ bool USSGameInstance::IsBattleMenuTraining() const {
 }
 
 bool USSGameInstance::IsBattleMenuStandByTraining() const {
+    return false;
+}
+
+bool USSGameInstance::IsBattleMenuModeHUN() const {
     return false;
 }
 
@@ -607,6 +639,10 @@ EKoratBattleStartAppealType USSGameInstance::GetStartAppealType() const {
     return EKoratBattleStartAppealType::Normal;
 }
 
+EBattleWinLose USSGameInstance::GetSpConclusionResult() const {
+    return EBattleWinLose::None;
+}
+
 FKoratBGMDataList USSGameInstance::GetSparkingBGM2P() const {
     return FKoratBGMDataList{};
 }
@@ -633,6 +669,10 @@ FString USSGameInstance::GetServerVersion() const {
 
 FName USSGameInstance::GetSelectBattleMode010ListDataKey() {
     return NAME_None;
+}
+
+bool USSGameInstance::GetSearchOffStart() const {
+    return false;
 }
 
 FString USSGameInstance::GetSaveDataVersion() const {
@@ -691,6 +731,10 @@ bool USSGameInstance::GetNoMartialArts() const {
     return false;
 }
 
+USSModeNSRManager* USSGameInstance::GetModeNSRManager() const {
+    return NULL;
+}
+
 FSSOptionAssistParam USSGameInstance::GetMatchingAssistParam(int32 InPlaySide) {
     return FSSOptionAssistParam{};
 }
@@ -735,6 +779,10 @@ bool USSGameInstance::GetEnhanceditems() const {
     return false;
 }
 
+EKoratBattleMenu USSGameInstance::GetEKoratBattleMenuForBattle() const {
+    return EKoratBattleMenu::SetupBattle;
+}
+
 EKoratBattleMenu USSGameInstance::GetEKoratBattleMenu() const {
     return EKoratBattleMenu::SetupBattle;
 }
@@ -759,6 +807,10 @@ ASSLevelSequenceActor* USSGameInstance::GetDramaticBattleEndingLevelSequenceActo
     return NULL;
 }
 
+FKoratBGMDataList USSGameInstance::GetDefaultBattleBGM() const {
+    return FKoratBGMDataList{};
+}
+
 EDebugVirtualNetPlayerRoleType USSGameInstance::GetDebugNetRollType() const {
     return EDebugVirtualNetPlayerRoleType::Off;
 }
@@ -773,6 +825,10 @@ FSSDebugCutEditorTestSetting USSGameInstance::GetDebugCutEditorTestSetting() con
 
 FSSDebugAdventureIFTestSetting USSGameInstance::GetDebugAdventureIFTestSetting() const {
     return FSSDebugAdventureIFTestSetting{};
+}
+
+EKoratBattleDamageCorrection USSGameInstance::GetDamageCorrection() const {
+    return EKoratBattleDamageCorrection::Normal;
 }
 
 FText USSGameInstance::GetConversionText(FText InText, TArray<FText> InWord, const FString& InStyleName) {
@@ -947,10 +1003,6 @@ void USSGameInstance::ClearBattleDirectingData() {
 }
 
 void USSGameInstance::ClearBattleChangeSettingData() {
-}
-
-EBattleWinLose USSGameInstance::CheckSpConclusionWithKnockDown() const {
-    return EBattleWinLose::None;
 }
 
 bool USSGameInstance::CheckKnockDown(const FKoratBattleDirectingCondition& InCondition, const bool InMoment) const {

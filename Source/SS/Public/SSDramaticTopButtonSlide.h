@@ -3,6 +3,7 @@
 #include "SSMenuManager.h"
 #include "SSDramaticTopButtonSlide.generated.h"
 
+class USSMenuButton;
 class UWidgetAnimation;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -25,7 +26,7 @@ protected:
     void OnLeftShift();
     
     UFUNCTION(BlueprintCallable)
-    void ModeSet();
+    void ModeSet(USSMenuButton* InButton);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNowSelectModeNum();

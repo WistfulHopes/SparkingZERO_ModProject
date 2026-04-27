@@ -89,7 +89,6 @@ class UKoratEffectExpDataAsset;
 class UKoratEffectFigTransTypeDataAsset;
 class UKoratEffectHitAirWallDataAsset;
 class UKoratEffectHitDataAsset;
-class UKoratEffectLimitsDataAsset;
 class UKoratEffectMatParamNameDataAsset;
 class UKoratEffectRatDataAsset;
 class UKoratEffectStaDataAsset;
@@ -212,6 +211,9 @@ class USSMissionDataAsset;
 class USSMissionFilterDataAsset;
 class USSMissionSortDataAsset;
 class USSMissionTrophyDataAsset;
+class USSModeHUNAssetDataAsset;
+class USSModeHUNDataAsset;
+class USSModeNSRDataAsset;
 class USSMovieListDataAsset;
 class USSMythicalOrbDataAsset;
 class USSNotificationDataAsset;
@@ -242,6 +244,7 @@ class USSTournamentListDataAsset;
 class USSTournamentSelectResDataAsset;
 class USSTrainingBattleUiDataAsset;
 class USSTutorialBattleUiDataAsset;
+class USSUiWidgetManager;
 class USSWishComeTrueCategoryDataAsset;
 class USSWishComeTrueContentsDataAsset;
 class USSWishComeTrueDataAsset;
@@ -363,6 +366,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSDramaticExtraDataAsset* DramaticExtraData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USSModeHUNDataAsset* ModeHUNData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USSModeNSRDataAsset* ModeNSRData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UKoratBattleSetupDataAsset* BattleSetupAssetData;
@@ -519,6 +528,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSPlayerCardBGListDataAsset* PlayerCardBGListData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USSModeHUNAssetDataAsset* ModeHUNAssetDataAsset;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterEffectColorSetDataTypeDataList FormChangeEffectKeyType;
@@ -746,6 +758,9 @@ public:
     UKoratChainPlaySoundDataAsset* ChainPlaySoundData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UUserDefinedEnum* SoundBranchTypeData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UKoratGroupIdDataAsset* GroupIdData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -789,9 +804,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UKoratShakeForceTypeDataAsset* ShakeForceTypeAssetData;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UKoratEffectLimitsDataAsset* EffectLimitsData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UUserDefinedEnum* ObjectLimitGroupIDEnum;
@@ -865,7 +877,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BattleDirectingTaketurnWaitSecond;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USSSoundManager* SoundPlayer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -879,6 +891,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USSAppNetworkWorker* AppNetworkWorker;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USSUiWidgetManager* UiWidgetManager;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USSPlayerMatchNetworkManager* PlayerMatchNetworkManager;
@@ -1066,4 +1081,3 @@ public:
     UKoratGameSingleton();
 
 };
-

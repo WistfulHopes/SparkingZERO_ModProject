@@ -28,7 +28,7 @@ void ASSMapWarpDataAssetHolder::SetCollectedPlayerStartListByEditData(TArray<AAc
 void ASSMapWarpDataAssetHolder::SetCollectedNormalLocatorListByEditData(TArray<AActor*> edittedPoints) {
 }
 
-bool ASSMapWarpDataAssetHolder::SearchDirectableAreaPoint(const FTransform& InTransform, FTransform& OutResultTransform, const EWarpRequestType InWarpRequestType, const bool InTargetAir, const bool InTargetWater, const ASSCharacter* InCharacter, const ASSCharacter* InTargetCharacter, const int32 InShuffle) {
+bool ASSMapWarpDataAssetHolder::SearchDirectableAreaPoint(const FTransform& InTransform, FTransform& OutResultTransform, const EWarpRequestType InWarpRequestType, const bool InTargetAir, const bool InTargetWater, const ASSCharacter* InCharacter, const ASSCharacter* InTargetCharacter, const int32 InShuffle, const bool InForceFitting) {
     return false;
 }
 
@@ -79,7 +79,7 @@ bool ASSMapWarpDataAssetHolder::LoadMapAreaData(const FString& InMapName) {
     return false;
 }
 
-bool ASSMapWarpDataAssetHolder::IsSafeArea(FVector InCheckPos, ASSCharacter* InCharacter, EWarpRequestType InWarpRequestType, bool InCharacterInAir) {
+bool ASSMapWarpDataAssetHolder::IsSafeArea(FVector InCheckPos, ASSCharacter* InCharacter, EWarpRequestType InWarpRequestType, bool InCharacterInAir, bool InEnableOverheadCheck) {
     return false;
 }
 

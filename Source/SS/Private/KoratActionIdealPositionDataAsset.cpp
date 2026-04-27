@@ -9,6 +9,7 @@ UKoratActionIdealPositionDataAsset::UKoratActionIdealPositionDataAsset() {
     this->bNoHomingUpwards = false;
     this->bUseOpponentRadius = false;
     this->bUseOneselfRadius = false;
+    this->bUseMyGiantTargetNormalRadiusNoIgnore = false;
     this->bNoTilt = false;
     this->bMidAirKick = false;
     this->bTargetPreLastPosition = false;

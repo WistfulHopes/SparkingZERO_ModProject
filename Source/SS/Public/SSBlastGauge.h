@@ -48,6 +48,9 @@ public:
     void SetGaugeMax(const float InGaugeMax);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnSelectFirstIn();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnConsumeStock();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -61,6 +64,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnChangeChargeOn();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetStartShowModeNow();
     
 };
 

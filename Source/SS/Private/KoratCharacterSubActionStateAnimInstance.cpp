@@ -116,6 +116,10 @@ UAnimMontage* UKoratCharacterSubActionStateAnimInstance::GetOriginalMontage(cons
     return NULL;
 }
 
+bool UKoratCharacterSubActionStateAnimInstance::GetNullMovementTotal(const EKoratAnimType InAnimType, float& OutNullMovementTotalXY, float& OutNullMovementTotalZ) const {
+    return false;
+}
+
 FName UKoratCharacterSubActionStateAnimInstance::GetNextSection(const EKoratAnimType InAnimType) const {
     return NAME_None;
 }

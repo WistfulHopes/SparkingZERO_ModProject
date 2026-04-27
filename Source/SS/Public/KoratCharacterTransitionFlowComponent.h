@@ -119,6 +119,15 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratActionDataList NowAction;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bInitJustSmashParam;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bStartJustSmashInput;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float CanJustSmashTime;
+    
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratActionDataList ReactionDesiredCpp;
@@ -308,7 +317,7 @@ public:
     void SetTransitionDestinationAnimIndex(FKoratActionDataList InAction, int32 InAnimIndex, bool InIsStartTurn, bool InIsAnimTurn, FName InTurningSection);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void SetTransitionDestination(FKoratActionDataList InAction, bool InIsStartTurn, bool InIsAnimTurn, FName InTurningSection, bool IsNoTurnBeforeTransition, const int32 IsAnimIndex);
+    void SetTransitionDestination(FKoratActionDataList InAction, bool InIsStartTurn, bool InIsAnimTurn, FName InTurningSection, bool IsNoTurnBeforeTransition, FKoratActionDataList InActionOfPreReplace, const int32 IsAnimIndex);
     
     UFUNCTION(BlueprintCallable)
     void SetRequestDirectingAction(const EKoratBattleDirectingAction InRequestType);
@@ -330,7 +339,7 @@ protected:
     void ResetTargetRotationCpp(UKoratCharacterMovementComponent* InCharacterMovement, EKoratActionRotationBaseDirection InRotationBaseDirection, EKoratActionBodyYawMode InBodyYawMode, EKoratActionBodyPitchMode InBodyPitchMode, const FKoratActionDataList InAction);
     
     UFUNCTION(BlueprintCallable)
-    void OnTransitActionCpp(const FKoratActionDataList& InAction);
+    void OnTransitActionCpp(const FKoratActionDataList& InAction, const FKoratActionDataList& InActionOfPreReplace);
     
 public:
     UFUNCTION(BlueprintCallable)

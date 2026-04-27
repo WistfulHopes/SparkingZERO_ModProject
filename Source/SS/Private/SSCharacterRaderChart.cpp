@@ -6,7 +6,7 @@ USSCharacterRaderChart::USSCharacterRaderChart() {
     this->RadarChartParamMin = 1.00f;
 }
 
-void USSCharacterRaderChart::CalcRadarChartParamInner_Implementation(const FKoratBlastActionDataAssetRecord& InBlastActions, const FKoratCharacterDataAssetRecord& InCharacterData, TArray<float>& OutRadarChartParam) {
+void USSCharacterRaderChart::CalcRadarChartParamInner_Implementation(const FKoratBlastActionDataAssetRecord& InBlastActions, const FKoratCharacterDataAssetRecord& InCharacterData, bool bInIsSingleBattleDamage, TArray<float>& OutRadarChartParam) {
 }
 
 

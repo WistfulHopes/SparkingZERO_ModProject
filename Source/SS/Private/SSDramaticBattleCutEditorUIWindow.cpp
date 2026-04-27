@@ -1,6 +1,7 @@
 #include "SSDramaticBattleCutEditorUIWindow.h"
 
 USSDramaticBattleCutEditorUIWindow::USSDramaticBattleCutEditorUIWindow() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->WindowTitleTextWidget = NULL;
     this->ScrollBoxWidget = NULL;
     this->HeaderSwitcherWidget = NULL;

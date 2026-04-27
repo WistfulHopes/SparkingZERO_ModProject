@@ -12,6 +12,9 @@ void USSCharacterDataAsset::SetDesignatedDataList() {
 void USSCharacterDataAsset::SetChangeCharacterActionData() {
 }
 
+void USSCharacterDataAsset::SetAiCharacterDataAsset(USSAiCharacterDataAsset* InAiCharacterDataAsset) {
+}
+
 bool USSCharacterDataAsset::ImportGeneralFateCombination(const TMap<FKoratCharacterDataList, EGeneralFateAttribute2>& InMap) {
     return false;
 }

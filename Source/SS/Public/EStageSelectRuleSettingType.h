@@ -12,6 +12,7 @@ enum class EStageSelectRuleSettingType : uint8 {
     Com2Level,
     OutField,
     BattleRule,
+    MaxDP,
     Fly,
     PlayerSwitch,
     PlayerFormChange,

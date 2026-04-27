@@ -10,6 +10,7 @@ ASSEffectDecalActor::ASSEffectDecalActor(const FObjectInitializer& ObjectInitial
     this->FadeValue = 1.50f;
     this->BurnIntencity = 0.00f;
     this->InteractMaterial = NULL;
+    this->PrevIteractMaterial = NULL;
     this->CurrentDynamicMaterialInstance = NULL;
     this->DisplayAlpha = 1.00f;
     this->DyingTimeSpan = 1.00f;

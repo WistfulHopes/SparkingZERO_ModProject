@@ -31,6 +31,9 @@ public:
     int32 MinRequireCharacterTeamBattle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UTexture2D> RandomStageBgTexture;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, USSTournamentDataAsset*> PtrRecords;
     
     USSTournamentListDataAsset();

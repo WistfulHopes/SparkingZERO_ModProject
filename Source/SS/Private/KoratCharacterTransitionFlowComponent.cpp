@@ -10,6 +10,9 @@ UKoratCharacterTransitionFlowComponent::UKoratCharacterTransitionFlowComponent(c
     this->bPreliminaryTurningCpp = false;
     this->PreliminaryTurnedAnimIndexCpp = 0;
     this->bPreliminaryTurnedIsAnimTurnCpp = false;
+    this->bInitJustSmashParam = false;
+    this->bStartJustSmashInput = false;
+    this->CanJustSmashTime = 0.00f;
     this->AsyncTransitionDemo = NULL;
     this->AsyncTransitionPlayAction = NULL;
     this->AsyncTransitionTurn = NULL;
@@ -92,7 +95,7 @@ void UKoratCharacterTransitionFlowComponent::SetAcceptedInputsType(const TArray<
 void UKoratCharacterTransitionFlowComponent::ResetTargetRotationCpp(UKoratCharacterMovementComponent* InCharacterMovement, EKoratActionRotationBaseDirection InRotationBaseDirection, EKoratActionBodyYawMode InBodyYawMode, EKoratActionBodyPitchMode InBodyPitchMode, const FKoratActionDataList InAction) {
 }
 
-void UKoratCharacterTransitionFlowComponent::OnTransitActionCpp(const FKoratActionDataList& InAction) {
+void UKoratCharacterTransitionFlowComponent::OnTransitActionCpp(const FKoratActionDataList& InAction, const FKoratActionDataList& InActionOfPreReplace) {
 }
 
 void UKoratCharacterTransitionFlowComponent::NotificationDashPursuitRequestOnBattleAssist() {

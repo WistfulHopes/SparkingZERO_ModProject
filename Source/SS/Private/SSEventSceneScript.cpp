@@ -23,6 +23,10 @@ int32 ASSEventSceneScript::GetSubsceneNum() const {
     return 0;
 }
 
+ASSCharacter* ASSEventSceneScript::GetSSCharacter(const int32 InCharacterId) {
+    return NULL;
+}
+
 int32 ASSEventSceneScript::GetCurrentSubscene() const {
     return 0;
 }

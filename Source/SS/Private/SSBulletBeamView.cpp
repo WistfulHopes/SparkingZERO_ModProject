@@ -1,6 +1,6 @@
 #include "SSBulletBeamView.h"
-#include "Components/SceneComponent.h"
 #include "Components/SplineComponent.h"
+#include "Components/SceneComponent.h"
 
 ASSBulletBeamView::ASSBulletBeamView(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootCompo"));
@@ -30,24 +30,26 @@ ASSBulletBeamView::ASSBulletBeamView(const FObjectInitializer& ObjectInitializer
     this->bStopScalingLoopAddEffects = false;
     this->bReserveDeactivateLoopAddEffect = false;
     this->bEndMeshFlg = false;
+    this->bIgnoreBulletToCreateSpline = false;
     this->DebugSplineLength = 0.00f;
     this->DebugSplineMeshLoopLength = 0.00f;
     this->bUseSpline = false;
     this->bUpdateSpline = true;
     this->bIsBeam = false;
     this->bReflected = false;
+    this->bDisableBeamHit = false;
     this->SelectEffectColorComponent = NULL;
     this->BulletRatFreeTimeline = NULL;
     this->BulletRatSpawnActorManager = NULL;
     this->DebugLength = 0.00f;
+    this->SplineComponent->SetupAttachment(RootComponent);
+    this->LoopSplineCalcCompo->SetupAttachment(RootComponent);
+    this->TopEffectLocComponent->SetupAttachment(RootComponent);
     this->BottomEffectLocComponent->SetupAttachment(RootComponent);
+    this->TopOffsetEffectLocComponent->SetupAttachment(RootComponent);
+    this->TopAtbEffectLocComponent->SetupAttachment(RootComponent);
     this->BottomOffsetEffectLocComponent->SetupAttachment(RootComponent);
     this->ContactPointComponent->SetupAttachment(TopEffectLocComponent);
-    this->LoopSplineCalcCompo->SetupAttachment(RootComponent);
-    this->SplineComponent->SetupAttachment(RootComponent);
-    this->TopAtbEffectLocComponent->SetupAttachment(RootComponent);
-    this->TopEffectLocComponent->SetupAttachment(RootComponent);
-    this->TopOffsetEffectLocComponent->SetupAttachment(RootComponent);
 }
 
 void ASSBulletBeamView::SetExecuteActor(AActor* InActor) {

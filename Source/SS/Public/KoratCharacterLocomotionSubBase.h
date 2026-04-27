@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "Engine/HitResult.h"
 #include "KoratCharacterLocomotionSubBase.generated.h"
 
 class ACharacter;
@@ -19,6 +19,9 @@ protected:
 public:
     UKoratCharacterLocomotionSubBase();
 
+    UFUNCTION(BlueprintCallable)
+    void PrintHitResult(const FHitResult& InHitResult);
+    
     UFUNCTION(BlueprintCallable)
     float CalculationSideStepAddYaw(ASSCharacter* InCharacter, float InDeltaSeconds, float InMaxSpeed);
     

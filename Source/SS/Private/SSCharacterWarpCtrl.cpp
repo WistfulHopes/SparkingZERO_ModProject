@@ -32,6 +32,9 @@ void ASSCharacterWarpCtrl::SetBlastWarpControlActive(bool IsActive) {
 void ASSCharacterWarpCtrl::OnWarpOverride(const UObject* WorldContextObject, bool InReturn, bool InLoop, const ULevelSequencePlayer* InSequencePlayer) {
 }
 
+void ASSCharacterWarpCtrl::OnWarpInstant(const UObject* WorldContextObject, const ULevelSequencePlayer* InSequencePlayer, EWarpRequestType InWarpRequestType) {
+}
+
 bool ASSCharacterWarpCtrl::IsImpactWarpControlActive() {
     return false;
 }

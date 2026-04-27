@@ -18,5 +18,7 @@ enum class EKoratDramaticEditBeforTransition : uint8 {
     CutUpdateEditPreview,
     CutUpdateSceneEditor,
     CutUpdatePostBattle,
+    EditFinish,
+    EditCancel,
 };
 

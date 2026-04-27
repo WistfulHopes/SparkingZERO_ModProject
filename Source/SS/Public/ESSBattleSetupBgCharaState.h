@@ -5,6 +5,7 @@
 UENUM(BlueprintType)
 enum class ESSBattleSetupBgCharaState : uint8 {
     Loading,
+    OneFrameWaiting,
     WarpWaiting,
     SpawndHiddenStandby,
     Invalid,

@@ -1,6 +1,7 @@
 #include "SSPresentBoxInfomationListManager.h"
 
 USSPresentBoxInfomationListManager::USSPresentBoxInfomationListManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ScrollBox = NULL;
 }
 

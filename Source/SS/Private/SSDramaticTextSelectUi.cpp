@@ -1,6 +1,7 @@
 #include "SSDramaticTextSelectUi.h"
 
 USSDramaticTextSelectUi::USSDramaticTextSelectUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->NowReplaceWordNum = 0;
     this->LeftButton = NULL;
     this->RightButton = NULL;

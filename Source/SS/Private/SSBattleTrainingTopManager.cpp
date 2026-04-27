@@ -1,6 +1,7 @@
 #include "SSBattleTrainingTopManager.h"
 
 USSBattleTrainingTopManager::USSBattleTrainingTopManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->BuiltInMenu = NULL;
     this->DecideHoldButton = NULL;
     this->CancelHoldButton = NULL;

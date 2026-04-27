@@ -57,6 +57,7 @@ ASSBattleGameStateBase::ASSBattleGameStateBase(const FObjectInitializer& ObjectI
     this->bDebugPause1P = false;
     this->bDebugPause2P = false;
     this->bMapChangePause = false;
+    this->bModeNSRPause = false;
     this->bInterruptDialogPause = false;
     this->bAnyPause = false;
     this->NetworkFenceCount = 0;
@@ -80,6 +81,7 @@ ASSBattleGameStateBase::ASSBattleGameStateBase(const FObjectInitializer& ObjectI
     this->DefeatedCharacter = NULL;
     this->PreSideBySideMode = ECameraSideBySideMode::None;
     this->bIsTimeOverSettle = false;
+    this->bBattleSettled = false;
 }
 
 void ASSBattleGameStateBase::WarpTheCharacter(ASSCharacter* InCharacter, const ESSWarpTargetType InWarpTargetType) {
@@ -91,6 +93,8 @@ void ASSBattleGameStateBase::WaitUiLevelLoad(UObject* WorldContextObject, const 
 void ASSBattleGameStateBase::WaitMapChangeLoadingComplete(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo) {
 }
 
+void ASSBattleGameStateBase::WaitingForRequestTransitAction(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo, const int32 InPlaySide) {
+}
 void ASSBattleGameStateBase::WaitingForDramaticFinishDemo(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo) {
 }
 
@@ -211,6 +215,8 @@ void ASSBattleGameStateBase::StartTutorialFinishScreenFade() {
 void ASSBattleGameStateBase::StartTrainingPositionReset(const bool InPositionOnly) {
 }
 
+void ASSBattleGameStateBase::StartLoadingSectionNoTouchRootMotionTimer() {
+}
 void ASSBattleGameStateBase::StartLoadingSectionNoTouchRootMotion() {
 }
 
@@ -268,6 +274,8 @@ void ASSBattleGameStateBase::ShowWidget(UObject* WorldContextObject, const FLate
 void ASSBattleGameStateBase::SetWaitForSettleDirection(const bool InFlag) {
 }
 
+void ASSBattleGameStateBase::SettingControllerTickDependencies() {
+}
 void ASSBattleGameStateBase::SetSideBySideCameraMode(bool InEnable, bool InBurstUpdate) {
 }
 
@@ -334,7 +342,7 @@ void ASSBattleGameStateBase::ResetCharactersAtApear() {
 void ASSBattleGameStateBase::ResetCameraFade() {
 }
 
-void ASSBattleGameStateBase::ResetBattleElapsedTime() {
+void ASSBattleGameStateBase::ResetBattleDirectingElapsedTime() {
 }
 
 void ASSBattleGameStateBase::ResetActionCameraTargets() {
@@ -444,6 +452,9 @@ void ASSBattleGameStateBase::OnBeginFrameProcess() {
 
 
 
+void ASSBattleGameStateBase::NotifyBgmManagerReady(ASSBGMManager* InBgmManager) {
+}
+
 void ASSBattleGameStateBase::MapChangeStart(UObject* WorldContextObject, const FLatentActionInfo InLatentInfo) {
 }
 
@@ -527,6 +538,9 @@ bool ASSBattleGameStateBase::IsLoadingSection() const {
     return false;
 }
 
+bool ASSBattleGameStateBase::IsKnockDownFromRetryData(const int32 InPlaySide) {
+    return false;
+}
 bool ASSBattleGameStateBase::IsIntroductionOrder2pFirst() {
     return false;
 }
@@ -540,6 +554,10 @@ bool ASSBattleGameStateBase::IsHitFallInRingoutRule(const ASSCharacter* InCharac
 }
 
 bool ASSBattleGameStateBase::IsFinishMode() {
+    return false;
+}
+
+bool ASSBattleGameStateBase::IsDuringBattleConnectionStatus() const {
     return false;
 }
 
@@ -785,6 +803,9 @@ ASSCharacter* ASSBattleGameStateBase::CreateHiddenCharacterForTaketurns(const FV
 void ASSBattleGameStateBase::CreateHiddenCharacter(bool InReuseCameraFast, bool InDamageCostume) {
 }
 
+void ASSBattleGameStateBase::CreateDestructionFieldForGiant(ASSCharacter* InTriggerCharacter) {
+}
+
 void ASSBattleGameStateBase::CreateDamageCostumeCharacter(bool InReuseCameraFast) {
 }
 
@@ -818,13 +839,16 @@ void ASSBattleGameStateBase::CrashImpactFinish() {
 void ASSBattleGameStateBase::ClearFade() {
 }
 
+void ASSBattleGameStateBase::ClearBuffInBattleFinish() {
+}
+
 void ASSBattleGameStateBase::ClearBuff() {
 }
 
 void ASSBattleGameStateBase::CheckSideBySideCameraMode() {
 }
 
-void ASSBattleGameStateBase::CheckDramaticFinish(bool& OutDramaticFinish) {
+void ASSBattleGameStateBase::CheckDramaticFinish(bool& OutDramaticFinish, int32& OutWinnerPlaySide) {
 }
 
 void ASSBattleGameStateBase::CheckDamageCostumeLoadedInThisTerminal(EKoratLoop& OutResult) {
@@ -907,5 +931,3 @@ void ASSBattleGameStateBase::BattleImpactBreak(UObject* WorldContextObject) {
 
 void ASSBattleGameStateBase::BattleImpactBlastBreak(UObject* WorldContextObject) {
 }
-
-

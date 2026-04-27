@@ -18,6 +18,7 @@ USSActionDataAsset::USSActionDataAsset() {
     this->RotationBaseDirection = EKoratActionRotationBaseDirection::Front;
     this->BodyYawMode = EKoratActionBodyYawMode::Primary;
     this->BodyPitchMode = EKoratActionBodyPitchMode::Opponent;
+    this->DisableSnapHorizontalInNearGround = false;
     this->TiltTimingType = EKoratActionTiltTimingType::StartAction;
     this->InterpSpeed = 1440.00f;
     this->MinAngle = -30.00f;
@@ -38,6 +39,7 @@ USSActionDataAsset::USSActionDataAsset() {
     this->bPossibleSuperZCounterAdditionalCatch = false;
     this->bPossibleSelfishness = false;
     this->bPossibleBuffAvoidable = false;
+    this->bImpossibleBuffAvoidableAttack = false;
     this->bPossibleInterruptGuard = false;
     this->bPossibleInterruptReflect = false;
     this->PossibleInterruptReflectTimeSincePush = 0.00f;
@@ -52,11 +54,13 @@ USSActionDataAsset::USSActionDataAsset() {
     this->bResetMove = false;
     this->bRequestBulletToFinish = false;
     this->bAutoReflect = false;
+    this->bDashReflect = false;
     this->bSparkingConditionKeeping = false;
     this->bLoadedSupporterKeeping = false;
     this->bActionIdleType = false;
     this->bUntransferableSettleStep = false;
     this->bContinueDamage = false;
+    this->bContinueEnemyCombo = false;
     this->bCancelableSparkingCombo = false;
     this->bCancelableBlastCombo = false;
     this->bInvincible = false;
@@ -108,6 +112,8 @@ USSActionDataAsset::USSActionDataAsset() {
     this->bResetHitStop = false;
     this->bForceFinishVanishing = false;
     this->bNoAutoGuard = false;
+    this->bCancelCharacterActionVoice = false;
+    this->bDelayResetArmor = false;
 }
 
 void USSActionDataAsset::SetContinueDamageFlag() {

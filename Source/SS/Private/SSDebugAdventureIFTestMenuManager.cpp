@@ -1,6 +1,7 @@
 #include "SSDebugAdventureIFTestMenuManager.h"
 
 USSDebugAdventureIFTestMenuManager::USSDebugAdventureIFTestMenuManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSDebugAdventureIFTestMenuManager::StartAging(const FText& InSelectedCharacter, const FText& InSelectedEvent) {

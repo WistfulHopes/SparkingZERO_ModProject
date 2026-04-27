@@ -1,7 +1,10 @@
 #include "SSGalleryTheaterDeleteModeButton.h"
 
 USSGalleryTheaterDeleteModeButton::USSGalleryTheaterDeleteModeButton() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
+
+
 
 
 

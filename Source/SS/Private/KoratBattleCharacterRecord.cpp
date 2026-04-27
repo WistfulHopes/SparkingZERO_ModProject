@@ -19,5 +19,6 @@ FKoratBattleCharacterRecord::FKoratBattleCharacterRecord() {
     this->PlayerMatchPlayCount = 0;
     this->TenkaichPlayCount = 0;
     this->TenkaichOnilePlayCount = 0;
+    this->BattleMode011PlayCount = 0;
 }
 

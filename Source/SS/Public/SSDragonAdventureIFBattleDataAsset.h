@@ -7,6 +7,7 @@
 #include "KoratEventSceneDataList.h"
 #include "KoratPlayerStartDataList.h"
 #include "MutualDataAsset.h"
+#include "SSDragonAdventureIFVoiceCueBlastListItem.h"
 #include "SSDragonAdventureIFBattleDataAsset.generated.h"
 
 class ULevelSequence;
@@ -62,6 +63,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FText> VoiceIDBlackList;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FString, FSSDragonAdventureIFVoiceCueBlastListItem> VoiceCueBlackList2;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText RewardTipsText;

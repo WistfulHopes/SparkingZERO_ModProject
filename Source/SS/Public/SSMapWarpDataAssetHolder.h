@@ -93,7 +93,7 @@ public:
     void SetCollectedNormalLocatorListByEditData(TArray<AActor*> edittedPoints);
     
     UFUNCTION(BlueprintCallable)
-    bool SearchDirectableAreaPoint(const FTransform& InTransform, FTransform& OutResultTransform, const EWarpRequestType InWarpRequestType, const bool InTargetAir, const bool InTargetWater, const ASSCharacter* InCharacter, const ASSCharacter* InTargetCharacter, const int32 InShuffle);
+    bool SearchDirectableAreaPoint(const FTransform& InTransform, FTransform& OutResultTransform, const EWarpRequestType InWarpRequestType, const bool InTargetAir, const bool InTargetWater, const ASSCharacter* InCharacter, const ASSCharacter* InTargetCharacter, const int32 InShuffle, const bool InForceFitting);
     
     UFUNCTION(BlueprintCallable)
     bool RemoveWaterDirectableAreaByUserEdit(ASSMapAreaEditGuideCylinder* EditData);
@@ -132,7 +132,7 @@ public:
     bool LoadMapAreaData(const FString& InMapName);
     
     UFUNCTION(BlueprintCallable)
-    bool IsSafeArea(FVector InCheckPos, ASSCharacter* InCharacter, EWarpRequestType InWarpRequestType, bool InCharacterInAir);
+    bool IsSafeArea(FVector InCheckPos, ASSCharacter* InCharacter, EWarpRequestType InWarpRequestType, bool InCharacterInAir, bool InEnableOverheadCheck);
     
     UFUNCTION(BlueprintCallable)
     bool IsOceanPlaneActor(AActor* InCheckActor);

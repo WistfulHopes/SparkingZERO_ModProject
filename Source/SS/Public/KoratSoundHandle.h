@@ -8,4 +8,5 @@ struct FKoratSoundHandle {
 public:
     SS_API FKoratSoundHandle();
 };
+FORCEINLINE uint32 GetTypeHash(const FKoratSoundHandle) { return 0; }
 

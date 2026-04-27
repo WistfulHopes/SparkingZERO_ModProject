@@ -1,6 +1,7 @@
 #include "SSCrashGaugeSet.h"
 
 USSCrashGaugeSet::USSCrashGaugeSet() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->CrashGauge = NULL;
     this->PressButton = NULL;
 }

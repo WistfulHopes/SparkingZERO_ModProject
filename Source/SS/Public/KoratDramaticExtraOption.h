@@ -24,6 +24,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsDLCBattle;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsDefaultUnlockWithNewIcon;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bEditable_DefaultUnlockWithNewIcon;
+    
+public:
     SS_API FKoratDramaticExtraOption();
 };
-

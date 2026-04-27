@@ -20,6 +20,8 @@ ASSBattleLevelScriptActor::ASSBattleLevelScriptActor(const FObjectInitializer& O
     this->ExplosionManager = NULL;
     this->TutorialBattleScriptDirector = NULL;
     this->EffectHitAirWallManager = NULL;
+    this->BattleModeNSRActor = NULL;
+    this->BattleModeNSRSelectController = NULL;
     this->PreloadingWidget = NULL;
     this->BattleDebugDrawActor = NULL;
     this->CharacterUIActionManager = NULL;

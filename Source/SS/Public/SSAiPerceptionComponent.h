@@ -55,7 +55,7 @@ private:
     void OnFinalizeAi();
     
     UFUNCTION(BlueprintCallable)
-    void OnDamage(const float InDamage);
+    void OnDamage(const float InDamage, const bool InGuardSuccess);
     
     UFUNCTION(BlueprintCallable)
     void OnActivatedCharacter(ASSCharacter* InCharacter);
@@ -84,6 +84,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTargetSparkingMode() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsTargetIsShortRange() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSuperCounter() const;
@@ -156,6 +159,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFastAvoidanceCombat() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsFastAvoidanceBullet() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFastAvoidanceBlastCombat() const;
@@ -237,6 +243,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBehindTheEnemy() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsBattlePractice() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAscertain() const;

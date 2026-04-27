@@ -1,6 +1,7 @@
 #include "SSDebugMainGameUIWidget.h"
 
 USSDebugMainGameUIWidget::USSDebugMainGameUIWidget() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ExecuteInstancePtr = NULL;
     this->bSwitchNewWBP = false;
 }

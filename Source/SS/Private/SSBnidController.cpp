@@ -4,6 +4,7 @@ ASSBnidController::ASSBnidController(const FObjectInitializer& ObjectInitializer
     this->GuideWidget = NULL;
     this->MenuGeneralDialog = NULL;
     this->MenuGeneralDialog2 = NULL;
+    this->NetworkManager = NULL;
 }
 
 

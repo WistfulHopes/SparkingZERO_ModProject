@@ -7,6 +7,7 @@ FSSPlayerCardData::FSSPlayerCardData() {
     this->ShowBattleMode010Info = false;
     this->ShowTournamentInfo = false;
     this->ShowRankMatchInfo = false;
+    this->ShowRankMatchSeasonInfo = false;
     this->IsNeedSync = false;
 }
 

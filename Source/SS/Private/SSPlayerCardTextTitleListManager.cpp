@@ -1,6 +1,7 @@
 #include "SSPlayerCardTextTitleListManager.h"
 
 USSPlayerCardTextTitleListManager::USSPlayerCardTextTitleListManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->UnlockItem = NULL;
 }
 

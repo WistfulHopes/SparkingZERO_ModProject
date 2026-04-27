@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECameraZoomType.h"
 #include "EKoratActionAttackType.h"
+#include "EKoratBulletCategoryType.h"
 #include "ESSBulletCharacterFirstHitType.h"
 #include "ESSBulletCharacterLastHitType.h"
 #include "ESSBulletGeometryFirstHitType.h"
@@ -108,6 +109,9 @@ public:
     float LifeSpanAfterCharacterLastHit;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIgnoreHitBehindAttackChara;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float GeometryCollisionSize;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -123,10 +127,19 @@ public:
     ESSBulletGeometryLastHitType GeometryLastHitType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bLastHitAtIndestructibleGeometry;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bGeometryCollisionTestOnlyOnce;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ClashCollisionSize;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 EnergyBullectCollisionPriority;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 EnergyBullectCollisionPriorityInBeam;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bOverrideBeamCollisionSize;
@@ -333,6 +346,9 @@ public:
     bool bImpossibleReflect;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bPossibleDashReflect;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bImpossibleAbsorption;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -387,6 +403,9 @@ public:
     float ReduceZSearchEffectTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratBulletCategoryType CategoryType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bReceiveSelfDamage;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -413,4 +432,3 @@ public:
     void Check();
     
 };
-

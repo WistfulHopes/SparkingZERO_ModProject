@@ -17,6 +17,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratRewardDataList> ItemArray;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText TitleText;
+    
     SS_API FSSDragonAdventureIFEpisodeRewardDataAssetRecord();
 };
 

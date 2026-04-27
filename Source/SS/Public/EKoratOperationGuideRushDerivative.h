@@ -82,6 +82,13 @@ enum class EKoratOperationGuideRushDerivative : uint8 {
     Potara,
     FusionChange,
     SpiralSlash,
+    RollingPress,
+    ParrySmash,
+    SuperZCounter,
+    Ascertain,
+    AscertainCombo_1,
+    AscertainCombo_2,
+    BlastImpactImpuctOFF,
     Num,
 };
 

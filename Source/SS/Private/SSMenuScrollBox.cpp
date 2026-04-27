@@ -1,6 +1,7 @@
 #include "SSMenuScrollBox.h"
 
 USSMenuScrollBox::USSMenuScrollBox() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ViewScrollBox = NULL;
     this->RightDragMoveScale = 1.80f;
     this->ThumbMinSize = 100.00f;

@@ -8,6 +8,7 @@ class UImage;
 class USSMainMenuPager;
 class USSMainMenuSliderButtons;
 class USSMenuButton;
+class USpUIAutoScrollBox;
 class UTextBlock;
 class UWidgetSwitcher;
 
@@ -39,6 +40,9 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UWidgetSwitcher* DownloadTextSwitcher;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USpUIAutoScrollBox* GuideScrollBox;
     
 public:
     USSMainMenuSlider();

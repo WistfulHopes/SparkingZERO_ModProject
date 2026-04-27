@@ -1,6 +1,7 @@
 #include "SSDramaticDirectionWindow.h"
 
 USSDramaticDirectionWindow::USSDramaticDirectionWindow() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->EditTableNumText = NULL;
     this->EditItemText = NULL;
     this->SelectTriggerButtonType = ESSKeyInputType::UI_Option;

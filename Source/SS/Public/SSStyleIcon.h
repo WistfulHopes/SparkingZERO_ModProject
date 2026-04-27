@@ -37,13 +37,13 @@ public:
     void OnChangeDisable();
     
     UFUNCTION(BlueprintCallable)
-    void Disable(int32 InConsumeBlastStock);
+    void Disable(int32 InConsumeBlastStock, bool bMainPanel);
     
     UFUNCTION(BlueprintCallable)
     void Decide();
     
     UFUNCTION(BlueprintCallable)
-    void Activate(int32 InConsumeBlastStock);
+    void Activate(int32 InConsumeBlastStock, bool bMainPanel);
     
 };
 

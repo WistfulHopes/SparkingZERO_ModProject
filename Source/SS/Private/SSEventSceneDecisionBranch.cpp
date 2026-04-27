@@ -2,6 +2,7 @@
 
 USSEventSceneDecisionBranch::USSEventSceneDecisionBranch() {
     this->bIsFocusable = true;
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->CanvasPanel = NULL;
     this->DummyFocusButton = NULL;
 }

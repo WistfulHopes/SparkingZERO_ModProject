@@ -3,6 +3,7 @@
 #include "SSMainMenuWidgetFromList.h"
 #include "SSMainMenuUserInfoWindow.generated.h"
 
+class UOverlay;
 class USSMainMenuUserInfoCategoryTab;
 class USSMenuButton;
 class UTextBlock;
@@ -38,6 +39,18 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UUserWidget* RankIcon;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UOverlay* WinningStreakPanel;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* WinningStreakValueText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UOverlay* WinningStreakBonusPanel;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* WinningStreakBonusValueText;
     
     USSMainMenuUserInfoWindow();
 

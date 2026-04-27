@@ -7,7 +7,11 @@ ASSBattleRushCameraActor::ASSBattleRushCameraActor(const FObjectInitializer& Obj
     this->PhysicalDisparityDecayScaleHeightArray.AddDefaulted(4);
     this->PhysicalDisparityDecayScaleBaseYawArray.AddDefaulted(4);
     this->PhysicalDisparityBoundScaleDecayRateArray.AddDefaulted(4);
+    this->PhysicalDisparityTargetWeightAddLengthArray.AddDefaulted(4);
+    this->PhysicalDisparityTargetWeightAddHeightArray.AddDefaulted(4);
+    this->PhysicalDisparityTargetWeightAddWidthArray.AddDefaulted(4);
     this->bLookAtNullOffsetTargetImitationArray.AddDefaulted(4);
+    this->bLookAtNullOffsetTargetReversedImitationArray.AddDefaulted(4);
     this->LookUpEnemySectionArray.AddDefaulted(4);
     this->RushState = ERushState::NONE;
     this->LagConvergence = 3.00f;

@@ -1,6 +1,7 @@
 #include "SSDramaticSideModeButtonSet.h"
 
 USSDramaticSideModeButtonSet::USSDramaticSideModeButtonSet() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->EditMode = EKoratDramaticEditButtonMode::None;
     this->ExtraButton = NULL;
     this->EditButton = NULL;

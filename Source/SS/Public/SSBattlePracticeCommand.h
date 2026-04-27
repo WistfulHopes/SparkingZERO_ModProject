@@ -22,6 +22,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EBattlePracticeAcceptedInputsType AcceptedInputsType;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratBattleKey MonitoringBattleKey;
+    
     FSSBattlePracticeCommand();
 };
 

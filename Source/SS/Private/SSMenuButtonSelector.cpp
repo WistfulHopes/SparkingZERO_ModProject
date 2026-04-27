@@ -1,6 +1,7 @@
 #include "SSMenuButtonSelector.h"
 
 USSMenuButtonSelector::USSMenuButtonSelector() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->TextWidget = NULL;
 }
 

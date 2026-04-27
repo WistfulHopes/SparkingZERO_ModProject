@@ -255,6 +255,9 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool CloseEditorUtilityWidget(const FString& ObjectPath);
     
+    UFUNCTION(BlueprintCallable)
+    static bool CheckPlayerControllerViewCharacterCamera(const ASSCharacter* InCharacter);
+    
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static bool CapsuleTraceMultiWithRotation(const UObject* WorldContextObject, const FVector Start, const FVector END, float Radius, float HalfHeight, const FRotator Orientation, TEnumAsByte<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
     

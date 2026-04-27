@@ -14,6 +14,7 @@ enum class ESSGalleryMyDataMajorItemType : uint8 {
     Tournament,
     Tournament_Online,
     RankMatch,
+    RankMatchSeason,
     QuickMatch,
     Story,
     Drama,
@@ -21,6 +22,7 @@ enum class ESSGalleryMyDataMajorItemType : uint8 {
     Mission,
     Title,
     Item,
+    ModeNSR,
     Num,
 };
 

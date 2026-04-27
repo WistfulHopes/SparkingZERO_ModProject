@@ -1,6 +1,7 @@
 #include "SSDebugBattleSetupMenuManager.h"
 
 USSDebugBattleSetupMenuManager::USSDebugBattleSetupMenuManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->SelectedStartButtonOfLastSession = NULL;
 }
 
@@ -25,7 +26,11 @@ void USSDebugBattleSetupMenuManager::SaveDataLoad() {
 void USSDebugBattleSetupMenuManager::GetStageSelectParameter(UObject* WorldContextObject, TArray<FText>& OutItems, FText& OutCurrentItem) {
 }
 
-EKoratBattleCpuLevel USSDebugBattleSetupMenuManager::GetCurrentBattleCpuLevel(UObject* WorldContextObject, const FText InCurrentCpuLevelText) {
+EKoratBattleCpuOptimize USSDebugBattleSetupMenuManager::GetCurrentBattleCpuOptimize(UObject* WorldContextObject, const FText InCurrentText) {
+    return EKoratBattleCpuOptimize::None;
+}
+
+EKoratBattleCpuLevel USSDebugBattleSetupMenuManager::GetCurrentBattleCpuLevel(UObject* WorldContextObject, const FText InCurrentText) {
     return EKoratBattleCpuLevel::None;
 }
 
@@ -36,6 +41,9 @@ void USSDebugBattleSetupMenuManager::GetCharacter1PSelectParameter(UObject* Worl
 }
 
 void USSDebugBattleSetupMenuManager::GetBGMSelectParameter(UObject* WorldContextObject, TArray<FText>& OutItems, FText& OutCurrentItem, ESSBGMCategoryType InBGMCategoryType) {
+}
+
+void USSDebugBattleSetupMenuManager::GetBattleCpuOptimizeSelectParameter(UObject* WorldContextObject, TArray<FText>& OutItems, FText& OutCurrentItem) {
 }
 
 void USSDebugBattleSetupMenuManager::GetBattleCpuLevelSelectParameter(UObject* WorldContextObject, TArray<FText>& OutItems, FText& OutCurrentItem) {

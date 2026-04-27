@@ -24,13 +24,17 @@ USSBulletParamDataAsset::USSBulletParamDataAsset() {
     this->CollisionRevibeSpan = 1.00f;
     this->CharacterLastHitType = ESSBulletCharacterLastHitType::PlayOT;
     this->LifeSpanAfterCharacterLastHit = 0.00f;
+    this->bIgnoreHitBehindAttackChara = false;
     this->GeometryCollisionSize = 32.00f;
     this->GeometryFirstHitType = ESSBulletGeometryFirstHitType::SingleHit;
     this->GeometryCollisionRevibeNum = 1;
     this->GeometryCollisionRevibeSpan = 1.00f;
     this->GeometryLastHitType = ESSBulletGeometryLastHitType::PlayOT;
+    this->bLastHitAtIndestructibleGeometry = false;
+    this->bGeometryCollisionTestOnlyOnce = false;
     this->ClashCollisionSize = 100.00f;
     this->EnergyBullectCollisionPriority = 0;
+    this->EnergyBullectCollisionPriorityInBeam = -1;
     this->bOverrideBeamCollisionSize = false;
     this->BeamCollisionSize = 0.00f;
     this->StatusAtStart = ESSBulletStatusAtStart::Homing;
@@ -58,6 +62,7 @@ USSBulletParamDataAsset::USSBulletParamDataAsset() {
     this->bScratchCostumeEnable = false;
     this->bImpossibleGuard = false;
     this->bImpossibleReflect = false;
+    this->bPossibleDashReflect = false;
     this->bImpossibleAbsorption = false;
     this->bInterruptGuard = false;
     this->bInterruptReflect = false;
@@ -75,6 +80,7 @@ USSBulletParamDataAsset::USSBulletParamDataAsset() {
     this->DestructionFieldScale = 1.00f;
     this->bReduceZSearchAfterHit = false;
     this->ReduceZSearchEffectTime = 0.00f;
+    this->CategoryType = EKoratBulletCategoryType::Undefined;
     this->bReceiveSelfDamage = false;
     this->SelfDamagePower = 0.00f;
     this->SelfDamagePowerDpMultiplier.AddDefaulted(10);

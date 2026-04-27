@@ -4,6 +4,7 @@
 ASSPlayerController::ASSPlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->CheatClass = UKoratCheatManager::StaticClass();
     this->ClickEventKeys.AddDefaulted(1);
+    this->EffectInFrontOfTheCamera = NULL;
 }
 
 

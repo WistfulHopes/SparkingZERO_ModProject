@@ -1,6 +1,7 @@
 #include "SSMainMenuSettingsWidgetBase.h"
 
 USSMainMenuSettingsWidgetBase::USSMainMenuSettingsWidgetBase() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->PropertySettingsWidget = NULL;
 }
 

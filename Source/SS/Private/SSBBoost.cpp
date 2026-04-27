@@ -1,6 +1,7 @@
 #include "SSBBoost.h"
 
 USSBBoost::USSBBoost() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSBBoost::SetGuideKey(ESSKeyInputType InKeyInputType) {

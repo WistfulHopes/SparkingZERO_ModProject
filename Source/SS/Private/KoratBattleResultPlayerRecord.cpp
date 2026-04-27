@@ -14,5 +14,7 @@ FKoratBattleResultPlayerRecord::FKoratBattleResultPlayerRecord() {
     this->RewardPoint = 0;
     this->BattlePassPoint = 0;
     this->PlayTime = 0.00f;
+    this->ModeScore = 0;
+    this->ModeRank = 0;
 }
 

@@ -30,7 +30,7 @@ void USSAiPerceptionComponent::OnInitializeAi() {
 void USSAiPerceptionComponent::OnFinalizeAi() {
 }
 
-void USSAiPerceptionComponent::OnDamage(const float InDamage) {
+void USSAiPerceptionComponent::OnDamage(const float InDamage, const bool InGuardSuccess) {
 }
 
 void USSAiPerceptionComponent::OnActivatedCharacter(ASSCharacter* InCharacter) {
@@ -65,6 +65,10 @@ bool USSAiPerceptionComponent::IsTargetsPreventionOfAction() const {
 }
 
 bool USSAiPerceptionComponent::IsTargetSparkingMode() const {
+    return false;
+}
+
+bool USSAiPerceptionComponent::IsTargetIsShortRange() const {
     return false;
 }
 
@@ -161,6 +165,10 @@ bool USSAiPerceptionComponent::IsGuard() const {
 }
 
 bool USSAiPerceptionComponent::IsFastAvoidanceCombat() const {
+    return false;
+}
+
+bool USSAiPerceptionComponent::IsFastAvoidanceBullet() const {
     return false;
 }
 
@@ -269,6 +277,10 @@ bool USSAiPerceptionComponent::IsBlastBoost() const {
 }
 
 bool USSAiPerceptionComponent::IsBehindTheEnemy() const {
+    return false;
+}
+
+bool USSAiPerceptionComponent::IsBattlePractice() const {
     return false;
 }
 

@@ -7,6 +7,7 @@ ASSUiLevelScriptActor::ASSUiLevelScriptActor(const FObjectInitializer& ObjectIni
     this->CutCameraDirectorClass = ASSMenuCameraDirector::StaticClass();
     this->MenuController = NULL;
     this->MenuCharacterManager = NULL;
+    this->bDisableMenuControllerLinkDestroy = false;
 }
 
 ASSMenuSceneController* ASSUiLevelScriptActor::GetMenuController() {

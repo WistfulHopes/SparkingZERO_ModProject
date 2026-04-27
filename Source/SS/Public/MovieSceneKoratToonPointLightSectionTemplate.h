@@ -3,10 +3,11 @@
 #include "Evaluation/MovieSceneParameterTemplate.h"
 #include "KoratByteParameterNameAndCurve.h"
 #include "KoratIntParameterNameAndCurve.h"
+#include "KoratPointLightParameterSection.h"
 #include "MovieSceneKoratToonPointLightSectionTemplate.generated.h"
 
 USTRUCT(BlueprintType)
-struct FMovieSceneKoratToonPointLightSectionTemplate : public FMovieSceneParameterSectionTemplate {
+struct SS_API FMovieSceneKoratToonPointLightSectionTemplate : public FMovieSceneParameterSectionTemplate {
     GENERATED_BODY()
 public:
 protected:
@@ -17,6 +18,19 @@ protected:
     TArray<FKoratIntParameterNameAndCurve> Integers;
     
 public:
-    SS_API FMovieSceneKoratToonPointLightSectionTemplate();
+    FMovieSceneKoratToonPointLightSectionTemplate();
+    FMovieSceneKoratToonPointLightSectionTemplate(const UKoratPointLightParameterSection& Section);
+
+    virtual void Evaluate(const FMovieSceneEvaluationOperand& Operand,
+                          const FMovieSceneContext& Context,
+                          const FPersistentEvaluationData& PersistentData,
+                          FMovieSceneExecutionTokens& ExecutionTokens) const override;
+
+    virtual UScriptStruct& GetScriptStructImpl() const override
+    {
+        return *StaticStruct();
+    }
+
+    virtual EMovieSceneCompletionMode GetCompletionMode() const;
 };
 

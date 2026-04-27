@@ -17,5 +17,6 @@ FSSOptionVideoVisibleFlags::FSSOptionVideoVisibleFlags() {
     this->bChaos = false;
     this->bVsync = false;
     this->bDof = false;
+    this->bOutOfArea = false;
 }
 

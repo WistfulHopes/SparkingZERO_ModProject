@@ -1,6 +1,7 @@
 #include "SSMainGameHUDWidget.h"
 
 USSMainGameHUDWidget::USSMainGameHUDWidget() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->P1MainGaugeWidget = NULL;
     this->P2MainGaugeWidget = NULL;
     this->P1NoticeWidget = NULL;

@@ -1,6 +1,7 @@
 #include "SSDBEvTriggerUi.h"
 
 USSDBEvTriggerUi::USSDBEvTriggerUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->PressButton = NULL;
     this->CircleGauge = NULL;
 }

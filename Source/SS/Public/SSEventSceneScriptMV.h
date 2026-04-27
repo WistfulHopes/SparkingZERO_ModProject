@@ -34,6 +34,12 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USSEventSceneIFSuggest* IFSuggestWidget;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bOverrideNearClippingPlane;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float CustomNearClippingPlane;
+    
 public:
     ASSEventSceneScriptMV(const FObjectInitializer& ObjectInitializer);
 

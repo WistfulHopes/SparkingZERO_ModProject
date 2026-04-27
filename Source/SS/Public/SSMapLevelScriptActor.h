@@ -1,8 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "KoratMapDataList.h"
+#include "SSLevelScriptActor.h"
+#include "KoratMapCharacterData.h"
 #include "KoratMapDataList.h"
 #include "SSLevelScriptActor.h"
 #include "SSMapLevelScriptActor.generated.h"
@@ -75,6 +76,9 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<ULevelSequence> MapChangeDestructOTLevelSequence;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FKoratMapCharacterData> MapCharacterDataBeforeMapChange;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FBox AreaBox;

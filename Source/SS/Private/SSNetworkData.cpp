@@ -21,5 +21,11 @@ FSSNetworkData::FSSNetworkData() {
     this->PlayerMatchParticipation = 0;
     this->PlayerMatchCharaCount = 0;
     this->PlayerMatchModeAuto = false;
+    this->RankMatchSeasonSingleMaxWinCount = 0;
+    this->RankMatchSeasonSingleMaxRankValue = 0;
+    this->RankMatchSeasonSingleRankCharaCount = 0;
+    this->RankMatchSeasonTeamMaxWinCount = 0;
+    this->RankMatchSeasonTeamMaxRankValue = 0;
+    this->RankMatchSeasonTeamRankCharaCount = 0;
 }
 

@@ -70,7 +70,7 @@ public:
     ASSBattleAIController(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)
-    void SetBrainComponentDependency();
+    void SetAiComponentDependency();
     
     UFUNCTION(BlueprintCallable)
     void ResetLog();
@@ -123,6 +123,9 @@ public:
     UBehaviorTreeComponent* GetBehaviorTreeComponent();
     
     UFUNCTION(BlueprintCallable)
+    void ClearAiComponentDependency();
+    
+    UFUNCTION(BlueprintCallable)
     bool CanAiRun();
     
     UFUNCTION(BlueprintCallable)
@@ -131,4 +134,3 @@ public:
 
     // Fix for true pure virtual functions not being implemented
 };
-

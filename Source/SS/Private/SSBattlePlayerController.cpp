@@ -36,9 +36,12 @@ ASSBattlePlayerController::ASSBattlePlayerController(const FObjectInitializer& O
     this->DramaticDetailsController = NULL;
     this->TrainingSettingController = NULL;
     this->GeneralDialogController = NULL;
+    this->RecoveryIcons_1P = NULL;
+    this->RecoveryIcons_2P = NULL;
     this->P1TutorialHelpWidget = NULL;
     this->P2TutorialHelpWidget = NULL;
     this->AnnouncementWidget = NULL;
+    this->MenuGeneralDialog = NULL;
     this->Chameleon = NULL;
 }
 

@@ -33,6 +33,9 @@ enum class EKoratTransitionMode : uint8 {
     Tutorial,
     Ending,
     EndSlate,
+    ModeHUN,
+    ModeHUNBattleSetup,
+    ModeNSR,
     None,
 };
 

@@ -1,6 +1,7 @@
 #include "SSWishSelectorTalkButton.h"
 
 USSWishSelectorTalkButton::USSWishSelectorTalkButton() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->CaptionOn = NULL;
     this->CaptionOff = NULL;
     this->MarkOn = NULL;

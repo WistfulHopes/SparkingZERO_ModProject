@@ -28,6 +28,7 @@ enum class EKoratMainGameSaveMode : uint8 {
     MyData,
     Appreciation,
     OnegaiShenron,
+    ModeNSR,
     Event,
 };
 

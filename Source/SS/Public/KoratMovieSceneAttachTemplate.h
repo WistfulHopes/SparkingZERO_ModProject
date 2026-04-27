@@ -8,10 +8,27 @@
 #include "Channels/MovieSceneStringChannel.h"
 #include "KoratMovieSceneAttachTemplate.generated.h"
 
+class UKoratMovieSceneAttachSection;
+
 USTRUCT(BlueprintType)
-struct FKoratMovieSceneAttachTemplate : public FMovieSceneEvalTemplate {
+struct SS_API FKoratMovieSceneAttachTemplate final : public FMovieSceneEvalTemplate {
     GENERATED_BODY()
 public:
+    FKoratMovieSceneAttachTemplate();
+	FKoratMovieSceneAttachTemplate(const UKoratMovieSceneAttachSection& Section);
+	
+    virtual void Evaluate(const FMovieSceneEvaluationOperand& Operand,
+                          const FMovieSceneContext& Context,
+                          const FPersistentEvaluationData& PersistentData,
+                          FMovieSceneExecutionTokens& ExecutionTokens) const override;
+    
+    virtual UScriptStruct& GetScriptStructImpl() const override
+    {
+        return *StaticStruct();
+    }
+    
+    virtual EMovieSceneCompletionMode GetCompletionMode() const;
+    
 private:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieScenePropertySectionData PropertyData;
@@ -46,7 +63,5 @@ private:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneBoolChannel RotationFollowing;
     
-public:
-    SS_API FKoratMovieSceneAttachTemplate();
 };
 

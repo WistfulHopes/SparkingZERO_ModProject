@@ -1,6 +1,7 @@
 #include "SSPropertySettingsWidget.h"
 
 USSPropertySettingsWidget::USSPropertySettingsWidget() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->EnterButton = NULL;
     this->WindowTitleText = NULL;
     this->ScrollBox = NULL;

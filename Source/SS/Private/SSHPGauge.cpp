@@ -1,6 +1,7 @@
 #include "SSHPGauge.h"
 
 USSHPGauge::USSHPGauge() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->HPPerGauge = 10000.00f;
     this->DamageGaugeReduceSpeed = 10000.00f;
     this->DamageDelaySec = 0.00f;

@@ -2,10 +2,13 @@
 
 ASSShopMenuController::ASSShopMenuController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->BannerAutoSlideIntervalSec = 3.00f;
+    this->CharacterTextureLoadMaterialInstance = NULL;
     this->shopStatus = 0;
     this->BaseMenuWidget = NULL;
     this->PurchaseConfirmationDialog = NULL;
     this->PurchasedDialog = NULL;
+    this->MultiPurchaseConfirmationDialog = NULL;
+    this->MultiPurchasedDialog = NULL;
     this->ItemDetailWidget = NULL;
     this->MenuGeneralDialog = NULL;
     this->PreviewCharacterItemEquipment = NULL;

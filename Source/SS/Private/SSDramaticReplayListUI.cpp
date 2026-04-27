@@ -1,6 +1,7 @@
 #include "SSDramaticReplayListUI.h"
 
 USSDramaticReplayListUI::USSDramaticReplayListUI() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->DefaultFocusIdx = 0;
 }
 

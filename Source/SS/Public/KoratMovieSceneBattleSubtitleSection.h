@@ -15,5 +15,6 @@ private:
 public:
     UKoratMovieSceneBattleSubtitleSection();
 
+    const FKoratMovieSceneBattleSubtitleSectionData& GetEventData() const { return EventData; }
 };
 

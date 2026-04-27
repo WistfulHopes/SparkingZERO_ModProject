@@ -11,6 +11,8 @@
 
 class ASSCutCameraActor;
 class ASSLevelSequenceActor;
+class ASSMainMenuSequenceDestroyer;
+class ASSModeNSRSelectController;
 class ASSOptionController;
 class ASSPresentBoxControllerActor;
 class ASSTraceLocator;
@@ -28,6 +30,7 @@ class USSMainMenuSubModeMenu;
 class USSMainMenuSubModeMenuExtra;
 class USSMenuDialogManager;
 class USSMenuGeneralDialog;
+class USSMenuWidget;
 class USSOperationGuideSet;
 class USSPlayerMatchNetworkManager;
 class USSRingMenuUi;
@@ -137,6 +140,15 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSDramaticBattleWLibHelpDialog* TipsDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ASSModeNSRSelectController* BattleModeNSRSelectController;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    ASSMainMenuSequenceDestroyer* SequenceDestroyer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    TMap<FString, USSMenuWidget*> CreatedWidgetPool;
     
 public:
     ASSMainMenuController(const FObjectInitializer& ObjectInitializer);

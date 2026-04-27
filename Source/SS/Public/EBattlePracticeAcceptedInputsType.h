@@ -71,5 +71,6 @@ enum class EBattlePracticeAcceptedInputsType : uint8 {
     DashBlow,
     DownThrow,
     FastAvoidance,
+    ParrySmash,
 };
 

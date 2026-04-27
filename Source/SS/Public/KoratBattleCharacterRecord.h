@@ -71,6 +71,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 TenkaichOnilePlayCount;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 BattleMode011PlayCount;
+    
     FKoratBattleCharacterRecord();
 };
 

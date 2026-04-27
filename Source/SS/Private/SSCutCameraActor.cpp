@@ -14,6 +14,7 @@ ASSCutCameraActor::ASSCutCameraActor(const FObjectInitializer& ObjectInitializer
     this->EndBlendFloatCurveLat = TEXT("Curve_BlendRateTypeDefault");
     this->Priority = -1.00f;
     this->CameraSlot = 0;
+    this->CameraAoidTerrainType = ECameraAoidTerrainType::None;
     this->PhysicalDisparityType = ECameraPhysicalDisparityType::None;
     this->PhysicalDisparityDecayType = ECameraPhysicalDisparityDecayType::Normal;
     this->PhysicalDisparityDecayTypeHeight = ECameraPhysicalDisparityDecayType::Normal;
@@ -73,18 +74,6 @@ float ASSCutCameraActor::GetRestTimeInStartBlendNative(bool InLookAtTarget, bool
 }
 
 float ASSCutCameraActor::GetRestTimeInStartBlendManual(bool InLookAtTarget, double InWorldTime, double InSequencerStartTime, ASSCutCameraActor* InSrcCamera, bool InCinemaBlendZero) {
-    return 0.0f;
-}
-
-float ASSCutCameraActor::GetPhysicalDisparityTargetWeightAddWidth() {
-    return 0.0f;
-}
-
-float ASSCutCameraActor::GetPhysicalDisparityTargetWeightAddLength() {
-    return 0.0f;
-}
-
-float ASSCutCameraActor::GetPhysicalDisparityTargetWeightAddHeight() {
     return 0.0f;
 }
 

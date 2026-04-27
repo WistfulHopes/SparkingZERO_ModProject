@@ -10,6 +10,7 @@ AKoratOverrideTransformActor::AKoratOverrideTransformActor(const FObjectInitiali
     this->bPossessableObject = false;
     this->bNeedCheckAttachObjects = false;
     this->MyRootComponent = (USceneComponent*)RootComponent;
+    this->bTickPrerequisiteActorFlag = false;
 }
 
 

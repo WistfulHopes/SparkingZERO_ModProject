@@ -1,6 +1,7 @@
 #include "SSGalleryPictureBookViewerMenuListManager.h"
 
 USSGalleryPictureBookViewerMenuListManager::USSGalleryPictureBookViewerMenuListManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSGalleryPictureBookViewerMenuListManager::UpdateButtonIndex(USSMenuButton* InHitButton, int32 InDataIndex) {

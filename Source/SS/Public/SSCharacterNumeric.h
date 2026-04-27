@@ -72,10 +72,16 @@ protected:
     float OverrideMaxHPGaugeValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float FixedMaxHPGaugeValue;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float IncomingDamageRate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SPGaugeAutoRecoverySpeed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float SPAutoRecoverySpeedScaleUnderOneGauge;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SPGaugeAutoRecoverySpeedSuperZCounter;
@@ -291,7 +297,10 @@ protected:
     float FallStopRecoveryWaitTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float DamageScale;
+    float DPDamageScale;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float SingleBattleDPDamageScale;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChangeCharacterCooldown;
@@ -338,8 +347,4 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMaxHPGaugeValue() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    float GetDamageScale() const;
-    
 };
-

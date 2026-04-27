@@ -21,6 +21,7 @@ UKoratCharacterMovementComponent::UKoratCharacterMovementComponent(const FObject
     this->MovementActRemainTime = 0.00f;
     this->bMovementActReferenceDownTargetNull = false;
     this->bEnablePushingCollision = true;
+    this->bPushingCollisionHit = false;
     this->bExecFluffy = true;
     this->FluffyStart = 0.00f;
     this->FluffyEnd = 0.00f;
@@ -95,6 +96,10 @@ bool UKoratCharacterMovementComponent::IsCanFly() const {
 }
 
 bool UKoratCharacterMovementComponent::GetSocketTransformSyncSafe(FTransform& OutTransform, const FName SocketName, const TEnumAsByte<ERelativeTransformSpace> TransformSpace) const {
+    return false;
+}
+
+bool UKoratCharacterMovementComponent::GetPushingCollisionHit() const {
     return false;
 }
 

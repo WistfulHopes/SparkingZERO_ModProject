@@ -8,10 +8,25 @@
 #include "Channels/MovieSceneStringChannel.h"
 #include "KoratMovieSceneLookAtTemplate.generated.h"
 
+class UKoratMovieSceneLookAtSection;
+
 USTRUCT(BlueprintType)
-struct FKoratMovieSceneLookAtTemplate : public FMovieSceneEvalTemplate {
+struct SS_API FKoratMovieSceneLookAtTemplate final : public FMovieSceneEvalTemplate {
     GENERATED_BODY()
 public:
+    FKoratMovieSceneLookAtTemplate();
+	FKoratMovieSceneLookAtTemplate(const UKoratMovieSceneLookAtSection& Section);
+	
+    virtual void Evaluate(const FMovieSceneEvaluationOperand& Operand,
+                          const FMovieSceneContext& Context,
+                          const FPersistentEvaluationData& PersistentData,
+                          FMovieSceneExecutionTokens& ExecutionTokens) const override;
+    
+    virtual UScriptStruct& GetScriptStructImpl() const override
+    {
+        return *StaticStruct();
+    }
+    
 private:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneByteChannel PartFlags;
@@ -42,8 +57,4 @@ private:
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneFloatChannel OverrideBlendTime;
-    
-public:
-    SS_API FKoratMovieSceneLookAtTemplate();
 };
-

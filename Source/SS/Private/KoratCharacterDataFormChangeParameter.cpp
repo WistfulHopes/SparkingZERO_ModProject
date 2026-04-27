@@ -10,5 +10,6 @@ FKoratCharacterDataFormChangeParameter::FKoratCharacterDataFormChangeParameter()
     this->bDisableRecoveryAfterTheSecondTime = false;
     this->CoolTime = 0.00f;
     this->SafeSpawnAreaSize = EKoratSafeSpawnAreaSize::None;
+    this->bNotReleasedCanNotFormChange = false;
 }
 

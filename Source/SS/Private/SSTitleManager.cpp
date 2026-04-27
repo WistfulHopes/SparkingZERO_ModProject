@@ -1,6 +1,7 @@
 #include "SSTitleManager.h"
 
 USSTitleManager::USSTitleManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->PressAnyKey = NULL;
     this->TitleInfoGuide = NULL;
 }

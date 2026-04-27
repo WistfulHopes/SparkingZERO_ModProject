@@ -16,6 +16,9 @@ public:
     void OnChangeOut();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnChangeFocusMiss();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnChangeFocus_toOut();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

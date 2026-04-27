@@ -1,6 +1,7 @@
 #include "SSDramaticBattleSummaryUi.h"
 
 USSDramaticBattleSummaryUi::USSDramaticBattleSummaryUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSDramaticBattleSummaryUi::ShowSumaryTextWidget() {

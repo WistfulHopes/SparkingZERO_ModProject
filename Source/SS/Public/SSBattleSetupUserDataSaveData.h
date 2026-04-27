@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EKoratBattleSetupCharaInfoDispType.h"
 #include "KoratCharacterDataList.h"
 #include "SSBattleSetupUserDataCharacterSortFilter.h"
 #include "SSBattleSetupUserDataCustomizeBuildupItemMySets.h"
@@ -25,6 +26,12 @@ public:
     FSSBattleSetupUserDataSaveDataTargetTeaming DPBattleTeaming;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSBattleSetupUserDataSaveDataTargetTeaming DPBattleTeaming_Low;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSBattleSetupUserDataSaveDataTargetTeaming DPBattleTeaming_High;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSBattleSetupUserDataCustomizeBuildupItemMySets BuildupMySet;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -32,6 +39,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSBattleSetupUserDataCharacterSortFilter CharacterSortFilter;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratBattleSetupCharaInfoDispType CharaInfoDispType;
     
     SS_API FSSBattleSetupUserDataSaveData();
 };

@@ -4,6 +4,7 @@ FKoratCharacterCombativesParameter::FKoratCharacterCombativesParameter() {
     this->Power = 0;
     this->Shave = 0;
     this->EnergyDamage = 0;
+    this->EnergyShave = 0;
     this->EnergyGain = 0;
     this->bNoKnockDownAttack = false;
     this->HitActionCameraData = NULL;

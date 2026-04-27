@@ -1,6 +1,7 @@
 #include "SSGalleryTheaterMoviePlayerManager.h"
 
 USSGalleryTheaterMoviePlayerManager::USSGalleryTheaterMoviePlayerManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 

@@ -2,6 +2,7 @@
 
 USSMenuViewScroll::USSMenuViewScroll() {
     this->bIsVolatile = true;
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ColumnsNum = 1;
     this->FixAreaTopLineViewIdx = 1;
     this->FixAreaLineNumber = 1;

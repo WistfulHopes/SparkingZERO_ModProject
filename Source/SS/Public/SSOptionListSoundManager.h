@@ -15,7 +15,13 @@ private:
     void SetAnimSongButton();
     
     UFUNCTION(BlueprintCallable)
+    void PlaySeType();
+    
+    UFUNCTION(BlueprintCallable)
     void OnChangeValueVoiceButton(const float InChangeGauge);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnChangeValueSeType(const FSSMenuButtonTextItemEntry& InChangeItem);
     
     UFUNCTION(BlueprintCallable)
     void OnChangeValueSeButton(const float InChangeGauge);

@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "LevelSequencePlayer.h"
+#include "MovieSceneObjectBindingID.h"
 #include "KoratCharacterEffectColorSetData.h"
 #include "KoratCharacterPointLightData.h"
 #include "KoratEffectColorDataDetail.h"
@@ -66,6 +67,9 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName ManagedId;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSet<FMovieSceneObjectBindingID> DisableTrackControlRigs;
     
 public:
     USSLevelSequencePlayer(const FObjectInitializer& ObjectInitializer);

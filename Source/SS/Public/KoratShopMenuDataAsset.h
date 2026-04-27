@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EKoratBattleSetupTransition.h"
+#include "KoratBGMDataList.h"
 #include "KoratBattleSetupMenuTransitionData.h"
 #include "KoratConversationDataList.h"
 #include "MutualDataAsset.h"
@@ -16,6 +17,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EKoratBattleSetupTransition, FName> CameraSequenceAttachSocketName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratBGMDataList ShopBGM;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratBGMDataList ChangeBGMQue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, TSoftClassPtr<UObject>> PtrRecords;

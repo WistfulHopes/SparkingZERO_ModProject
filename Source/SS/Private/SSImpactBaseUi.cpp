@@ -1,6 +1,7 @@
 #include "SSImpactBaseUi.h"
 
 USSImpactBaseUi::USSImpactBaseUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->BoostButton = NULL;
 }
 

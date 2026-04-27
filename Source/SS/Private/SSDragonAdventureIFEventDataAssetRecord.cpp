@@ -9,5 +9,6 @@ FSSDragonAdventureIFEventDataAssetRecord::FSSDragonAdventureIFEventDataAssetReco
     this->WriteOnceIndex = 0;
     this->bUnlockEventBlock = false;
     this->bIsBadEvend = false;
+    this->bIsIgnoreChangedDifficultyLevel = false;
 }
 

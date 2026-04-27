@@ -1,8 +1,6 @@
 #include "KoratLevelSequenceInstanceData.h"
 
-UKoratLevelSequenceInstanceData::UKoratLevelSequenceInstanceData(const FObjectInitializer& ObjectInitializer) : Super(
-	ObjectInitializer)
-{
+UKoratLevelSequenceInstanceData::UKoratLevelSequenceInstanceData(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bEnableLocation = true;
     this->bEnableRotation = true;
     this->bEnableScale = true;

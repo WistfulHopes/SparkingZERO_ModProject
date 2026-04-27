@@ -1,6 +1,7 @@
 #include "SSPauseRequirementListManager.h"
 
 USSPauseRequirementListManager::USSPauseRequirementListManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSPauseRequirementListManager::SubScroll() {

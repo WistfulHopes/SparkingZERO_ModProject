@@ -25,6 +25,8 @@ ASSMainMenuController::ASSMainMenuController(const FObjectInitializer& ObjectIni
     this->OptionController = NULL;
     this->PresentBoxActor = NULL;
     this->TipsDialog = NULL;
+    this->BattleModeNSRSelectController = NULL;
+    this->SequenceDestroyer = NULL;
 }
 
 

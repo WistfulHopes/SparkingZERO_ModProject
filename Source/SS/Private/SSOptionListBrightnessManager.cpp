@@ -1,6 +1,7 @@
 #include "SSOptionListBrightnessManager.h"
 
 USSOptionListBrightnessManager::USSOptionListBrightnessManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSOptionListBrightnessManager::SetHUDButton() {

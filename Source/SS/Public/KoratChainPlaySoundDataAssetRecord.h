@@ -7,6 +7,8 @@
 #include "ESSSoundGroupType.h"
 #include "KoratBGMDataList.h"
 #include "KoratPatternVoiceDataList.h"
+#include "KoratSequenceSoundBranch.h"
+#include "KoratSoundBranchTypeDataList.h"
 #include "KoratChainPlaySoundDataAssetRecord.generated.h"
 
 USTRUCT(BlueprintType)
@@ -42,6 +44,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Volume;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FKoratSoundBranchTypeDataList, FKoratSequenceSoundBranch> SoundBranches;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsPlay2D;

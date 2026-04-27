@@ -44,7 +44,7 @@ private:
     void OnFinalizeAi();
     
     UFUNCTION(BlueprintCallable)
-    void OnDamage(const float InDamage);
+    void OnDamage(const float InDamage, const bool InGuardSuccess);
     
     UFUNCTION(BlueprintCallable)
     void OnChangeCharacter(int32 InPlayerNumber, ASSCharacter* InOldCharacter, ASSCharacter* InNewCharacter, const bool bInSamePerson);

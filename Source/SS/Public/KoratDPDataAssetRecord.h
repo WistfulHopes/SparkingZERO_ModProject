@@ -13,6 +13,9 @@ public:
     float DamageScale;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float SingleBattleDamageScale;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChangeCharacterCooldown;
     
     SS_API FKoratDPDataAssetRecord();

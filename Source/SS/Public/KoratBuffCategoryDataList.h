@@ -11,6 +11,4 @@ public:
     
     FKoratBuffCategoryDataList();
 };
-
 FORCEINLINE uint32 GetTypeHash(const FKoratBuffCategoryDataList) { return 0; }
-

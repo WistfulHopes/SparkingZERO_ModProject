@@ -19,7 +19,7 @@ public:
     FText Name;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKoratCharacterDataList> CharacterIds;
+    TArray<FKoratCharacterDataList> CharacterIDs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratCharacterItemDataList> CharacterItemIds;
@@ -41,6 +41,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratEditPartsImageDataList> EditPartsImageIds;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratCharacterDataList> DlcUnlockIgnoreCharacterIds;
     
     USSDownLoadContentsDataAssetRecord();
 

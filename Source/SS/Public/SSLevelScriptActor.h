@@ -4,6 +4,7 @@
 #include "SSResource.h"
 #include "SSLevelScriptActor.generated.h"
 
+class AKoratDestructionManagerUpdateActor;
 class UObject;
 class USSRandom;
 
@@ -17,6 +18,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bPersistentLevel;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    AKoratDestructionManagerUpdateActor* DestructionManagerUpdateActor;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

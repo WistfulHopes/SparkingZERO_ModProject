@@ -16,7 +16,7 @@ ASSBattleAIController::ASSBattleAIController(const FObjectInitializer& ObjectIni
     this->ZSearchEffectRenderer = NULL;
 }
 
-void ASSBattleAIController::SetBrainComponentDependency() {
+void ASSBattleAIController::SetAiComponentDependency() {
 }
 
 void ASSBattleAIController::ResetLog() {
@@ -75,6 +75,9 @@ USSAiBTDecoratorUtilityComponent* ASSBattleAIController::GetDecoratorUtilityComp
 
 UBehaviorTreeComponent* ASSBattleAIController::GetBehaviorTreeComponent() {
     return NULL;
+}
+
+void ASSBattleAIController::ClearAiComponentDependency() {
 }
 
 bool ASSBattleAIController::CanAiRun() {

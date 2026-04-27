@@ -9,6 +9,7 @@ USSMissionDataRecord::USSMissionDataRecord() {
     this->bHasLimit = false;
     this->bIsNotListupMission = false;
     this->ReleaseTyming = ESSMissionReleaseTyming::None;
+    this->DisplayOrderEventTop = 0;
     this->UniqueSettingId = 0;
 }
 

@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "KoratMultiDeviceSettingDataBrightnessOptionSettings.h"
 #include "KoratMultiDeviceSettingDataGraphicsOptionSettings.h"
+#include "KoratMultiDeviceSettingDataPostProcessOfHDR.h"
 #include "MutualDataAsset.h"
 #include "KoratMultiDeviceSettingDataAsset.generated.h"
 
@@ -65,6 +66,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratMultiDeviceSettingDataGraphicsOptionSettings> GraphicsOptionSettings_DOFQuality;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratMultiDeviceSettingDataPostProcessOfHDR PostProcessOverrideParamOfHDR;
     
 public:
     UKoratMultiDeviceSettingDataAsset();

@@ -1,6 +1,7 @@
 #include "SSGalleryTheaterMovieListButtonlManager.h"
 
 USSGalleryTheaterMovieListButtonlManager::USSGalleryTheaterMovieListButtonlManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 

@@ -7,6 +7,7 @@ enum class EKoratBattleDirectingType : uint8 {
     None,
     Action,
     ActionOperable,
+    ActionBlast,
     Parameters,
     Performance,
     Event,

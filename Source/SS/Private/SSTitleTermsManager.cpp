@@ -1,9 +1,10 @@
 #include "SSTitleTermsManager.h"
 
 USSTitleTermsManager::USSTitleTermsManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
-void USSTitleTermsManager::SubScroll() {
+void USSTitleTermsManager::SubScroll(float InIntensity) {
 }
 
 void USSTitleTermsManager::OnChangeValueRightButton() {
@@ -21,7 +22,7 @@ void USSTitleTermsManager::OnChangeValueCategory_R() {
 void USSTitleTermsManager::OnChangeValueCategory_L() {
 }
 
-void USSTitleTermsManager::AddScroll() {
+void USSTitleTermsManager::AddScroll(float InIntensity) {
 }
 
 

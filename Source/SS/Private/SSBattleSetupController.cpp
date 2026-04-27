@@ -1,13 +1,10 @@
 #include "SSBattleSetupController.h"
 
 ASSBattleSetupController::ASSBattleSetupController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->CurrentTeamDPOver = FText::FromString(TEXT("Team's DP exceeds limit."));
+    this->OpponentTeamDPOver = FText::FromString(TEXT("Opposing team's DP exceeds limit."));
     this->BackToTitleText = FText::FromString(TEXT("Return to Title Screen"));
     this->bIsEnableCustomizeCharaEntryCamera = false;
-    this->SyncCharacterToFadeDelaySec = 0.20f;
-    this->SyncCharacterFadeOutSec = 0.50f;
-    this->SyncCharacterFadeInSec = 0.50f;
-    this->DefaultBuildupItemUnlockNum = 7;
-    this->OnlineOpponentTeamingSyncInterval = 1.00f;
     this->MenuGeneralDialog = NULL;
     this->BattleSetupCharaListWidget = NULL;
     this->NewTopMenuWidget1P = NULL;
@@ -19,6 +16,7 @@ ASSBattleSetupController::ASSBattleSetupController(const FObjectInitializer& Obj
     this->CustomizeTopMenuWidget = NULL;
     this->CustomizeCommonItemMenuWidget = NULL;
     this->CustomizeBuildupStatusUiWidget = NULL;
+    this->CustomizeBuildupStatusUiFromCharaSelectWidget = NULL;
     this->CustomizeBuildupItemMySetWidget = NULL;
     this->CustomizeCostumeMenuWidget = NULL;
     this->CustomizeDirectionMenuWidget = NULL;
@@ -40,9 +38,11 @@ ASSBattleSetupController::ASSBattleSetupController(const FObjectInitializer& Obj
     this->FormSelectWindow = NULL;
     this->OnlineTeamPublicSettingUi = NULL;
     this->TeamingMySetWidget = NULL;
+    this->RegulationList = NULL;
     this->OptionController = NULL;
     this->PreviewCharacterItemEquipment = NULL;
     this->ActionListController = NULL;
+    this->BattleModeNSRHighScoreManager = NULL;
 }
 
 void ASSBattleSetupController::UpdateCameraAttachTransform() {

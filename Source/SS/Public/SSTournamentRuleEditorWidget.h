@@ -3,12 +3,18 @@
 #include "SSMenuViewScroll.h"
 #include "SSTournamentRuleEditorWidget.generated.h"
 
+class UImage;
 class USSMenuButton;
 class USSRemoteButton;
 
 UCLASS(Blueprintable, EditInlineNew)
 class USSTournamentRuleEditorWidget : public USSMenuViewScroll {
     GENERATED_BODY()
+public:
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UImage* StageImage;
+    
 public:
     USSTournamentRuleEditorWidget();
 

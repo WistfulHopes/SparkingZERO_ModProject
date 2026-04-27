@@ -37,6 +37,12 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USceneComponent* MyRootComponent;
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bTickPrerequisiteActorFlag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TWeakObjectPtr<AActor> PrerequisiteActor;
     
 public:
     AKoratOverrideTransformActor(const FObjectInitializer& ObjectInitializer);

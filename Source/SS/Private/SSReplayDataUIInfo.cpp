@@ -6,6 +6,7 @@ FSSReplayDataUIInfo::FSSReplayDataUIInfo() {
     this->UIBattleMode = ESSReplayDataUIBattleMode::None;
     this->WinLose = ESSReplayDataUWinLose::None;
     this->FavoriteMark = 0;
+    this->BattleMemberRule = EKoratBattleMemberRule::None;
     this->MajorVersionInt = 0;
     this->ContentVersionInt = 0;
     this->SaveDataVersionInt = 0;

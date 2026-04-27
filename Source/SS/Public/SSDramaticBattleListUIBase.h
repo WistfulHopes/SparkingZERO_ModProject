@@ -3,6 +3,7 @@
 #include "EKoratDramaticListStatus.h"
 #include "EKortaDramticBattleCategory.h"
 #include "KoratDramaticBattleCommonListData.h"
+#include "OnSSDramaticBattleCategoryChangedDelegate.h"
 #include "SSMenuViewScroll.h"
 #include "SSDramaticBattleListUIBase.generated.h"
 
@@ -14,6 +15,9 @@ UCLASS(Blueprintable, EditInlineNew)
 class USSDramaticBattleListUIBase : public USSMenuViewScroll {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnSSDramaticBattleCategoryChanged OnCategoryChangeFinish;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratDramaticBattleCommonListData> BattleDatas;
@@ -77,4 +81,3 @@ protected:
     void OnCategoryChanged(USSMenuButton* InButton);
     
 };
-

@@ -44,7 +44,8 @@ public class SSEditor : ModuleRules {
             "SpRuntime",
             "UMG",
             "UnrealEd",
-            "WindSimShader", "MovieSceneTools",
+            "WindSimShader", 
+            "MovieSceneTools",
         });
     }
 }

@@ -249,6 +249,12 @@ public:
     FSSDialogTextData WLibBattleReportDeceitPenaltyDialog;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSDialogTextData WLibPenaltyEndDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSDialogTextData WLibBattleReportPenaltyEndDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSDialogTextData BlockedUserContentsNotifyDialog;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -262,6 +268,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSDialogTextData HistoryOverNotOpenDialog;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSDialogTextData BattleSearchResultEmptyDialog;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<ESSWLibHomeCategoryButtonType, ESSWLibBattleListOverInfoType> WLibHomeListOverInfoSettingMap;
@@ -338,7 +347,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ESSDRMTextSortType> WordTextSortList;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName ExtraBatttleCategory01TipsDataName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText ExtraBatttleCategory01NameText;
+    
     UKoratDramaticBattleCommonDataAsset();
 
 };
-

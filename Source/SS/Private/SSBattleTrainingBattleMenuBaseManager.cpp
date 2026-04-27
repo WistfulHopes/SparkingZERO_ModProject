@@ -1,6 +1,7 @@
 #include "SSBattleTrainingBattleMenuBaseManager.h"
 
 USSBattleTrainingBattleMenuBaseManager::USSBattleTrainingBattleMenuBaseManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->GuideButtonSet = NULL;
     this->GuideButtonSetFooter = NULL;
 }

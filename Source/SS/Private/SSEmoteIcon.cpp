@@ -1,6 +1,7 @@
 #include "SSEmoteIcon.h"
 
 USSEmoteIcon::USSEmoteIcon() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->FaceImage = NULL;
 }
 

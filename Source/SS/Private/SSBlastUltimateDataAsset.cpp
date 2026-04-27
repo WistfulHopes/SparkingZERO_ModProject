@@ -17,6 +17,8 @@ USSBlastUltimateDataAsset::USSBlastUltimateDataAsset() {
     this->BlastImpactPower = 0;
     this->bCanSpeedImpact = false;
     this->bWeakSpecialShield = false;
+    this->bNoDisableSnapHorizontalInNearGround = true;
+    this->bToAimBodyBlendTimeIsZero = false;
     this->ConsecutiveInputMaxNum = 0;
     this->bIsEnableHideNearDestructionStaticMesh = true;
 }

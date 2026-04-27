@@ -26,7 +26,7 @@ void ASSBattleTrainingBattleUiController::TrainingInputSuccess(int32 InIndex, EK
 void ASSBattleTrainingBattleUiController::TrainingInputFinished(FName InMenuName) {
 }
 
-void ASSBattleTrainingBattleUiController::TrainingInputFailure(int32 InIndex, EKoratBattleKey InBattleKey, FName InMenuName) {
+void ASSBattleTrainingBattleUiController::TrainingInputFailure(int32 InIndex, EKoratBattleKey InBattleKey, FName InMenuName, EBattlePracticeInputFailureType InFailureType) {
 }
 
 void ASSBattleTrainingBattleUiController::PracticeResetDeathRetry() {

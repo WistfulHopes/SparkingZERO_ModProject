@@ -1,6 +1,7 @@
 #include "SSMenuMissionListUI.h"
 
 USSMenuMissionListUI::USSMenuMissionListUI() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->PanelBaseWidget = NULL;
     this->StampWidget = NULL;
     this->StampSwitcher = NULL;

@@ -9,5 +9,6 @@ FKoratCharacterSearchParameterChanging::FKoratCharacterSearchParameterChanging()
     this->AuraLostSecScale = 0.00f;
     this->EasyFindingScaleByTargetScale = 0.00f;
     this->EquipSearchParamData = NULL;
+    this->bNoSearchWhenAttacked = false;
 }
 

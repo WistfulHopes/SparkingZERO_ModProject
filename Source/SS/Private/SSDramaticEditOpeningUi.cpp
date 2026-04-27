@@ -1,6 +1,7 @@
 #include "SSDramaticEditOpeningUi.h"
 
 USSDramaticEditOpeningUi::USSDramaticEditOpeningUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->TitleButton = NULL;
     this->SaveButton = NULL;
     this->BGMSelectButton = NULL;

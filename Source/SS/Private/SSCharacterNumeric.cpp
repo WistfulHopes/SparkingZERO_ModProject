@@ -12,8 +12,10 @@ USSCharacterNumeric::USSCharacterNumeric() {
     this->MaxHPDPScale = 1.00f;
     this->AddMaxHP = 0.00f;
     this->OverrideMaxHPGaugeValue = -1.00f;
+    this->FixedMaxHPGaugeValue = -1.00f;
     this->IncomingDamageRate = 1.00f;
     this->SPGaugeAutoRecoverySpeed = 1000.00f;
+    this->SPAutoRecoverySpeedScaleUnderOneGauge = 1.00f;
     this->SPGaugeAutoRecoverySpeedSuperZCounter = -1000.00f;
     this->SPGaugeAutoRecoveryLimit = 20000.00f;
     this->SPChargeSpeed = 10000.00f;
@@ -85,7 +87,8 @@ USSCharacterNumeric::USSCharacterNumeric() {
     this->LiftRecoveryWaitTime = 0.00f;
     this->FallRecoveryToLandingBorderDistance = 100.00f;
     this->FallStopRecoveryWaitTime = 0.00f;
-    this->DamageScale = 1.00f;
+    this->DPDamageScale = 1.00f;
+    this->SingleBattleDPDamageScale = 1.00f;
     this->ChangeCharacterCooldown = 20.00f;
     this->BlastBoostCostNormal = 10000.00f;
     this->BlastBoostCostSparking = 10000.00f;
@@ -105,10 +108,6 @@ float USSCharacterNumeric::GetMaxSPGaugeValue() const {
 }
 
 float USSCharacterNumeric::GetMaxHPGaugeValue() const {
-    return 0.0f;
-}
-
-float USSCharacterNumeric::GetDamageScale() const {
     return 0.0f;
 }
 

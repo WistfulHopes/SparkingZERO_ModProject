@@ -42,6 +42,9 @@ private:
     void OnChangeValuePostProcessQuality(const FSSMenuButtonTextItemEntry& InChangeItem);
     
     UFUNCTION(BlueprintCallable)
+    void OnChangeValueOutOfArea(const FSSMenuButtonTextItemEntry& InChangeItem);
+    
+    UFUNCTION(BlueprintCallable)
     void OnChangeValueMotionBlurQuality(const FSSMenuButtonTextItemEntry& InChangeItem);
     
     UFUNCTION(BlueprintCallable)

@@ -1,6 +1,7 @@
 #include "SSUiWidget.h"
 
 USSUiWidget::USSUiWidget() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->bTickEvenWhenPaused = true;
 }
 

@@ -1,7 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Types/SlateEnums.h"
+#include "OnSSViewScrollButtonChangeAnimEventDelegate.h"
 #include "OnSSViewScrollButtonChangeEventDelegate.h"
+#include "OnSSViewScrollHitButtonChangeAnimEventDelegate.h"
 #include "OnSSViewScrollHitButtonChangeEventDelegate.h"
 #include "OnSSViewScrollMovingEventDelegate.h"
 #include "OnSSViewScrollSideChangerButtonValueChangeEventDelegate.h"
@@ -28,6 +30,12 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSSViewScrollMovingEvent OnScrollMove;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnSSViewScrollButtonChangeAnimEvent OnButtonDataChangeAnimationEvent;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnSSViewScrollHitButtonChangeAnimEvent OnHitButtonDataChangeAnimationEvent;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

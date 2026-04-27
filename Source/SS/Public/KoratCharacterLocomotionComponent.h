@@ -397,10 +397,10 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsNearRangeGiantCharaCpp() const;
     
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsNearRangeDistanceCpp(float InDistance) const;
     
-public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLeaningWall(float InWallAngle) const;
     

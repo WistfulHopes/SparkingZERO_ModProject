@@ -60,8 +60,13 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratCharacterDataShortDashParameter ScaledStepShortDash;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratCharacterDataShortDashParameter StepCancelShortDash;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratCharacterDataShortDashParameter ScaledStepCancelShortDash;
+    
 public:
     USSCharacterSteps();
 
 };
-

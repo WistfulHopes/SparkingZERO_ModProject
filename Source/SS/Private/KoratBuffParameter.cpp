@@ -2,6 +2,7 @@
 
 FKoratBuffParameter::FKoratBuffParameter() {
     this->bNumb = false;
+    this->bPossibleRevengeCounterNumb = false;
     this->bSearchOff = false;
     this->bValid = false;
 }

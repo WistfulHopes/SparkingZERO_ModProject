@@ -1,6 +1,7 @@
 #include "SSMenuGeneralDialog.h"
 
 USSMenuGeneralDialog::USSMenuGeneralDialog() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSMenuGeneralDialog::ThisStart() {

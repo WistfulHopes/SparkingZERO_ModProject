@@ -12,6 +12,7 @@ FKoratCharacterCommonParameter::FKoratCharacterCommonParameter() {
     this->SPAutoRecoverySpeedParry = 0.00f;
     this->SPAutoRecoverySpeedSuperZCounter = 0.00f;
     this->SuperAscertainSPCost = 0.00f;
+    this->PossibleAscertainAngle = 0.00f;
     this->SPChargeSpeed = 0.00f;
     this->SparkingGaugeChargeSpeed = 0.00f;
     this->PreSparkingGaugeDecreaseSpeed = 0.00f;
@@ -23,6 +24,7 @@ FKoratCharacterCommonParameter::FKoratCharacterCommonParameter() {
     this->StunReactionMaxRecoverySP = 0.00f;
     this->StunReactionRecoverySpeed = 0.00f;
     this->StunReactionInputRecoverySpeed = 0.00f;
+    this->bDisableStunByEnergyShave = false;
     this->LimitBoostSPCost = 0.00f;
     this->LimitBoostRecoverySpeed = 0.00f;
     this->LimitBoostInputRecoverySpeed = 0.00f;
@@ -63,6 +65,11 @@ FKoratCharacterCommonParameter::FKoratCharacterCommonParameter() {
     this->DragonDashInterval = 0.00f;
     this->ComboDamageScaleCurve = NULL;
     this->ComboDamageScaleMax = 0.00f;
+    this->ReverseComboDamageScaleCurve = NULL;
+    this->BlastDamageScaleInCombo = 0.00f;
+    this->BlastDamageScaleEachBlastHit = 0.00f;
+    this->RushBulletHitCountDamageScaleCurve = NULL;
+    this->UltComboDamageScaleMin = 0.00f;
     this->SmashLevelGaugeMax = 0.00f;
     this->SmashLevelGaugeDecrementSpeed = 0.00f;
     this->SmashLevelGaugeDecrementDelayTime = 0.00f;
@@ -122,9 +129,13 @@ FKoratCharacterCommonParameter::FKoratCharacterCommonParameter() {
     this->FastAvoidanceInputTime = 0.00f;
     this->RushHighSpeedMoveRevengeInputTime = 0.00f;
     this->SuperCounterInputTime = 0.00f;
+    this->SuperZCounterCatchInputTime = 0.00f;
     this->GuardInputCoolTime = 0.00f;
     this->bDisableGuardInputCoolTimeReset = false;
     this->SuperCounterInputCoolTime = 0.00f;
     this->bDisableSuperCounterInputCoolTimeReset = false;
+    this->SuperZCounterCatchInputCoolTime = 0.00f;
+    this->bDisableSuperZCounterCatchInputCoolTimeReset = false;
+    this->bCancelZBurstDashAtUseUpSP = false;
 }
 

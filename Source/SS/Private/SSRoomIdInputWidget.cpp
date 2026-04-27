@@ -1,6 +1,7 @@
 #include "SSRoomIdInputWidget.h"
 
 USSRoomIdInputWidget::USSRoomIdInputWidget() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->Title = NULL;
     this->EnterButton = NULL;
 }

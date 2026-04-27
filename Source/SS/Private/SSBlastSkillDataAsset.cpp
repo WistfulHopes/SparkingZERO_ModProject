@@ -15,6 +15,8 @@ USSBlastSkillDataAsset::USSBlastSkillDataAsset() {
     this->BlastImpactPower = 0;
     this->bCanSpeedImpact = false;
     this->bWeakSpecialShield = false;
+    this->bNoDisableSnapHorizontalInNearGround = true;
+    this->bToAimBodyBlendTimeIsZero = false;
     this->bIsEnableHideNearDestructionStaticMesh = true;
     this->bDoVanishingWhenDoBlastCombo = false;
     this->VanishingDistance = 0.00f;

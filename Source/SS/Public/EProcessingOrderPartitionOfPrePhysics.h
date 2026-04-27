@@ -5,10 +5,14 @@
 UENUM(BlueprintType)
 enum class EProcessingOrderPartitionOfPrePhysics : uint8 {
     PostProccessManagerTicking,
+    DestructionManager,
     CharacterWarpCtrl,
+    CharacterBuffManager,
+    TriggerImpactGameComponent,
     BattleImpactProcedure,
     BattledirectingActor,
-    PadGenerationComponent,
+    AiComponent1P,
+    AiComponent2P,
     CharacterMeshTickStopActor,
     PlayerController,
     PlayerController1P,

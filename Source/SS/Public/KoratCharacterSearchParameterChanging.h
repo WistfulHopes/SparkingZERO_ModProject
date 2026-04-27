@@ -32,6 +32,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UKoratSearchParamDataAsset* EquipSearchParamData;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bNoSearchWhenAttacked;
+    
     SS_API FKoratCharacterSearchParameterChanging();
 };
 

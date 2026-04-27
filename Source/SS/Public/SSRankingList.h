@@ -6,12 +6,16 @@
 
 class USSMenuButton;
 class USSRemoteButton;
+class UTextBlock;
 
 UCLASS(Blueprintable, EditInlineNew)
 class USSRankingList : public USSMenuViewScroll {
     GENERATED_BODY()
 public:
 private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    TArray<UTextBlock*> LinkedRankRangeTexts;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FSSRankingUserData> PlayerRankingData;
     

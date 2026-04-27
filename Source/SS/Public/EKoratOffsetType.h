@@ -8,5 +8,7 @@ enum class EKoratOffsetType : uint8 {
     RushOffset,
     CollisionOffset,
     ExImpact,
+    AttackerWin,
+    DefenderWin,
 };
 

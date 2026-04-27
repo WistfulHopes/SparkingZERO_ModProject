@@ -12,7 +12,13 @@ public:
     TMap<ESSWLibPenaltyReasonType, FDateTime> LastPenaltyNotifyDate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<ESSWLibPenaltyReasonType, FDateTime> LastPenaltyNotifyDateTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<ESSWLibPenaltyReasonType, int32> LastNotifyPenaltyLevel;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDateTime LastPenaltyEndNotifyDateTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDateTime LastReportDate;

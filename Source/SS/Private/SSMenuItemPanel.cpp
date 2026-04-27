@@ -3,6 +3,7 @@
 
 USSMenuItemPanel::USSMenuItemPanel() {
     this->Visibility = ESlateVisibility::Visible;
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->bIsDisabled = false;
 }
 

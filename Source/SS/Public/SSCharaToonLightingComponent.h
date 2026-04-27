@@ -19,8 +19,25 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDebugPointLightLocation;
     
+#if WITH_EDITORONLY_DATA
+    UPROPERTY(EditAnywhere, meta = (DisplayName = "Enable In-Editor Outline", AllowPrivateAccess=true))
+    bool bEnableShellApplication = true;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="ToonShell", meta=(AllowPrivateAccess=true))
+    UMaterialInterface* ShellMaterial = nullptr;
+#endif
+
+    
 public:
     USSCharaToonLightingComponent(const FObjectInitializer& ObjectInitializer);
+
+    virtual void OnRegister() override;
+    
+#if WITH_EDITOR
+    virtual void PostEditComponentMove(bool bFinished) override;
+    virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+#endif
+
+    virtual void OnComponentCreated() override;
 
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -35,5 +52,9 @@ protected:
     UFUNCTION(BlueprintCallable)
     void ExecApplyShading(bool bConstruction, UMeshComponent* InMesh);
     
-};
+    UFUNCTION(BlueprintCallable)
+    void ApplyShells();
 
+    template<typename T>
+    T* FindComponentByName(FName Name);
+};

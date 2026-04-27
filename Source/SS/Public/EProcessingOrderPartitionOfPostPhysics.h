@@ -13,6 +13,7 @@ enum class EProcessingOrderPartitionOfPostPhysics : uint8 {
     CharacterBattleAssistComponent,
     EndMove,
     CutCameraLocator,
+    BulletStopActor,
     BulletController,
     BulletActor,
     BulletBeamView,

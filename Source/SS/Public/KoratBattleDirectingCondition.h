@@ -7,7 +7,7 @@
 #include "EKoratBattleDirectingInequalitySign.h"
 #include "EKoratBattleDirectingKnockDownType.h"
 #include "EKoratBattleDirectingTrigger.h"
-#include "EKoratValid.h"
+#include "KoratActionDataList.h"
 #include "KoratCharacterDataList.h"
 #include "KoratBattleDirectingCondition.generated.h"
 
@@ -25,10 +25,16 @@ public:
     int32 CharactersPos;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bAllMatch;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EKoratBattleDirectingConditionTargetType NumericalValueTargetType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 NumericalValue;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 NumericalValue2;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EKoratBattleDirectingInequalitySign InequalitySign;
@@ -38,6 +44,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EKoratBattleDirectingAction BattleDirectingAction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratActionDataList TargetAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 PlayerCharactersPos;
@@ -56,40 +65,49 @@ public:
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_TargetType;
+    bool bEditable_TargetType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_CharactersPos;
+    bool bEditable_CharactersPos;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_NumericalValueTargetType;
+    bool bEditable_AllMatch;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_NumericalValue;
+    bool bEditable_NumericalValueTargetType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_InequalitySign;
+    bool bEditable_NumericalValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_CharacterState;
+    bool bEditable_NumericalValue2;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_BattleDirectingAction;
+    bool bEditable_InequalitySign;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_PlayerCharactersPos;
+    bool bEditable_CharacterState;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_EnemyCharactersPos;
+    bool bEditable_BattleDirectingAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_ChangeCharacter;
+    bool bEditable_TargetAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_AttackType;
+    bool bEditable_PlayerCharactersPos;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_KnockDownType;
+    bool bEditable_EnemyCharactersPos;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bEditable_ChangeCharacter;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bEditable_AttackType;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bEditable_KnockDownType;
     
 public:
     SS_API FKoratBattleDirectingCondition();

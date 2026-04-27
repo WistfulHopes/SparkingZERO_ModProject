@@ -9,6 +9,7 @@ enum class EMainMenuListPropertySettingsType : uint8 {
     Ping,
     Rank,
     TeamRule,
+    MaxDP,
     Time,
     CompletionRate,
     Language,

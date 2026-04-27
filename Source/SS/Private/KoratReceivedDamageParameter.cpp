@@ -22,6 +22,7 @@ FKoratReceivedDamageParameter::FKoratReceivedDamageParameter() {
     this->bInterruptGuard = false;
     this->bInterruptReflect = false;
     this->AttackPowerMagnification = 0.00f;
+    this->AttackerDP = 0;
     this->Buff = NULL;
     this->bReduceZSearchAfterHit = false;
     this->ReduceZSearchEffectTime = 0.00f;

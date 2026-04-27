@@ -1,6 +1,7 @@
 #include "SSTrainingBattleUiTreinSetManager.h"
 
 USSTrainingBattleUiTreinSetManager::USSTrainingBattleUiTreinSetManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->BuiltInMenu = NULL;
 }
 

@@ -5,6 +5,7 @@
 #include "SSEventSceneEventReceiver.h"
 #include "SSEventSceneScript.generated.h"
 
+class ASSCharacter;
 class ASSEventSceneLocator;
 class ASSEventVoicePlayer;
 class ASSUiFaderHUD;
@@ -69,6 +70,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSubsceneNum() const;
     
+protected:
+    UFUNCTION(BlueprintCallable)
+    ASSCharacter* GetSSCharacter(const int32 InCharacterId);
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCurrentSubscene() const;
     

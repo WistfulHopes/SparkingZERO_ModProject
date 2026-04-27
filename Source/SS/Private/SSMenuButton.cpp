@@ -4,6 +4,7 @@
 USSMenuButton::USSMenuButton() {
     this->Visibility = ESlateVisibility::Visible;
     this->bIsFocusable = true;
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->caption = NULL;
     this->BindImage = NULL;
     this->TextureResourceObject = NULL;

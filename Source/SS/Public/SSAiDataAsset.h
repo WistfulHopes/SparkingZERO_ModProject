@@ -1,12 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EKoratBattleCpuLevel.h"
+#include "KoratCharacterFigureDataList.h"
 #include "KoratCharacterItemDataList.h"
 #include "MutualDataAsset.h"
 #include "SSAiActionDataList.h"
+#include "SSAiBodySize.h"
 #include "SSAiItem.h"
 #include "SSAiDataAsset.generated.h"
 
+class UBehaviorTree;
 class UCurveFloat;
 class USSAiTypeDataAsset;
 class UUserDefinedEnum;
@@ -35,6 +38,15 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UUserDefinedEnum* AiLevelTypeEnum;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UUserDefinedEnum* AiOptimizeTypeEnum;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UBehaviorTree* BehaviorTree;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UClass* ProbabilityClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 DefaultAiLevel;
@@ -67,28 +79,13 @@ public:
     float BlastImpactMaxRate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float ShortRangeOfDefaultBodySize;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float ShortRangeOfSmallBodySize;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float ShortRangeOfGiantBodySize;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float MediumRangeOfDefaultBodySize;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float MediumRangeOfSmallBodySize;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float MediumRangeOfGiantBodySize;
+    TMap<FKoratCharacterFigureDataList, FSSAiBodySize> BodySizeMap;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FSSAiActionDataList> ActionDataMap;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<FName, USSAiTypeDataAsset*> TypeDataAssets;
+    TMap<FName, USSAiTypeDataAsset*> PtrRecords;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FKoratCharacterItemDataList, FSSAiItem> ItemDataMap;
@@ -107,6 +104,12 @@ public:
     UFUNCTION(BlueprintCallable)
     void Search();
     
+    UFUNCTION(BlueprintCallable)
+    void OutputTimeOutZero();
+    
+    UFUNCTION(BlueprintCallable)
+    void OutputDisablesInterruptsOtherTrees();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetTypeNameArray(TArray<FName>& OutNames) const;
     
@@ -117,4 +120,3 @@ public:
     void DuplicationActionDataItem();
     
 };
-

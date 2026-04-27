@@ -1,6 +1,7 @@
 #include "SSBlastImpactUi.h"
 
 USSBlastImpactUi::USSBlastImpactUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ChargeGaugeCurve = NULL;
     this->GaugeScaleCurve = NULL;
     this->DebugProgressSpeed = 0.50f;

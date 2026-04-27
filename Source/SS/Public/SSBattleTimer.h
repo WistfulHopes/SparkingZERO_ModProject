@@ -28,5 +28,8 @@ private:
 public:
     USSBattleTimer();
 
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnSelectFirstIn();
+    
 };
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EKoratBattleCpuLevel.h"
+#include "EKoratBattleCpuOptimize.h"
 #include "KoratBGMDataList.h"
 #include "KoratCharacterDataList.h"
 #include "KoratMapDataList.h"
@@ -38,7 +39,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EKoratBattleCpuLevel DefaultBattleCpuLevel;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratBattleCpuOptimize DefaultBattleCpuOptimize;
+    
     ASSDebugBattleSetupLvScriptActor(const FObjectInitializer& ObjectInitializer);
 
 };
-

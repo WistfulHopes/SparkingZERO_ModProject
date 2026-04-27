@@ -20,6 +20,7 @@ AKoratSequenceSoundPlayer::AKoratSequenceSoundPlayer(const FObjectInitializer& O
     this->IsPlay2D = false;
     this->CameraType = EKoratSequenceSoundCameraType::ALL;
     this->IsMoveToDifferentPositionSound = false;
+    this->IsEnableChangeTypeSE = false;
     this->PlayVoiceIndex = 0;
     this->IsResetRandomDataIndex = false;
     this->PatternBGMDataName = EKoratPatternBGMName::None;
@@ -29,6 +30,8 @@ AKoratSequenceSoundPlayer::AKoratSequenceSoundPlayer(const FObjectInitializer& O
     this->IsCrossFade = false;
     this->CtrlType = EKoratSequenceSoundControlType::None;
     this->bUseTerrainRay = false;
+    this->bIsChangeBattleBGM = false;
+    this->bIsBattleStartBGM = false;
     this->SoundManageComponent = NULL;
     this->LevelSequenceActor = NULL;
 }

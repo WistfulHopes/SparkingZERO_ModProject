@@ -1,6 +1,7 @@
 #include "SSDramaticTopButtonSlide.h"
 
 USSDramaticTopButtonSlide::USSDramaticTopButtonSlide() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSDramaticTopButtonSlide::SetCanInput() {
@@ -11,7 +12,7 @@ void USSDramaticTopButtonSlide::PlaySlideAnimation(UWidgetAnimation* InOneShotAn
 
 
 
-void USSDramaticTopButtonSlide::ModeSet() {
+void USSDramaticTopButtonSlide::ModeSet(USSMenuButton* InButton) {
 }
 
 int32 USSDramaticTopButtonSlide::GetNowSelectModeNum() {

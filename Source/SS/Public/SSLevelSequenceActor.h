@@ -76,10 +76,16 @@ protected:
     FKoratActionDataList WarpCtrlSequenceAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    int32 WarpCtrlReturnWarpBeforeFrame;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratActionDataList SaveSpawnAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bIsDemonstrationFromSaveAction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bNoUseOwnerCutDirector;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ASSCutCameraDirector> RebindedCutCameraDirector;
@@ -268,4 +274,3 @@ private:
     void AddRebindInfo(FMovieSceneObjectBindingID InBindingId, const FString& InName, uint32 InActorGUID);
     
 };
-

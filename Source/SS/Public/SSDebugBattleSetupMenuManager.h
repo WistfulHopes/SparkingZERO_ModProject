@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EKoratBattleCpuLevel.h"
+#include "EKoratBattleCpuOptimize.h"
 #include "EKoratBattleKeyMode.h"
 #include "ESSBGMCategoryType.h"
 #include "KoratCharacterDataList.h"
@@ -52,7 +53,10 @@ public:
     void GetStageSelectParameter(UObject* WorldContextObject, TArray<FText>& OutItems, FText& OutCurrentItem);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
-    EKoratBattleCpuLevel GetCurrentBattleCpuLevel(UObject* WorldContextObject, const FText InCurrentCpuLevelText);
+    EKoratBattleCpuOptimize GetCurrentBattleCpuOptimize(UObject* WorldContextObject, const FText InCurrentText);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    EKoratBattleCpuLevel GetCurrentBattleCpuLevel(UObject* WorldContextObject, const FText InCurrentText);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     void GetCharacter2PSelectParameter(UObject* WorldContextObject, TArray<FText>& OutItems, FText& OutCurrentItem, int32 InMemberNo);
@@ -62,6 +66,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     void GetBGMSelectParameter(UObject* WorldContextObject, TArray<FText>& OutItems, FText& OutCurrentItem, ESSBGMCategoryType InBGMCategoryType);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    void GetBattleCpuOptimizeSelectParameter(UObject* WorldContextObject, TArray<FText>& OutItems, FText& OutCurrentItem);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     void GetBattleCpuLevelSelectParameter(UObject* WorldContextObject, TArray<FText>& OutItems, FText& OutCurrentItem);

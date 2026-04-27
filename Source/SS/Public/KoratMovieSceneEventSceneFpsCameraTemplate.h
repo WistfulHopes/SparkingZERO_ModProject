@@ -6,10 +6,25 @@
 #include "Sections/MovieSceneActorReferenceSection.h"
 #include "KoratMovieSceneEventSceneFpsCameraTemplate.generated.h"
 
+class UKoratMovieSceneEventSceneFpsCameraSection;
+
 USTRUCT(BlueprintType)
-struct FKoratMovieSceneEventSceneFpsCameraTemplate : public FMovieSceneEvalTemplate {
+struct SS_API FKoratMovieSceneEventSceneFpsCameraTemplate final : public FMovieSceneEvalTemplate {
     GENERATED_BODY()
 public:
+    FKoratMovieSceneEventSceneFpsCameraTemplate();
+	FKoratMovieSceneEventSceneFpsCameraTemplate(const UKoratMovieSceneEventSceneFpsCameraSection& Section);
+	
+    virtual void Evaluate(const FMovieSceneEvaluationOperand& Operand,
+                          const FMovieSceneContext& Context,
+                          const FPersistentEvaluationData& PersistentData,
+                          FMovieSceneExecutionTokens& ExecutionTokens) const override;
+    
+    virtual UScriptStruct& GetScriptStructImpl() const override
+    {
+        return *StaticStruct();
+    }
+    
 private:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneActorReferenceData LookAtReference;
@@ -20,7 +35,4 @@ private:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneFloatChannel Alpha;
     
-public:
-    SS_API FKoratMovieSceneEventSceneFpsCameraTemplate();
 };
-

@@ -1,6 +1,7 @@
 #include "SSSPGauge.h"
 
 USSSPGauge::USSSPGauge() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->MaxValue = 0.00f;
     this->DamageGaugeReduceSpeed = 10000.00f;
     this->MinusGaugeWidget = NULL;

@@ -4,7 +4,7 @@
 
 ASSEffectPedestalActorNiagara::ASSEffectPedestalActorNiagara(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->Emitter = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Emitter"));
-    this->Emitter->SetupAttachment(GetProductOffset());
+    this->Emitter->SetupAttachment(ProductOffset);
 }
 
 

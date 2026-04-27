@@ -21,7 +21,7 @@ void USSAiLearningComponent::OnFinishCommand() {
 void USSAiLearningComponent::OnFinalizeAi() {
 }
 
-void USSAiLearningComponent::OnDamage(const float InDamage) {
+void USSAiLearningComponent::OnDamage(const float InDamage, const bool InGuardSuccess) {
 }
 
 void USSAiLearningComponent::OnAttackHit(const float InDamage, const bool InGuardBreak) {

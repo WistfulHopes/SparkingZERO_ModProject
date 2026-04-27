@@ -50,5 +50,34 @@ float USSAnimInstance::GetCurrentRelevantAnimTimeRemainingFraction(const FName I
 float USSAnimInstance::GetCurrentRelevantAnimTime(const FName InMachineName, FName& OutCurrentStateName) {
     return 0.0f;
 }
+void USSAnimInstance::ApplyWindToAllKawaiiPhysicsNodes(
+    float WindScale,
+    float OverwriteWindSpeed,
+    const FVector& OverwriteWindDirection,
+    bool bEnableWind,
+    bool bEnableOverwriteWind)
+{
+    const IAnimClassInterface* AnimClassInterface = IAnimClassInterface::GetFromClass(GetClass());
+    if (!AnimClassInterface) return;
 
+    const TArray<FStructProperty*>& NodeProperties = AnimClassInterface->GetAnimNodeProperties();
+
+    for (FStructProperty* Prop : NodeProperties)
+    {
+        if (!Prop || Prop->Struct->GetFName() != FName("AnimNode_KawaiiPhysics"))
+            continue;
+
+        void* NodePtr = Prop->ContainerPtrToValuePtr<void>(this);
+        if (!NodePtr) continue;
+
+        FAnimNode_KawaiiPhysics* KawaiiNode = reinterpret_cast<FAnimNode_KawaiiPhysics*>(NodePtr);
+        if (!KawaiiNode) continue;
+
+        KawaiiNode->bEnableWind = bEnableWind;
+        KawaiiNode->bEnableOverwriteWind = bEnableOverwriteWind;
+        KawaiiNode->WindScale = WindScale;
+        KawaiiNode->OverwriteWindSpeed = OverwriteWindSpeed;
+        KawaiiNode->OverwriteWindDirection = OverwriteWindDirection;
+    }
+}
 

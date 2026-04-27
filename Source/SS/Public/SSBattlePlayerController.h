@@ -20,6 +20,8 @@ class USSBlastImpactUi;
 class USSCrashImpactBoostUi;
 class USSCrashImpactSetUi;
 class USSDBEvTriggerUi;
+class USSMenuGeneralDialog;
+class USSMenuGeneralDialog;
 class USSMenuManager;
 class USSMenuTextUi;
 class USSOperationGuideSet;
@@ -138,6 +140,12 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSGeneralDialogController* GeneralDialogController;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSUiWidget* RecoveryIcons_1P;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSUiWidget* RecoveryIcons_2P;
+    
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     TArray<USSUiWidget*> ShowStartedWidgets;
@@ -156,6 +164,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSBattleTutorialHelpManager* AnnouncementWidget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSMenuGeneralDialog* MenuGeneralDialog;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

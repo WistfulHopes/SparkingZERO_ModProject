@@ -3,12 +3,15 @@
 #include "EKoratAllComLevelSetting.h"
 #include "EKoratBattleKeyMode.h"
 #include "EKoratBattleMemberRule.h"
+#include "EKoratBattleMemberRuleMode.h"
 #include "EKoratBattleOfflineMode.h"
 #include "EKoratCommonOnOffType.h"
+#include "EKoratMaxDPType.h"
 #include "EKoratTimeLimitType.h"
 #include "EStageSelectPageType.h"
 #include "EStageSelectRuleSettingType.h"
 #include "KoratBGMDataList.h"
+#include "KoratDramaticBattleTipsDataList.h"
 #include "KoratMapDataList.h"
 #include "SSMenuSceneController.h"
 #include "Templates/SubclassOf.h"
@@ -19,6 +22,7 @@ class ASSCutCameraActor;
 class ASSUiFaderHUD;
 class ULevelSequence;
 class UObject;
+class USSDramaticBattleWLibHelpDialog;
 class USSMenuButton;
 class USSMenuGeneralDialog;
 class USSMenuManager;
@@ -86,6 +90,9 @@ protected:
     TMap<EKoratBattleMemberRule, FText> BattleMemberRuleSettingTexts;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<EKoratMaxDPType, FText> MaxDPTexts;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EKoratTimeLimitType, FText> TimeLimitFullTexts;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -102,6 +109,15 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FText> ComLevelSettingListTitleTextDouble;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FText> ComTextSingle;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FText> ComTextDouble;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText ComLevelInfoFormatText;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EKoratBattleKeyMode, FText> BattleKeyModeTexts;
@@ -173,7 +189,19 @@ protected:
     EKoratBattleMemberRule BattleMemberRuleDefaultSetting;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratBattleMemberRuleMode BattleMemberRuleModeSettingMode;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<EKoratMaxDPType> MaxDPList;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratMaxDPType MaxDPDefaultSetting;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EKoratTimeLimitType, float> TimiLimitSecondTable;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<EKoratBattleMemberRule, FKoratDramaticBattleTipsDataList> BattleMemberRuleTipsIdTable;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EKoratAllComLevelSetting> ComLevelSettingList;
@@ -225,6 +253,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<USSTimerUi> ClassTimerUi;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<USSDramaticBattleWLibHelpDialog> ClassTipsDialog;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<ULevelSequence> StartCameraSequence;
@@ -284,6 +315,9 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSTimerUi* TimerUi;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSDramaticBattleWLibHelpDialog* TipsDialog;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSCutCameraActor* ManualCameraActor;
     
@@ -313,4 +347,3 @@ private:
     void ChangeBgmListButton(USSRemoteButton* InButton, int32 InDataIndex);
     
 };
-

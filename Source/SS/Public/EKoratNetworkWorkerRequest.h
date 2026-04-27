@@ -45,6 +45,8 @@ enum class EKoratNetworkWorkerRequest : uint8 {
     ResolveBanner,
     SyncPlayerCard,
     BattleMode010,
+    FetchTitleIds,
+    ShowStoreOrBrowser,
     Max,
 };
 

@@ -22,7 +22,7 @@ void USSAiPadGenerationComponent::OnInitializeAi() {
 void USSAiPadGenerationComponent::OnFinalizeAi() {
 }
 
-void USSAiPadGenerationComponent::OnDamage(const float InDamage) {
+void USSAiPadGenerationComponent::OnDamage(const float InDamage, const bool InGuardSuccess) {
 }
 
 void USSAiPadGenerationComponent::OnChangeCharacter(int32 InPlayerNumber, ASSCharacter* InOldCharacter, ASSCharacter* InNewCharacter, const bool bInSamePerson) {

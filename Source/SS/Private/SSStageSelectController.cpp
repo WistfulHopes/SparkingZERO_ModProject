@@ -7,6 +7,7 @@ ASSStageSelectController::ASSStageSelectController(const FObjectInitializer& Obj
     this->StageSelectStopShakeBlendEndTime = 0.50f;
     this->StartUIFadeSecond = 0.50f;
     this->StagePreviewChangeDelaySecond = 0.10f;
+    this->ComLevelInfoFormatText = FText::FromString(TEXT("TR_UI_BTSETUP_0126"));
     this->TimeLimitDefaultSetting = EKoratTimeLimitType::NoLimit;
     this->AllComLevelDefaultSetting = EKoratAllComLevelSetting::None;
     this->AllCombineDefaultSetting = EKoratCommonOnOffType::None;
@@ -16,6 +17,8 @@ ASSStageSelectController::ASSStageSelectController(const FObjectInitializer& Obj
     this->OutFieldDefaultSetting = EKoratCommonOnOffType::OFF;
     this->BattleRuleDefaultSetting = EKoratBattleOfflineMode::TeamBattle;
     this->BattleMemberRuleDefaultSetting = EKoratBattleMemberRule::Team;
+    this->BattleMemberRuleModeSettingMode = EKoratBattleMemberRuleMode::None;
+    this->MaxDPDefaultSetting = EKoratMaxDPType::MaxDPNormal;
     this->ExhibitionDefaultTimeLimit = EKoratTimeLimitType::LimitSec240;
     this->ExhibitionDefaultBattleRule = EKoratBattleOfflineMode::TeamBattle;
     this->ExhibitionDefaultBattleMemberRule = EKoratBattleMemberRule::Team;
@@ -38,6 +41,7 @@ ASSStageSelectController::ASSStageSelectController(const FObjectInitializer& Obj
     this->RuleListWidget = NULL;
     this->FaderHUD = NULL;
     this->TimerUi = NULL;
+    this->TipsDialog = NULL;
     this->ManualCameraActor = NULL;
     this->CriMediaPlayer = NULL;
 }

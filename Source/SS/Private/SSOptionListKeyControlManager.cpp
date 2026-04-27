@@ -1,6 +1,7 @@
 #include "SSOptionListKeyControlManager.h"
 
 USSOptionListKeyControlManager::USSOptionListKeyControlManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSOptionListKeyControlManager::OnChangeValueUserNotification(const FSSMenuButtonTextItemEntry& InChangeItem) {

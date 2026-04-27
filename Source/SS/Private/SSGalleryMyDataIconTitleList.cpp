@@ -1,6 +1,7 @@
 #include "SSGalleryMyDataIconTitleList.h"
 
 USSGalleryMyDataIconTitleList::USSGalleryMyDataIconTitleList() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->UnlockItem = NULL;
 }
 

@@ -1,6 +1,7 @@
 #include "SSDramaticEditCharaSettingUi.h"
 
 USSDramaticEditCharaSettingUi::USSDramaticEditCharaSettingUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ComLevelButton = NULL;
     this->DoneButton = NULL;
     this->CategoryTitleText = NULL;

@@ -1,6 +1,7 @@
 #include "SSActionListManager.h"
 
 USSActionListManager::USSActionListManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ActionListContentManager = NULL;
     this->Character = NULL;
 }

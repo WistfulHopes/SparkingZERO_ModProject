@@ -20,6 +20,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSChameleonNative* ChameleonActor;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bOwnerAIContorller;
+    
 public:
     ASSEffectActorInFrontOfTheCamera(const FObjectInitializer& ObjectInitializer);
 

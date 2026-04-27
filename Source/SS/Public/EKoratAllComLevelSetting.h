@@ -9,6 +9,7 @@ enum class EKoratAllComLevelSetting : uint8 {
     Middle,
     High,
     ExtraHigh,
+    Extreme,
     Max,
 };
 

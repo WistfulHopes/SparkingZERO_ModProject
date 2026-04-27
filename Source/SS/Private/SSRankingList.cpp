@@ -1,6 +1,7 @@
 #include "SSRankingList.h"
 
 USSRankingList::USSRankingList() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSRankingList::UpdatePlayerRankingPanel(USSMenuButton* InHitButton, USSRemoteButton* InRemoteButton, int32 InDataIndex) {

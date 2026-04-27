@@ -6,9 +6,6 @@ UKoratMapDataAsset::UKoratMapDataAsset() {
 void UKoratMapDataAsset::Sort() {
 }
 
-void UKoratMapDataAsset::SetManaSource() {
-}
-
 FText UKoratMapDataAsset::GetMapName(const FName& InMapKey) const {
     return FText::GetEmpty();
 }

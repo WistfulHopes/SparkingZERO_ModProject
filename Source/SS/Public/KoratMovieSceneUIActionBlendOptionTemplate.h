@@ -7,10 +7,25 @@
 #include "Channels/MovieSceneObjectPathChannel.h"
 #include "KoratMovieSceneUIActionBlendOptionTemplate.generated.h"
 
+class UKoratMovieSceneUIActionBlendOptionSection;
+
 USTRUCT(BlueprintType)
-struct FKoratMovieSceneUIActionBlendOptionTemplate : public FMovieSceneEvalTemplate {
+struct SS_API FKoratMovieSceneUIActionBlendOptionTemplate final : public FMovieSceneEvalTemplate {
     GENERATED_BODY()
 public:
+    FKoratMovieSceneUIActionBlendOptionTemplate();
+	FKoratMovieSceneUIActionBlendOptionTemplate(const UKoratMovieSceneUIActionBlendOptionSection& Section);
+	
+    virtual void Evaluate(const FMovieSceneEvaluationOperand& Operand,
+                          const FMovieSceneContext& Context,
+                          const FPersistentEvaluationData& PersistentData,
+                          FMovieSceneExecutionTokens& ExecutionTokens) const override;
+    
+    virtual UScriptStruct& GetScriptStructImpl() const override
+    {
+        return *StaticStruct();
+    }
+    
 private:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneBoolChannel OverrideBlendIn;
@@ -21,7 +36,7 @@ private:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneByteChannel BlendInBlendOption;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true, ObjectType="/Script/Engine.CurveFloat", AllowedClasses="/Script/Engine.CurveFloat"))
     FMovieSceneObjectPathChannel BlendInCustomCurve;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -33,7 +48,7 @@ private:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneByteChannel BlendOutBlendOption;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true, ObjectType="/Script/Engine.CurveFloat", AllowedClasses="/Script/Engine.CurveFloat"))
     FMovieSceneObjectPathChannel BlendOutCustomCurve;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -41,8 +56,4 @@ private:
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneBoolChannel EnableAutoBlendOut;
-    
-public:
-    SS_API FKoratMovieSceneUIActionBlendOptionTemplate();
 };
-

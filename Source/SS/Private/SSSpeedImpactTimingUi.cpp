@@ -1,6 +1,7 @@
 #include "SSSpeedImpactTimingUi.h"
 
 USSSpeedImpactTimingUi::USSSpeedImpactTimingUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->DefaultJustTiming = 0.75f;
     this->DefaultJustJudgeLength = 0.10f;
     this->CircleScaleCurve = NULL;

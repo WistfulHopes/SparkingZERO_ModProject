@@ -51,6 +51,9 @@ protected:
     float SaveLastSectionRemainTimeInAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float SaveFootIKAlpha;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDrawDebug;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -73,6 +76,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLastSectionRemainTimeInAction() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetFootIKAlpha() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FName GetComponentTagName();

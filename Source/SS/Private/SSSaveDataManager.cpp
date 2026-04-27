@@ -22,6 +22,7 @@ USSSaveDataManager::USSSaveDataManager() {
     this->bErrorStartFlg = true;
     this->bRestoreFocusErrorEnd = false;
     this->bMainGameSavePermission = false;
+    this->bCheckResizeAndShardingMode = false;
 }
 
 void USSSaveDataManager::StartFileChkSaveData() {

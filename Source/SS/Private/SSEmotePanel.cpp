@@ -1,6 +1,7 @@
 #include "SSEmotePanel.h"
 
 USSEmotePanel::USSEmotePanel() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->EmoteIcon = NULL;
     this->GuideButtonWidgets = NULL;
 }

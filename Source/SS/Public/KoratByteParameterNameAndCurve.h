@@ -1,10 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Channels/MovieSceneChannelData.h"
 #include "Channels/MovieSceneByteChannel.h"
 #include "KoratByteParameterNameAndCurve.generated.h"
 
 USTRUCT(BlueprintType)
-struct FKoratByteParameterNameAndCurve {
+struct SS_API FKoratByteParameterNameAndCurve {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -12,7 +13,4 @@ public:
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneByteChannel ParameterCurve;
-    
-    SS_API FKoratByteParameterNameAndCurve();
 };
-

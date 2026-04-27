@@ -3,7 +3,7 @@
 #include "EKoratBattleDirectingAction.h"
 #include "EKoratBattleDirectingActivate.h"
 #include "EKoratBattleDirectingConditionTargetType.h"
-#include "EKoratValid.h"
+#include "EKoratBattleDirectingInequalitySign2.h"
 #include "KoratAiCommandDataList.h"
 #include "KoratAiTypeDataList.h"
 #include "KoratBGMDataList.h"
@@ -27,6 +27,15 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 TargetCharactersPos;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDpCheck;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 bDpLv;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratBattleDirectingInequalitySign2 DpInequalitySign;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSCharacterSettingData FormChangeCharacter;
@@ -72,43 +81,49 @@ public:
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_TargetType;
+    bool bEditable_TargetType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_TargetCharactersPos;
+    bool bEditable_TargetCharactersPos;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_FormChangeCharacter;
+    bool bEditable_bDpCheck;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_BattleDirectingActivateAction;
+    bool bEditable_FormChangeCharacter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_ActivateNumericalValue;
+    bool bEditable_BattleDirectingActivateAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_CpuThinkingType;
+    bool bEditable_ActivateNumericalValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_UpdateCpuLevel;
+    bool bEditable_CpuThinkingType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_IdName;
+    bool bEditable_UpdateCpuLevel;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_IsEquipItem;
+    bool bEditable_IdName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_EquipItem;
+    bool bEditable_EquipItem;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_Buff;
+    bool bEditable_Buff;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_BattleConversation;
+    bool bEditable_BattleConversation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    EKoratValid bEditable_EventData;
+    bool bEditable_EventData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bEditable_RequestAiCommand;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bEditable_bSkipTarget;
     
 public:
     SS_API FKoratBattleDirectingDetails();

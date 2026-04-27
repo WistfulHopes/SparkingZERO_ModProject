@@ -145,6 +145,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSMenuButton* TextListLeftButton;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<int32> SelectableTableIndexs;
+    
 public:
     USSdramaticEditDirectionDetailUi();
 

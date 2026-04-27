@@ -4,6 +4,7 @@
 #include "EMainMenuListButtonBehaviour.h"
 #include "EMainMenuOnlineCheckMode.h"
 #include "KoratButtonGuideDataList.h"
+#include "KoratDramaticBattleTipsDataList.h"
 #include "SSMainMenuListButtonDialogData.h"
 #include "SSMainMenuListOpenWidgetData.h"
 #include "SSMainMenuListButtonBase.generated.h"
@@ -65,6 +66,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEntryOnline;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratDramaticBattleTipsDataList FirstTipsDataList;
     
     SS_API FSSMainMenuListButtonBase();
 };

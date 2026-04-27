@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "EKoratBattleMemberRule.h"
 #include "ESSReplayDataUIBattleMode.h"
 #include "ESSReplayDataUWinLose.h"
 #include "KoratBattlePlayCharacter.h"
@@ -37,6 +38,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDateTime SaveDate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratBattleMemberRule BattleMemberRule;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString GameVersion;

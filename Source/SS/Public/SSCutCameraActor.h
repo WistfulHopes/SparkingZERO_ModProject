@@ -3,6 +3,7 @@
 #include "CineCameraActor.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/HitResult.h"
+#include "ECameraAoidTerrainType.h"
 #include "ECameraLocatorSocketType.h"
 #include "ECameraLocatorTargetType.h"
 #include "ECameraPhysicalDisparityDecayType.h"
@@ -70,6 +71,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     uint8 CameraSlot;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
+    ECameraAoidTerrainType CameraAoidTerrainType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     ECameraPhysicalDisparityType PhysicalDisparityType;
@@ -224,15 +228,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     float GetRestTimeInStartBlendManual(bool InLookAtTarget, double InWorldTime, double InSequencerStartTime, ASSCutCameraActor* InSrcCamera, bool InCinemaBlendZero);
-    
-    UFUNCTION(BlueprintCallable)
-    float GetPhysicalDisparityTargetWeightAddWidth();
-    
-    UFUNCTION(BlueprintCallable)
-    float GetPhysicalDisparityTargetWeightAddLength();
-    
-    UFUNCTION(BlueprintCallable)
-    float GetPhysicalDisparityTargetWeightAddHeight();
     
     UFUNCTION(BlueprintCallable)
     float GetManualBlendTime(bool InLookAtTarget, FString& OutDebugBlendProfile);

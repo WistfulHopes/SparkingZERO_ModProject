@@ -64,9 +64,6 @@ void USSSoundManager::SetAisacByName(const ESSSoundGroupType InSoundGroupType, c
 void USSSoundManager::Reset() {
 }
 
-void USSSoundManager::ReserveBGM(const FKoratBGMDataList InBGMDataList) {
-}
-
 void USSSoundManager::RemoveAtomCueSheetLoaderActor(const FName& InCueSheetName) {
 }
 
@@ -96,7 +93,7 @@ FKoratSoundHandle USSSoundManager::PlayChangeLabelBGM(const FKoratBGMDataList In
     return FKoratSoundHandle{};
 }
 
-FKoratSoundHandle USSSoundManager::PlayBGM(const FKoratBGMDataList InBGMDataList, const float InFadeInTime, const float InFadeOutTime, const bool IsCrossFade, const bool IsOverwrite, const ESSAnimeSongsModeWhenStartBroadCast InAnimeSongsModeWhenStartBroadCast, const FKoratBGMDataList InOriginalBGMDataList) {
+FKoratSoundHandle USSSoundManager::PlayBGM(const FKoratBGMDataList InBGMDataList, const float InFadeInTime, const float InFadeOutTime, const bool IsCrossFade, const bool IsOverwrite, const ESSAnimeSongsModeWhenStartBroadCast InAnimeSongsModeWhenStartBroadCast, const FKoratBGMDataList InOriginalBGMDataList, const bool IsChangeBattleBGM, const bool InRecursive) {
     return FKoratSoundHandle{};
 }
 

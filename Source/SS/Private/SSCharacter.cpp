@@ -12,6 +12,8 @@
 #include "Templates/SubclassOf.h"
 
 ASSCharacter::ASSCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USSCharacterCapsuleComponent>(TEXT("CollisionCylinder")).SetDefaultSubobjectClass<UKoratCharacterMovementComponent>(TEXT("CharMoveComp"))) {
+    const FProperty* p_CapsuleComponent = GetClass()->FindPropertyByName("CapsuleComponent");
+    (*p_CapsuleComponent->ContainerPtrToValuePtr<UCapsuleComponent*>(this)) = (UCapsuleComponent*)RootComponent;
     this->Random = CreateDefaultSubobject<USSRandom>(TEXT("CharacterRandom"));
     this->BulletRandom = CreateDefaultSubobject<USSRandom>(TEXT("BulletRandom"));
     this->LocomotionRandom = CreateDefaultSubobject<USSRandom>(TEXT("LocomotionRandom"));
@@ -149,6 +151,10 @@ ASSCharacter::ASSCharacter(const FObjectInitializer& ObjectInitializer) : Super(
     this->ForceFeedbackComponent = CreateDefaultSubobject<UForceFeedbackComponent>(TEXT("ForceFeedbackComponent"));
     this->bSetupCharacterDataList = false;
     this->MontageComponent = NULL;
+    this->FootIKAlphaGoal = 1.00f;
+    this->FootIKAlphaDulation = 0.00f;
+    this->FootIKAlphaNow = 1.00f;
+    this->AnimInstSwitchVisibility = NULL;
     this->AnimInstFootIK = NULL;
     this->AnimInstLookat = NULL;
     this->bHiddenInGameCamera = false;
@@ -173,10 +179,14 @@ ASSCharacter::ASSCharacter(const FObjectInitializer& ObjectInitializer) : Super(
     this->bHiddenCharacterEffects = false;
     this->bIsDemo = false;
     this->bCameraPlayerSafeLocaionUpdated = false;
+    this->bCameraPlayerSafeLocaionUpdatedEnemy = false;
+    this->bCameraPlayerSafeLocaion2DUpdated = false;
     this->CameraDragonHomingElapsedTime = 0.00f;
     this->CameraDragonHomingElapsedTimeMax = 0.25f;
-    this->CameraDragonHomingFarScale = 10.00f;
-    this->CameraDragonHomingNearScale = 8.00f;
+    this->CameraDragonHomingFarScalePlayer = 10.00f;
+    this->CameraDragonHomingNearScalePlayer = 8.00f;
+    this->CameraDragonHomingFarScaleEnemy = 20.00f;
+    this->CameraDragonHomingNearScaleEnemy = 19.00f;
     this->CurrentLocomotionDetailStatus = EKoratCharacterLocomotionDetailStatus::IdleMove;
     this->PreActionCategory = EKoratActionCategoryType::WaitOrMove;
     this->PreActionSubCategory = EKoratActionSubCategoryType::None;
@@ -193,6 +203,7 @@ ASSCharacter::ASSCharacter(const FObjectInitializer& ObjectInitializer) : Super(
     this->WaitingCostumeDamage = 0;
     this->CostumeScratchLv = 0;
     this->SetCustomTimeDilationReason = EKoratSetCustomTimeDilationReason::Combine_EffectAffect;
+    this->bUpdateBattleStateWithWorldTime = false;
     this->HPGaugeValue = 0.00f;
     this->SPGaugeValue = 0.00f;
     this->bCanAutoRecoverSpGauge = true;
@@ -208,6 +219,7 @@ ASSCharacter::ASSCharacter(const FObjectInitializer& ObjectInitializer) : Super(
     this->bBlastCombo = false;
     this->BlastStockCount = 0;
     this->NextSkillGaugeGainHP = 0.00f;
+    this->bDoneLastOneHPSkillGaugeGain = false;
     this->bPrepareConsumeSkillStockCost = false;
     this->PrepareConsumeSkillSlot = EKoratSkillSlot::Slot1;
     this->BoostSPGaugeValue = 0.00f;
@@ -231,11 +243,14 @@ ASSCharacter::ASSCharacter(const FObjectInitializer& ObjectInitializer) : Super(
     this->CharacterChangeRequest = -2;
     this->bForceChangeByBattleDirectingRequest = false;
     this->SafeSpawnCharacterChangeMode = EKoratCharacterChangeMode::None;
+    this->StyleChangePowerupCount = 0;
     this->CharacterHUDStatusReq = EKoratCharacterHUDStatusReq::None;
     this->bCharacterHUDTickEnable = true;
     this->bDemoStopHUDDisable = false;
     this->bDemoStopCharacterDisable = false;
     this->bDemoHideBullets = false;
+    this->bBlastImpactPreparation = false;
+    this->bDisableBlastImpactPreparation = false;
     this->TargetPawn = NULL;
     this->LastDamageAttackType = EKoratActionAttackType::None;
     this->SuperAscertainSuccessAttackType = EKoratActionAttackType::None;
@@ -397,6 +412,7 @@ ASSCharacter::ASSCharacter(const FObjectInitializer& ObjectInitializer) : Super(
     this->SpeedImpactOneBlowJudgeTime = 0.20f;
     this->SpeedImpactRapidComboJudgeTime = 0.36f;
     this->bSpeedImpactForcedWinner = false;
+    this->SpeedImpactStartBlast = EKoratBlastSlotType::None;
     this->BlastImpactValueTotal = 0.00f;
     this->BlastImpactAttackPower = 0.00f;
     this->BlastImpactValue = 0.50f;
@@ -432,12 +448,14 @@ ASSCharacter::ASSCharacter(const FObjectInitializer& ObjectInitializer) : Super(
     this->ReferenceLipsAnalyzer = NULL;
     this->FacialControlRig = NULL;
     this->bIsFinishDemo = false;
+    this->bIsFinishDemoThisAction = false;
+    this->bIsCalledFinishDemoThisAction = false;
     this->bIsChangeHiddenCharacter = false;
     this->bIsSecondStartAppealCharacter = false;
     this->bIsSecondStartAppealCharacterWhenDestroyEffect = false;
     this->SpawnedLevelSequenceActor = NULL;
-    this->CapsulePushingComponent->SetupAttachment(RootComponent);
     this->ForceFeedbackComponent->SetupAttachment(RootComponent);
+    this->CapsulePushingComponent->SetupAttachment(RootComponent);
 }
 
 
@@ -564,6 +582,9 @@ void ASSCharacter::StartCheckBlastBoostOnCharacter() {
 void ASSCharacter::StartChangeTargetCharacter() {
 }
 
+void ASSCharacter::StartBlastImpactPreparationIfNeeded(const FKoratActionDataList& InAction) {
+}
+
 void ASSCharacter::StartBlastGaugeRecovery() {
 }
 
@@ -650,6 +671,18 @@ void ASSCharacter::SetSparkingGaugeMax() {
 }
 
 void ASSCharacter::SetSafeSpawnAreaSize(EKoratSafeSpawnAreaSize InAreaSize) {
+}
+
+void ASSCharacter::SetReactionFastRecoveryInputHitStop(const bool InReactionFastRecoveryInputHitStop) {
+}
+
+void ASSCharacter::SetReactionFastRecoveryInputCount(const int32 InInputCount) {
+}
+
+void ASSCharacter::SetReactionFastRecoveryInput(const bool InReactionFastRecoveryInput) {
+}
+
+void ASSCharacter::SetReactionFastRecovery(const bool InReactionFastRecovery) {
 }
 
 void ASSCharacter::SetPushingCollisionEnable(bool bEnable) {
@@ -1043,6 +1076,9 @@ void ASSCharacter::ResetJumpRushBulletShotCount() {
 void ASSCharacter::ResetJumpFlag() {
 }
 
+void ASSCharacter::ResetHitCount() {
+}
+
 void ASSCharacter::ResetHitBulletCount() {
 }
 
@@ -1065,6 +1101,9 @@ void ASSCharacter::ResetDashRushBulletShotCount() {
 }
 
 void ASSCharacter::ResetCounterCondition() {
+}
+
+void ASSCharacter::ResetBulletControllerCommand() {
 }
 
 void ASSCharacter::ResetArmorLevel(UObject* InObject) {
@@ -1175,7 +1214,7 @@ void ASSCharacter::OnEndMontageLevelSequence_Implementation(FKoratActionDataList
 
 
 
-void ASSCharacter::OnEndAction(const FKoratActionDataList& InEndAction) {
+void ASSCharacter::OnEndAction(const FKoratActionDataList& InEndAction, const FKoratActionDataList& InNextAction) {
 }
 
 
@@ -1293,6 +1332,14 @@ bool ASSCharacter::IsUpDownMoving() {
     return false;
 }
 
+bool ASSCharacter::IsUncontrollable() const {
+    return false;
+}
+
+bool ASSCharacter::IsUnconsciousAndNotPossibleRevengeCounterNumb() const {
+    return false;
+}
+
 bool ASSCharacter::IsUnconscious() const {
     return false;
 }
@@ -1326,6 +1373,10 @@ bool ASSCharacter::IsThrowAction2P(FKoratActionDataList InAction) const {
 }
 
 bool ASSCharacter::IsThrowAction1P(FKoratActionDataList InAction) const {
+    return false;
+}
+
+bool ASSCharacter::IsThereCombativesParameter(const FKoratActionDataList InAction) const {
     return false;
 }
 
@@ -1433,6 +1484,18 @@ bool ASSCharacter::IsReceiveSelfDamage(const FKoratActionDataList& InAction) {
     return false;
 }
 
+bool ASSCharacter::IsReactionFastRecoveryInputHitStop() const {
+    return false;
+}
+
+bool ASSCharacter::IsReactionFastRecoveryInput() const {
+    return false;
+}
+
+bool ASSCharacter::IsReactionFastRecovery() const {
+    return false;
+}
+
 bool ASSCharacter::IsPursuitPossible(const EKoratPursuitType InPursuitType) const {
     return false;
 }
@@ -1453,11 +1516,23 @@ bool ASSCharacter::IsPossibleSparkingCharge() const {
     return false;
 }
 
+bool ASSCharacter::IsPossibleRevengeCounterNumb() const {
+    return false;
+}
+
 bool ASSCharacter::IsPlayAddtiveReactionAction(const FKoratActionDataList& InAction) const {
     return false;
 }
 
+bool ASSCharacter::IsParryDerived() const {
+    return false;
+}
+
 bool ASSCharacter::IsNumbState() const {
+    return false;
+}
+
+bool ASSCharacter::IsNoAutoGuard(const FKoratActionDataList InAction) const {
     return false;
 }
 
@@ -1980,6 +2055,9 @@ void ASSCharacter::InheritSettings(const ASSCharacter* InFrom) {
 void ASSCharacter::InheritDebugSettings(const ASSCharacter* InFrom) {
 }
 
+void ASSCharacter::InheritBodyChangeVoiceData(ASSCharacter* InBefore) {
+}
+
 
 
 
@@ -2120,7 +2198,7 @@ float ASSCharacter::GetStunReactionInputRecoverySpeed() const {
     return 0.0f;
 }
 
-void ASSCharacter::GetStepsParameter(FKoratCharacterDataStepParameter& Front, FKoratCharacterDataStepParameter& FlyBackIN, FKoratCharacterDataStepParameter& FlyBackOT, FKoratCharacterDataStepParameter& FlyLeftRightIN, FKoratCharacterDataStepParameter& FlyLeftRightOT, FKoratCharacterDataStepParameter& GroundBackIN, FKoratCharacterDataStepParameter& GroundBackOT, FKoratCharacterDataStepParameter& GroundLeftRightIN, FKoratCharacterDataStepParameter& GroundLeftRightOT, FKoratCharacterDataStepParameter& LongFrontIN, FKoratCharacterDataStepParameter& LongFrontOT, FKoratCharacterDataStepParameter& LongBackIN, FKoratCharacterDataStepParameter& LongBackOT, FKoratCharacterDataShortDashParameter& ShortDash) const {
+void ASSCharacter::GetStepsParameter(FKoratCharacterDataStepParameter& Front, FKoratCharacterDataStepParameter& FlyBackIN, FKoratCharacterDataStepParameter& FlyBackOT, FKoratCharacterDataStepParameter& FlyLeftRightIN, FKoratCharacterDataStepParameter& FlyLeftRightOT, FKoratCharacterDataStepParameter& GroundBackIN, FKoratCharacterDataStepParameter& GroundBackOT, FKoratCharacterDataStepParameter& GroundLeftRightIN, FKoratCharacterDataStepParameter& GroundLeftRightOT, FKoratCharacterDataStepParameter& LongFrontIN, FKoratCharacterDataStepParameter& LongFrontOT, FKoratCharacterDataStepParameter& LongBackIN, FKoratCharacterDataStepParameter& LongBackOT, FKoratCharacterDataShortDashParameter& ShortDash, FKoratCharacterDataShortDashParameter& CancelShortDash) const {
 }
 
 float ASSCharacter::GetSPGaugeValue() const {
@@ -2259,6 +2337,10 @@ float ASSCharacter::GetReactionSplitHighBorder() const {
     return 0.0f;
 }
 
+int32 ASSCharacter::GetReactionFastRecoveryInputCount() const {
+    return 0;
+}
+
 bool ASSCharacter::GetPushingCollisionEnable() {
     return false;
 }
@@ -2279,6 +2361,10 @@ void ASSCharacter::GetPreAction(FKoratActionDataList& OutAction) const {
 }
 
 float ASSCharacter::GetPowerImpactValue() const {
+    return 0.0f;
+}
+
+float ASSCharacter::GetPossibleAscertainAngle() const {
     return 0.0f;
 }
 
@@ -2334,6 +2420,9 @@ float ASSCharacter::GetMovementParameterVanishingTraceShiftDistance() const {
     return 0.0f;
 }
 
+float ASSCharacter::GetMovementParameterUpDownSpeed() const {
+    return 0.0f;
+}
 TEnumAsByte<EMovementMode> ASSCharacter::GetMovementParameterStartMovementMode() const {
     return MOVE_None;
 }
@@ -2378,6 +2467,9 @@ float ASSCharacter::GetMovementParameterNearWalkSpeed() const {
     return 0.0f;
 }
 
+float ASSCharacter::GetMovementParameterNearUpDownSpeed() const {
+    return 0.0f;
+}
 float ASSCharacter::GetMovementParameterNearSpeed() const {
     return 0.0f;
 }
@@ -2919,6 +3011,10 @@ float ASSCharacter::GetCurrentLevelSequencePosition() const {
 }
 
 
+int32 ASSCharacter::GetCurrentBlastID() const {
+    return 0;
+}
+
 float ASSCharacter::GetCurrentBlastChargeTime() const {
     return 0.0f;
 }
@@ -3136,8 +3232,14 @@ bool ASSCharacter::GetCannotBlastCombo() const {
     return false;
 }
 
+void ASSCharacter::GetCancelShortDashParameter(FKoratCharacterDataShortDashParameter& OutCancelShortDash) const {
+}
 float ASSCharacter::GetBulletRapidFireNum() const {
     return 0.0f;
+}
+
+int32 ASSCharacter::GetBulletCountWithoutInvalidatedBullet() const {
+    return 0;
 }
 
 int32 ASSCharacter::GetBoostCount() const {
@@ -3568,6 +3670,9 @@ void ASSCharacter::ForceFinishEarlyHD() {
 void ASSCharacter::FlushAnimEvent() {
 }
 
+void ASSCharacter::FinishProgrammableDitherDuringDemo() {
+}
+
 void ASSCharacter::FinishDemonstration() {
 }
 
@@ -3590,7 +3695,7 @@ bool ASSCharacter::ExecNative() {
 void ASSCharacter::EndOpportunitySpeedImpact() {
 }
 
-void ASSCharacter::EndForcedSparkingDesired() {
+void ASSCharacter::EndForcedSparkingDesired(bool bInDisableSparkingCountUp) {
 }
 
 void ASSCharacter::EndCheckBlastBoostOnCharacter() {
@@ -3689,13 +3794,13 @@ void ASSCharacter::DebugBlastImpactClear() {
 void ASSCharacter::DebugBlastImpact() {
 }
 
-void ASSCharacter::DamageSP(const float InDamage) {
+void ASSCharacter::DamageSP(const float InDamage, const bool bInDisableStun) {
 }
 
 void ASSCharacter::DamageOverTimeSP(float InValue, float InTime) {
 }
 
-float ASSCharacter::DamageHP(const float InDamage, const bool bInCanKnockDown, const ASSCharacter* InDamageSourceCharacter) {
+float ASSCharacter::DamageHP(const float InDamage, const bool bInCanKnockDown, const ASSCharacter* InDamageSourceCharacter, const bool InGuardSuccess) {
     return 0.0f;
 }
 
@@ -3798,6 +3903,9 @@ void ASSCharacter::ClearChangedStates() {
 void ASSCharacter::ClearBuffWithTag(const FName& InTag) {
 }
 
+void ASSCharacter::ClearBuffOnDramaticFinish() {
+}
+
 void ASSCharacter::ClearBoneFinalized() {
 }
 
@@ -3805,6 +3913,9 @@ void ASSCharacter::ClearBattleDirectingFormChangeForbidHUD() {
 }
 
 void ASSCharacter::ClearBattleDirectingFormChangeForbid() {
+}
+
+void ASSCharacter::ClampPositionToMap() {
 }
 
 bool ASSCharacter::CheckSphereSweepHitMap(const FVector InStartPos, const FVector InEndPos, const float InSize, FHitResult& OutResult) {
@@ -3879,6 +3990,10 @@ bool ASSCharacter::CheckBlastStockCosumable(int32 InBlastCost) const {
 }
 
 bool ASSCharacter::CheckBlastDemoBranchSpDeriveType_Implementation(const FSSBlastDemoBranchCondition& InCondition) {
+    return false;
+}
+
+bool ASSCharacter::CheckAnyTargetLocationsWithinAngle(const ASSCharacter* InOpponentCharacter, FVector InFowardDirection, float InAngleDeg, bool bInIgnoreHeight) const {
     return false;
 }
 
@@ -4004,5 +4119,3 @@ void ASSCharacter::AddActionBuff(const FKoratActionDataList& InAction, int32 InB
 
 void ASSCharacter::AddAcceptedInputsType(const TArray<EBattlePracticeAcceptedInputsType> InTypes) {
 }
-
-

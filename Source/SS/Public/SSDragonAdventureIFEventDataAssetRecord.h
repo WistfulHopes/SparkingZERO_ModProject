@@ -54,10 +54,16 @@ public:
     bool bUnlockEventBlock;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<int32> IgnoreUnlockEventBlockIndex;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsBadEvend;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName BadEvendRetryEventName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsIgnoreChangedDifficultyLevel;
     
     SS_API FSSDragonAdventureIFEventDataAssetRecord();
 };

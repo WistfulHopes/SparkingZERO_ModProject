@@ -1,6 +1,7 @@
 #include "SSDramaticRightWindowSceneUi.h"
 
 USSDramaticRightWindowSceneUi::USSDramaticRightWindowSceneUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->bIsEditorMode = true;
     this->DecideNum = 0;
     this->NowDecideStatus = EKoratDramaticSceneListDecideStatus::None;

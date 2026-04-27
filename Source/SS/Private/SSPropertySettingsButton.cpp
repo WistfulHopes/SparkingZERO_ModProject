@@ -1,6 +1,7 @@
 #include "SSPropertySettingsButton.h"
 
 USSPropertySettingsButton::USSPropertySettingsButton() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->Label = NULL;
 }
 

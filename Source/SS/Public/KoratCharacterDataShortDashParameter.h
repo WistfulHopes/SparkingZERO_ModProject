@@ -38,6 +38,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SpCost;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UCurveFloat* DirectionSpeedRatioCurve;
+    
     SS_API FKoratCharacterDataShortDashParameter();
 };
 

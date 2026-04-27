@@ -6,6 +6,7 @@
 #include "KoratPostProcessAgentManager.generated.h"
 
 class AKoratPostProcessAgentManagerTickingActor;
+class APostProcessVolume;
 class UCurveFloat;
 class UKoratPostProcessAgentChameleonManager;
 class UKoratPostProcessAgentVolumeManager;
@@ -26,6 +27,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UCurveFloat* clossFadeCurve;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TWeakObjectPtr<APostProcessVolume> OverridePostProcessForHDR;
     
 public:
     UKoratPostProcessAgentManager();

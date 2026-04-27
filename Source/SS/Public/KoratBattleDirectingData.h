@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EKoratBattleDamageCorrection.h"
 #include "EKoratBattleFormat.h"
 #include "EKoratBattleMemberRule.h"
 #include "EKoratBattleMenu.h"
@@ -34,6 +35,9 @@ public:
     FKoratBGMDataList BattleBGM;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratBGMDataList DefaultBattleBGM;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnhanceditems;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -43,6 +47,12 @@ public:
     bool bNoMartialArts;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratBattleDamageCorrection DamageCorrection;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 MaxDP;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratBattleTeamDirectingData> TeamSetting;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -50,6 +60,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bSearchOffStart;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDisableCharacterSilhouetteInZSearchOff;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratBattleCpuData CpuData;

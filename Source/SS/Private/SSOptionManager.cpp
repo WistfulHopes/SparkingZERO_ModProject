@@ -1,6 +1,7 @@
 #include "SSOptionManager.h"
 
 USSOptionManager::USSOptionManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSOptionManager::SetTabControlLock(bool bInIsLock) {

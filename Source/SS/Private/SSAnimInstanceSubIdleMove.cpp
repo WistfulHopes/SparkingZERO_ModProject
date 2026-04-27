@@ -57,6 +57,7 @@ USSAnimInstanceSubIdleMove::USSAnimInstanceSubIdleMove() {
     this->BodyPitchAngle_ = 0.00f;
     this->BodyPitchEnabled_ = false;
     this->IsDownBlendSkip_ = false;
+    this->IsMovingAction_ = false;
 }
 
 bool USSAnimInstanceSubIdleMove::IsGroundWalkingOnCharacter() const {

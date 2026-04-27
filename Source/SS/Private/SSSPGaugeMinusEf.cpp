@@ -1,6 +1,7 @@
 #include "SSSPGaugeMinusEf.h"
 
 USSSPGaugeMinusEf::USSSPGaugeMinusEf() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 

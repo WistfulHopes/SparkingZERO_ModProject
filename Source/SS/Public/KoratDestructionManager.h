@@ -8,10 +8,16 @@
 #include "KoratDestructionManager.generated.h"
 
 class AFieldSystemActor;
+class AGeometryCollectionActor;
 
 UCLASS(Blueprintable)
 class UKoratDestructionManager : public UObject {
     GENERATED_BODY()
+public:
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TArray<AGeometryCollectionActor*> ActorList;
+    
 public:
     UKoratDestructionManager();
 

@@ -21,7 +21,7 @@ public:
     EAlphaBlendOption BlendInBlendOption;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UObject* BlendInCustomCurve;
+    TObjectPtr<UCurveFloat> BlendInCustomCurve;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool OverrideBlendOut;
@@ -33,7 +33,7 @@ public:
     EAlphaBlendOption BlendOutBlendOption;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UObject* BlendOutCustomCurve;
+    TObjectPtr<UCurveFloat> BlendOutCustomCurve;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BlendOutTriggerTime;

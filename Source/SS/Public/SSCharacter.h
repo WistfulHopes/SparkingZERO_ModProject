@@ -146,6 +146,7 @@
 #include "OnActivatedCharacterDelegate.h"
 #include "OnCharacterBattleAttackHitDelegate.h"
 #include "OnCharacterBattleDamageReceivedDelegate.h"
+#include "OnCharacterBattleGuardBreakDelegate.h"
 #include "OnCharacterBattleKnockDownDelegate.h"
 #include "OnCharacterBattleRecoverReceivedDelegate.h"
 #include "OnCharacterBattleSPDownDelegate.h"
@@ -313,6 +314,7 @@ class USSCharacterSocketComponent;
 class USSCharacterStencilComponent;
 class USSCharacterStencilParams;
 class USSCharacterSteps;
+class USSCharacterSwitchVisibilityAnimInstance;
 class USSCharacterTrail;
 class USSCharacterZBurstDash;
 class USSLevelSequencePlayer;
@@ -501,7 +503,7 @@ public:
     FOnCharacterBattleAttackHit OnCharacterBattleAttackHit;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FOnCharacterBattleDamageReceived OnCharacterBattleGuardBreak;
+    FOnCharacterBattleGuardBreak OnCharacterBattleGuardBreak;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnCharacterBattleRecoverReceived OnCharacterBattleRecoverReceived;
@@ -866,6 +868,18 @@ protected:
     FCharacterFootIK CharacterFootIK;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    float FootIKAlphaGoal;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    float FootIKAlphaDulation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    float FootIKAlphaNow;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USSCharacterSwitchVisibilityAnimInstance* AnimInstSwitchVisibility;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USSCharacterInverseKinematicsAnimInstance* AnimInstFootIK;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -875,7 +889,10 @@ protected:
     USSCharacterSimpleAimInstance* AnimInstLookat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    FKoratCharacterDataList BodyChengedCharacterDataList;
+    FKoratCharacterDataList BodyChangedCharacterDataList;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FKoratCharacterCostumeDataList BodyChangedCostumeDataList;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<USSCharacterAntiBulletComponent> AntiBulletComponent;
@@ -954,16 +971,40 @@ public:
     FRotator CameraPlayerSafeRotation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bCameraPlayerSafeLocaionUpdatedEnemy;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FVector CameraPlayerSafeLocaionLocalEnemy;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FRotator CameraPlayerSafeRotationEnemy;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bCameraPlayerSafeLocaion2DUpdated;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FVector CameraPlayerSafeLocaionLocal2D;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FRotator CameraPlayerSafeRotation2D;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float CameraDragonHomingElapsedTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float CameraDragonHomingElapsedTimeMax;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    float CameraDragonHomingFarScale;
+    float CameraDragonHomingFarScalePlayer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    float CameraDragonHomingNearScale;
+    float CameraDragonHomingNearScalePlayer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    float CameraDragonHomingFarScaleEnemy;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    float CameraDragonHomingNearScaleEnemy;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -977,6 +1018,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FKoratActionDataList DeleteEffectActionAtDestroySequenceActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratActionDataList NotifiedStartAction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratActionDataList NotifiedStartActionOfPreReplace;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EKoratActionCategoryType PreActionCategory;
@@ -1035,6 +1082,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EKoratSetCustomTimeDilationReason SetCustomTimeDilationReason;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bUpdateBattleStateWithWorldTime;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HPGaugeValue;
     
@@ -1082,6 +1132,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float NextSkillGaugeGainHP;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDoneLastOneHPSkillGaugeGain;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bPrepareConsumeSkillStockCost;
@@ -1153,6 +1206,9 @@ protected:
     EKoratCharacterChangeMode SafeSpawnCharacterChangeMode;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 StyleChangePowerupCount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EKoratCharacterHUDStatusReq CharacterHUDStatusReq;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -1166,6 +1222,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDemoHideBullets;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bBlastImpactPreparation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDisableBlastImpactPreparation;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     APawn* TargetPawn;
@@ -1727,6 +1789,9 @@ protected:
     bool bSpeedImpactForcedWinner;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratBlastSlotType SpeedImpactStartBlast;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BlastImpactValueTotal;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -1848,6 +1913,15 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bIsFinishDemo;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bIsFinishDemoThisAction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    bool bIsCalledFinishDemoThisAction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FKoratActionDataList FinishDemoNotifyAction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bIsChangeHiddenCharacter;
@@ -2033,6 +2107,9 @@ public:
     void StartChangeTargetCharacter();
     
     UFUNCTION(BlueprintCallable)
+    void StartBlastImpactPreparationIfNeeded(const FKoratActionDataList& InAction);
+    
+    UFUNCTION(BlueprintCallable)
     void StartBlastGaugeRecovery();
     
     UFUNCTION(BlueprintCallable)
@@ -2121,6 +2198,18 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetSafeSpawnAreaSize(EKoratSafeSpawnAreaSize InAreaSize);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetReactionFastRecoveryInputHitStop(const bool InReactionFastRecoveryInputHitStop);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetReactionFastRecoveryInputCount(const int32 InInputCount);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetReactionFastRecoveryInput(const bool InReactionFastRecoveryInput);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetReactionFastRecovery(const bool InReactionFastRecovery);
     
     UFUNCTION(BlueprintCallable)
     void SetPushingCollisionEnable(bool bEnable);
@@ -2517,6 +2606,9 @@ public:
     void ResetJumpFlag();
     
     UFUNCTION(BlueprintCallable)
+    void ResetHitCount();
+    
+    UFUNCTION(BlueprintCallable)
     void ResetHitBulletCount();
     
     UFUNCTION(BlueprintCallable)
@@ -2539,6 +2631,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ResetCounterCondition();
+    
+    UFUNCTION(BlueprintCallable)
+    void ResetBulletControllerCommand();
     
     UFUNCTION(BlueprintCallable)
     void ResetArmorLevel(UObject* InObject);
@@ -2693,7 +2788,7 @@ public:
     void OnEndDemo();
     
     UFUNCTION(BlueprintCallable)
-    void OnEndAction(const FKoratActionDataList& InEndAction);
+    void OnEndAction(const FKoratActionDataList& InEndAction, const FKoratActionDataList& InNextAction);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnCharacterTookDamage(const FKoratActionDataList& InReactionAction, EKoratReactionDirection InReactionDirection, const FKoratAddtiveReactionParameter& InAddtiveReactionParameter);
@@ -2708,7 +2803,7 @@ public:
     void OnCharacterGaveOffset(const FKoratHitStopData& InHitStopData, const FKoratHitEffectAfterHitStop& InHitEffectAfterHitStop, const ESituationOfOpponentWhenAttackHit InOpponentHitSituation);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnCharacterGaveDamage(EKoratCharacterMovementTransition InMovementTransition, const bool bInHoming, const FKoratHitStopData& InHitStopData, const FKoratHitEffectAfterHitStop& InHitEffectAfterHitStop, const bool bInBlownAttack, const EKoratActionAttackType InAttackType, const ESituationOfOpponentWhenAttackHit InOpponentHitSituation, const FKoratActionDataList& InAttackAction);
+    void OnCharacterGaveDamage(EKoratCharacterMovementTransition InMovementTransition, const bool bInHoming, const FKoratHitStopData& InHitStopData, const FKoratHitEffectAfterHitStop& InHitEffectAfterHitStop, const bool bInBlownAttack, const EKoratActionAttackType InAttackType, const ESituationOfOpponentWhenAttackHit InOpponentHitSituation, const FKoratActionDataList& InAttackAction, const FKoratActionDataList& InReactionActionOfNoEndured);
     
     UFUNCTION(BlueprintCallable)
     void OnChangeCurrentAction(const FKoratActionDataList& InAction);
@@ -2824,6 +2919,12 @@ public:
     bool IsUpDownMoving();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsUncontrollable() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsUnconsciousAndNotPossibleRevengeCounterNumb() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUnconscious() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -2849,6 +2950,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsThrowAction1P(FKoratActionDataList InAction) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsThereCombativesParameter(const FKoratActionDataList InAction) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTargetRepelStopAction() const;
@@ -2929,6 +3033,15 @@ public:
     bool IsReceiveSelfDamage(const FKoratActionDataList& InAction);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsReactionFastRecoveryInputHitStop() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsReactionFastRecoveryInput() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsReactionFastRecovery() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPursuitPossible(const EKoratPursuitType InPursuitType) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -2944,10 +3057,19 @@ public:
     bool IsPossibleSparkingCharge() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsPossibleRevengeCounterNumb() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlayAddtiveReactionAction(const FKoratActionDataList& InAction) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsParryDerived() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsNumbState() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsNoAutoGuard(const FKoratActionDataList InAction) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsNearModeOnCharacter() const;
@@ -3358,6 +3480,9 @@ public:
     UFUNCTION(BlueprintCallable)
     void InheritDebugSettings(const ASSCharacter* InFrom);
     
+    UFUNCTION(BlueprintCallable)
+    void InheritBodyChangeVoiceData(ASSCharacter* InBefore);
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void HighSpeedMovementOmenToAppear(const EKoratFreeTimelineType TimeLineType);
     
@@ -3479,8 +3604,7 @@ public:
     float GetStunReactionInputRecoverySpeed() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    void GetStepsParameter(FKoratCharacterDataStepParameter& Front, FKoratCharacterDataStepParameter& FlyBackIN, FKoratCharacterDataStepParameter& FlyBackOT, FKoratCharacterDataStepParameter& FlyLeftRightIN, FKoratCharacterDataStepParameter& FlyLeftRightOT, FKoratCharacterDataStepParameter& GroundBackIN, FKoratCharacterDataStepParameter& GroundBackOT, FKoratCharacterDataStepParameter& GroundLeftRightIN, FKoratCharacterDataStepParameter& GroundLeftRightOT, FKoratCharacterDataStepParameter& LongFrontIN, FKoratCharacterDataStepParameter& LongFrontOT, FKoratCharacterDataStepParameter& LongBackIN, FKoratCharacterDataStepParameter& LongBackOT, FKoratCharacterDataShortDashParameter& ShortDash) const;
-    
+    void GetStepsParameter(FKoratCharacterDataStepParameter& Front, FKoratCharacterDataStepParameter& FlyBackIN, FKoratCharacterDataStepParameter& FlyBackOT, FKoratCharacterDataStepParameter& FlyLeftRightIN, FKoratCharacterDataStepParameter& FlyLeftRightOT, FKoratCharacterDataStepParameter& GroundBackIN, FKoratCharacterDataStepParameter& GroundBackOT, FKoratCharacterDataStepParameter& GroundLeftRightIN, FKoratCharacterDataStepParameter& GroundLeftRightOT, FKoratCharacterDataStepParameter& LongFrontIN, FKoratCharacterDataStepParameter& LongFrontOT, FKoratCharacterDataStepParameter& LongBackIN, FKoratCharacterDataStepParameter& LongBackOT, FKoratCharacterDataShortDashParameter& ShortDash, FKoratCharacterDataShortDashParameter& CancelShortDash) const;    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSPGaugeValue() const;
     
@@ -3594,6 +3718,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetReactionSplitHighBorder() const;
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetReactionFastRecoveryInputCount() const;
+    
     UFUNCTION(BlueprintCallable)
     bool GetPushingCollisionEnable();
     
@@ -3611,6 +3738,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPowerImpactValue() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetPossibleAscertainAngle() const;
     
     UFUNCTION(BlueprintCallable)
     FKoratPlayerStartDataList GetPlayerStartKey() const;
@@ -3652,6 +3782,9 @@ public:
     float GetMovementParameterVanishingTraceShiftDistance() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetMovementParameterUpDownSpeed() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TEnumAsByte<EMovementMode> GetMovementParameterStartMovementMode() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -3683,6 +3816,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMovementParameterNearWalkSpeed() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetMovementParameterNearUpDownSpeed() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMovementParameterNearSpeed() const;
@@ -4113,6 +4249,9 @@ public:
     FKoratBlowReactionBrakeParameter GetCurrentHitBackBlowBrakeParameter();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetCurrentBlastID() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentBlastChargeTime() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -4281,7 +4420,13 @@ public:
     bool GetCannotBlastCombo() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    void GetCancelShortDashParameter(FKoratCharacterDataShortDashParameter& OutCancelShortDash) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBulletRapidFireNum() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetBulletCountWithoutInvalidatedBullet() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetBoostCount() const;
@@ -4623,6 +4768,9 @@ public:
     void FlushAnimEvent();
     
     UFUNCTION(BlueprintCallable)
+    void FinishProgrammableDitherDuringDemo();
+    
+    UFUNCTION(BlueprintCallable)
     void FinishDemonstration();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -4649,7 +4797,7 @@ public:
     void EndOpportunitySpeedImpact();
     
     UFUNCTION(BlueprintCallable)
-    void EndForcedSparkingDesired();
+    void EndForcedSparkingDesired(bool bInDisableSparkingCountUp);
     
     UFUNCTION(BlueprintCallable)
     void EndCheckBlastBoostOnCharacter();
@@ -4760,13 +4908,13 @@ public:
     void DebugBlastImpact();
     
     UFUNCTION(BlueprintCallable)
-    void DamageSP(const float InDamage);
+    void DamageSP(const float InDamage, const bool bInDisableStun);
     
     UFUNCTION(BlueprintCallable)
     void DamageOverTimeSP(float InValue, float InTime);
     
     UFUNCTION(BlueprintCallable)
-    float DamageHP(const float InDamage, const bool bInCanKnockDown, const ASSCharacter* InDamageSourceCharacter);
+    float DamageHP(const float InDamage, const bool bInCanKnockDown, const ASSCharacter* InDamageSourceCharacter, const bool InGuardSuccess);
     
     UFUNCTION(BlueprintCallable)
     void CreateRequestAnimData(const FKoratActionDataList InAction, int32 InAnimIndex, const EKoratAnimType InAnimType, const EKoratPlayableAnimType InPlayableAnimType, bool bInSoonStart, bool bInTurn, bool bInCancelableOnly, FName InTurningSection, FKoratRequestAnimData& OutRequestAnimData, EKoratBranch& OutResult);
@@ -4865,6 +5013,9 @@ public:
     void ClearBuffWithTag(const FName& InTag);
     
     UFUNCTION(BlueprintCallable)
+    void ClearBuffOnDramaticFinish();
+    
+    UFUNCTION(BlueprintCallable)
     void ClearBoneFinalized();
     
     UFUNCTION(BlueprintCallable)
@@ -4872,6 +5023,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ClearBattleDirectingFormChangeForbid();
+    
+    UFUNCTION(BlueprintCallable)
+    void ClampPositionToMap();
     
     UFUNCTION(BlueprintCallable)
     bool CheckSphereSweepHitMap(const FVector InStartPos, const FVector InEndPos, const float InSize, FHitResult& OutResult);
@@ -4929,6 +5083,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool CheckBlastDemoBranchSpDeriveType(const FSSBlastDemoBranchCondition& InCondition);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool CheckAnyTargetLocationsWithinAngle(const ASSCharacter* InOpponentCharacter, FVector InFowardDirection, float InAngleDeg, bool bInIgnoreHeight) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CheckAimBodyBlendTimeZero() const;
@@ -5074,4 +5231,3 @@ public:
 
     // Fix for true pure virtual functions not being implemented
 };
-

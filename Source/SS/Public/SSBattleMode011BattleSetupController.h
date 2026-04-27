@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "KoratMatchingCondPropDataList.h"
 #include "SSOnlineBattleSetupController.h"
 #include "SSBattleMode011BattleSetupController.generated.h"
 
@@ -27,6 +28,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText BackToTop;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FKoratMatchingCondPropDataList> MatchingConditionArray;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSBattleMode010TopMenu* BattleMode010TopMenuWidget;

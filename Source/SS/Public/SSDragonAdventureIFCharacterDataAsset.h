@@ -2,9 +2,11 @@
 #include "CoreMinimal.h"
 #include "EExhibitionType.h"
 #include "ESSDragonAdventureIFCharaActionType.h"
+#include "KoratCharacterCostumeDataList.h"
 #include "KoratDragonAdventureIFRouteClearInfoDataList.h"
 #include "KoratPlayerStartDataList.h"
 #include "MutualDataAsset.h"
+#include "SSDragonAdventureIFDLC2Setting.h"
 #include "SSDragonAdventureIFExhibitionSetting.h"
 #include "SSDragonAdventureIFUpdate1Setting.h"
 #include "SSDragonAdventureIFCharacterDataAsset.generated.h"
@@ -20,6 +22,9 @@ class USSDragonAdventureIFCharacterDataAsset : public UMutualDataAsset {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText CharacterName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FKoratCharacterCostumeDataList CostumeDataList;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText IntroductionText;
@@ -52,6 +57,9 @@ public:
     bool IgnoreOpen;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool IsShowSynopsis;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<ESSDragonAdventureIFCharaActionType, TSoftObjectPtr<ULevelSequence>> Actions;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -74,6 +82,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSSDragonAdventureIFUpdate1Setting Update1Setting;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSSDragonAdventureIFDLC2Setting DLC2Setting;
     
     USSDragonAdventureIFCharacterDataAsset();
 

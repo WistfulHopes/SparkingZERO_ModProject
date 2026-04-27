@@ -1,6 +1,5 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "KoratActionDataList.h"
 #include "KoratPlayerStartDataList.h"
 #include "SSUiLevelScriptActor.h"
 #include "SSBattleSetupLevelScriptActorBase.generated.h"
@@ -8,7 +7,6 @@
 class AActor;
 class ASSCharacter;
 class ASSLevelSequenceActor;
-class UCurveFloat;
 class ULevelSequence;
 
 UCLASS(Blueprintable)
@@ -23,55 +21,7 @@ protected:
     FKoratPlayerStartDataList CharacterStartPlaceP2;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FKoratActionDataList StartAction;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FKoratActionDataList DecideAction;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ULevelSequence* CharaSelectEntrySequence;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ULevelSequence* CharaSelectEntrySequenceLP;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ULevelSequence* CharaSelectEntrySequenceLPEmoteBack;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ULevelSequence* CharaSelectStandSequence;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ULevelSequence* CharaSelectStandNonInterpolationSequence;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ULevelSequence* CharaSelectWaitChange;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<ULevelSequence*> CharaSelectWaitChangeList;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ULevelSequence* CharaTopEntrySequence;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ULevelSequence* CharaLeaveSequence;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ULevelSequence* NoEffectStandSequence;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName CameraAttachSocketName;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FName CameraFocusSocketName;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UCurveFloat* WaistAdjustOffsetCameraInterpolateCurve;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UCurveFloat* CameraFocusTransformInterpolateCurve;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float CameraFocusTransformInterpolateSec;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSLevelSequenceActor* CurrentLevelSequenceActor;

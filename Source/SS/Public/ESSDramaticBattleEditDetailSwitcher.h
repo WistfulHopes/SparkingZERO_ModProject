@@ -14,6 +14,8 @@ enum class ESSDramaticBattleEditDetailSwitcher : uint8 {
     EventText,
     Bgm,
     Scene,
+    Form,
+    IconAndTextAndNum,
     Blank,
     None,
 };

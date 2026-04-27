@@ -1,6 +1,7 @@
 #include "SSTeamGauge.h"
 
 USSTeamGauge::USSTeamGauge() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 

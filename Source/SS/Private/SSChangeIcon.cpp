@@ -1,6 +1,7 @@
 #include "SSChangeIcon.h"
 
 USSChangeIcon::USSChangeIcon() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->FaceImage = NULL;
     this->FaceImageTexture = NULL;
     this->SpUIGauge = NULL;

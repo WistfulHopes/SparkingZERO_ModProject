@@ -5,6 +5,7 @@ USSCombativesDataAsset::USSCombativesDataAsset() {
     this->PowerDpMultiplier.AddDefaulted(10);
     this->Shave = 0;
     this->EnergyDamage = 0;
+    this->EnergyShave = 0;
     this->EnergyGain = 0;
     this->SmashLevelGaugeIncrement = 0.00f;
     this->bNoKnockDownAttack = false;

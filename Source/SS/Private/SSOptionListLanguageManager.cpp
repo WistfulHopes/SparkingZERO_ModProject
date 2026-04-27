@@ -1,6 +1,7 @@
 #include "SSOptionListLanguageManager.h"
 
 USSOptionListLanguageManager::USSOptionListLanguageManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSOptionListLanguageManager::OnChangeValueLocalizationVoiceButton(const FSSMenuButtonImageItemEntry& InChangeItem) {

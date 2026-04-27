@@ -8,8 +8,9 @@
 
 class ASSCharacter;
 class ASSLevelSequenceActor;
+class USSCharacterStencilParams;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, Transient)
 class ASSCZSearchEffectRenderer : public AActor {
     GENERATED_BODY()
 public:
@@ -20,11 +21,17 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<EKoratBattleSearchStatus, TSoftObjectPtr<ASSLevelSequenceActor>> SequenceActorPtrMap;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<ASSLevelSequenceActor> AuraSearchEffectSequenceActor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    USSCharacterStencilParams* IlluminationStencilParam;
+    
 public:
     ASSCZSearchEffectRenderer(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)
-    void OnSearchStateChanged(const ASSCharacter* InCharacter, const FKoratSearchData& InSearchData, EKoratBattleSearchFactor InFactor);
+    void OnSearchStateChangedMyself(const ASSCharacter* InCharacter, const FKoratSearchData& InSearchData, EKoratBattleSearchFactor InFactor);
     
 };
 

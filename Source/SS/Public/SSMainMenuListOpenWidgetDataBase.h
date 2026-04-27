@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EKoratModeNSRSelectMode.h"
 #include "EMainMenuOnlineCheckMode.h"
 #include "EMainMenuSettingsMode.h"
 #include "KoratButtonGuideDataList.h"
@@ -46,7 +47,13 @@ public:
     TArray<int32> ButtonGuideHiddenIndexes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText GuideText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bOnlineOnly;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EKoratModeNSRSelectMode ModeNSRContinueMode;
     
     SS_API FSSMainMenuListOpenWidgetDataBase();
 };

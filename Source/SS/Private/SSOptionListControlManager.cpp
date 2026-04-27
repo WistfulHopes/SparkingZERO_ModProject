@@ -1,6 +1,7 @@
 #include "SSOptionListControlManager.h"
 
 USSOptionListControlManager::USSOptionListControlManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->KeySetModeFocusWidget = NULL;
 }
 

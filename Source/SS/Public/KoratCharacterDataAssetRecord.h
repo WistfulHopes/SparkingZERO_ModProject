@@ -23,7 +23,6 @@
 #include "KoratCharacterItemDataList.h"
 #include "KoratVelocityLineEffectDataList.h"
 #include "KoratVelocityLineEffectTypeDataList.h"
-#include "SSAiCharacterDataList.h"
 #include "SSFateDataList.h"
 #include "KoratCharacterDataAssetRecord.generated.h"
 
@@ -32,6 +31,7 @@ class UKoratCharacterCombinationDataAsset;
 class UKoratCharacterMLSDataAsset;
 class UKoratSoundDataAsset;
 class ULevelSequence;
+class USSAiCharacterDataAsset;
 class USSAnimInstance;
 class USSCharacterUiDataAsset;
 class USSEffectColorDataAsset;
@@ -57,6 +57,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsNpcChara;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsLockDefaultCostume;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratCharacterDataCostumeParameter> Costumes;
@@ -137,7 +140,7 @@ public:
     FKoratCharacterDataNameInfo NameInfo;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSSAiCharacterDataList AiCharacterData;
+    USSAiCharacterDataAsset* AiCharacterDataAsset;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FKoratCharacterItemDataList> DefaultItems;

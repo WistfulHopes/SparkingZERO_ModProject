@@ -121,6 +121,10 @@ bool UKoratCharacterMontageComponent::IsBattleKeyPressedImpl(const EKoratBattleK
 }
 
 
+float UKoratCharacterMontageComponent::GetSuperZCounterCatchInputTime() const {
+    return 0.0f;
+}
+
 float UKoratCharacterMontageComponent::GetSuperCounterInputTime() const {
     return 0.0f;
 }
@@ -170,6 +174,10 @@ float UKoratCharacterMontageComponent::GetBattleKeyTimeSincePressedInActionImpl(
 }
 
 float UKoratCharacterMontageComponent::GetBattleKeyTimeSincePressedImpl(const EKoratBattleKey InBattleKey) const {
+    return 0.0f;
+}
+
+float UKoratCharacterMontageComponent::GetBattleKeyTimeSincePressedAtIntervalOfWorldTimeImpl(const EKoratBattleKey InBattleKey) const {
     return 0.0f;
 }
 

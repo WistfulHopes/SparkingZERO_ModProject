@@ -2,5 +2,6 @@
 
 FSSDragonAdventureIFRouteClearInfoAssetRecord::FSSDragonAdventureIFRouteClearInfoAssetRecord() {
     this->bOriginalRoute = false;
+    this->bIgnoreTrophyChecking = false;
 }
 

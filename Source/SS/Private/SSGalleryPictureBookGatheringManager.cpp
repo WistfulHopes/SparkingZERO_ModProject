@@ -1,6 +1,7 @@
 #include "SSGalleryPictureBookGatheringManager.h"
 
 USSGalleryPictureBookGatheringManager::USSGalleryPictureBookGatheringManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 

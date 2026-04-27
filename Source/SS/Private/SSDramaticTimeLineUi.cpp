@@ -1,6 +1,7 @@
 #include "SSDramaticTimeLineUi.h"
 
 USSDramaticTimeLineUi::USSDramaticTimeLineUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->TimeLineViewPanelWidgetName = TEXT("TimeLineViewPanel");
     this->TimeLineTrackViewPanelWidgetName = TEXT("TimeLineTrackViewPanel");
     this->TimeSliderWidgetName = TEXT("TimeSlider");

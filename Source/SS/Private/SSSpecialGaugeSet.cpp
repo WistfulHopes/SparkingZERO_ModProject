@@ -1,6 +1,7 @@
 #include "SSSpecialGaugeSet.h"
 
 USSSpecialGaugeSet::USSSpecialGaugeSet() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->SPGauge = NULL;
     this->SparkingGauge = NULL;
     this->MinusGauge = NULL;

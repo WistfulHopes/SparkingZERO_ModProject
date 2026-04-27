@@ -11,5 +11,6 @@ FKoratCharacterDataShortDashParameter::FKoratCharacterDataShortDashParameter() {
     this->bIsStopClearSpeed = false;
     this->StopBrakingDeceleration = 0.00f;
     this->SpCost = 0.00f;
+    this->DirectionSpeedRatioCurve = NULL;
 }
 

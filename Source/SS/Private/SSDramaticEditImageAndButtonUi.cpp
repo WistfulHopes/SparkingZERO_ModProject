@@ -1,6 +1,7 @@
 #include "SSDramaticEditImageAndButtonUi.h"
 
 USSDramaticEditImageAndButtonUi::USSDramaticEditImageAndButtonUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->TitleTextWidget = NULL;
     this->ScaleBoxTitleText = NULL;
     this->FocusTime = 0.00f;

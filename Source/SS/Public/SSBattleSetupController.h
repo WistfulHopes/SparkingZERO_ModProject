@@ -1,6 +1,5 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InputCoreTypes.h"
 #include "BattleSetupPlayerWidgets.h"
 #include "EKoratAllComLevelSetting.h"
 #include "EKoratBattleKeyMode.h"
@@ -8,16 +7,15 @@
 #include "EKoratBattleSetupCustomizeTopCategoryButton.h"
 #include "KoratBGMDataList.h"
 #include "KoratCharacterDataList.h"
-#include "KoratCharacterItemDataList.h"
 #include "KoratMapDataList.h"
 #include "SSBattleSetupControllerBase.h"
-#include "SSBattleSetupPlayerLabelObjects.h"
 #include "SSBattleSetupController.generated.h"
 
 class ASSActionListController;
 class ASSOptionController;
-class ULevelSequence;
 class USSBattleMemberSettingMenu;
+class USSBattleMode010Regulation;
+class USSBattleModeNSRHighScoreManager;
 class USSBattleSetupBuildupItemMySet;
 class USSBattleSetupBuildupItemSelectDialog;
 class USSBattleSetupCustomizeBuildupStatusUi;
@@ -45,33 +43,6 @@ class ASSBattleSetupController : public ASSBattleSetupControllerBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKey> ToggleSkillWindowKeys;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKey> BattleStartKey;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKey> RandomCharacterKey;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKey> CustomizeShortcutKey;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKey> CustomizeBgmPlayPauseKey;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKey> CustomizeActionPreviewKey;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKey> CustomizeBuildupItemAllRemoveShortcutKey;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKey> SortFilterShortcutKey;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKey> TrainingMysetShortcutKey;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKoratBGMDataList BgmBattleSetup;
     
@@ -133,6 +104,9 @@ protected:
     FText TextDPNumText;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText CurrentTeamDPOver;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText OpponentTeamDPOver;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -151,130 +125,7 @@ protected:
     TMap<EKoratAllComLevelSetting, FText> ComLevelItemTexts;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<EKoratBattleKeyMode, FSSBattleSetupPlayerLabelObjects> PlayerLabelObjects_Left;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<EKoratBattleKeyMode, FSSBattleSetupPlayerLabelObjects> PlayerLabelObjects_Right;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsEnableCustomizeCharaEntryCamera;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FKoratCharacterItemDataList> CharacterSkillOffItems;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float SyncCharacterToFadeDelaySec;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float SyncCharacterFadeOutSec;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float SyncCharacterFadeInSec;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 DefaultBuildupItemUnlockNum;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float OnlineOpponentTeamingSyncInterval;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<EKoratBattleSetupCustomizeComSettingButton> CustomizeAiSettingList;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleMemberSettingMenu> ClassTopMenuWidget1P;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleMemberSettingMenu> ClassTopMenuWidget2P;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSMenuManager> ClassTopMenuButtonSet;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSUiWidget> ClassPlayerLabelWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSUiWidget> ClassTrainingWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleSetupCustomizeTopMenu> ClassCustomizeTopMenuWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleSetupNameList> ClassCustomizeCharaNameWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleSetupBuildupItemSelectDialog> ClassCustomizeCommonItemMenuWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleSetupCustomizeBuildupStatusUi> ClassCustomizeBuildupStatusUiWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleSetupBuildupItemMySet> ClassCustomizeBuildupItemMySetWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleSetupCustomizeCostumeMenu> ClassCustomizeCostumeMenuWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSMenuViewScroll> ClassCustomizeDirectionMenuWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSMenuViewScroll> ClassCustomizeAppealMenuWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSMenuViewScroll> ClassCustomizeFusionItemMenuWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSMenuViewScroll> ClassCustomizeBgmMenuWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSMenuViewScroll> ClassCustomizeAiMenuWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSUiWidget> ClassCustomizeAiDescriptionWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleSetupTeamList> ClassCharaSelectTeamListWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSOneShotUi> ClassNotify1PWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSOneShotUi> ClassNotify2PWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSMenuGeneralDialog> ClassMenuGeneralDialog;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSMenuViewScroll> ClassBattleSetupCharaListWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSUiWidget> ClassTopVsWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSTimerUi> ClassTimerUi;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSWaitDialog> ClassWaitDialog;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSCharaSelectStatusBase> ClassCharaNameWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSCharaSelectStatusBase> ClassTransformWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleSetupStatusSkillList> ClassSkillListWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleSetupFormSelectWindow> ClassFormSelectWindow;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSUiWidget> ClassOnlineTeamPublicSettingUi;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<USSBattleSetupTeamingMySet> ClassTeamingMySetWidget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<ULevelSequence> FromStageSelectTransitionSequence;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<USSCharaSelectStatusBase*> CharaStatusList;
@@ -314,6 +165,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSBattleSetupCustomizeBuildupStatusUi* CustomizeBuildupStatusUiWidget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSBattleSetupCustomizeBuildupStatusUi* CustomizeBuildupStatusUiFromCharaSelectWidget;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSBattleSetupBuildupItemMySet* CustomizeBuildupItemMySetWidget;
@@ -378,6 +232,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSBattleSetupTeamingMySet* TeamingMySetWidget;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSBattleMode010Regulation* RegulationList;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSOptionController* OptionController;
     
@@ -386,6 +243,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASSActionListController* ActionListController;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSBattleModeNSRHighScoreManager* BattleModeNSRHighScoreManager;
     
 public:
     ASSBattleSetupController(const FObjectInitializer& ObjectInitializer);

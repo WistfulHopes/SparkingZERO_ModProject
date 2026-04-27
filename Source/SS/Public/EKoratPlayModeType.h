@@ -18,6 +18,11 @@ enum class EKoratPlayModeType : uint8 {
     PlayMode_TournamentOnline,
     PlayMode_RankMatchDP,
     PlayMode_BattleMode011,
+    PlayMode_RankMatchSeason,
+    PlayMode_RankMatchSeasonDP,
+    PlayMode_ModeHUN,
+    PlayMode_ModeNSRBruteForce,
+    PlayMode_ModeNSRUnlimited,
     Num,
 };
 

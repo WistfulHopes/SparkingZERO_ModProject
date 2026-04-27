@@ -1,6 +1,7 @@
 #include "SSWmStampSelectManager.h"
 
 USSWmStampSelectManager::USSWmStampSelectManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 

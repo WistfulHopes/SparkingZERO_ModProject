@@ -8,8 +8,11 @@ FKoratBattleDirectingData::FKoratBattleDirectingData() {
     this->bEnhanceditems = false;
     this->bOutField = false;
     this->bNoMartialArts = false;
+    this->DamageCorrection = EKoratBattleDamageCorrection::Normal;
+    this->MaxDP = 0;
     this->bSuddenlySparking = false;
     this->bSearchOffStart = false;
+    this->bDisableCharacterSilhouetteInZSearchOff = false;
     this->bLiveCommentary = false;
 }
 

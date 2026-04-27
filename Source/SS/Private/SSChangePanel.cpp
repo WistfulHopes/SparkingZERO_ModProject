@@ -1,6 +1,7 @@
 #include "SSChangePanel.h"
 
 USSChangePanel::USSChangePanel() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->ChangeIcon = NULL;
     this->GuideButtonWidgets = NULL;
 }

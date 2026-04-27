@@ -3,6 +3,8 @@
 FKoratCharacterDataMovementParameter::FKoratCharacterDataMovementParameter() {
     this->NormalSpeed = 0.00f;
     this->NearSpeed = 0.00f;
+    this->UpDownSpeed = 0.00f;
+    this->NearUpDownSpeed = 0.00f;
     this->NearDistance = 0.00f;
     this->SpeedInterpolateRange = 0.00f;
     this->NormalWalkSpeed = 0.00f;

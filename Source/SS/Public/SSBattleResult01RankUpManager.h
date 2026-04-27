@@ -23,5 +23,11 @@ private:
 public:
     USSBattleResult01RankUpManager();
 
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnChange_Rankup();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnChange_RankDown();
+    
 };
-

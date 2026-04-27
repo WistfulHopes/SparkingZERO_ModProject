@@ -19,9 +19,6 @@ public:
     UFUNCTION(BlueprintCallable)
     void Sort();
     
-    UFUNCTION(BlueprintCallable)
-    void SetManaSource();
-    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetMapName(const FName& InMapKey) const;
     

@@ -4,9 +4,23 @@
 #include "KoratMovieSceneSoundTemplate.generated.h"
 
 USTRUCT(BlueprintType)
-struct FKoratMovieSceneSoundTemplate : public FMovieSceneParameterSectionTemplate {
+struct SS_API FKoratMovieSceneSoundTemplate : public FMovieSceneParameterSectionTemplate {
     GENERATED_BODY()
 public:
-    SS_API FKoratMovieSceneSoundTemplate();
-};
+    FKoratMovieSceneSoundTemplate();
+    FKoratMovieSceneSoundTemplate(const UKoratMovieSceneSoundSceneSection& Section);
 
+    virtual void Evaluate(const FMovieSceneEvaluationOperand& Operand,
+                          const FMovieSceneContext& Context,
+                          const FPersistentEvaluationData& PersistentData,
+                          FMovieSceneExecutionTokens& ExecutionTokens) const override;
+
+    virtual UScriptStruct& GetScriptStructImpl() const override
+    {
+        return *StaticStruct();
+    }
+
+    virtual EMovieSceneCompletionMode GetCompletionMode() const;
+    
+    TArray<FBoolParameterNameAndCurve> BoolCurves;
+};

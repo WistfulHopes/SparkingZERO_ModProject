@@ -1,6 +1,7 @@
 #include "SSBattleSetupTeamingMySet.h"
 
 USSBattleSetupTeamingMySet::USSBattleSetupTeamingMySet() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->MySetFaceChipOverlayWidgetPrefixName = TEXT("MS_Face_");
     this->MySetFaceChipImageWidgetPrefixName = TEXT("IMG_Face_MS_");
     this->TeamFaceChipOverlayWidgetPrefixName = TEXT("Team_Face_");

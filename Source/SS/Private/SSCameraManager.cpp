@@ -3,6 +3,7 @@
 
 ASSCameraManager::ASSCameraManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->PlayerControllerID = -1;
+    this->bWithCinecamera = false;
     this->bFromSequence = false;
     this->ConnectedTime = 0.00f;
     this->bShakeClosing = false;

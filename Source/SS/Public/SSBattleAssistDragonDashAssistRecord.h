@@ -17,6 +17,9 @@ public:
     float DragonDashAttackDistance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float DragonDashAttackDistanceGiantChara;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DragonDashAttackAngle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -27,4 +30,3 @@ public:
     
     SS_API FSSBattleAssistDragonDashAssistRecord();
 };
-

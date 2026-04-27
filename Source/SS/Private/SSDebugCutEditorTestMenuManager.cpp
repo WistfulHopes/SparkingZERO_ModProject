@@ -1,6 +1,7 @@
 #include "SSDebugCutEditorTestMenuManager.h"
 
 USSDebugCutEditorTestMenuManager::USSDebugCutEditorTestMenuManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 bool USSDebugCutEditorTestMenuManager::SetupStart(const FText& InSelectedStage, const TArray<FText>& InSelectedCharacters, const TArray<FText>& InSelectedCharacterStarts, const FText& InSelectedCutType) {

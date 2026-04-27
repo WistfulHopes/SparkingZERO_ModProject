@@ -4,6 +4,8 @@
 #include "SSTournamentSelectController.generated.h"
 
 class ASSCutCameraActor;
+class USSMenuDialogManager;
+class USSMenuGeneralDialog;
 class USSOperationGuideSet;
 class USSSortFilterDialog;
 class USSTournamentRuleEditorWidget;
@@ -36,6 +38,12 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USSTournamentSaveLoadWidget* SaveLoadWidget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USSMenuGeneralDialog* DialogWidget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USSMenuDialogManager* DialogManager;
     
 public:
     ASSTournamentSelectController(const FObjectInitializer& ObjectInitializer);

@@ -1,6 +1,7 @@
 #include "SSStandardMenuManager.h"
 
 USSStandardMenuManager::USSStandardMenuManager() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->CurrentWidget = NULL;
 }
 

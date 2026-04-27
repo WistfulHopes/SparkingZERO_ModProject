@@ -13,6 +13,7 @@ FKoratBattlePlayCharacter::FKoratBattlePlayCharacter() {
     this->BlastStockCount = 0;
     this->BlastGaugeValue = 0.00f;
     this->NextSkillGaugeGainHP = 0.00f;
+    this->bDoneLastOneHPSkillGaugeGain = false;
     this->AddMaxHP = 0.00f;
     this->CpuLevel = 0;
     this->CostumeDamageLv = 0;

@@ -57,6 +57,9 @@ protected:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EKoratBattleKey, double> TimeSincePressedKeyAtInterval;
     
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<EKoratBattleKey, double> TimeSincePressedKeyAtIntervalOfWorldTime;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EKoratBattleKey, bool> PressedKey;
     
@@ -360,6 +363,9 @@ public:
     bool IsActionCanStandby() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetSuperZCounterCatchInputTime() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSuperCounterInputTime() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -400,6 +406,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBattleKeyTimeSincePressedImpl(const EKoratBattleKey InBattleKey) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetBattleKeyTimeSincePressedAtIntervalOfWorldTimeImpl(const EKoratBattleKey InBattleKey) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBattleKeyTimeSincePressedAtIntervalImpl(const EKoratBattleKey InBattleKey) const;
@@ -443,4 +452,3 @@ public:
     void AddIgnoreUntilPushedKey(TArray<EKoratBattleKey> InIgnoreUntilPushedKey);
     
 };
-

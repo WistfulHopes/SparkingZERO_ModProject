@@ -2,6 +2,7 @@
 
 USSBattleReplaySaveGame::USSBattleReplaySaveGame() {
     this->BattleData.AddDefaulted(1);
+    this->bIsDebugOnlineAutoBattleAiEnable = false;
 }
 
 void USSBattleReplaySaveGame::GetReplayWorldLocation(int32 PlaySideCommon, TArray<FTransform>& Transform1P, TArray<FTransform>& Transform2P) {

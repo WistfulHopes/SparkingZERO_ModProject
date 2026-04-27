@@ -15,6 +15,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bNoCombine;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bNoPerformanceItem;
+    
     SS_API FKoratBattleTeamDirectingData();
 };
 

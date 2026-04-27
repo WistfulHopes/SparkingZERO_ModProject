@@ -29,6 +29,9 @@ protected:
     FKoratControlRigSocketInfo RightSocketInfo;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName SpecifiedBone;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EKoratInverseKinematicsType, FSSInverseKinematicsParameter> LeftHand;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -36,6 +39,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ThrowA2B;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float FootIKAlpha;
     
 public:
     USSCharacterInverseKinematicsAnimInstance();
@@ -103,7 +109,7 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable)
-    void BeginThrow(const EKoratInverseKinematicsType ThrowType);
+    void BeginThrow(const EKoratInverseKinematicsType ThrowType, const FName& NewSpecifiedBone);
     
 };
 

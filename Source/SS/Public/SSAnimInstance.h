@@ -63,5 +63,13 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentRelevantAnimTime(const FName InMachineName, FName& OutCurrentStateName);
     
+    UFUNCTION(BlueprintCallable, Category="Kawaii Wind")
+    void ApplyWindToAllKawaiiPhysicsNodes(
+        float WindScale,
+        float OverwriteWindSpeed,
+        const FVector& OverwriteWindDirection,
+        bool bEnableWind = true,
+        bool bEnableOverwriteWind = true);
+ 
 };
 

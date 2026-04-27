@@ -5,8 +5,8 @@
 #include "KoratTriggerEffectParameters.h"
 #include "MovieSceneTriggerEffectSection.generated.h"
 
-UCLASS(Blueprintable, MinimalAPI)
-class UMovieSceneTriggerEffectSection : public UMovieSceneSection {
+UCLASS(Blueprintable)
+class SS_API UMovieSceneTriggerEffectSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -18,4 +18,3 @@ public:
     UMovieSceneTriggerEffectSection();
 
 };
-

@@ -1,6 +1,7 @@
 #include "SSDramaticEditCutListUi.h"
 
 USSDramaticEditCutListUi::USSDramaticEditCutListUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
 }
 
 void USSDramaticEditCutListUi::OnSetupPanelDataTest(USSMenuButton* InHitButton, USSRemoteButton* InRemoteButton, int32 InDataIndex) {

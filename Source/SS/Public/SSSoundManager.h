@@ -132,9 +132,6 @@ public:
     void Reset();
     
     UFUNCTION(BlueprintCallable)
-    void ReserveBGM(const FKoratBGMDataList InBGMDataList);
-    
-    UFUNCTION(BlueprintCallable)
     void RemoveAtomCueSheetLoaderActor(const FName& InCueSheetName);
     
     UFUNCTION(BlueprintCallable)
@@ -159,7 +156,7 @@ public:
     FKoratSoundHandle PlayChangeLabelBGM(const FKoratBGMDataList InBGMDataList, const float InFadeInTime, const float InFadeOutTime, const bool IsCrossFade);
     
     UFUNCTION(BlueprintCallable)
-    FKoratSoundHandle PlayBGM(const FKoratBGMDataList InBGMDataList, const float InFadeInTime, const float InFadeOutTime, const bool IsCrossFade, const bool IsOverwrite, const ESSAnimeSongsModeWhenStartBroadCast InAnimeSongsModeWhenStartBroadCast, const FKoratBGMDataList InOriginalBGMDataList);
+    FKoratSoundHandle PlayBGM(const FKoratBGMDataList InBGMDataList, const float InFadeInTime, const float InFadeOutTime, const bool IsCrossFade, const bool IsOverwrite, const ESSAnimeSongsModeWhenStartBroadCast InAnimeSongsModeWhenStartBroadCast, const FKoratBGMDataList InOriginalBGMDataList, const bool IsChangeBattleBGM, const bool InRecursive);
     
     UFUNCTION(BlueprintCallable)
     void PauseSoundByType(const ESSSoundGroupType InSoundGroupType, const bool bInPause);
@@ -239,4 +236,3 @@ public:
     void AddAtomCueSheetInfo(USoundAtomCueSheet* InCueSheet);
     
 };
-

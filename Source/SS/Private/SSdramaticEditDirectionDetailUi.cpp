@@ -1,6 +1,7 @@
 #include "SSdramaticEditDirectionDetailUi.h"
 
 USSdramaticEditDirectionDetailUi::USSdramaticEditDirectionDetailUi() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->DirectionCharaWidget = NULL;
     this->DirectionNumericWidget = NULL;
     this->DirectionFormChangeWidget = NULL;

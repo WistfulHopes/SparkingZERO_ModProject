@@ -21,7 +21,9 @@ ASSBattleResultController::ASSBattleResultController(const FObjectInitializer& O
     this->AdventureIFController = NULL;
     this->MenuGeneralDialog = NULL;
     this->ResultTimerManager = NULL;
+    this->ResultReplayManager = NULL;
     this->ReportDialog = NULL;
+    this->ModeNSRRezultManager = NULL;
 }
 
 

@@ -46,7 +46,7 @@ public:
 
 protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void CalcRadarChartParamInner(const FKoratBlastActionDataAssetRecord& InBlastActions, const FKoratCharacterDataAssetRecord& InCharacterData, TArray<float>& OutRadarChartParam);
+    void CalcRadarChartParamInner(const FKoratBlastActionDataAssetRecord& InBlastActions, const FKoratCharacterDataAssetRecord& InCharacterData, bool bInIsSingleBattleDamage, TArray<float>& OutRadarChartParam);
     
 };
 

@@ -1,6 +1,7 @@
 #include "SSMainGauge.h"
 
 USSMainGauge::USSMainGauge() {
+    this->ScreenSizeCanvasSlotWidgetName.AddDefaulted(1);
     this->FaceChipMaterial = NULL;
     this->HPGauge = NULL;
     this->HPStockSet = NULL;
@@ -42,6 +43,10 @@ void USSMainGauge::HpGaugeChange(float InPercentage) {
 
 USSTeamGauge* USSMainGauge::GetTeamGauge() {
     return NULL;
+}
+
+int32 USSMainGauge::GetStartShowModeNow() {
+    return 0;
 }
 
 USSSPGauge* USSMainGauge::GetSPGauge() {
